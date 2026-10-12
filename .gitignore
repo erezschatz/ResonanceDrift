@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+.kotlin/
+
+# Android Studio / IntelliJ — machine-specific
+.idea/
+*.iml
+local.properties
+.cxx/
+captures/
+*.hprof
+
+# Release signing — never committed (the debug keystore IS committed, on purpose)
+keystore.properties
+*.jks
+!keystore/debug.keystore
+
+# OS
+.DS_Store
+Thumbs.db

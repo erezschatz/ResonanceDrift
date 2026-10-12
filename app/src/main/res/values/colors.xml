@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only what the launcher icon and the window background need. Every
+         other colour is a Compose value in ui/theme/Color.kt. -->
+    <color name="ic_launcher_background">#6366F1</color>
+    <color name="window_background">#FFFFFF</color>
+</resources>

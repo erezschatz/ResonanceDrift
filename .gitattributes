@@ -1,0 +1,7 @@
+# LF everywhere, including on Windows checkouts, so the two machines never
+# disagree about line endings.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.keystore binary
+*.png binary
