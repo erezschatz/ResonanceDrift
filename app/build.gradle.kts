@@ -30,7 +30,7 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
 
-        // Bump both on every installable change. See CLAUDE.md → Versioning.
+        // Bump both on every installable change. See docs/SPEC.md → Versioning.
         versionCode = 1
         versionName = "1.0"
 
@@ -39,7 +39,7 @@ android {
 
     signingConfigs {
         // Shared debug key, committed to the repo, so Mac and Windows builds
-        // install over each other on the phone. See CLAUDE.md → Signing.
+        // install over each other on the phone. See docs/SPEC.md → Signing.
         getByName("debug") {
             storeFile = rootProject.file("keystore/debug.keystore")
             storePassword = "android"

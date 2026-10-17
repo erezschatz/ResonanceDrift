@@ -20,7 +20,7 @@ private val LightColors = lightColorScheme(
 )
 
 /**
- * Light only, by decision (CLAUDE.md → UI). No dynamic colour, and the
+ * Light only, by decision (docs/DECISIONS.md D7). No dynamic colour, and the
  * system dark-mode setting is deliberately ignored.
  */
 @Composable

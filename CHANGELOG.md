@@ -1,0 +1,29 @@
+# Changelog
+
+One entry per change, written in the same commit as the change. Newest first.
+Versions follow `app/build.gradle.kts` (`versionName`); *Unreleased* collects
+what has not yet been installed on the phone as a numbered version.
+
+## Unreleased
+
+### 2026-10-17 — Documentation restructured under the Unities
+- `CLAUDE.md` now holds only the working discipline and per-commit checklist.
+- Spec moved to `docs/SPEC.md`; setup guide to `docs/SETUP.md`.
+- Added `docs/DECISIONS.md` (D1–D17, from the October 12 design session),
+  `docs/PLAN.md` with one task file per step in `docs/tasks/`,
+  `docs/AMPACHE.md` (the server contract as ReDrift used it) and
+  `docs/REDRIFT.md` (the predecessor: location, what carries over, what does not).
+- This changelog.
+
+### 2026-10-12 — Project skeleton
+- Gradle project: AGP 9.4 (built-in Kotlin), Kotlin 2.4.10, Compose BOM
+  2026.09.00, Media3 1.11.1, Room 2.8.5, Navigation 3 1.2.0; versions in
+  `gradle/libs.versions.toml`; wrapper pinned to Gradle 9.6.0.
+- Shared debug keystore committed; release signing optional via
+  `keystore.properties`, falling back to the debug key.
+- Manifest with the phase-1 permissions; vector adaptive launcher icon.
+- `ResonanceDriftApp`, `AppGraph` (OkHttp + Json), placeholder `MainActivity`,
+  light theme carrying ReDrift's colours.
+- `ampache/AlbumNames` ("Artist - Album" prefix stripping) with unit tests —
+  the first ported behaviour and the toolchain's smoke test.
+- Not yet built on a machine with an Android SDK (see task 01).

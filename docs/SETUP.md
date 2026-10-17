@@ -118,7 +118,7 @@ Manager. The phone must be on the same Wi-Fi as the computer.
 
 1. Create an empty private GitHub repository `ResonanceDrift`. Claude generates
    the project skeleton (Gradle files, manifest, `AppGraph`, the empty package
-   tree, `CLAUDE.md`, this file), commits, and pushes.
+   tree, `docs/`, this file), commits, and pushes.
 2. On each machine: `git clone` it to the path above (Mac: wherever your other
    repos live; Windows: on `C:`, not WSL).
 3. In Studio: **File → Open…** and pick the repo folder (the one containing
