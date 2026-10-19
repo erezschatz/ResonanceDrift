@@ -120,7 +120,8 @@ ResonanceDrift/
         │       ├── MainActivity.kt        single Activity; hosts Compose nav
         │       ├── ampache/               server contract
         │       │   ├── AmpacheClient.kt       handshake, ping, every action
-        │       │   ├── AmpacheUrls.kt         stream / art URL builders
+        │       │   ├── AmpacheUrls.kt         API / stream / art URL builders
+        │       │   ├── AmpacheException.kt    every failure as a closed set, user-facing messages
         │       │   ├── Session.kt             token + expiry, refresh logic
         │       │   └── model/                 @Serializable DTOs, one file per type
         │       ├── data/                  local state
@@ -250,7 +251,8 @@ real server.
 - Handshake: `auth = sha256(username + sha256(password))`, `version=6.0.0`;
   response carries `auth` (token) and `session_expire`. No timestamp variant.
 - Keep-alive: `ping` when the app comes to the foreground with < 20 min left,
-  throttled to once a minute. Every API/stream call also extends the session
+  throttled to once a minute (`MainActivity.onStart` → `Session.pingIfStale`).
+  A ping answered without `session_expire` means the token is dead. Every API/stream call also extends the session
   server-side, so active playback keeps itself alive.
 - Stream: `<server>/play/index.php?ssid=<token>&type=song&oid=<id>&format=raw`
 - Art: `get_art&id=<albumId>&type=album&size=<px>`

@@ -6,6 +6,17 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-19 — Login and session (step 02, in progress) · 1.1 (2)
+- Auth screen (server URL, username, password, Connect) with inline errors:
+  unreachable, plain http blocked, non-JSON answer, wrong credentials.
+- `AmpacheClient` handshake + ping; `Session` keeps the token, re-handshakes
+  silently on expiry and retries once, pings on foreground when < 20 min
+  remain (throttled to once a minute). Decision D20.
+- `Settings` (DataStore) stores server, username, password hash, token, expiry.
+- Logged-in placeholder screen with Log out, until navigation (task 07).
+- Tests: hash vectors, URL building, expiry maths, re-auth-then-retry against
+  MockWebServer (19 new, 24 total).
+
 ### 2026-10-19 — Step 01 done: toolchain green on the Mac
 - First real build: Gradle sync, Assemble Project and `./gradlew test` pass;
   Run ▶ installs on the Pixel 9 and shows the "ResonanceDrift" placeholder.

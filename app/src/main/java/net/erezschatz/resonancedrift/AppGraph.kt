@@ -1,7 +1,16 @@
 package net.erezschatz.resonancedrift
 
 import android.content.Context
+import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import androidx.datastore.preferences.preferencesDataStoreFile
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
+import net.erezschatz.resonancedrift.ampache.AmpacheClient
+import net.erezschatz.resonancedrift.ampache.Session
+import net.erezschatz.resonancedrift.data.Settings
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
@@ -21,6 +30,12 @@ class AppGraph(private val context: Context) {
 
     val appContext: Context = context.applicationContext
 
+    /**
+     * Work that belongs to the process, not to a screen (restoring the session
+     * at startup). SupervisorJob: one failed child must not cancel the rest.
+     */
+    val appScope: CoroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+
     /** Shared HTTP client: Ampache API calls, audio streaming, album art. */
     val httpClient: OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(15, TimeUnit.SECONDS)
@@ -37,9 +52,20 @@ class AppGraph(private val context: Context) {
         coerceInputValues = true
     }
 
+    /** DataStore requires exactly one instance per file, hence here. */
+    val settings: Settings = Settings(
+        PreferenceDataStoreFactory.create { appContext.preferencesDataStoreFile("settings") },
+    )
+
+    val ampache: AmpacheClient = AmpacheClient(httpClient, json)
+
+    val session: Session = Session(ampache, settings)
+
+    init {
+        appScope.launch { session.restore() }
+    }
+
     // Next, in this order, as they are implemented:
-    //   settings      (DataStore: server URL, user, password hash, session)
-    //   ampache       (AmpacheClient over httpClient + json + settings)
     //   db            (Room)
     //   library       (LibraryRepository over ampache + db)
     //   mediaCache    (Media3 SimpleCache — exactly one per process)

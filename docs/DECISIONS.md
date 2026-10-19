@@ -237,3 +237,27 @@ well as the Mac.
 block step 01 on a machine that may never be used. The shared debug keystore
 (committed) and the JVM criteria file (D18) keep it cheap to add later.
 
+## D20 · 2026-10-19 · Session rules
+
+**Decision.**
+- *Logged in* means "credentials are stored", not "the token is valid". A
+  restart goes straight past the auth screen, with or without network.
+- A dead token (Session Expired envelope, HTTP 401/403, or a `ping` without
+  `session_expire`) triggers one silent re-handshake with the stored password
+  hash, then one retry of the failed call. Concurrent failures share one
+  re-handshake.
+- Only a *rejected* re-handshake (the password changed) returns to the auth
+  screen, prefilled with server and username. A network failure during
+  re-handshake is just an error; the user stays logged in.
+- Log out clears local state only; no `goodbye` call.
+- A server address typed without a scheme gets `https://`.
+
+**Rejected.** ReDrift's `handleSessionExpired()`, which cleared credentials and
+showed the login screen on any expiry (it stored only the token, so it had no
+choice). Calling `goodbye` on log out (ReDrift did): it needs the network,
+and an orphaned server session expires on its own.
+
+**Why.** Task 02's promise: "I never see a login screen again unless I log out
+or the password changes." Storing the password hash is what makes that
+possible.
+
