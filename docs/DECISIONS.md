@@ -261,3 +261,14 @@ and an orphaned server session expires on its own.
 or the password changes." Storing the password hash is what makes that
 possible.
 
+## D21 · 2026-10-19 · Log out keeps server and username
+
+**Decision.** Log out forgets the password hash, token and expiry, and keeps
+the server URL and username so the auth screen comes back prefilled. Supersedes
+the "clears everything" wording of task 02 and the log-out line of D20.
+
+**Rejected.** Clearing everything (as first built and verified in 1.1).
+
+**Why.** Erez: one server, one user — retyping the address after a log out
+is friction with no benefit. The password still has to be typed again.
+

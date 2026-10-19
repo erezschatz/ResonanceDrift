@@ -135,12 +135,28 @@ class SessionTest {
     }
 
     @Test
-    fun `logout clears the store and the state`() = runTest {
+    fun `logout forgets the secrets but keeps server and username`() = runTest {
         store.saved = StoredLogin(serverUrl, "demo", "hash", "tok", 0)
         val session = Session(client, store)
         session.restore()
         session.logout()
         assertNull(store.saved)
+        assertEquals(LastAccount(serverUrl, "demo"), store.lastAccount())
+        assertEquals(SessionState.LoggedOut(serverUrl, "demo"), session.state.value)
+    }
+
+    @Test
+    fun `restart after logout shows the auth screen prefilled`() = runTest {
+        store.last = LastAccount(serverUrl, "demo")
+        val session = Session(client, store)
+        session.restore()
+        assertEquals(SessionState.LoggedOut(serverUrl, "demo"), session.state.value)
+    }
+
+    @Test
+    fun `fresh install shows an empty auth screen`() = runTest {
+        val session = Session(client, store)
+        session.restore()
         assertEquals(SessionState.LoggedOut("", ""), session.state.value)
     }
 
@@ -244,11 +260,20 @@ class SessionTest {
 
     private fun pingBody() = """{"session_expire":"$EXPIRE","server":"6.6.0"}"""
 
+    /** Mirrors Settings: the secrets and the last account are stored separately. */
     private class FakeCredentialStore : CredentialStore {
         var saved: StoredLogin? = null
+        var last: LastAccount? = null
         override suspend fun load() = saved
-        override suspend fun save(login: StoredLogin) { saved = login }
-        override suspend fun clear() { saved = null }
+        override suspend fun save(login: StoredLogin) {
+            saved = login
+            last = LastAccount(login.serverUrl, login.username)
+        }
+        override suspend fun lastAccount() = last ?: saved?.let { LastAccount(it.serverUrl, it.username) }
+        override suspend fun clearSecrets() {
+            last = lastAccount()
+            saved = null
+        }
     }
 
     private companion object {

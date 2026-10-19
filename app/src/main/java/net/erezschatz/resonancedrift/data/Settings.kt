@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.first
 import net.erezschatz.resonancedrift.ampache.CredentialStore
+import net.erezschatz.resonancedrift.ampache.LastAccount
 import net.erezschatz.resonancedrift.ampache.StoredLogin
 
 /**
@@ -40,10 +41,15 @@ class Settings(private val store: DataStore<Preferences>) : CredentialStore {
         }
     }
 
-    override suspend fun clear() {
+    override suspend fun lastAccount(): LastAccount? {
+        val prefs = store.data.first()
+        val server = prefs[SERVER_URL] ?: return null
+        val username = prefs[USERNAME] ?: return null
+        return LastAccount(server, username)
+    }
+
+    override suspend fun clearSecrets() {
         store.edit { prefs ->
-            prefs.remove(SERVER_URL)
-            prefs.remove(USERNAME)
             prefs.remove(PASSWORD_HASH)
             prefs.remove(TOKEN)
             prefs.remove(EXPIRES_AT)

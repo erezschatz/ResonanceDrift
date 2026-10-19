@@ -18,7 +18,8 @@ I log out or the password changes.
 - [x] `ping` on return to foreground when < 20 min of session remain, throttled
       to once a minute
 - [x] Restart the app → lands past the auth screen, no network needed for that
-- [x] Log out clears everything and returns to the auth screen
+- [x] Log out clears password hash, token and expiry and returns to the auth
+      screen, prefilled with server and username (D21; was "clears everything")
 - [x] Unit tests: handshake hash against a known vector; URL building; expiry
       maths; re-auth-then-retry against MockWebServer
 

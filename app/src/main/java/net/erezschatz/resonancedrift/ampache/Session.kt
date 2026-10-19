@@ -24,17 +24,25 @@ data class StoredLogin(
  * (DataStore); tests use an in-memory fake.
  */
 interface CredentialStore {
+    /** The full login, or null when there is no password hash (logged out). */
     suspend fun load(): StoredLogin?
     suspend fun save(login: StoredLogin)
-    suspend fun clear()
+
+    /** Server and username survive log out, to prefill the auth screen. */
+    suspend fun lastAccount(): LastAccount?
+
+    /** Log out: forget password hash, token and expiry; keep [lastAccount]. */
+    suspend fun clearSecrets()
 }
+
+data class LastAccount(val serverUrl: String, val username: String)
 
 /** What the UI needs to know to choose between the auth screen and the app. */
 sealed interface SessionState {
     /** Stored credentials not read yet (first few ms after launch). */
     data object Unknown : SessionState
 
-    /** Show the auth screen, prefilled with these (empty after log out). */
+    /** Show the auth screen, prefilled with these (empty on a fresh install). */
     data class LoggedOut(val serverUrl: String, val username: String) : SessionState
 
     data class LoggedIn(val serverUrl: String, val username: String) : SessionState
@@ -72,7 +80,8 @@ class Session(
         _state.value = if (stored != null) {
             SessionState.LoggedIn(stored.serverUrl, stored.username)
         } else {
-            SessionState.LoggedOut("", "")
+            val last = store.lastAccount()
+            SessionState.LoggedOut(last?.serverUrl.orEmpty(), last?.username.orEmpty())
         }
         restored.complete(Unit)
     }
@@ -92,9 +101,10 @@ class Session(
 
     suspend fun logout() {
         restored.await()
-        store.clear()
+        val current = login
+        store.clearSecrets()
         login = null
-        _state.value = SessionState.LoggedOut("", "")
+        _state.value = SessionState.LoggedOut(current?.serverUrl.orEmpty(), current?.username.orEmpty())
     }
 
     /**
@@ -148,7 +158,7 @@ class Session(
         } catch (e: AmpacheException.ServerError) {
             // The stored hash was rejected: the password changed on the server.
             // Keep server and username so the auth screen is prefilled.
-            store.clear()
+            store.clearSecrets()
             login = null
             _state.value = SessionState.LoggedOut(current.serverUrl, current.username)
             throw e

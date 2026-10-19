@@ -6,6 +6,12 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-19 — Log out keeps server and username · 1.3 (4)
+- Log out now forgets only the password hash, token and expiry; the auth
+  screen comes back with server URL and username filled in. Decision D21.
+- Tests: 26 total (logout keeps the account; prefill after restart; empty on
+  a fresh install).
+
 ### 2026-10-19 — Step 02 done; auth screen fixes · 1.2 (3)
 - Verified on the phone against the real server (1.1): errors, login, restart
   offline, log out.
