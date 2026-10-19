@@ -136,7 +136,7 @@ Manager. The phone must be on the same Wi-Fi as the computer.
    machine-specific — never commit it.
 
 **Check:** the project tree shows `app` with no red underlines, and **Build →
-Make Project** succeeds. Then run the unit tests once (`./gradlew test`) —
+Assemble Project** succeeds (older Studio called it *Make Project*). Then run the unit tests once (`./gradlew test`) —
 the skeleton ships with one small test so the whole toolchain is proven
 before any real code exists.
 
