@@ -209,3 +209,19 @@ about the project is in the repo), *time* (docs, tests, changelog written with
 the code, not later — especially with an LLM, whatever is unwritten is lost),
 *action* (one account of the work, no parallel narratives). A new session must
 be able to pick up from the repo alone.
+
+## D18 · 2026-10-19 · Build JDK pinned in the repo by Daemon JVM criteria
+
+**Decision.** `gradle/gradle-daemon-jvm.properties` is committed and pins the
+Gradle daemon to JDK 25 (with per-OS toolchain download links). This file, not
+a Studio setting, decides which JDK runs the build.
+
+**Rejected.** The old SETUP step: "set Studio's *Gradle JDK* to the embedded
+JetBrains Runtime on each machine". Current Studio no longer has that
+dropdown; it has *Gradle JVM criteria*, which writes this file.
+
+**Why.** Unity of place: the build's JDK is a property of the project and
+belongs in the repo, not in each machine's IDE settings, where the two
+machines drift apart ("it builds for me"). Bytecode target stays Java 17
+(`app/build.gradle.kts`); this only chooses the JDK that runs Gradle.
+

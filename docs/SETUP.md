@@ -78,13 +78,18 @@ paths. Keep this repo at something like `C:\Users\ErezSchatz\dev\ResonanceDrift`
 
 ---
 
-## 3. One Studio setting that must match on both machines
+## 3. The build JDK comes from the repo
 
-**Settings → Build, Execution, Deployment → Build Tools → Gradle →
-Gradle JDK** must be the **Embedded JDK (JetBrains Runtime)**. Using a
-system JDK on one machine and the embedded one on the other is the classic
-"it builds for me" problem. Leave *Distribution* on "Wrapper" — the repo's
-`gradlew` decides the Gradle version, not the machine.
+There is no per-machine JDK to pick. `gradle/gradle-daemon-jvm.properties`
+(Gradle's *Daemon JVM criteria*) pins the JDK the build runs on — version 25 —
+with download links per OS. Gradle uses a matching local JDK if it finds one
+and otherwise downloads it, so both machines build with the same JDK.
+
+In Studio this shows up as **Settings → Build, Execution, Deployment → Build
+Tools → Gradle → Gradle JVM criteria** (it replaces the old *Gradle JDK*
+dropdown). Leave it as the repo has it; changing it there rewrites the file,
+and that change is a commit, not a local preference. Leave *Distribution* on
+"Wrapper" — the repo's `gradlew` decides the Gradle version, not the machine.
 
 ---
 
@@ -211,7 +216,7 @@ debug key is shared, the install on the phone updates in place.
 | Symptom | Cause | Fix |
 |---|---|---|
 | Gradle sync: "SDK location not found" | No `local.properties` | **File → Sync Project with Gradle Files**; Studio regenerates it. Or create it with `sdk.dir=<SDK path from step 1/2>` |
-| Sync: "Unsupported class file major version" / JDK errors | Wrong Gradle JDK | Step 3 — Embedded JDK on this machine |
+| Sync: "Unsupported class file major version" / JDK errors | Daemon JVM criteria changed or the toolchain download failed | Step 3 — `git diff gradle/gradle-daemon-jvm.properties`; restore it, then sync again with network on |
 | Sync: "The project is using an incompatible version of the Android Gradle plugin" / "requires Android Studio X" | Studio older than the `agp` version in `libs.versions.toml` | Update Studio (Help → Check for Updates) — preferred. Or lower `agp` to the newest version your Studio accepts; Studio's error names it |
 | Sync: a dependency "could not be found" / "no matching variant" | A version pinned in `libs.versions.toml` doesn't exist | Studio underlines the line and offers the real latest version; take it. Paste the error if unsure |
 | Sync hangs or times out on downloads | Network / proxy | Retry; corporate VPN off; `gradle.properties` must not have stale proxy lines |
