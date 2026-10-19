@@ -1,9 +1,10 @@
 # SETUP.md — ResonanceDrift development environment
 
-Two machines: a Mac (primary) and a Windows PC (secondary). The project lives
-on the **Windows side** of the PC, never inside WSL2. Both machines build the
-same repo and install to the same Pixel 9, so both must sign with the same
-debug key (handled by the repo — see step 6).
+The Mac is the development machine. A Windows PC is an optional backup
+(D19): step 2 is only for the day it is needed. If it is used, the project
+lives on the **Windows side** of the PC, never inside WSL2, and both machines
+install to the same Pixel 9, so both sign with the same debug key (handled by
+the repo — see step 6).
 
 Do the steps in order. Each ends with a check; don't move on until it passes.
 
@@ -51,7 +52,7 @@ Nothing here needs admin rights beyond the installers themselves.
 
 ---
 
-## 2. Android Studio — Windows
+## 2. Android Studio — Windows (optional backup)
 
 Everything below happens in **Windows**, not in a WSL2 terminal. Gradle over
 the `\\wsl$` bridge is slow, file watching breaks, and Studio will mis-detect

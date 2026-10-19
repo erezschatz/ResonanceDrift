@@ -225,3 +225,15 @@ belongs in the repo, not in each machine's IDE settings, where the two
 machines drift apart ("it builds for me"). Bytecode target stays Java 17
 (`app/build.gradle.kts`); this only chooses the JDK that runs Gradle.
 
+## D19 · 2026-10-19 · The Windows PC is an optional backup
+
+**Decision.** The Mac is the only machine the plan depends on. The Windows PC
+may be set up later as a backup; no task's acceptance requires it.
+
+**Rejected.** Task 01 requiring a green build and install from Windows as
+well as the Mac.
+
+**Why.** Erez may do little or no work on Windows. Making it mandatory would
+block step 01 on a machine that may never be used. The shared debug keystore
+(committed) and the JVM criteria file (D18) keep it cheap to add later.
+

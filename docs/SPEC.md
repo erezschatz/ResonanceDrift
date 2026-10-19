@@ -101,7 +101,7 @@ ResonanceDrift/
 │   ├── tasks/NN-name.md          one file per step: promise, acceptance, notes
 │   ├── AMPACHE.md                the server API exactly as we use it
 │   ├── REDRIFT.md                the predecessor: where it is, what carries over
-│   └── SETUP.md                  install guide (Mac + Windows)
+│   └── SETUP.md                  install guide (Mac; Windows as optional backup)
 ├── settings.gradle.kts
 ├── build.gradle.kts
 ├── gradle/libs.versions.toml     every version lives here
