@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-19 — Step 02 done; auth screen fixes · 1.2 (3)
+- Verified on the phone against the real server (1.1): errors, login, restart
+  offline, log out.
+- URL and username fields: autocorrect and auto-capitalisation off (Gboard
+  inserted a space after each "."); whitespace is also stripped from the URL.
+- Errors read plainly ("Wrong username or password.", "Can't reach the
+  server…", "…doesn't look like an Ampache server."); the technical detail
+  stays in the exception message for logs.
+
 ### 2026-10-19 — Login and session (step 02, in progress) · 1.1 (2)
 - Auth screen (server URL, username, password, Connect) with inline errors:
   unreachable, plain http blocked, non-JSON answer, wrong credentials.

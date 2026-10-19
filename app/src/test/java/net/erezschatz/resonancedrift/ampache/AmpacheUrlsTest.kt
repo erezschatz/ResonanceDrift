@@ -7,17 +7,18 @@ import org.junit.Test
 class AmpacheUrlsTest {
 
     @Test
-    fun `server input is trimmed, slash-stripped and given https when bare`() {
+    fun `server input loses whitespace and trailing slashes, and given https when bare`() {
         assertEquals("https://music.example.com", AmpacheUrls.normalizeServer("  https://music.example.com/ "))
         assertEquals("https://music.example.com", AmpacheUrls.normalizeServer("music.example.com"))
         assertEquals("http://10.0.0.5:8080/ampache", AmpacheUrls.normalizeServer("http://10.0.0.5:8080/ampache//"))
+        assertEquals("https://music.example.com", AmpacheUrls.normalizeServer("music. example. com"))
     }
 
     @Test
     fun `garbage server input is rejected`() {
         assertNull(AmpacheUrls.normalizeServer(""))
         assertNull(AmpacheUrls.normalizeServer("   "))
-        assertNull(AmpacheUrls.normalizeServer("not a url"))
+        assertNull(AmpacheUrls.normalizeServer("music.example.com:99999"))
     }
 
     @Test

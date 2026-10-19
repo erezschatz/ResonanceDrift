@@ -107,7 +107,7 @@ class SessionTest {
     }
 
     @Test
-    fun `wrong credentials surface the server message`() = runTest {
+    fun `wrong credentials read plainly, server detail kept for logs`() = runTest {
         server.enqueue(json("""{"error":{"errorCode":"4701","errorMessage":"Received Invalid Handshake - Incorrect username or password"}}"""))
         val session = Session(client, store)
         session.restore()
@@ -115,7 +115,8 @@ class SessionTest {
             session.login(serverUrl, "demo", "nope")
             fail("expected ServerError")
         } catch (e: AmpacheException.ServerError) {
-            assertEquals("Received Invalid Handshake - Incorrect username or password", e.message)
+            assertEquals("Wrong username or password.", e.userMessage)
+            assertTrue(e.message.orEmpty().contains("Incorrect username or password"))
         }
         assertNull(store.saved)
     }

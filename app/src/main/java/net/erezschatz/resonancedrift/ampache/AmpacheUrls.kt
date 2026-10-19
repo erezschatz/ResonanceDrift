@@ -10,12 +10,13 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 object AmpacheUrls {
 
     /**
-     * Turns what the user typed into the `<server>` base: trimmed, trailing
-     * slashes removed, `https://` assumed when no scheme was given. Returns
-     * null when the result is still not a URL.
+     * Turns what the user typed into the `<server>` base: all whitespace removed
+     * (a URL has none; keyboards insert it after "."), trailing slashes removed,
+     * `https://` assumed when no scheme was given. Returns null when the result
+     * is still not a URL.
      */
     fun normalizeServer(input: String): String? {
-        var server = input.trim().trimEnd('/')
+        var server = input.filterNot { it.isWhitespace() }.trimEnd('/')
         if (server.isEmpty()) return null
         if (!server.startsWith("http://") && !server.startsWith("https://")) {
             server = "https://$server"

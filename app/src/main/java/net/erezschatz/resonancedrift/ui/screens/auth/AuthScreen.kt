@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
@@ -57,7 +58,13 @@ fun AuthScreen(viewModel: AuthViewModel) {
             placeholder = { Text("https://music.example.com") },
             singleLine = true,
             enabled = !viewModel.connecting,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, imeAction = ImeAction.Next),
+            // Autocorrect off: Gboard otherwise inserts a space after each "."
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Uri,
+                capitalization = KeyboardCapitalization.None,
+                autoCorrectEnabled = false,
+                imeAction = ImeAction.Next,
+            ),
             modifier = Modifier.fillMaxWidth(),
         )
         OutlinedTextField(
@@ -66,7 +73,11 @@ fun AuthScreen(viewModel: AuthViewModel) {
             label = { Text("Username") },
             singleLine = true,
             enabled = !viewModel.connecting,
-            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+            keyboardOptions = KeyboardOptions(
+                capitalization = KeyboardCapitalization.None,
+                autoCorrectEnabled = false,
+                imeAction = ImeAction.Next,
+            ),
             modifier = Modifier.fillMaxWidth(),
         )
         OutlinedTextField(

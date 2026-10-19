@@ -46,7 +46,7 @@ class AuthViewModel(private val session: Session) : ViewModel() {
                 // don't leave the password in memory for the next log out.
                 password = ""
             } catch (e: AmpacheException) {
-                error = e.message
+                error = e.userMessage
             } finally {
                 connecting = false
             }
