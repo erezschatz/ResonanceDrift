@@ -31,6 +31,8 @@ inline errors; real server logs in; restart in airplane mode lands logged in;
 log out returns to an empty auth screen. Follow-ups in 1.2: autocorrect off in
 the URL and username fields (Gboard put a space after each "."), whitespace
 stripped from the URL, and plain error sentences instead of the server's text.
+1.2 and 1.3 (log out keeps server and username, D21) verified on the phone
+the same day: no spaces in the URL, prefilled auth screen after log out.
 
 Where things are: `ampache/Session.kt` (state, re-auth, ping policy),
 `ampache/AmpacheClient.kt` (handshake, ping, error mapping),
