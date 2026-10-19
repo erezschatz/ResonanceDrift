@@ -6,6 +6,13 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-19 — Step 01 done: toolchain green on the Mac
+- First real build: Gradle sync, Assemble Project and `./gradlew test` pass;
+  Run ▶ installs on the Pixel 9 and shows the "ResonanceDrift" placeholder.
+- AGP 9.4.0 → 9.4.1 in `gradle/libs.versions.toml` (Studio's upgrade prompt
+  during the first sync; the build above ran on 9.4.1).
+- `docs/SETUP.md`: Build → *Assemble Project* (the old *Make Project*).
+
 ### 2026-10-19 — Windows PC demoted to optional backup
 - Task 01 acceptance is Mac-only; the Windows check moved to its notes.
 - `docs/SETUP.md`, `docs/SPEC.md` and task 14 say Windows is optional. Decision D19.

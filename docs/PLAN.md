@@ -11,7 +11,7 @@ result has been run on the phone (not just compiled).
 | # | Step | Status |
 |---|------|--------|
 | 00 | [Skeleton and documentation](tasks/00-skeleton.md) | done 2026-10-17 (skeleton pushed 2026-10-12; docs restructured 2026-10-17) |
-| 01 | [Toolchain green](tasks/01-toolchain-green.md) | todo |
+| 01 | [Toolchain green](tasks/01-toolchain-green.md) | done 2026-10-19 (Mac; Windows optional per D19) |
 | 02 | [Login and session](tasks/02-login-and-session.md) | todo |
 | 03 | [Ampache client](tasks/03-ampache-client.md) | todo |
 | 04 | [Playback service — one album through a locked screen](tasks/04-playback-service.md) | todo |
