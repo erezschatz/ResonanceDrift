@@ -21,7 +21,7 @@ this step cannot be made to work, nothing after it matters.
       play button, nothing else
 - [ ] On the Pixel: full album plays with screen locked; lock-screen prev/next/
       pause work; headphone unplug pauses; Bluetooth play/pause works
-- [ ] Killing the Activity from Recents does not stop playback
+- [x] Killing the Activity from Recents does not stop playback
 - [x] Unit test: `SongUriResolver` resolves with the current token and reflects
       a token change on the next resolve
 
@@ -33,3 +33,11 @@ Built 1.4 (5), 2026-10-21: the dev screen plays the first album `albums`
 returns (offset 0). Not yet run on the phone — the two Pixel criteria are the
 real test. When something misbehaves, note what the notification and lock
 screen showed; `PlaybackLog` does not exist until step 05.
+
+Phone, 1.4 (5), 2026-10-21 (Erez): streaming works, art shows in the
+notification; lock-screen prev/next/pause, headphone unplug, Bluetooth
+play/pause and swipe-from-Recents all behave. **Open:** a couple of audible
+hiccups mid-song with the screen locked, and the whole album has not yet been
+played through (the first album has 7–10 minute tracks). With 2–3 minutes of
+buffer a short network drop should be inaudible, so the hiccups are not yet
+explained — they need `PlaybackLog` (step 05) to diagnose.

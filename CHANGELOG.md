@@ -18,6 +18,9 @@ what has not yet been installed on the phone as a numbered version.
 - TEMPORARY dev screen replaces the logged-in placeholder: the first album,
   Play album, Pause/Resume, Log out. Removed in step 07. Decision D23.
 - Tests: `SongUriResolverTest` (5 new, 67 total).
+- Phone (1.4): streaming, notification art, lock-screen controls, unplug,
+  Bluetooth and swipe-from-Recents verified. Open: hiccups mid-song while
+  locked; full album not yet played through.
 
 ### 2026-10-21 — Step 03 done: Ampache client
 - `AmpacheClient` covers every action in `docs/AMPACHE.md`: albums, album,
