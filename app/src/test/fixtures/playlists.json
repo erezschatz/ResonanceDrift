@@ -1,0 +1,27 @@
+{
+    "total_count": 1,
+    "md5": "862091056e8ee7483a64d6b3197f03ad",
+    "playlist": [
+        {
+            "id": "12",
+            "name": "Flail East",
+            "owner": "erez",
+            "user": {
+                "id": "1",
+                "username": "erez"
+            },
+            "items": 228,
+            "type": "private",
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=12&object_type=playlist&id=112554&name=art.png",
+            "has_access": true,
+            "has_collaborate": true,
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "md5": null,
+            "last_update": 1792323742,
+            "time": 54215
+        }
+    ]
+}

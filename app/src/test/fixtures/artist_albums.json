@@ -1,0 +1,100 @@
+{
+    "total_count": 2,
+    "md5": "27a319266eb92864369df4e066d1cd5e",
+    "album": [
+        {
+            "id": "9129",
+            "name": "\"Darling The Dawn\"",
+            "prefix": null,
+            "basename": "\"Darling The Dawn\"",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "time": 2641,
+            "year": 2023,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9128",
+            "name": "ALL HANDS_MAKE LIGHT",
+            "prefix": null,
+            "basename": "ALL HANDS_MAKE LIGHT",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "time": 2759,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9128&object_type=album&id=105232&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "total_count": 196,
+    "md5": "34e85b7619cb9d05adf7892dd0986696",
+    "genre": [
+        {
+            "id": "179",
+            "name": "Abstract Metal",
+            "albums": 16,
+            "artists": 1,
+            "songs": 85,
+            "videos": 0,
+            "playlists": 0,
+            "live_streams": 0,
+            "is_hidden": false,
+            "merge": []
+        },
+        {
+            "id": "241",
+            "name": "Acoustic",
+            "albums": 4,
+            "artists": 3,
+            "songs": 30,
+            "videos": 0,
+            "playlists": 0,
+            "live_streams": 0,
+            "is_hidden": false,
+            "merge": []
+        },
+        {
+            "id": "293",
+            "name": "African Jazz",
+            "albums": 1,
+            "artists": 1,
+            "songs": 11,
+            "videos": 0,
+            "playlists": 0,
+            "live_streams": 0,
+            "is_hidden": false,
+            "merge": []
+        },
+        {
+            "id": "305",
+            "name": "Afrobayashi",
+            "albums": 1,
+            "artists": 1,
+            "songs": 6,
+            "videos": 0,
+            "playlists": 0,
+            "live_streams": 0,
+            "is_hidden": false,
+            "merge": []
+        },
+        {
+            "id": "102",
+            "name": "Afrobeat",
+            "albums": 19,
+            "artists": 6,
+            "songs": 76,
+            "videos": 0,
+            "playlists": 0,
+            "live_streams": 0,
+            "is_hidden": false,
+            "merge": []
+        }
+    ]
+}

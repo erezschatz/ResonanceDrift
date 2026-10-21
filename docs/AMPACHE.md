@@ -66,7 +66,7 @@ larger value is silently capped, so page until a short page comes back).
 | Action | Params | Response key | Notes |
 |---|---|---|---|
 | `albums` | `offset`, `limit` | `album[]` | Albums screen uses a random `offset` for variety |
-| `album` | `filter=id` | `album` or `album[]` | Server sometimes wraps a single object in an array — unwrap both |
+| `album` | `filter=id` | `album` or `album[]` | Server sometimes wraps a single object in an array — unwrap both. The client also accepts the object at the top level (Ampache 6's documented form) |
 | `album_songs` | `filter=albumId` | `song[]` | Track order as given |
 | `artists` | `offset`, `limit` | `artist[]` | |
 | `artist` | `filter=id` | `artist` / `artist[]` | |
@@ -89,9 +89,9 @@ Four queries run in parallel for one search string `q`:
 
 | Purpose | Params |
 |---|---|
-| Albums by title | `type=album&operator=and&rule_1=title&rule_1_operator=0&rule_1_input=q&limit=50` |
-| Albums by artist | `type=album&operator=and&rule_1=artist&rule_1_operator=0&rule_1_input=q&limit=50` |
-| Albums containing a matching song | `type=song&operator=and&rule_1=title&rule_1_operator=0&rule_1_input=q&limit=50` → take each song's `album` |
+| Albums by title | `type=album&operator=and&rule_1=title&rule_1_operator=0&rule_1_input=q&offset=0&limit=50` |
+| Albums by artist | `type=album&operator=and&rule_1=artist&rule_1_operator=0&rule_1_input=q&offset=0&limit=50` |
+| Albums containing a matching song | `type=song&operator=and&rule_1=title&rule_1_operator=0&rule_1_input=q&offset=0&limit=50` → take each song's `album` |
 | Songs by title (new) | same as above, but the songs themselves are the result |
 
 `rule_1_operator=0` means *contains*. Albums are merged by id (title results
@@ -101,8 +101,11 @@ song result has only `{ id, name, artist, year }` — enough for a card.
 ## Object shapes (fields we read)
 
 Only fields ReDrift actually read plus the ones phase 1 adds. Everything else
-is ignored (`ignoreUnknownKeys`). Ids are integers in Ampache 6 JSON but have
-been strings in older versions — parse leniently and store as `Long`.
+is ignored (`ignoreUnknownKeys`). Ids and counts arrive as strings or numbers
+depending on server version — parse leniently and store ids as `Long`; a count
+that is `""`, `null` or unreadable becomes 0 (`model/Lenient.kt`). **Exception:
+playlist ids are strings**, because smart playlists are listed as `smart_<n>`
+and that string is what `filter` takes back (D22).
 
 ```jsonc
 // album
@@ -128,11 +131,31 @@ been strings in older versions — parse leniently and store as `Long`.
 { "id": 7, "name": "Folk", "albums": 31, "artists": 12, "songs": 410 }
 
 // playlist
-{ "id": 3, "name": "Driving", "items": 2148, "owner": "erez", "type": "private" }
+{ "id": "3", "name": "Driving", "items": 2148, "owner": "erez", "type": "private" }
+// or "id": "smart_12" for a smart playlist
 ```
+
+## What the fixtures showed (2026-10-21)
+
+Captured from the real server; these override anything above that disagrees.
+
+- The handshake reports `"api": "8.1.0"` — the server runs a newer Ampache than
+  6 — while we still ask for `version=6.0.0`. All responses parse as 6-style.
+- **Single-object actions** (`album`, `artist`, `genre`, `playlist`, `song`)
+  answer with the object **at the top level**, not under a key or in an array.
+  The client still accepts the two forms ReDrift saw.
+- **Ids are strings** everywhere, nested refs included (`"id": "9129"`);
+  counts, years, track numbers and durations are numbers. Playlist ids are
+  plain numeric strings here (no smart playlists listed).
+- List actions add `total_count` (the full count, ignoring `limit`) and `md5`.
+- `limit` is honoured on `genre_songs` and `playlist_songs`.
+- A bad token gives `errorCode "4701"`, `errorType "account"`,
+  `errorMessage "Session Expired"`.
+- The server's own song `url` carries extra params (`uid`, `player`, `name`);
+  we still build ReDrift's shorter stream URL ourselves.
 
 ## Fixtures
 
 `app/src/test/fixtures/` holds verbatim responses from the **real** server (task
-03). Every DTO has a test that parses its fixture. When the server is upgraded
+03), written by `app/src/test/fixtures/capture.sh`. Every DTO has a test that parses its fixture. When the server is upgraded
 and something breaks, the first move is to re-capture the fixture and diff it.

@@ -272,3 +272,25 @@ the "clears everything" wording of task 02 and the log-out line of D20.
 **Why.** Erez: one server, one user — retyping the address after a log out
 is friction with no benefit. The password still has to be typed again.
 
+## D22 · 2026-10-21 · Ampache client shape: stateless calls, lenient numbers, string playlist ids
+
+**Decision.**
+- `AmpacheClient` stays stateless: one method per action, each taking
+  `server` and `token`. Callers go through `Session.call { server, token -> … }`,
+  which owns re-authentication. Paging is a helper (`fetchAllPages`) that takes
+  a per-page lambda, so each page re-authenticates on its own.
+- Ids and counts are read by small lenient serializers (`model/Lenient.kt`):
+  string or number; counts that are `""`/`null`/unreadable become 0; a
+  non-numeric id is a shape error (`NotJson`), not a crash.
+- Playlist ids are `String`, not `Long`.
+- Single-object actions accept `{key: x}`, `{key: [x]}` and a bare top-level `x`.
+
+**Rejected.** A stateful client holding the token (would duplicate
+`Session`'s job and its re-auth rule); `Long` playlist ids as `AMPACHE.md`
+first said; relying on `Json { isLenient }` alone for quoted numbers.
+
+**Why.** Ampache lists smart playlists with ids like `smart_12`; a `Long` would
+fail the whole `playlists` call the day one exists. Ids have been strings in
+Ampache 6 and numbers before; one serializer reads both regardless of how the
+JSON decoder is configured. The fixtures (task 03) will show which forms this
+server actually uses.

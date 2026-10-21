@@ -42,15 +42,8 @@ class AppGraph(private val context: Context) {
         .readTimeout(30, TimeUnit.SECONDS)
         .build()
 
-    /**
-     * Ampache's JSON is wide and changes between server versions; unknown keys
-     * are ignored so a new field on the server never breaks parsing here.
-     */
-    val json: Json = Json {
-        ignoreUnknownKeys = true
-        isLenient = true
-        coerceInputValues = true
-    }
+    /** Lenient Ampache JSON; defined beside the client so the fixture tests use the same one. */
+    val json: Json = AmpacheClient.json
 
     /** DataStore requires exactly one instance per file, hence here. */
     val settings: Settings = Settings(

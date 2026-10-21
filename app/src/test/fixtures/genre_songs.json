@@ -1,0 +1,1506 @@
+{
+    "total_count": 902,
+    "md5": "4c0031d2d52fee402302bdd792ecf28b",
+    "song": [
+        {
+            "id": "11022",
+            "title": "'Piphany Rambler",
+            "name": "'Piphany Rambler",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "album": {
+                "id": "3653",
+                "name": "Kollaps Tradixionales",
+                "prefix": null,
+                "basename": "Kollaps Tradixionales"
+            },
+            "albumartist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Thee Silver Mt. Zion Memorial Orchestra\/Kollaps Tradixionales\/07 - Piphany Rambler.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 1,
+            "time": 858,
+            "year": 2010,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320009,
+            "stream_bitrate": 320009,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=11022&uid=1&player=api&name=Thee%20Silver%20Mt.%20Zion%20Memorial%20Orchestra%20-%20-Piphany%20Rambler.mp3",
+            "size": 34381197,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3653&object_type=album&id=80529&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 12,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "64290",
+            "title": "(Goodnight) White Phosphorous",
+            "name": "(Goodnight) White Phosphorous",
+            "artist": {
+                "id": "1865",
+                "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                "prefix": "",
+                "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+            },
+            "artists": [
+                {
+                    "id": "1865",
+                    "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                    "prefix": "",
+                    "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+                }
+            ],
+            "album": {
+                "id": "9731",
+                "name": "\"NO MORE APOCALYPSE FATHER\"",
+                "prefix": null,
+                "basename": "\"NO MORE APOCALYPSE FATHER\""
+            },
+            "albumartist": {
+                "id": "1865",
+                "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                "prefix": "",
+                "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 6,
+            "filename": "\/mnt\/music\/WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN\/-NO MORE APOCALYPSE FATHER-\/06 - (Goodnight) White Phosphorous.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 2,
+            "time": 489,
+            "year": 2024,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 238777,
+            "stream_bitrate": 238777,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=64290&uid=1&player=api&name=WE%20ARE%20WINTER-S%20BLUE%20AND%20RADIANT%20CHILDREN%20-%20-Goodnight-%20White%20Phosphorous.mp3",
+            "size": 14655488,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9731&object_type=album&id=109814&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/wearewintersblueandradiantchildren.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "14946",
+            "title": "(Loop 1)",
+            "name": "(Loop 1)",
+            "artist": {
+                "id": "794",
+                "name": "Tarentel",
+                "prefix": "",
+                "basename": "Tarentel"
+            },
+            "artists": [
+                {
+                    "id": "794",
+                    "name": "Tarentel",
+                    "prefix": "",
+                    "basename": "Tarentel"
+                }
+            ],
+            "album": {
+                "id": "3619",
+                "name": "From Bone to Satellite",
+                "prefix": null,
+                "basename": "From Bone to Satellite"
+            },
+            "albumartist": {
+                "id": "794",
+                "name": "Tarentel",
+                "prefix": "",
+                "basename": "Tarentel"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/Tarentel\/From Bone To Satellite\/05 - (Loop 1).mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 3,
+            "time": 182,
+            "year": 2016,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 185369,
+            "stream_bitrate": 185369,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=14946&uid=1&player=api&name=Tarentel%20-%20-Loop%201-.mp3",
+            "size": 4263041,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3619&object_type=album&id=80179&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 4,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/tarentel.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "14943",
+            "title": "(Loop 2)",
+            "name": "(Loop 2)",
+            "artist": {
+                "id": "794",
+                "name": "Tarentel",
+                "prefix": "",
+                "basename": "Tarentel"
+            },
+            "artists": [
+                {
+                    "id": "794",
+                    "name": "Tarentel",
+                    "prefix": "",
+                    "basename": "Tarentel"
+                }
+            ],
+            "album": {
+                "id": "3619",
+                "name": "From Bone to Satellite",
+                "prefix": null,
+                "basename": "From Bone to Satellite"
+            },
+            "albumartist": {
+                "id": "794",
+                "name": "Tarentel",
+                "prefix": "",
+                "basename": "Tarentel"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Tarentel\/From Bone To Satellite\/07 - (Loop 2).mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 4,
+            "time": 181,
+            "year": 2016,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 231791,
+            "stream_bitrate": 231791,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=14943&uid=1&player=api&name=Tarentel%20-%20-Loop%202-.mp3",
+            "size": 5296401,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3619&object_type=album&id=80179&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 4,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/tarentel.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "6345",
+            "title": "-",
+            "name": "-",
+            "artist": {
+                "id": "345",
+                "name": "Pelican",
+                "prefix": "",
+                "basename": "Pelican"
+            },
+            "artists": [
+                {
+                    "id": "345",
+                    "name": "Pelican",
+                    "prefix": "",
+                    "basename": "Pelican"
+                }
+            ],
+            "album": {
+                "id": "3887",
+                "name": "The Fire In Our Throats Will Beckon The Thaw",
+                "prefix": "The",
+                "basename": "Fire In Our Throats Will Beckon The Thaw"
+            },
+            "albumartist": {
+                "id": "345",
+                "name": "Pelican",
+                "prefix": "",
+                "basename": "Pelican"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 4,
+            "filename": "\/mnt\/music\/Pelican\/The Fire In Our Throats Will Beckon The Thaw\/04 - -.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 5,
+            "time": 283,
+            "year": 2005,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 263936,
+            "stream_bitrate": 263936,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=6345&uid=1&player=api&name=Pelican%20-%20-.mp3",
+            "size": 9520066,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3887&object_type=album&id=80845&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 7,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/pelican.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "16214",
+            "title": "...and we climb",
+            "name": "...and we climb",
+            "artist": {
+                "id": "745",
+                "name": "HRSTA",
+                "prefix": "",
+                "basename": "HRSTA"
+            },
+            "artists": [
+                {
+                    "id": "745",
+                    "name": "HRSTA",
+                    "prefix": "",
+                    "basename": "HRSTA"
+                }
+            ],
+            "album": {
+                "id": "4649",
+                "name": "Stem Stem In Electro",
+                "prefix": null,
+                "basename": "Stem Stem In Electro"
+            },
+            "albumartist": {
+                "id": "745",
+                "name": "HRSTA",
+                "prefix": "",
+                "basename": "HRSTA"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/HRSTA\/Stem Stem In Electro\/01 - ...and we climb.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 6,
+            "time": 389,
+            "year": 2005,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320021,
+            "stream_bitrate": 320021,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=16214&uid=1&player=api&name=HRSTA%20-%20...and%20we%20climb.mp3",
+            "size": 16162816,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4649&object_type=album&id=83058&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 5,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "12180",
+            "title": "...Et aussi l'\u00e9clairage de plastique au centre de tout ces compartiments lat\u00e9raux",
+            "name": "...Et aussi l'\u00e9clairage de plastique au centre de tout ces compartiments lat\u00e9raux",
+            "artist": {
+                "id": "640",
+                "name": "Fly Pan Am",
+                "prefix": "",
+                "basename": "Fly Pan Am"
+            },
+            "artists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "album": {
+                "id": "4606",
+                "name": "Fly Pan Am",
+                "prefix": null,
+                "basename": "Fly Pan Am"
+            },
+            "albumartist": {
+                "id": "640",
+                "name": "Fly Pan Am",
+                "prefix": "",
+                "basename": "Fly Pan Am"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 2,
+            "filename": "\/mnt\/music\/Fly Pan Am\/Fly Pan Am\/02 - ...Et aussi l'\u00e9clairage de plastique au centre de tout ces compartiments lat\u00e9raux.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 7,
+            "time": 569,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320014,
+            "stream_bitrate": 320014,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=12180&uid=1&player=api&name=Fly%20Pan%20Am%20-%20...Et%20aussi%20l-clairage%20de%20plastique%20au%20centre%20de%20tout%20ces%20compartiments%20lat-raux.mp3",
+            "size": 23115776,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4606&object_type=album&id=80440&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 6,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "28123",
+            "title": "...Still, It Is Quiet Around Here",
+            "name": "...Still, It Is Quiet Around Here",
+            "artist": {
+                "id": "1441",
+                "name": "LITE",
+                "prefix": "",
+                "basename": "LITE"
+            },
+            "artists": [
+                {
+                    "id": "1441",
+                    "name": "LITE",
+                    "prefix": "",
+                    "basename": "LITE"
+                }
+            ],
+            "album": {
+                "id": "6185",
+                "name": "filmlets",
+                "prefix": null,
+                "basename": "filmlets"
+            },
+            "albumartist": {
+                "id": "1441",
+                "name": "LITE",
+                "prefix": "",
+                "basename": "LITE"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 9,
+            "filename": "\/mnt\/music\/LITE\/filmlets (1st album)\/09 - ...Still, It Is Quiet Around Here.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 8,
+            "time": 354,
+            "year": 2018,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 263763,
+            "stream_bitrate": 263763,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=28123&uid=1&player=api&name=LITE%20-%20...Still-%20It%20Is%20Quiet%20Around%20Here.mp3",
+            "size": 11826838,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6185&object_type=album&id=98373&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/liteband.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "25524",
+            "title": "09-15-00",
+            "name": "09-15-00",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "album": {
+                "id": "4630",
+                "name": "Yanqui U.X.O.",
+                "prefix": null,
+                "basename": "Yanqui U.X.O."
+            },
+            "albumartist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/Godspeed You! Black Emperor\/Yanqui U.X.O\/01 - 09-15-00.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 9,
+            "time": 987,
+            "year": 2002,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 248971,
+            "stream_bitrate": 248971,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=25524&uid=1&player=api&name=Godspeed%20You-%20Black%20Emperor%20-%2009-15-00.mp3",
+            "size": 30801976,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4630&object_type=album&id=80769&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 5,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/godspeedyoublackemperor.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "25521",
+            "title": "09-15-00 (cont.)",
+            "name": "09-15-00 (cont.)",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "album": {
+                "id": "4630",
+                "name": "Yanqui U.X.O.",
+                "prefix": null,
+                "basename": "Yanqui U.X.O."
+            },
+            "albumartist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 2,
+            "filename": "\/mnt\/music\/Godspeed You! Black Emperor\/Yanqui U.X.O\/02 - 09-15-00 (cont.).mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 10,
+            "time": 376,
+            "year": 2002,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 239632,
+            "stream_bitrate": 239632,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=25521&uid=1&player=api&name=Godspeed%20You-%20Black%20Emperor%20-%2009-15-00%20-cont.-.mp3",
+            "size": 11363954,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4630&object_type=album&id=80769&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 5,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/godspeedyoublackemperor.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "12341",
+            "title": "1,000,000 Died to Make this Sound",
+            "name": "1,000,000 Died to Make this Sound",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "album": {
+                "id": "4111",
+                "name": "13 Blues for Thirteen Moons",
+                "prefix": null,
+                "basename": "13 Blues for Thirteen Moons"
+            },
+            "albumartist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 13,
+            "filename": "\/mnt\/music\/Silver Mt. Zion\/13 Blues for Thirteen Moons\/13 - 1 000 000 Died To Make This Sound.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 11,
+            "time": 882,
+            "year": 2008,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320009,
+            "stream_bitrate": 320009,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=12341&uid=1&player=api&name=Thee%20Silver%20Mt.%20Zion%20Memorial%20Orchestra%20-%201-000-000%20Died%20to%20Make%20this%20Sound.mp3",
+            "size": 35657728,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4111&object_type=album&id=80429&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 5,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "7698",
+            "title": "1000 Foot Face",
+            "name": "1000 Foot Face",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "album": {
+                "id": "3444",
+                "name": "Every Country's Sun",
+                "prefix": null,
+                "basename": "Every Country's Sun"
+            },
+            "albumartist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Mogwai\/Every Country's Sun\/07 - 1000 Foot Face.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 12,
+            "time": 271,
+            "year": 2017,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 248738,
+            "stream_bitrate": 248738,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=7698&uid=1&player=api&name=Mogwai%20-%201000%20Foot%20Face.mp3",
+            "size": 8494939,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3444&object_type=album&id=80765&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 6,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/temporaryresidence.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "25584",
+            "title": "13 Angels Standing Guard 'Round the Side of Your Bed",
+            "name": "13 Angels Standing Guard 'Round the Side of Your Bed",
+            "artist": {
+                "id": "447",
+                "name": "A Silver Mt. Zion",
+                "prefix": "A",
+                "basename": "Silver Mt. Zion"
+            },
+            "artists": [
+                {
+                    "id": "447",
+                    "name": "A Silver Mt. Zion",
+                    "prefix": "A",
+                    "basename": "Silver Mt. Zion"
+                }
+            ],
+            "album": {
+                "id": "3572",
+                "name": "He Has Left Us Alone but Shafts of Light Sometimes Grace the Corner of Our Rooms...",
+                "prefix": null,
+                "basename": "He Has Left Us Alone but Shafts of Light Sometimes Grace the Corner of Our Rooms..."
+            },
+            "albumartist": {
+                "id": "447",
+                "name": "A Silver Mt. Zion",
+                "prefix": "A",
+                "basename": "Silver Mt. Zion"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/Silver Mt. Zion\/He Has Left Us Alone but Shafts of Light Sometimes Grace the Corner of Our Rooms\/05 - 13 Angels Standing Guard 'Round The Side Of Your Bed.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 13,
+            "time": 442,
+            "year": 2000,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320018,
+            "stream_bitrate": 320018,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=25584&uid=1&player=api&name=A%20Silver%20Mt.%20Zion%20-%2013%20Angels%20Standing%20Guard%20-Round%20the%20Side%20of%20Your%20Bed.mp3",
+            "size": 17720677,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3572&object_type=album&id=80716&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "12330",
+            "title": "13 Blues for Thirteen Moons",
+            "name": "13 Blues for Thirteen Moons",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "album": {
+                "id": "4111",
+                "name": "13 Blues for Thirteen Moons",
+                "prefix": null,
+                "basename": "13 Blues for Thirteen Moons"
+            },
+            "albumartist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 14,
+            "filename": "\/mnt\/music\/Silver Mt. Zion\/13 Blues for Thirteen Moons\/14 - 13 Blues For Thirteen Moons.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 14,
+            "time": 1006,
+            "year": 2008,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320008,
+            "stream_bitrate": 320008,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=12330&uid=1&player=api&name=Thee%20Silver%20Mt.%20Zion%20Memorial%20Orchestra%20-%2013%20Blues%20for%20Thirteen%20Moons.mp3",
+            "size": 40597504,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4111&object_type=album&id=80429&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 5,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "13274",
+            "title": "16.12",
+            "name": "16.12",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "album": {
+                "id": "3453",
+                "name": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined",
+                "prefix": null,
+                "basename": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined"
+            },
+            "albumartist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/Mono\/Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined\/01 - 16.12.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 15,
+            "time": 657,
+            "year": 2004,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 242301,
+            "stream_bitrate": 242301,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=13274&uid=1&player=api&name=Mono%20-%2016.12.mp3",
+            "size": 20196230,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3453&object_type=album&id=80339&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 4,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/monoofjapan.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "64899",
+            "title": "18 Volcanoes",
+            "name": "18 Volcanoes",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "album": {
+                "id": "9795",
+                "name": "The Bad Fire",
+                "prefix": "The",
+                "basename": "Bad Fire"
+            },
+            "albumartist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Mogwai\/The Bad Fire\/07 - 18 Volcanoes.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 16,
+            "time": 378,
+            "year": 2025,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 247022,
+            "stream_bitrate": 247022,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=64899&uid=1&player=api&name=Mogwai%20-%2018%20Volcanoes.mp3",
+            "size": 11929600,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9795&object_type=album&id=111097&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/mogwai.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "13279",
+            "title": "2 Candles, 1 Wish",
+            "name": "2 Candles, 1 Wish",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "album": {
+                "id": "3453",
+                "name": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined",
+                "prefix": null,
+                "basename": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined"
+            },
+            "albumartist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 4,
+            "filename": "\/mnt\/music\/Mono\/Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined\/04 - 2 Candles, 1 Wish.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 17,
+            "time": 167,
+            "year": 2004,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 235201,
+            "stream_bitrate": 235201,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=13279&uid=1&player=api&name=Mono%20-%202%20Candles-%201%20Wish.mp3",
+            "size": 5209905,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3453&object_type=album&id=80339&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 4,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/monoofjapan.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "7694",
+            "title": "20 Size",
+            "name": "20 Size",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "album": {
+                "id": "3444",
+                "name": "Every Country's Sun",
+                "prefix": null,
+                "basename": "Every Country's Sun"
+            },
+            "albumartist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 6,
+            "filename": "\/mnt\/music\/Mogwai\/Every Country's Sun\/06 - 20 Size.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 18,
+            "time": 284,
+            "year": 2017,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 266423,
+            "stream_bitrate": 266423,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=7694&uid=1&player=api&name=Mogwai%20-%2020%20Size.mp3",
+            "size": 9517797,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3444&object_type=album&id=80765&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 6,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/temporaryresidence.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "23164",
+            "title": "7.25",
+            "name": "7.25",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "album": {
+                "id": "5426",
+                "name": "Zidane",
+                "prefix": null,
+                "basename": "Zidane"
+            },
+            "albumartist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/Mogwai\/Zidane\/05 - 7.25.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 19,
+            "time": 314,
+            "year": 2006,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 240572,
+            "stream_bitrate": 240572,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=23164&uid=1&player=api&name=Mogwai%20-%207.25.mp3",
+            "size": 9565437,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5426&object_type=album&id=89727&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/mogwai.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "14877",
+            "title": "? (It's A Joke; It's Supposed to Be Funny)",
+            "name": "? (It's A Joke; It's Supposed to Be Funny)",
+            "artist": {
+                "id": "791",
+                "name": "Mice Parade",
+                "prefix": "",
+                "basename": "Mice Parade"
+            },
+            "artists": [
+                {
+                    "id": "791",
+                    "name": "Mice Parade",
+                    "prefix": "",
+                    "basename": "Mice Parade"
+                }
+            ],
+            "album": {
+                "id": "3437",
+                "name": "The True Meaning of Boodleybaye",
+                "prefix": "The",
+                "basename": "True Meaning of Boodleybaye"
+            },
+            "albumartist": {
+                "id": "791",
+                "name": "Mice Parade",
+                "prefix": "",
+                "basename": "Mice Parade"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 12,
+            "filename": "\/mnt\/music\/Mice Parade\/The True Meaning Of Boodleybaye\/12 - - (It's A Joke; It's Supposed To Be Funny).mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 20,
+            "time": 96,
+            "year": 1998,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 229418,
+            "stream_bitrate": 229418,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=14877&uid=1&player=api&name=Mice%20Parade%20-%20-%20-It-s%20A%20Joke-%20It-s%20Supposed%20to%20Be%20Funny-.mp3",
+            "size": 2859469,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3437&object_type=album&id=80184&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit http:\/\/miceparade.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": 0,
+            "replaygain_album_peak": 0,
+            "replaygain_track_gain": 0,
+            "replaygain_track_peak": 0,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        }
+    ]
+}

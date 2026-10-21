@@ -1,0 +1,1506 @@
+{
+    "total_count": 208,
+    "md5": "520ac0e8073f02b00b751be4a1d6992b",
+    "song": [
+        {
+            "id": "66071",
+            "title": "Fly Me to the Moon",
+            "name": "Fly Me to the Moon",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/01 Fly Me To The Moon.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 1,
+            "time": 151,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 273634,
+            "stream_bitrate": 273634,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66071&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20Fly%20Me%20to%20the%20Moon.mp3",
+            "size": 5208064,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66068",
+            "title": "I Wish You Love",
+            "name": "I Wish You Love",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 2,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/02 I Wish You Love.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 2,
+            "time": 179,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 271513,
+            "stream_bitrate": 271513,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66068&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20I%20Wish%20You%20Love.mp3",
+            "size": 6117376,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66069",
+            "title": "I Believe In You",
+            "name": "I Believe In You",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 3,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/03 I Believe In You.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 3,
+            "time": 146,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 279007,
+            "stream_bitrate": 279007,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66069&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20I%20Believe%20In%20You.mp3",
+            "size": 5134336,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "69477",
+            "title": "More (Theme from Mondo Cane)",
+            "name": "More (Theme from Mondo Cane)",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 4,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/04 More.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 4,
+            "time": 188,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 273043,
+            "stream_bitrate": 273043,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=69477&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20More%20-Theme%20from%20Mondo%20Cane-.mp3",
+            "size": 6419015,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66067",
+            "title": "I Can't Stop Loving You",
+            "name": "I Can't Stop Loving You",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/05 I Can't Stop Loving You.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 5,
+            "time": 184,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 269587,
+            "stream_bitrate": 269587,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66067&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20I%20Can-t%20Stop%20Loving%20You.mp3",
+            "size": 6242304,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66065",
+            "title": "Hello, Dolly!",
+            "name": "Hello, Dolly!",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 6,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/06 Hello, Dolly!.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 6,
+            "time": 169,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 279022,
+            "stream_bitrate": 279022,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66065&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20Hello-%20Dolly-.mp3",
+            "size": 5937152,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66064",
+            "title": "I Wanna Be Around",
+            "name": "I Wanna Be Around",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/07 I Wanna Be Around.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 7,
+            "time": 145,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 286983,
+            "stream_bitrate": 286983,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66064&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20I%20Wanna%20Be%20Around.mp3",
+            "size": 5244928,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66063",
+            "title": "The Best Is Yet to Come",
+            "name": "The Best Is Yet to Come",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 8,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/08 The Best Is Yet To Come.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 8,
+            "time": 179,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 287879,
+            "stream_bitrate": 287879,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66063&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20The%20Best%20Is%20Yet%20to%20Come.mp3",
+            "size": 6483968,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66066",
+            "title": "The Good Life",
+            "name": "The Good Life",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 9,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/09 The Good Life.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 9,
+            "time": 150,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 276732,
+            "stream_bitrate": 276732,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66066&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20The%20Good%20Life.mp3",
+            "size": 5230592,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "66070",
+            "title": "Wives and Lovers",
+            "name": "Wives and Lovers",
+            "artist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "artists": [
+                {
+                    "id": "901",
+                    "name": "Frank Sinatra & Count Basie",
+                    "prefix": "",
+                    "basename": "Frank Sinatra & Count Basie"
+                }
+            ],
+            "album": {
+                "id": "9904",
+                "name": "It Might as Well Be Swing",
+                "prefix": null,
+                "basename": "It Might as Well Be Swing"
+            },
+            "albumartist": {
+                "id": "901",
+                "name": "Frank Sinatra & Count Basie",
+                "prefix": "",
+                "basename": "Frank Sinatra & Count Basie"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 10,
+            "filename": "\/mnt\/music\/Frank Sinatra\/It Might as Well Be Swing\/10 Wives And Lovers.mp3",
+            "genre": [
+                {
+                    "id": "206",
+                    "name": "Swing"
+                }
+            ],
+            "playlisttrack": 10,
+            "time": 174,
+            "year": 1964,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 277163,
+            "stream_bitrate": 277163,
+            "rate": 48000,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=66070&uid=1&player=api&name=Frank%20Sinatra%20-%20Count%20Basie%20-%20Wives%20and%20Lovers.mp3",
+            "size": 6090752,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9904&object_type=album&id=111809&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62673",
+            "title": "Intro",
+            "name": "Intro",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/01. Intro.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 11,
+            "time": 82,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62673&uid=1&player=api&name=Rakim%20-%20Intro.mp3",
+            "size": 3424499,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62657",
+            "title": "Flow Forever",
+            "name": "Flow Forever",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 2,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/02. Flow Forever.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 12,
+            "time": 251,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62657&uid=1&player=api&name=Rakim%20-%20Flow%20Forever.mp3",
+            "size": 10172464,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62668",
+            "title": "When I B on tha Mic",
+            "name": "When I B on tha Mic",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 3,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/03. When I B on tha Mic.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 13,
+            "time": 222,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62668&uid=1&player=api&name=Rakim%20-%20When%20I%20B%20on%20tha%20Mic.mp3",
+            "size": 9033540,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62663",
+            "title": "Finest Ones (Feat. Clark Kent)",
+            "name": "Finest Ones (Feat. Clark Kent)",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 4,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/04. Finest Ones (feat. Clark Kent).mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 14,
+            "time": 264,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62663&uid=1&player=api&name=Rakim%20-%20Finest%20Ones%20-Feat.%20Clark%20Kent-.mp3",
+            "size": 10705398,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62660",
+            "title": "All Night Long",
+            "name": "All Night Long",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/05. All Night Long.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 15,
+            "time": 262,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62660&uid=1&player=api&name=Rakim%20-%20All%20Night%20Long.mp3",
+            "size": 10626999,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62669",
+            "title": "State of Hip Hop (Interlude)",
+            "name": "State of Hip Hop (Interlude)",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 6,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/06. State of Hip Hop (interlude).mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 16,
+            "time": 39,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62669&uid=1&player=api&name=Rakim%20-%20State%20of%20Hip%20Hop%20-Interlude-.mp3",
+            "size": 1681656,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62658",
+            "title": "Uplift",
+            "name": "Uplift",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/07. Uplift.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 17,
+            "time": 189,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62658&uid=1&player=api&name=Rakim%20-%20Uplift.mp3",
+            "size": 7681416,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62664",
+            "title": "I Know",
+            "name": "I Know",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 8,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/08. I Know.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 18,
+            "time": 247,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62664&uid=1&player=api&name=Rakim%20-%20I%20Know.mp3",
+            "size": 10010493,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62665",
+            "title": "It's the R",
+            "name": "It's the R",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 9,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/09. It's the R.mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 19,
+            "time": 255,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62665&uid=1&player=api&name=Rakim%20-%20It-s%20the%20R.mp3",
+            "size": 10344869,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "62662",
+            "title": "I'll Be There (Feat. Nneaka Morton)",
+            "name": "I'll Be There (Feat. Nneaka Morton)",
+            "artist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "artists": [
+                {
+                    "id": "1185",
+                    "name": "Rakim",
+                    "prefix": "",
+                    "basename": "Rakim"
+                }
+            ],
+            "album": {
+                "id": "9547",
+                "name": "The Master",
+                "prefix": "The",
+                "basename": "Master"
+            },
+            "albumartist": {
+                "id": "1185",
+                "name": "Rakim",
+                "prefix": "",
+                "basename": "Rakim"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 10,
+            "filename": "\/mnt\/music\/Rakim\/The Master\/10. I'll Be There (feat. Nneaka Morton).mp3",
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "playlisttrack": 20,
+            "time": 309,
+            "year": 1999,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 320000,
+            "stream_bitrate": 320000,
+            "rate": 44100,
+            "mode": "cbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=62662&uid=1&player=api&name=Rakim%20-%20I-ll%20Be%20There%20-Feat.%20Nneaka%20Morton-.mp3",
+            "size": 12505767,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9547&object_type=album&id=106898&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 3,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": null,
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        }
+    ]
+}

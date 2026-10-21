@@ -1,0 +1,136 @@
+{
+    "total_count": 1436,
+    "md5": "d10d84f783442221bc9faf22f7ed6e33",
+    "artist": [
+        {
+            "id": "1729",
+            "name": "2Pac",
+            "prefix": null,
+            "basename": "2Pac",
+            "albums": [],
+            "albumcount": 2,
+            "songs": [],
+            "songcount": 42,
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=1729&object_type=artist&id=105690&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "summary": "Tupac Amaru Shakur (June 16, 1971 \u2013 September 13, 1996) was an American hip hop artist, poet and actor. He stands as the highest selling rap\/hip hop artist ever, having sold 67 million albums worldwide.\n\nShaped in the genre of Rap, most of Shakur's songs are about growing up around violence and hardships in United States ghettos, racism, and sometimes his feuds with fellow rappers. Tupac is known for the political, economic, and racial equality messages in some of his work. ",
+            "time": 11880,
+            "yearformed": 0,
+            "placeformed": null
+        },
+        {
+            "id": "506",
+            "name": "3TEETH",
+            "prefix": null,
+            "basename": "3TEETH",
+            "albums": [],
+            "albumcount": 1,
+            "songs": [],
+            "songcount": 13,
+            "genre": [
+                {
+                    "id": "117",
+                    "name": "Industrial"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=506&object_type=artist&id=65161&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "summary": null,
+            "time": 2971,
+            "yearformed": 0,
+            "placeformed": null
+        },
+        {
+            "id": "1181",
+            "name": "50 Cent",
+            "prefix": null,
+            "basename": "50 Cent",
+            "albums": [],
+            "albumcount": 0,
+            "songs": [],
+            "songcount": 2,
+            "genre": [
+                {
+                    "id": "42",
+                    "name": "Hip-Hop"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=1181&object_type=artist&id=94729&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "summary": null,
+            "time": 473,
+            "yearformed": 0,
+            "placeformed": null
+        },
+        {
+            "id": "997",
+            "name": "65daysofstatic",
+            "prefix": null,
+            "basename": "65daysofstatic",
+            "albums": [],
+            "albumcount": 1,
+            "songs": [],
+            "songcount": 1,
+            "genre": [
+                {
+                    "id": "161",
+                    "name": "Experimental"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=997&object_type=artist&id=86894&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "summary": null,
+            "time": 3612,
+            "yearformed": 0,
+            "placeformed": null
+        },
+        {
+            "id": "1010",
+            "name": "75 Dollar Bill",
+            "prefix": null,
+            "basename": "75 Dollar Bill",
+            "albums": [],
+            "albumcount": 1,
+            "songs": [],
+            "songcount": 9,
+            "genre": [
+                {
+                    "id": "15",
+                    "name": "Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=1010&object_type=artist&id=86883&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "summary": null,
+            "time": 4116,
+            "yearformed": 0,
+            "placeformed": null
+        }
+    ]
+}

@@ -40,4 +40,28 @@ object AmpacheUrls {
         }
         return builder.build()
     }
+
+    /**
+     * `<server>/play/index.php?ssid=<token>&type=song&oid=<songId>&format=raw`.
+     * Concatenated, not built, exactly as ReDrift's getStreamUrl() did: the
+     * token is hex and the id a number, so nothing needs encoding. `format=raw`
+     * asks for the original file — no server-side transcoding.
+     */
+    fun stream(server: String, token: String, songId: Long): String =
+        "$server/play/index.php?ssid=$token&type=song&oid=$songId&format=raw"
+
+    /**
+     * Album art through the API's `get_art` action, so it carries `auth` like
+     * any other call. Same parameters and order as ReDrift's getArtUrl().
+     */
+    fun art(server: String, token: String, albumId: Long, sizePx: Int = DEFAULT_ART_SIZE_PX): String =
+        api(
+            server,
+            "get_art",
+            token,
+            listOf("id" to albumId.toString(), "type" to "album", "size" to sizePx.toString()),
+        ).toString()
+
+    /** ReDrift's default; grids and the mini player. Now Playing asks for more. */
+    const val DEFAULT_ART_SIZE_PX = 300
 }

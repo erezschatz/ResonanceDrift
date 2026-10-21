@@ -1,0 +1,5881 @@
+{
+    "total_count": 125,
+    "md5": "4c0221ded6b5a1a0b82a1a7bc950a20c",
+    "album": [
+        {
+            "id": "9129",
+            "name": "\"Darling The Dawn\"",
+            "prefix": null,
+            "basename": "\"Darling The Dawn\"",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "time": 2641,
+            "year": 2023,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4625",
+            "name": "\"Luciferian Towers\"",
+            "prefix": null,
+            "basename": "\"Luciferian Towers\"",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 2630,
+            "year": 2017,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4625&object_type=album&id=80727&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9731",
+            "name": "\"NO MORE APOCALYPSE FATHER\"",
+            "prefix": null,
+            "basename": "\"NO MORE APOCALYPSE FATHER\"",
+            "artist": {
+                "id": "1865",
+                "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                "prefix": "",
+                "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+            },
+            "artists": [
+                {
+                    "id": "1865",
+                    "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                    "prefix": "",
+                    "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1865",
+                    "name": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN",
+                    "prefix": "",
+                    "basename": "WE ARE WINTER\u2019S BLUE AND RADIANT CHILDREN"
+                }
+            ],
+            "time": 2671,
+            "year": 2024,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9731&object_type=album&id=109814&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9732",
+            "name": "\"NO\u2008TITLE AS OF 13 FEBRUARY 2024 28,340 DEAD\"",
+            "prefix": null,
+            "basename": "\"NO\u2008TITLE AS OF 13 FEBRUARY 2024 28,340 DEAD\"",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 3248,
+            "year": 2024,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9732&object_type=album&id=109815&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5648",
+            "name": "The \"Pretty Little Lightning Paw\" EP",
+            "prefix": "The",
+            "basename": "\"Pretty Little Lightning Paw\" EP",
+            "artist": {
+                "id": "1244",
+                "name": "Thee Silver Mt Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "1244",
+                    "name": "Thee Silver Mt Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1244",
+                    "name": "Thee Silver Mt Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt Zion Memorial Orchestra"
+                }
+            ],
+            "time": 1816,
+            "year": 2004,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5648&object_type=album&id=92998&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5634",
+            "name": "\"This Is Our Punk-Rock\" Thee Rusted Satellites Gather + Sing",
+            "prefix": null,
+            "basename": "\"This Is Our Punk-Rock\" Thee Rusted Satellites Gather + Sing",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "time": 3461,
+            "year": 2003,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5634&object_type=album&id=92196&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4959",
+            "name": "\"Variations & Rarities: 2004-2019\" Vol. I",
+            "prefix": null,
+            "basename": "\"Variations & Rarities: 2004-2019\" Vol. I",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 1304,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4959&object_type=album&id=86353&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4111",
+            "name": "13 Blues for Thirteen Moons",
+            "prefix": null,
+            "basename": "13 Blues for Thirteen Moons",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "time": 3543,
+            "year": 2008,
+            "tracks": [],
+            "songcount": 16,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4111&object_type=album&id=80429&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3550",
+            "name": "Actual Existence",
+            "prefix": null,
+            "basename": "Actual Existence",
+            "artist": {
+                "id": "613",
+                "name": "RLYR",
+                "prefix": "",
+                "basename": "RLYR"
+            },
+            "artists": [
+                {
+                    "id": "613",
+                    "name": "RLYR",
+                    "prefix": "",
+                    "basename": "RLYR"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "613",
+                    "name": "RLYR",
+                    "prefix": "",
+                    "basename": "RLYR"
+                }
+            ],
+            "time": 2398,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3550&object_type=album&id=80477&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9128",
+            "name": "ALL HANDS_MAKE LIGHT",
+            "prefix": null,
+            "basename": "ALL HANDS_MAKE LIGHT",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "time": 2759,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9128&object_type=album&id=105232&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5791",
+            "name": "all lights fucked on the hairy amp drooling",
+            "prefix": null,
+            "basename": "all lights fucked on the hairy amp drooling",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 4174,
+            "year": 2022,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5791&object_type=album&id=95060&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9381",
+            "name": "All of a Sudden I Miss Everyone",
+            "prefix": null,
+            "basename": "All of a Sudden I Miss Everyone",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2614,
+            "year": 2007,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9381&object_type=album&id=105484&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4626",
+            "name": "Allelujah! Don't Bend! Ascend!",
+            "prefix": null,
+            "basename": "Allelujah! Don't Bend! Ascend!",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 3187,
+            "year": 2012,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4626&object_type=album&id=80771&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4443",
+            "name": "American Football",
+            "prefix": null,
+            "basename": "American Football",
+            "artist": {
+                "id": "759",
+                "name": "American Football",
+                "prefix": "",
+                "basename": "American Football"
+            },
+            "artists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "time": 2452,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4443&object_type=album&id=80229&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4306",
+            "name": "American Football (LP2)",
+            "prefix": null,
+            "basename": "American Football (LP2)",
+            "artist": {
+                "id": "759",
+                "name": "American Football",
+                "prefix": "",
+                "basename": "American Football"
+            },
+            "artists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "time": 2273,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4306&object_type=album&id=80153&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4442",
+            "name": "American Football (LP3)",
+            "prefix": null,
+            "basename": "American Football (LP3)",
+            "artist": {
+                "id": "759",
+                "name": "American Football",
+                "prefix": "",
+                "basename": "American Football"
+            },
+            "artists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "time": 2833,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4442&object_type=album&id=80246&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "10076",
+            "name": "American Football (LP4)",
+            "prefix": null,
+            "basename": "American Football (LP4)",
+            "artist": {
+                "id": "759",
+                "name": "American Football",
+                "prefix": "",
+                "basename": "American Football"
+            },
+            "artists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "759",
+                    "name": "American Football",
+                    "prefix": "",
+                    "basename": "American Football"
+                }
+            ],
+            "time": 2978,
+            "year": 2026,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=10076&object_type=album&id=112109&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3655",
+            "name": "Another Language",
+            "prefix": null,
+            "basename": "Another Language",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 2821,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3655&object_type=album&id=80340&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9137",
+            "name": "Apologie du temps perdu, Vol. 1",
+            "prefix": null,
+            "basename": "Apologie du temps perdu, Vol. 1",
+            "artist": {
+                "id": "1660",
+                "name": "BRUIT \u2264",
+                "prefix": "",
+                "basename": "BRUIT \u2264"
+            },
+            "artists": [
+                {
+                    "id": "1660",
+                    "name": "BRUIT \u2264",
+                    "prefix": "",
+                    "basename": "BRUIT \u2264"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1660",
+                    "name": "BRUIT \u2264",
+                    "prefix": "",
+                    "basename": "BRUIT \u2264"
+                }
+            ],
+            "time": 1464,
+            "year": 2023,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9137&object_type=album&id=105241&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4227",
+            "name": "Arrivals & Departures",
+            "prefix": null,
+            "basename": "Arrivals & Departures",
+            "artist": {
+                "id": "103",
+                "name": "The Calm Blue Sea",
+                "prefix": "The",
+                "basename": "Calm Blue Sea"
+            },
+            "artists": [
+                {
+                    "id": "103",
+                    "name": "The Calm Blue Sea",
+                    "prefix": "The",
+                    "basename": "Calm Blue Sea"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "103",
+                    "name": "The Calm Blue Sea",
+                    "prefix": "The",
+                    "basename": "Calm Blue Sea"
+                }
+            ],
+            "time": 2637,
+            "year": 2012,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4227&object_type=album&id=81166&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9898",
+            "name": "Artery",
+            "prefix": null,
+            "basename": "Artery",
+            "artist": {
+                "id": "1955",
+                "name": "BRONTIDE",
+                "prefix": "",
+                "basename": "BRONTIDE"
+            },
+            "artists": [
+                {
+                    "id": "1955",
+                    "name": "BRONTIDE",
+                    "prefix": "",
+                    "basename": "BRONTIDE"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1955",
+                    "name": "BRONTIDE",
+                    "prefix": "",
+                    "basename": "BRONTIDE"
+                }
+            ],
+            "time": 2599,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9898&object_type=album&id=111803&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5403",
+            "name": "As The Love Continues",
+            "prefix": null,
+            "basename": "As The Love Continues",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3683,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 11,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5403&object_type=album&id=89120&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4627",
+            "name": "Asunder, Sweet and Other Distress",
+            "prefix": null,
+            "basename": "Asunder, Sweet and Other Distress",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 2423,
+            "year": 2015,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4627&object_type=album&id=80770&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3441",
+            "name": "Atomic",
+            "prefix": null,
+            "basename": "Atomic",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2917,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3441&object_type=album&id=81010&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9795",
+            "name": "The Bad Fire",
+            "prefix": "The",
+            "basename": "Bad Fire",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3285,
+            "year": 2025,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9795&object_type=album&id=111097&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4760",
+            "name": "Batcat",
+            "prefix": null,
+            "basename": "Batcat",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 872,
+            "year": 2008,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4760&object_type=album&id=83787&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "10075",
+            "name": "BLOOM AND RUIN - \"Two Liberations\"",
+            "prefix": null,
+            "basename": "BLOOM AND RUIN - \"Two Liberations\"",
+            "artist": {
+                "id": "2030",
+                "name": "Efrim Manuel Menuck + Tashi Dorji",
+                "prefix": "",
+                "basename": "Efrim Manuel Menuck + Tashi Dorji"
+            },
+            "artists": [
+                {
+                    "id": "2030",
+                    "name": "Efrim Manuel Menuck + Tashi Dorji",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck + Tashi Dorji"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "2030",
+                    "name": "Efrim Manuel Menuck + Tashi Dorji",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck + Tashi Dorji"
+                }
+            ],
+            "time": 2308,
+            "year": 2026,
+            "tracks": [],
+            "songcount": 2,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=10075&object_type=album&id=112108&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5633",
+            "name": "Born into Trouble as the Sparks Fly Upward",
+            "prefix": null,
+            "basename": "Born into Trouble as the Sparks Fly Upward",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "time": 3500,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5633&object_type=album&id=92195&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4906",
+            "name": "C'est \u00e7a",
+            "prefix": null,
+            "basename": "C'est \u00e7a",
+            "artist": {
+                "id": "640",
+                "name": "Fly Pan Am",
+                "prefix": "",
+                "basename": "Fly Pan Am"
+            },
+            "artists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "time": 2338,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4906&object_type=album&id=86058&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3926",
+            "name": "The Calm Blue Sea",
+            "prefix": "The",
+            "basename": "Calm Blue Sea",
+            "artist": {
+                "id": "103",
+                "name": "The Calm Blue Sea",
+                "prefix": "The",
+                "basename": "Calm Blue Sea"
+            },
+            "artists": [
+                {
+                    "id": "103",
+                    "name": "The Calm Blue Sea",
+                    "prefix": "The",
+                    "basename": "Calm Blue Sea"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "103",
+                    "name": "The Calm Blue Sea",
+                    "prefix": "The",
+                    "basename": "Calm Blue Sea"
+                }
+            ],
+            "time": 3579,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3926&object_type=album&id=80684&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4068",
+            "name": "Come Morning, A Radiant Light",
+            "prefix": null,
+            "basename": "Come Morning, A Radiant Light",
+            "artist": {
+                "id": "496",
+                "name": "Coastlands",
+                "prefix": "",
+                "basename": "Coastlands"
+            },
+            "artists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "time": 2808,
+            "year": 2015,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4068&object_type=album&id=80663&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3442",
+            "name": "Come On Die Young",
+            "prefix": null,
+            "basename": "Come On Die Young",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4052,
+            "year": 1999,
+            "tracks": [],
+            "songcount": 12,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3442&object_type=album&id=80979&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "6195",
+            "name": "Comradely Objects",
+            "prefix": null,
+            "basename": "Comradely Objects",
+            "artist": {
+                "id": "1448",
+                "name": "Horse Lords",
+                "prefix": "",
+                "basename": "Horse Lords"
+            },
+            "artists": [
+                {
+                    "id": "1448",
+                    "name": "Horse Lords",
+                    "prefix": "",
+                    "basename": "Horse Lords"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1448",
+                    "name": "Horse Lords",
+                    "prefix": "",
+                    "basename": "Horse Lords"
+                }
+            ],
+            "time": 2485,
+            "year": 2022,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": "album",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6195&object_type=album&id=98479&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": "7262e180-1d78-4032-89f0-3f90004f9d58",
+            "mbid_group": "142d682e-987a-4b17-99da-5279f44d334c"
+        },
+        {
+            "id": "5188",
+            "name": "Death",
+            "prefix": null,
+            "basename": "Death",
+            "artist": {
+                "id": "496",
+                "name": "Coastlands",
+                "prefix": "",
+                "basename": "Coastlands"
+            },
+            "artists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "time": 2335,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5188&object_type=album&id=87839&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "10057",
+            "name": "Dust and Disquiet",
+            "prefix": null,
+            "basename": "Dust and Disquiet",
+            "artist": {
+                "id": "2022",
+                "name": "Caspian",
+                "prefix": "",
+                "basename": "Caspian"
+            },
+            "artists": [
+                {
+                    "id": "2022",
+                    "name": "Caspian",
+                    "prefix": "",
+                    "basename": "Caspian"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "2022",
+                    "name": "Caspian",
+                    "prefix": "",
+                    "basename": "Caspian"
+                }
+            ],
+            "time": 3399,
+            "year": 2015,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=10057&object_type=album&id=112078&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4761",
+            "name": "Earth Division",
+            "prefix": null,
+            "basename": "Earth Division",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 992,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4761&object_type=album&id=83788&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9379",
+            "name": "The Earth Is Not a Cold Dead Place",
+            "prefix": "The",
+            "basename": "Earth Is Not a Cold Dead Place",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2737,
+            "year": 2003,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9379&object_type=album&id=105482&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4861",
+            "name": "Efrim Manuel Menuck & Kein Doria are SING SINCK, SING",
+            "prefix": null,
+            "basename": "Efrim Manuel Menuck & Kein Doria are SING SINCK, SING",
+            "artist": {
+                "id": "910",
+                "name": "SING SINCK, SING",
+                "prefix": "",
+                "basename": "SING SINCK, SING"
+            },
+            "artists": [
+                {
+                    "id": "910",
+                    "name": "SING SINCK, SING",
+                    "prefix": "",
+                    "basename": "SING SINCK, SING"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "910",
+                    "name": "SING SINCK, SING",
+                    "prefix": "",
+                    "basename": "SING SINCK, SING"
+                }
+            ],
+            "time": 1835,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4861&object_type=album&id=85472&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9380",
+            "name": "End",
+            "prefix": null,
+            "basename": "End",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2726,
+            "year": 2023,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9380&object_type=album&id=105483&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5998",
+            "name": "Enjoy Eternal Bliss",
+            "prefix": null,
+            "basename": "Enjoy Eternal Bliss",
+            "artist": {
+                "id": "367",
+                "name": "Yndi Halda",
+                "prefix": "",
+                "basename": "Yndi Halda"
+            },
+            "artists": [
+                {
+                    "id": "367",
+                    "name": "Yndi Halda",
+                    "prefix": "",
+                    "basename": "Yndi Halda"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "367",
+                    "name": "Yndi Halda",
+                    "prefix": "",
+                    "basename": "Yndi Halda"
+                }
+            ],
+            "time": 3941,
+            "year": 2007,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5998&object_type=album&id=97165&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4085",
+            "name": "EP+6",
+            "prefix": null,
+            "basename": "EP+6",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4317,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4085&object_type=album&id=80530&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3444",
+            "name": "Every Country's Sun",
+            "prefix": null,
+            "basename": "Every Country's Sun",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3362,
+            "year": 2017,
+            "tracks": [],
+            "songcount": 11,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3444&object_type=album&id=80765&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5766",
+            "name": "Exit in Darkness",
+            "prefix": null,
+            "basename": "Exit in Darkness",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 955,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 2,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5766&object_type=album&id=94952&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "6185",
+            "name": "filmlets",
+            "prefix": null,
+            "basename": "filmlets",
+            "artist": {
+                "id": "1441",
+                "name": "LITE",
+                "prefix": "",
+                "basename": "LITE"
+            },
+            "artists": [
+                {
+                    "id": "1441",
+                    "name": "LITE",
+                    "prefix": "",
+                    "basename": "LITE"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1441",
+                    "name": "LITE",
+                    "prefix": "",
+                    "basename": "LITE"
+                }
+            ],
+            "time": 2458,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6185&object_type=album&id=98373&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3887",
+            "name": "The Fire In Our Throats Will Beckon The Thaw",
+            "prefix": "The",
+            "basename": "Fire In Our Throats Will Beckon The Thaw",
+            "artist": {
+                "id": "345",
+                "name": "Pelican",
+                "prefix": "",
+                "basename": "Pelican"
+            },
+            "artists": [
+                {
+                    "id": "345",
+                    "name": "Pelican",
+                    "prefix": "",
+                    "basename": "Pelican"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "345",
+                    "name": "Pelican",
+                    "prefix": "",
+                    "basename": "Pelican"
+                }
+            ],
+            "time": 3522,
+            "year": 2005,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3887&object_type=album&id=80845&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4606",
+            "name": "Fly Pan Am",
+            "prefix": null,
+            "basename": "Fly Pan Am",
+            "artist": {
+                "id": "640",
+                "name": "Fly Pan Am",
+                "prefix": "",
+                "basename": "Fly Pan Am"
+            },
+            "artists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "time": 3616,
+            "year": 1999,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4606&object_type=album&id=80440&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9694",
+            "name": "For My Parents",
+            "prefix": null,
+            "basename": "For My Parents",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3337,
+            "year": 2012,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9694&object_type=album&id=108913&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3619",
+            "name": "From Bone to Satellite",
+            "prefix": null,
+            "basename": "From Bone to Satellite",
+            "artist": {
+                "id": "794",
+                "name": "Tarentel",
+                "prefix": "",
+                "basename": "Tarentel"
+            },
+            "artists": [
+                {
+                    "id": "794",
+                    "name": "Tarentel",
+                    "prefix": "",
+                    "basename": "Tarentel"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "794",
+                    "name": "Tarentel",
+                    "prefix": "",
+                    "basename": "Tarentel"
+                }
+            ],
+            "time": 9612,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 13,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3619&object_type=album&id=80179&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5478",
+            "name": "Frontera",
+            "prefix": null,
+            "basename": "Frontera",
+            "artist": {
+                "id": "640",
+                "name": "Fly Pan Am",
+                "prefix": "",
+                "basename": "Fly Pan Am"
+            },
+            "artists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "640",
+                    "name": "Fly Pan Am",
+                    "prefix": "",
+                    "basename": "Fly Pan Am"
+                }
+            ],
+            "time": 2379,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5478&object_type=album&id=90721&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4110",
+            "name": "Fuck Off Get Free We Pour Light On Everything",
+            "prefix": null,
+            "basename": "Fuck Off Get Free We Pour Light On Everything",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "time": 2954,
+            "year": 2013,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4110&object_type=album&id=80717&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4532",
+            "name": "The Further Still",
+            "prefix": "The",
+            "basename": "Further Still",
+            "artist": {
+                "id": "496",
+                "name": "Coastlands",
+                "prefix": "",
+                "basename": "Coastlands"
+            },
+            "artists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "time": 2765,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4532&object_type=album&id=80367&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4628",
+            "name": "F\u266f A\u266f \u221e",
+            "prefix": null,
+            "basename": "F\u266f A\u266f \u221e",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 3808,
+            "year": 1996,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4628&object_type=album&id=81068&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4648",
+            "name": "Ghosts Will Come and Kiss Our Eyes",
+            "prefix": null,
+            "basename": "Ghosts Will Come and Kiss Our Eyes",
+            "artist": {
+                "id": "745",
+                "name": "HRSTA",
+                "prefix": "",
+                "basename": "HRSTA"
+            },
+            "artists": [
+                {
+                    "id": "745",
+                    "name": "HRSTA",
+                    "prefix": "",
+                    "basename": "HRSTA"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "745",
+                    "name": "HRSTA",
+                    "prefix": "",
+                    "basename": "HRSTA"
+                }
+            ],
+            "time": 2517,
+            "year": 2007,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4648&object_type=album&id=80279&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4417",
+            "name": "Government Commissions (BBC Sessions 1996-2003)",
+            "prefix": null,
+            "basename": "Government Commissions (BBC Sessions 1996-2003)",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4056,
+            "year": 2012,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4417&object_type=album&id=80436&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5443",
+            "name": "G_d\u2019s Pee AT STATE\u2019S END!",
+            "prefix": null,
+            "basename": "G_d\u2019s Pee AT STATE\u2019S END!",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 3157,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5443&object_type=album&id=90012&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4779",
+            "name": "Hallelujah Mystic Garden Part 2",
+            "prefix": null,
+            "basename": "Hallelujah Mystic Garden Part 2",
+            "artist": {
+                "id": "884",
+                "name": "Acid Mothers Temple",
+                "prefix": "",
+                "basename": "Acid Mothers Temple"
+            },
+            "artists": [
+                {
+                    "id": "884",
+                    "name": "Acid Mothers Temple",
+                    "prefix": "",
+                    "basename": "Acid Mothers Temple"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "884",
+                    "name": "Acid Mothers Temple",
+                    "prefix": "",
+                    "basename": "Acid Mothers Temple"
+                }
+            ],
+            "time": 1968,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 2,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4779&object_type=album&id=84837&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5649",
+            "name": "Hang On To Each Other",
+            "prefix": null,
+            "basename": "Hang On To Each Other",
+            "artist": {
+                "id": "1244",
+                "name": "Thee Silver Mt Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "1244",
+                    "name": "Thee Silver Mt Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1244",
+                    "name": "Thee Silver Mt Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt Zion Memorial Orchestra"
+                }
+            ],
+            "time": 1396,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 2,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5649&object_type=album&id=92999&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4400",
+            "name": "Happy Songs for Happy People",
+            "prefix": null,
+            "basename": "Happy Songs for Happy People",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2507,
+            "year": 2003,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4400&object_type=album&id=80976&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4403",
+            "name": "Hardcore Will Never Die, But You Will",
+            "prefix": null,
+            "basename": "Hardcore Will Never Die, But You Will",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4569,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 11,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4403&object_type=album&id=80977&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3447",
+            "name": "The Hawk is Howling",
+            "prefix": "The",
+            "basename": "Hawk is Howling",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3805,
+            "year": 2008,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3447&object_type=album&id=80671&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3572",
+            "name": "He Has Left Us Alone but Shafts of Light Sometimes Grace the Corner of Our Rooms...",
+            "prefix": null,
+            "basename": "He Has Left Us Alone but Shafts of Light Sometimes Grace the Corner of Our Rooms...",
+            "artist": {
+                "id": "447",
+                "name": "A Silver Mt. Zion",
+                "prefix": "A",
+                "basename": "Silver Mt. Zion"
+            },
+            "artists": [
+                {
+                    "id": "447",
+                    "name": "A Silver Mt. Zion",
+                    "prefix": "A",
+                    "basename": "Silver Mt. Zion"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "447",
+                    "name": "A Silver Mt. Zion",
+                    "prefix": "A",
+                    "basename": "Silver Mt. Zion"
+                }
+            ],
+            "time": 2826,
+            "year": 2000,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3572&object_type=album&id=80716&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "6245",
+            "name": "Heaven Vol. 1",
+            "prefix": null,
+            "basename": "Heaven Vol. 1",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 1215,
+            "year": 2022,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6245&object_type=album&id=98904&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3689",
+            "name": "History of the Future",
+            "prefix": null,
+            "basename": "History of the Future",
+            "artist": {
+                "id": "480",
+                "name": "Watter",
+                "prefix": "",
+                "basename": "Watter"
+            },
+            "artists": [
+                {
+                    "id": "480",
+                    "name": "Watter",
+                    "prefix": "",
+                    "basename": "Watter"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "480",
+                    "name": "Watter",
+                    "prefix": "",
+                    "basename": "Watter"
+                }
+            ],
+            "time": 2789,
+            "year": 2017,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3689&object_type=album&id=80685&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4109",
+            "name": "Horses in the Sky",
+            "prefix": null,
+            "basename": "Horses in the Sky",
+            "artist": {
+                "id": "647",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band"
+            },
+            "artists": [
+                {
+                    "id": "647",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "647",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra & Tra-La-La Band"
+                }
+            ],
+            "time": 3492,
+            "year": 2005,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4109&object_type=album&id=80437&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9386",
+            "name": "How Strange, Innocence",
+            "prefix": null,
+            "basename": "How Strange, Innocence",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2921,
+            "year": 2005,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9386&object_type=album&id=105489&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3450",
+            "name": "Hymn to the Immortal Wind",
+            "prefix": null,
+            "basename": "Hymn to the Immortal Wind",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 4017,
+            "year": 2009,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3450&object_type=album&id=80902&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "10049",
+            "name": "Ice Fleet",
+            "prefix": null,
+            "basename": "Ice Fleet",
+            "artist": {
+                "id": "2020",
+                "name": "KAUAN",
+                "prefix": "",
+                "basename": "KAUAN"
+            },
+            "artists": [
+                {
+                    "id": "2020",
+                    "name": "KAUAN",
+                    "prefix": "",
+                    "basename": "KAUAN"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "2020",
+                    "name": "KAUAN",
+                    "prefix": "",
+                    "basename": "KAUAN"
+                }
+            ],
+            "time": 2487,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=10049&object_type=album&id=112070&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4427",
+            "name": "Inindependence",
+            "prefix": null,
+            "basename": "Inindependence",
+            "artist": {
+                "id": "781",
+                "name": "A Minor Forest",
+                "prefix": "A",
+                "basename": "Minor Forest"
+            },
+            "artists": [
+                {
+                    "id": "781",
+                    "name": "A Minor Forest",
+                    "prefix": "A",
+                    "basename": "Minor Forest"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "781",
+                    "name": "A Minor Forest",
+                    "prefix": "A",
+                    "basename": "Minor Forest"
+                }
+            ],
+            "time": 3234,
+            "year": 1998,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4427&object_type=album&id=80194&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3445",
+            "name": "KIN",
+            "prefix": null,
+            "basename": "KIN",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2504,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3445&object_type=album&id=80405&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3653",
+            "name": "Kollaps Tradixionales",
+            "prefix": null,
+            "basename": "Kollaps Tradixionales",
+            "artist": {
+                "id": "584",
+                "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                "prefix": "",
+                "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+            },
+            "artists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "584",
+                    "name": "Thee Silver Mt. Zion Memorial Orchestra",
+                    "prefix": "",
+                    "basename": "Thee Silver Mt. Zion Memorial Orchestra"
+                }
+            ],
+            "time": 3396,
+            "year": 2010,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3653&object_type=album&id=80529&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4194",
+            "name": "Laughing Stock",
+            "prefix": null,
+            "basename": "Laughing Stock",
+            "artist": {
+                "id": "185",
+                "name": "Talk Talk",
+                "prefix": "",
+                "basename": "Talk Talk"
+            },
+            "artists": [
+                {
+                    "id": "185",
+                    "name": "Talk Talk",
+                    "prefix": "",
+                    "basename": "Talk Talk"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "185",
+                    "name": "Talk Talk",
+                    "prefix": "",
+                    "basename": "Talk Talk"
+                }
+            ],
+            "time": 2575,
+            "year": 1991,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4194&object_type=album&id=81024&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4031",
+            "name": "Lift Your Skinny Fists Like Antennas to Heaven",
+            "prefix": null,
+            "basename": "Lift Your Skinny Fists Like Antennas to Heaven",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 5241,
+            "year": 2000,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4031&object_type=album&id=81066&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5043",
+            "name": "Look Alive",
+            "prefix": null,
+            "basename": "Look Alive",
+            "artist": {
+                "id": "1016",
+                "name": "Unwed Sailor",
+                "prefix": "",
+                "basename": "Unwed Sailor"
+            },
+            "artists": [
+                {
+                    "id": "1016",
+                    "name": "Unwed Sailor",
+                    "prefix": "",
+                    "basename": "Unwed Sailor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1016",
+                    "name": "Unwed Sailor",
+                    "prefix": "",
+                    "basename": "Unwed Sailor"
+                }
+            ],
+            "time": 2456,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5043&object_type=album&id=86826&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3877",
+            "name": "Lost in Space",
+            "prefix": null,
+            "basename": "Lost in Space",
+            "artist": {
+                "id": "119",
+                "name": "KOFF",
+                "prefix": "",
+                "basename": "KOFF"
+            },
+            "artists": [
+                {
+                    "id": "119",
+                    "name": "KOFF",
+                    "prefix": "",
+                    "basename": "KOFF"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "119",
+                    "name": "KOFF",
+                    "prefix": "",
+                    "basename": "KOFF"
+                }
+            ],
+            "time": 1437,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3877&object_type=album&id=81162&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9138",
+            "name": "The Machine is burning and now everyone knows it could happen again",
+            "prefix": "The",
+            "basename": "Machine is burning and now everyone knows it could happen again",
+            "artist": {
+                "id": "1660",
+                "name": "BRUIT \u2264",
+                "prefix": "",
+                "basename": "BRUIT \u2264"
+            },
+            "artists": [
+                {
+                    "id": "1660",
+                    "name": "BRUIT \u2264",
+                    "prefix": "",
+                    "basename": "BRUIT \u2264"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1660",
+                    "name": "BRUIT \u2264",
+                    "prefix": "",
+                    "basename": "BRUIT \u2264"
+                }
+            ],
+            "time": 2374,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9138&object_type=album&id=105242&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4595",
+            "name": "Mechanics of Dominion",
+            "prefix": null,
+            "basename": "Mechanics of Dominion",
+            "artist": {
+                "id": "475",
+                "name": "Esmerine",
+                "prefix": "",
+                "basename": "Esmerine"
+            },
+            "artists": [
+                {
+                    "id": "475",
+                    "name": "Esmerine",
+                    "prefix": "",
+                    "basename": "Esmerine"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "475",
+                    "name": "Esmerine",
+                    "prefix": "",
+                    "basename": "Esmerine"
+                }
+            ],
+            "time": 2684,
+            "year": 2017,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4595&object_type=album&id=80693&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4531",
+            "name": "MILIEU III",
+            "prefix": null,
+            "basename": "MILIEU III",
+            "artist": {
+                "id": "496",
+                "name": "Coastlands",
+                "prefix": "",
+                "basename": "Coastlands"
+            },
+            "artists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "time": 1648,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4531&object_type=album&id=82234&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3663",
+            "name": "Millions Now Living Will Never Die",
+            "prefix": null,
+            "basename": "Millions Now Living Will Never Die",
+            "artist": {
+                "id": "742",
+                "name": "Tortoise",
+                "prefix": "",
+                "basename": "Tortoise"
+            },
+            "artists": [
+                {
+                    "id": "742",
+                    "name": "Tortoise",
+                    "prefix": "",
+                    "basename": "Tortoise"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "742",
+                    "name": "Tortoise",
+                    "prefix": "",
+                    "basename": "Tortoise"
+                }
+            ],
+            "time": 2576,
+            "year": 1996,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3663&object_type=album&id=80282&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4368",
+            "name": "Mogwai Young Team",
+            "prefix": null,
+            "basename": "Mogwai Young Team",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3870,
+            "year": 1997,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4368&object_type=album&id=81210&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4411",
+            "name": "Mr. Beast",
+            "prefix": null,
+            "basename": "Mr. Beast",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2596,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4411&object_type=album&id=80672&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3446",
+            "name": "My Father My King",
+            "prefix": null,
+            "basename": "My Father My King",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 1213,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 1,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3446&object_type=album&id=80632&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "6002",
+            "name": "New Bodies",
+            "prefix": null,
+            "basename": "New Bodies",
+            "artist": {
+                "id": "635",
+                "name": "Tangents",
+                "prefix": "",
+                "basename": "Tangents"
+            },
+            "artists": [
+                {
+                    "id": "635",
+                    "name": "Tangents",
+                    "prefix": "",
+                    "basename": "Tangents"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "635",
+                    "name": "Tangents",
+                    "prefix": "",
+                    "basename": "Tangents"
+                }
+            ],
+            "time": 2985,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6002&object_type=album&id=97188&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3656",
+            "name": "New Others Part One",
+            "prefix": null,
+            "basename": "New Others Part One",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 2286,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3656&object_type=album&id=80379&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3657",
+            "name": "New Others Part Two",
+            "prefix": null,
+            "basename": "New Others Part Two",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 2382,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3657&object_type=album&id=80378&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5805",
+            "name": "New Year's Eve",
+            "prefix": null,
+            "basename": "New Year's Eve",
+            "artist": {
+                "id": "1315",
+                "name": "El Ten Eleven",
+                "prefix": "",
+                "basename": "El Ten Eleven"
+            },
+            "artists": [
+                {
+                    "id": "1315",
+                    "name": "El Ten Eleven",
+                    "prefix": "",
+                    "basename": "El Ten Eleven"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1315",
+                    "name": "El Ten Eleven",
+                    "prefix": "",
+                    "basename": "El Ten Eleven"
+                }
+            ],
+            "time": 1889,
+            "year": 2022,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5805&object_type=album&id=95163&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3451",
+            "name": "Nowhere Now Here",
+            "prefix": null,
+            "basename": "Nowhere Now Here",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3624,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3451&object_type=album&id=80307&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9730",
+            "name": "OATH",
+            "prefix": null,
+            "basename": "OATH",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 4273,
+            "year": 2024,
+            "tracks": [],
+            "songcount": 11,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9730&object_type=album&id=109813&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3452",
+            "name": "One Step More and You Die",
+            "prefix": null,
+            "basename": "One Step More and You Die",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3071,
+            "year": 2002,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3452&object_type=album&id=80263&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "10046",
+            "name": "Oscillate",
+            "prefix": null,
+            "basename": "Oscillate",
+            "artist": {
+                "id": "1960",
+                "name": "pg.lost",
+                "prefix": "",
+                "basename": "pg.lost"
+            },
+            "artists": [
+                {
+                    "id": "1960",
+                    "name": "pg.lost",
+                    "prefix": "",
+                    "basename": "pg.lost"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1960",
+                    "name": "pg.lost",
+                    "prefix": "",
+                    "basename": "pg.lost"
+                }
+            ],
+            "time": 3393,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=10046&object_type=album&id=112064&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "6039",
+            "name": "Palmless Prayer \/ Mass Murder Refrain",
+            "prefix": null,
+            "basename": "Palmless Prayer \/ Mass Murder Refrain",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "333",
+                    "name": "Mono & world's end girlfriend",
+                    "prefix": "",
+                    "basename": "Mono & world's end girlfriend"
+                }
+            ],
+            "time": 4446,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=6039&object_type=album&id=97457&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5703",
+            "name": "Pilgrimage of the Soul",
+            "prefix": null,
+            "basename": "Pilgrimage of the Soul",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3438,
+            "year": 2021,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5703&object_type=album&id=93529&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4075",
+            "name": "Pissing Stars",
+            "prefix": null,
+            "basename": "Pissing Stars",
+            "artist": {
+                "id": "526",
+                "name": "Efrim Manuel Menuck",
+                "prefix": "",
+                "basename": "Efrim Manuel Menuck"
+            },
+            "artists": [
+                {
+                    "id": "526",
+                    "name": "Efrim Manuel Menuck",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "526",
+                    "name": "Efrim Manuel Menuck",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck"
+                }
+            ],
+            "time": 2772,
+            "year": 2018,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4075&object_type=album&id=80563&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4581",
+            "name": "Plays \"High Gospel\"",
+            "prefix": null,
+            "basename": "Plays \"High Gospel\"",
+            "artist": {
+                "id": "526",
+                "name": "Efrim Manuel Menuck",
+                "prefix": "",
+                "basename": "Efrim Manuel Menuck"
+            },
+            "artists": [
+                {
+                    "id": "526",
+                    "name": "Efrim Manuel Menuck",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "526",
+                    "name": "Efrim Manuel Menuck",
+                    "prefix": "",
+                    "basename": "Efrim Manuel Menuck"
+                }
+            ],
+            "time": 2530,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4581&object_type=album&id=80609&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4405",
+            "name": "RAVE TAPES",
+            "prefix": null,
+            "basename": "RAVE TAPES",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2941,
+            "year": 2014,
+            "tracks": [],
+            "songcount": 10,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4405&object_type=album&id=80980&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4961",
+            "name": "Requiem for Hell",
+            "prefix": null,
+            "basename": "Requiem for Hell",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 2761,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4961&object_type=album&id=86355&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9385",
+            "name": "The Rescue",
+            "prefix": "The",
+            "basename": "Rescue",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 1964,
+            "year": 2019,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9385&object_type=album&id=105488&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4214",
+            "name": "Les Revenants",
+            "prefix": "Les",
+            "basename": "Revenants",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 3003,
+            "year": 2013,
+            "tracks": [],
+            "songcount": 14,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4214&object_type=album&id=80435&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3551",
+            "name": "RLYR - Delayer",
+            "prefix": null,
+            "basename": "RLYR - Delayer",
+            "artist": {
+                "id": "613",
+                "name": "RLYR",
+                "prefix": "",
+                "basename": "RLYR"
+            },
+            "artists": [
+                {
+                    "id": "613",
+                    "name": "RLYR",
+                    "prefix": "",
+                    "basename": "RLYR"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "613",
+                    "name": "RLYR",
+                    "prefix": "",
+                    "basename": "RLYR"
+                }
+            ],
+            "time": 2473,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3551&object_type=album&id=80226&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4412",
+            "name": "Rock Action",
+            "prefix": null,
+            "basename": "Rock Action",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 2308,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4412&object_type=album&id=80651&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5809",
+            "name": "Scarlet Holliday",
+            "prefix": null,
+            "basename": "Scarlet Holliday",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 907,
+            "year": 2022,
+            "tracks": [],
+            "songcount": 3,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5809&object_type=album&id=95168&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4629",
+            "name": "Slow Riot for New Zer\u00f8 Kanada",
+            "prefix": null,
+            "basename": "Slow Riot for New Zer\u00f8 Kanada",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 1717,
+            "year": 1999,
+            "tracks": [],
+            "songcount": 2,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4629&object_type=album&id=80722&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4195",
+            "name": "Spirit of Eden",
+            "prefix": null,
+            "basename": "Spirit of Eden",
+            "artist": {
+                "id": "185",
+                "name": "Talk Talk",
+                "prefix": "",
+                "basename": "Talk Talk"
+            },
+            "artists": [
+                {
+                    "id": "185",
+                    "name": "Talk Talk",
+                    "prefix": "",
+                    "basename": "Talk Talk"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "185",
+                    "name": "Talk Talk",
+                    "prefix": "",
+                    "basename": "Talk Talk"
+                }
+            ],
+            "time": 2482,
+            "year": 1988,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4195&object_type=album&id=81022&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4649",
+            "name": "Stem Stem In Electro",
+            "prefix": null,
+            "basename": "Stem Stem In Electro",
+            "artist": {
+                "id": "745",
+                "name": "HRSTA",
+                "prefix": "",
+                "basename": "HRSTA"
+            },
+            "artists": [
+                {
+                    "id": "745",
+                    "name": "HRSTA",
+                    "prefix": "",
+                    "basename": "HRSTA"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "745",
+                    "name": "HRSTA",
+                    "prefix": "",
+                    "basename": "HRSTA"
+                }
+            ],
+            "time": 2580,
+            "year": 2005,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4649&object_type=album&id=83058&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3841",
+            "name": "Stubborn Persistent Illusions",
+            "prefix": null,
+            "basename": "Stubborn Persistent Illusions",
+            "artist": {
+                "id": "234",
+                "name": "Do Make Say Think",
+                "prefix": "",
+                "basename": "Do Make Say Think"
+            },
+            "artists": [
+                {
+                    "id": "234",
+                    "name": "Do Make Say Think",
+                    "prefix": "",
+                    "basename": "Do Make Say Think"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "234",
+                    "name": "Do Make Say Think",
+                    "prefix": "",
+                    "basename": "Do Make Say Think"
+                }
+            ],
+            "time": 3647,
+            "year": 2017,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3841&object_type=album&id=80925&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9384",
+            "name": "Take Care, Take Care, Take Care",
+            "prefix": null,
+            "basename": "Take Care, Take Care, Take Care",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2760,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9384&object_type=album&id=105487&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4419",
+            "name": "Ten Rapid",
+            "prefix": null,
+            "basename": "Ten Rapid",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 1998,
+            "year": 1997,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4419&object_type=album&id=80616&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4299",
+            "name": "Things Shaped In Passing",
+            "prefix": null,
+            "basename": "Things Shaped In Passing",
+            "artist": {
+                "id": "806",
+                "name": "The Six Parts Seven",
+                "prefix": "The",
+                "basename": "Six Parts Seven"
+            },
+            "artists": [
+                {
+                    "id": "806",
+                    "name": "The Six Parts Seven",
+                    "prefix": "The",
+                    "basename": "Six Parts Seven"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "806",
+                    "name": "The Six Parts Seven",
+                    "prefix": "The",
+                    "basename": "Six Parts Seven"
+                }
+            ],
+            "time": 2474,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4299&object_type=album&id=80161&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3844",
+            "name": "This Will Destroy You",
+            "prefix": null,
+            "basename": "This Will Destroy You",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 3089,
+            "year": 2008,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3844&object_type=album&id=80891&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9382",
+            "name": "Those Who Tell the Truth Shall Die, Those Who Tell the Truth Shall Live Forever",
+            "prefix": null,
+            "basename": "Those Who Tell the Truth Shall Die, Those Who Tell the Truth Shall Live Forever",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2991,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9382&object_type=album&id=105485&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4291",
+            "name": "Thought for Food",
+            "prefix": null,
+            "basename": "Thought for Food",
+            "artist": {
+                "id": "800",
+                "name": "The Books",
+                "prefix": "The",
+                "basename": "Books"
+            },
+            "artists": [
+                {
+                    "id": "800",
+                    "name": "The Books",
+                    "prefix": "The",
+                    "basename": "Books"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "800",
+                    "name": "The Books",
+                    "prefix": "The",
+                    "basename": "Books"
+                }
+            ],
+            "time": 2322,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 12,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4291&object_type=album&id=80169&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4533",
+            "name": "To Be Found",
+            "prefix": null,
+            "basename": "To Be Found",
+            "artist": {
+                "id": "496",
+                "name": "Coastlands",
+                "prefix": "",
+                "basename": "Coastlands"
+            },
+            "artists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "496",
+                    "name": "Coastlands",
+                    "prefix": "",
+                    "basename": "Coastlands"
+                }
+            ],
+            "time": 2669,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4533&object_type=album&id=80664&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4420",
+            "name": "Travel Is Dangerous",
+            "prefix": null,
+            "basename": "Travel Is Dangerous",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 1987,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4420&object_type=album&id=80617&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3437",
+            "name": "The True Meaning of Boodleybaye",
+            "prefix": "The",
+            "basename": "True Meaning of Boodleybaye",
+            "artist": {
+                "id": "791",
+                "name": "Mice Parade",
+                "prefix": "",
+                "basename": "Mice Parade"
+            },
+            "artists": [
+                {
+                    "id": "791",
+                    "name": "Mice Parade",
+                    "prefix": "",
+                    "basename": "Mice Parade"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "791",
+                    "name": "Mice Parade",
+                    "prefix": "",
+                    "basename": "Mice Parade"
+                }
+            ],
+            "time": 4432,
+            "year": 1998,
+            "tracks": [],
+            "songcount": 14,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3437&object_type=album&id=80184&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3658",
+            "name": "Tunnel Blanket",
+            "prefix": null,
+            "basename": "Tunnel Blanket",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 3641,
+            "year": 2011,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3658&object_type=album&id=80312&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5999",
+            "name": "Under Summer",
+            "prefix": null,
+            "basename": "Under Summer",
+            "artist": {
+                "id": "367",
+                "name": "Yndi Halda",
+                "prefix": "",
+                "basename": "Yndi Halda"
+            },
+            "artists": [
+                {
+                    "id": "367",
+                    "name": "Yndi Halda",
+                    "prefix": "",
+                    "basename": "Yndi Halda"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "367",
+                    "name": "Yndi Halda",
+                    "prefix": "",
+                    "basename": "Yndi Halda"
+                }
+            ],
+            "time": 3479,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 4,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5999&object_type=album&id=97170&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4129",
+            "name": "Under the Pipal Tree",
+            "prefix": null,
+            "basename": "Under the Pipal Tree",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3818,
+            "year": 2001,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4129&object_type=album&id=80524&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9907",
+            "name": "Versus",
+            "prefix": null,
+            "basename": "Versus",
+            "artist": {
+                "id": "1960",
+                "name": "pg.lost",
+                "prefix": "",
+                "basename": "pg.lost"
+            },
+            "artists": [
+                {
+                    "id": "1960",
+                    "name": "pg.lost",
+                    "prefix": "",
+                    "basename": "pg.lost"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1960",
+                    "name": "pg.lost",
+                    "prefix": "",
+                    "basename": "pg.lost"
+                }
+            ],
+            "time": 3192,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9907&object_type=album&id=111812&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5042",
+            "name": "Vespertine",
+            "prefix": null,
+            "basename": "Vespertine",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 3513,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 7,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5042&object_type=album&id=86825&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3453",
+            "name": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined",
+            "prefix": null,
+            "basename": "Walking Cloud and Deep Red Sky, Flag Fluttered and the Sun Shined",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3505,
+            "year": 2004,
+            "tracks": [],
+            "songcount": 8,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3453&object_type=album&id=80339&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "9383",
+            "name": "The Wilderness",
+            "prefix": "The",
+            "basename": "Wilderness",
+            "artist": {
+                "id": "1733",
+                "name": "Explosions in the Sky",
+                "prefix": "",
+                "basename": "Explosions in the Sky"
+            },
+            "artists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "1733",
+                    "name": "Explosions in the Sky",
+                    "prefix": "",
+                    "basename": "Explosions in the Sky"
+                }
+            ],
+            "time": 2780,
+            "year": 2016,
+            "tracks": [],
+            "songcount": 9,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9383&object_type=album&id=105486&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "4630",
+            "name": "Yanqui U.X.O.",
+            "prefix": null,
+            "basename": "Yanqui U.X.O.",
+            "artist": {
+                "id": "167",
+                "name": "Godspeed You! Black Emperor",
+                "prefix": "",
+                "basename": "Godspeed You! Black Emperor"
+            },
+            "artists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "167",
+                    "name": "Godspeed You! Black Emperor",
+                    "prefix": "",
+                    "basename": "Godspeed You! Black Emperor"
+                }
+            ],
+            "time": 4497,
+            "year": 2002,
+            "tracks": [],
+            "songcount": 5,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=4630&object_type=album&id=80769&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3454",
+            "name": "You Are There",
+            "prefix": null,
+            "basename": "You Are There",
+            "artist": {
+                "id": "294",
+                "name": "Mono",
+                "prefix": "",
+                "basename": "Mono"
+            },
+            "artists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "294",
+                    "name": "Mono",
+                    "prefix": "",
+                    "basename": "Mono"
+                }
+            ],
+            "time": 3600,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3454&object_type=album&id=80362&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "3842",
+            "name": "Young Mountain",
+            "prefix": null,
+            "basename": "Young Mountain",
+            "artist": {
+                "id": "237",
+                "name": "This Will Destroy You",
+                "prefix": "",
+                "basename": "This Will Destroy You"
+            },
+            "artists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "237",
+                    "name": "This Will Destroy You",
+                    "prefix": "",
+                    "basename": "This Will Destroy You"
+                }
+            ],
+            "time": 2166,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 6,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=3842&object_type=album&id=80922&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5389",
+            "name": "ZEROZEROZERO",
+            "prefix": null,
+            "basename": "ZEROZEROZERO",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4123,
+            "year": 2020,
+            "tracks": [],
+            "songcount": 21,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5389&object_type=album&id=89058&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        },
+        {
+            "id": "5426",
+            "name": "Zidane",
+            "prefix": null,
+            "basename": "Zidane",
+            "artist": {
+                "id": "206",
+                "name": "Mogwai",
+                "prefix": "",
+                "basename": "Mogwai"
+            },
+            "artists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "songartists": [
+                {
+                    "id": "206",
+                    "name": "Mogwai",
+                    "prefix": "",
+                    "basename": "Mogwai"
+                }
+            ],
+            "time": 4206,
+            "year": 2006,
+            "tracks": [],
+            "songcount": 12,
+            "diskcount": 1,
+            "type": null,
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=5426&object_type=album&id=89727&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "mbid": null,
+            "mbid_group": null
+        }
+    ]
+}

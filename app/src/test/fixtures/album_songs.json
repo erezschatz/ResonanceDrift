@@ -1,0 +1,531 @@
+{
+    "total_count": 7,
+    "md5": "93cad1e94a8bb76c2e65117b9e2c0629",
+    "song": [
+        {
+            "id": "58397",
+            "title": "A Sparrows' Lift",
+            "name": "A Sparrows' Lift",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 1,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/01 - A Sparrows' Lift.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 1,
+            "time": 193,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 226954,
+            "stream_bitrate": 226954,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58397&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20A%20Sparrows-%20Lift.mp3",
+            "size": 5519360,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58398",
+            "title": "We Live on a Fucking Planet and Baby That's the Sun",
+            "name": "We Live on a Fucking Planet and Baby That's the Sun",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 2,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/02 - We Live On A Fucking Planet And Baby That's The Sun.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 2,
+            "time": 607,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 259977,
+            "stream_bitrate": 259977,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58398&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20We%20Live%20on%20a%20Fucking%20Planet%20and%20Baby%20That-s%20the%20Sun.mp3",
+            "size": 19769344,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58402",
+            "title": "Waiting for the Light to Quit",
+            "name": "Waiting for the Light to Quit",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 3,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/03 - Waiting For The Light To Quit.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 3,
+            "time": 286,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 269316,
+            "stream_bitrate": 269316,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58402&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20Waiting%20for%20the%20Light%20to%20Quit.mp3",
+            "size": 9676800,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58396",
+            "title": "A Workers' Graveyard (Poor Eternal)",
+            "name": "A Workers' Graveyard (Poor Eternal)",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 4,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/04 - A Workers' Graveyard (Poor Eternal).mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 4,
+            "time": 187,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 264500,
+            "stream_bitrate": 264500,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58396&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20A%20Workers-%20Graveyard%20-Poor%20Eternal-.mp3",
+            "size": 6252544,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58399",
+            "title": "The Sons and Daughters of Poor Eternal",
+            "name": "The Sons and Daughters of Poor Eternal",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 5,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/05 - The Sons And Daughters Of Poor Eternal.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 5,
+            "time": 568,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 259822,
+            "stream_bitrate": 259822,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58399&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20The%20Sons%20and%20Daughters%20of%20Poor%20Eternal.mp3",
+            "size": 18501632,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58400",
+            "title": "Anchor",
+            "name": "Anchor",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 6,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/06 - Anchor.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 6,
+            "time": 450,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 259484,
+            "stream_bitrate": 259484,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58400&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20Anchor.mp3",
+            "size": 14665728,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        },
+        {
+            "id": "58401",
+            "title": "Lie Down in Roses Dear",
+            "name": "Lie Down in Roses Dear",
+            "artist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "artists": [
+                {
+                    "id": "1658",
+                    "name": "ALL HANDS_MAKE LIGHT",
+                    "prefix": "",
+                    "basename": "ALL HANDS_MAKE LIGHT"
+                }
+            ],
+            "album": {
+                "id": "9129",
+                "name": "\"Darling The Dawn\"",
+                "prefix": null,
+                "basename": "\"Darling The Dawn\""
+            },
+            "albumartist": {
+                "id": "1658",
+                "name": "ALL HANDS_MAKE LIGHT",
+                "prefix": "",
+                "basename": "ALL HANDS_MAKE LIGHT"
+            },
+            "disk": 1,
+            "disksubtitle": null,
+            "track": 7,
+            "filename": "\/mnt\/music\/ALL HANDS_MAKE LIGHT\/-Darling The Dawn-\/07 - Lie Down In Roses Dear.mp3",
+            "genre": [
+                {
+                    "id": "90",
+                    "name": "Post Rock"
+                }
+            ],
+            "playlisttrack": 7,
+            "time": 350,
+            "year": 2023,
+            "format": "mp3",
+            "stream_format": "mp3",
+            "bitrate": 254603,
+            "stream_bitrate": 254603,
+            "rate": 44100,
+            "mode": "vbr",
+            "mime": "audio\/mpeg",
+            "stream_mime": "audio\/mpeg",
+            "url": "https:\/\/equinemusic.com\/play\/index.php?ssid=b618db5b3bb5c91f5f2c107b8f8aabaa&type=song&oid=58401&uid=1&player=api&name=ALL%20HANDS-MAKE%20LIGHT%20-%20Lie%20Down%20in%20Roses%20Dear.mp3",
+            "size": 11177984,
+            "mbid": null,
+            "art": "https:\/\/equinemusic.com\/image.php?object_id=9129&object_type=album&id=105233&name=art.jpg",
+            "has_art": true,
+            "flag": false,
+            "rating": null,
+            "averagerating": null,
+            "playcount": 2,
+            "catalog": 7,
+            "composer": null,
+            "channels": 2,
+            "comment": "Visit https:\/\/allhandsmakelight.bandcamp.com",
+            "license": null,
+            "publisher": null,
+            "language": null,
+            "lyrics": null,
+            "replaygain_album_gain": null,
+            "replaygain_album_peak": null,
+            "replaygain_track_gain": null,
+            "replaygain_track_peak": null,
+            "r128_album_gain": null,
+            "r128_track_gain": null
+        }
+    ]
+}

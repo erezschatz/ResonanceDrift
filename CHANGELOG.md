@@ -6,6 +6,23 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-21 — Step 03 done: Ampache client
+- `AmpacheClient` covers every action in `docs/AMPACHE.md`: albums, album,
+  album_songs, artists, artist, artist_albums, artist_songs, genres, genre,
+  genre_albums, genre_songs, playlists, playlist, playlist_songs,
+  playlist_remove_song, song, record_play, advanced_search (album by
+  title/artist, song by title). `fetchAllPages` pages 5000 at a time.
+- DTOs in `ampache/model/` (Album, Song, Artist, Genre, Playlist, Ref) with
+  lenient ids and counts; playlist ids are strings. Decision D22.
+- `AmpacheUrls.stream` and `AmpacheUrls.art`, pinned to ReDrift's strings.
+- The Json configuration moved from `AppGraph` to `AmpacheClient.json` so the
+  tests parse with the same one.
+- `app/src/test/fixtures/capture.sh` captures the real server's answers;
+  18 fixtures captured and committed. They showed single objects at the top
+  level, string ids, and a server reporting API 8.1.0 (`docs/AMPACHE.md`).
+- Tests: 36 new (fixture parsing, client shapes, URLs, paging); 62 total, all
+  passing. No UI changes; no version bump.
+
 ### 2026-10-19 — Log out keeps server and username · 1.3 (4)
 - Log out now forgets only the password hash, token and expiry; the auth
   screen comes back with server URL and username filled in. Decision D21.

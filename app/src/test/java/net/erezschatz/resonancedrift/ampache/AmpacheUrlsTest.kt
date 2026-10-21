@@ -44,4 +44,39 @@ class AmpacheUrlsTest {
             url.toString(),
         )
     }
+
+    // Expected strings are what ReDrift's getStreamUrl() / getArtUrl() return
+    // for the same inputs (string concatenation and URLSearchParams, respectively).
+
+    @Test
+    fun `stream url matches ReDrift byte for byte`() {
+        assertEquals(
+            "https://music.example.com/play/index.php?ssid=abc123&type=song&oid=9876&format=raw",
+            AmpacheUrls.stream("https://music.example.com", "abc123", 9876),
+        )
+    }
+
+    @Test
+    fun `stream url keeps a server installed under a path`() {
+        assertEquals(
+            "https://example.com/ampache/play/index.php?ssid=t&type=song&oid=1&format=raw",
+            AmpacheUrls.stream("https://example.com/ampache", "t", 1),
+        )
+    }
+
+    @Test
+    fun `art url matches ReDrift byte for byte, default size 300`() {
+        assertEquals(
+            "https://music.example.com/server/json.server.php?action=get_art&auth=abc123&id=123&type=album&size=300",
+            AmpacheUrls.art("https://music.example.com", "abc123", 123),
+        )
+    }
+
+    @Test
+    fun `art url takes a size`() {
+        assertEquals(
+            "https://h/server/json.server.php?action=get_art&auth=t&id=5&type=album&size=512",
+            AmpacheUrls.art("https://h", "t", 5, sizePx = 512),
+        )
+    }
 }
