@@ -206,7 +206,7 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
     `CacheDataSource(SimpleCache, LRU ~512 MB)` → `OkHttpDataSource`.
     Cached bytes replay without network; nothing is ever downloaded ahead
     beyond ExoPlayer's own buffering. One `SimpleCache` per process (Media3
-    requirement) — it lives in `AppGraph`.
+    requirement) — it lives in `AppGraph`, under `filesDir/media-cache` (D23).
 - **`SongUriResolver`.** `MediaItem` URIs are token-free and stable:
   `rd://song/<id>`. The resolver turns that into the real stream URL with the
   *current* session token at request time. Token refresh therefore never
@@ -288,7 +288,10 @@ real server.
   off, system dark mode ignored. Simple and clean; no gradients, no blur.
 - `PlayerConnection` wraps the `MediaController` and exposes `StateFlow`s
   (current item, position, playing, queue, shuffle state). Everything in the
-  UI reads those; nothing in the UI touches ExoPlayer.
+  UI reads those; nothing in the UI touches ExoPlayer. It lives in `AppGraph`;
+  `MainActivity` connects it in `onStart` and releases it in `onStop` (D23).
+- Items sent from the controller lose their URI on the way to the session;
+  the service's `onAddMediaItems` rebuilds `rd://song/<id>` from the media id.
 - Persistent chrome (mini player, bottom bar) lives in the scaffold around `NavDisplay`.
   Now Playing is a full-screen destination, not an overlay hack.
 - Lists use `LazyColumn` / `LazyVerticalGrid` — virtualisation is free, so

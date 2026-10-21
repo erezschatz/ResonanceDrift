@@ -2,6 +2,7 @@ package net.erezschatz.resonancedrift.data
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -11,9 +12,9 @@ import net.erezschatz.resonancedrift.ampache.LastAccount
 import net.erezschatz.resonancedrift.ampache.StoredLogin
 
 /**
- * DataStore-backed settings. Today that is only the login: server URL,
- * username, password hash (never the password), session token and expiry.
- * Single account (docs/SPEC.md → Data).
+ * DataStore-backed settings: the login (server URL, username, password hash —
+ * never the password — session token and expiry; single account, docs/SPEC.md
+ * → Data) and whether the notification permission was already asked for.
  */
 class Settings(private val store: DataStore<Preferences>) : CredentialStore {
 
@@ -56,11 +57,19 @@ class Settings(private val store: DataStore<Preferences>) : CredentialStore {
         }
     }
 
+    /** The notification permission is asked for once, ever; after that it is the user's call in system settings. */
+    suspend fun notificationPermissionAsked(): Boolean = store.data.first()[NOTIFICATION_PERMISSION_ASKED] ?: false
+
+    suspend fun markNotificationPermissionAsked() {
+        store.edit { prefs -> prefs[NOTIFICATION_PERMISSION_ASKED] = true }
+    }
+
     private companion object {
         val SERVER_URL = stringPreferencesKey("server_url")
         val USERNAME = stringPreferencesKey("username")
         val PASSWORD_HASH = stringPreferencesKey("password_hash")
         val TOKEN = stringPreferencesKey("session_token")
         val EXPIRES_AT = longPreferencesKey("session_expires_at")
+        val NOTIFICATION_PERMISSION_ASKED = booleanPreferencesKey("notification_permission_asked")
     }
 }

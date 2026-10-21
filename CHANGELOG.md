@@ -6,6 +6,19 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-21 — Playback service (step 04, in progress) · 1.4 (5)
+- `PlaybackService` (`MediaSessionService`, `foregroundServiceType=
+  mediaPlayback`) owns one ExoPlayer: audio focus, pause on unplug,
+  `WAKE_MODE_NETWORK`, 2–3 min buffers, `rd://song/<id>` → stream URL with the
+  current token → 512 MB cache keyed by song → OkHttp.
+- `MediaItems`: song metadata (title, artist, album, year, track, duration,
+  512 px art) for the notification and lock screen.
+- `PlayerConnection`: the UI's MediaController, connected while the app is visible.
+- Notification permission asked once on first launch.
+- TEMPORARY dev screen replaces the logged-in placeholder: the first album,
+  Play album, Pause/Resume, Log out. Removed in step 07. Decision D23.
+- Tests: `SongUriResolverTest` (5 new, 67 total).
+
 ### 2026-10-21 — Step 03 done: Ampache client
 - `AmpacheClient` covers every action in `docs/AMPACHE.md`: albums, album,
   album_songs, artists, artist, artist_albums, artist_songs, genres, genre,

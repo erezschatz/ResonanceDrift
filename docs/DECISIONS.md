@@ -294,3 +294,27 @@ fail the whole `playlists` call the day one exists. Ids have been strings in
 Ampache 6 and numbers before; one serializer reads both regardless of how the
 JSON decoder is configured. The fixtures (task 03) will show which forms this
 server actually uses.
+
+## D23 · 2026-10-21 · Playback service wiring details (step 04)
+
+**Decision.**
+- `PlayerConnection` (the UI's `MediaController`) is a process singleton in
+  `AppGraph`, connected only while the Activity is started (`onStart`/`onStop`).
+- The media cache lives in `filesDir/media-cache`, bounded by the 512 MB LRU
+  evictor.
+- `onTaskRemoved` is not overridden: Media3's default keeps the service when
+  swiped from Recents while playing and stops it when paused.
+- The notification art URL (`get_art`, 512 px) is fixed when the MediaItem is
+  built, token included; only the stream URL is resolved per request.
+- `DefaultLoadControl` buffers 120–180 s with time prioritised over the byte cap.
+- The notification permission is asked once ever (a flag in `Settings`).
+
+**Rejected.** A controller kept bound for the whole process lifetime (keeps a
+paused service alive in the background for no reason); `cacheDir` (Android
+may delete files there behind `SimpleCache`'s index); a resolver for art too
+(it would mean a custom Media3 `BitmapLoader` now, for a cost — a missing
+notification picture after a token change — that task 13 removes by rebuilding
+items on restore); asking for notifications on every launch.
+
+**Why.** Smallest proof for step 04 that follows SPEC → Playback; each of these
+is cheap to change if the phone says otherwise.

@@ -7,7 +7,7 @@
 
     <!-- The playback service runs in the foreground while music plays. On
          API 34+ the service type must be declared both here and on the
-         <service> element (added when PlaybackService lands). -->
+         <service> element below. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 
@@ -38,6 +38,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Exported so system UI, the lock screen and Bluetooth controllers can
+             connect to the session; Media3 checks callers itself. -->
+        <service
+            android:name=".playback.PlaybackService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
 
     </application>
 </manifest>
