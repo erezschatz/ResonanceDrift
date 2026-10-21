@@ -140,6 +140,8 @@ ResonanceDrift/
         │       │   ├── QueueController.kt     the small interface AlbumShuffle talks to
         │       │   ├── MediaItems.kt          Song ↔ MediaItem mapping
         │       │   ├── NetworkRecovery.kt     retry-on-error + connectivity callback
+        │       │   ├── RecoveryPolicy.kt      retry decisions (pure) + the loader's retry policy
+        │       │   ├── PlaybackEvents.kt      ExoPlayer analytics events → PlaybackLog lines
         │       │   ├── Commands.kt            custom SessionCommands (shuffle, next album)
         │       │   └── PlaybackLog.kt         300-entry ring buffer + report
         │       └── ui/
@@ -229,12 +231,20 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   `ConnectivityManager` reports a network back. Session-expiry responses
   (401/403 from the stream URL) trigger a re-handshake, then the same retry.
   Never skip to the next item on error — that hides problems and is not what
-  the user wants in a tunnel.
+  the user wants in a tunnel. Numbers (D25): the loader retries ~10 min
+  (1→30 s backoff) with the player in BUFFERING; `NetworkRecovery` then tries
+  for ~30 min (5→60 s). `prepare()` alone resumes — it keeps playWhenReady, so
+  a pause pressed during the outage holds. An HTML/wrong-type answer gets one
+  re-handshake before being given up on.
 - **`PlaybackLog`.** 300-entry ring buffer of player events (state, transition,
   error with cause, recovery attempts, shuffle decisions) persisted to a file
   in app storage, rotated on service start. Now Playing's bug button copies a
   report (device, app version, current state, previous run, this run) to the
-  clipboard. Smaller than ReDrift's but the same workflow.
+  clipboard. Smaller than ReDrift's but the same workflow. Lines are logged by
+  `PlaybackEvents` (an `AnalyticsListener`): state with position and buffered
+  time, playWhenReady reasons, suppression, transitions, load start/done/error,
+  audio underruns, errors with their cause chain; and by `NetworkRecovery`.
+  `ssid=`/`auth=` values are scrubbed from every line.
 - **Persistence.** On every transition, pause, and every ~10 s while playing,
   save `[song ids]`, index, position, shuffle flag to `QueueStateStore`.
   Restore on service create as a prepared, **paused** playlist at the saved

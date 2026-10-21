@@ -1,6 +1,7 @@
 package net.erezschatz.resonancedrift
 
 import android.content.Context
+import android.os.Build
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.preferencesDataStoreFile
 import kotlinx.coroutines.CoroutineScope
@@ -14,6 +15,7 @@ import androidx.media3.database.StandaloneDatabaseProvider
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
 import net.erezschatz.resonancedrift.data.Settings
+import net.erezschatz.resonancedrift.playback.PlaybackLog
 import net.erezschatz.resonancedrift.playback.SongUriResolver
 import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 import okhttp3.OkHttpClient
@@ -84,10 +86,21 @@ class AppGraph(private val context: Context) {
     /** The UI's MediaController; MainActivity connects it while visible. */
     val playerConnection: PlayerConnection = PlayerConnection(appContext)
 
+    /** Written by the service, read by the diagnostics button; files in filesDir/playback-log. */
+    val playbackLog: PlaybackLog = PlaybackLog(File(appContext.filesDir, "playback-log"))
+
+    /** "1.5 (6)" — for the playback log and the diagnostics report. */
+    val appVersion: String by lazy {
+        val info = appContext.packageManager.getPackageInfo(appContext.packageName, 0)
+        "${info.versionName} (${info.longVersionCode})"
+    }
+
+    val deviceDescription: String =
+        "${Build.MANUFACTURER} ${Build.MODEL}, Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})"
+
     // Next, in this order, as they are implemented:
     //   db            (Room)
     //   library       (LibraryRepository over ampache + db)
-    //   playbackLog
 
     private companion object {
         const val MEDIA_CACHE_BYTES = 512L * 1024 * 1024

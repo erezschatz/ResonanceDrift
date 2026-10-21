@@ -53,7 +53,11 @@ object PlayerFactory {
             .build()
 
         return ExoPlayer.Builder(context)
-            .setMediaSourceFactory(DefaultMediaSourceFactory(resolving))
+            .setMediaSourceFactory(
+                DefaultMediaSourceFactory(resolving)
+                    // Retry failing loads for ~10 min instead of failing the item (task 05).
+                    .setLoadErrorHandlingPolicy(RetryingLoadErrorPolicy()),
+            )
             // true = ExoPlayer requests and handles audio focus (calls, other apps, ducking).
             .setAudioAttributes(audioAttributes, true)
             // Pause when headphones are unplugged or Bluetooth audio disconnects.

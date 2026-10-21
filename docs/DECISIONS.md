@@ -318,3 +318,44 @@ items on restore); asking for notifications on every launch.
 
 **Why.** Smallest proof for step 04 that follows SPEC → Playback; each of these
 is cheap to change if the phone says otherwise.
+
+## D24 · 2026-10-21 · Start step 05 before step 04 is closed
+
+**Decision.** Step 05 (network recovery and playback log) starts while step 04
+is still `in progress`. Step 04 closes when a full album has played through
+with the screen locked *and* `PlaybackLog` explains any hiccup heard.
+
+**Rejected.** Finishing 04 first by ear alone — re-playing the album and
+guessing at the cause of the hiccups.
+
+**Why.** On 1.4 everything in 04 checked out on the phone except two audible
+hiccups mid-song with the screen locked. With 2–3 minutes of buffer a short
+network drop should be silent, so "it was the network" is a guess. Without a
+log there is no way to tell a network stall from an audio underrun (CPU
+starved while locked) or a focus/suppression event, and that log is step 05's
+first deliverable. Exception to PLAN.md's "strictly in order".
+
+## D25 · 2026-10-21 · Recovery numbers and the playback log's contents (step 05)
+
+**Decision.**
+- Two layers. The loader (`RetryingLoadErrorPolicy`) retries a failing load
+  ~10 minutes (1, 2, 4, 8, 16, then 30 s; counter resets on progress) before
+  the player reports an error; 4xx other than 408/429 are not retried there.
+  Then `NetworkRecovery` retries `prepare()` for ~30 minutes (5, 10, 20, 40,
+  then 60 s) and at once when the default network comes back.
+- `prepare()` without `play()`: playWhenReady survives the error, so a pause
+  during the outage is respected. (SPEC said "prepare() + play()".)
+- 401/403 → one re-handshake (`Session.renewToken`) then retry; an HTML page or
+  wrong content type → one re-handshake, then give up in place.
+- Log lines carry position and buffered-ahead time; audio underruns and
+  suppression are logged; tokens are scrubbed.
+
+**Rejected.** Retrying forever (a dead server would cost battery and network
+indefinitely); relying on `NetworkRecovery` alone (once the player is IDLE the
+service leaves the foreground and Android may freeze or kill it, so its timers
+cannot be trusted — a load retrying in BUFFERING keeps the service foreground);
+`play()` on every recovery.
+
+**Why.** The tunnel case is minutes, not hours; the first 10 minutes are the
+robust layer. The log's job right now is to explain 1.4's hiccups (D24), which
+needs buffering, underrun and focus events told apart.

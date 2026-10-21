@@ -14,8 +14,8 @@ result has been run on the phone (not just compiled).
 | 01 | [Toolchain green](tasks/01-toolchain-green.md) | done 2026-10-19 (Mac; Windows optional per D19) |
 | 02 | [Login and session](tasks/02-login-and-session.md) | done 2026-10-19 |
 | 03 | [Ampache client](tasks/03-ampache-client.md) | done 2026-10-21 (no UI; verified by fixtures from the real server) |
-| 04 | [Playback service — one album through a locked screen](tasks/04-playback-service.md) | in progress (1.4 on phone: all but full-album play verified; hiccups while locked unexplained) |
-| 05 | [Network recovery and playback log](tasks/05-network-recovery-and-log.md) | todo |
+| 04 | [Playback service — one album through a locked screen](tasks/04-playback-service.md) | in progress (1.4 on phone: all but full-album play verified; hiccups while locked unexplained; closes with 05's log, D24) |
+| 05 | [Network recovery and playback log](tasks/05-network-recovery-and-log.md) | in progress (built 1.5; awaiting phone test; started before 04 closed, D24) |
 | 06 | [Library data layer](tasks/06-library-data.md) | todo |
 | 07 | [Navigation, bottom bar, mini player](tasks/07-navigation-and-chrome.md) | todo |
 | 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | todo |

@@ -182,6 +182,20 @@ class SessionTest {
     }
 
     @Test
+    fun `renewToken re-handshakes without a failing call and the resolver sees the new token`() = runTest {
+        store.saved = StoredLogin(serverUrl, "demo", "hash", "old", 0)
+        server.enqueue(json(handshakeBody("new")))
+        val session = Session(client, store)
+        session.restore()
+
+        session.renewToken()
+
+        assertEquals("handshake", takeUrl().queryParameter("action"))
+        assertEquals("new", session.currentLogin()?.token)
+        assertEquals("new", savedLogin().token)
+    }
+
+    @Test
     fun `http 401 counts as expiry too`() = runTest {
         store.saved = StoredLogin(serverUrl, "demo", "hash", "old", 0)
         server.enqueue(MockResponse().setResponseCode(401))

@@ -48,7 +48,13 @@ class MainActivity : ComponentActivity() {
                     // TEMPORARY until navigation (task 07).
                     is SessionState.LoggedIn -> DevPlayerScreen(
                         viewModel = viewModel(
-                            factory = DevPlayerViewModel.factory(session, graph.ampache, graph.playerConnection),
+                            factory = DevPlayerViewModel.factory(
+                                session,
+                                graph.ampache,
+                                graph.playerConnection,
+                                graph.playbackLog,
+                                listOf(graph.appVersion, graph.deviceDescription),
+                            ),
                         ),
                         onLogout = { lifecycleScope.launch { session.logout() } },
                     )

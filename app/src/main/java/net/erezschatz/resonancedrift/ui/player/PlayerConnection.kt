@@ -11,6 +11,7 @@ import com.google.common.util.concurrent.ListenableFuture
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import net.erezschatz.resonancedrift.playback.PlaybackEvents
 import net.erezschatz.resonancedrift.playback.PlaybackService
 import java.util.concurrent.CancellationException
 import java.util.concurrent.ExecutionException
@@ -80,6 +81,19 @@ class PlayerConnection(private val context: Context) {
     fun togglePlayPause() {
         val current = controller ?: return
         if (current.isPlaying) current.pause() else current.play()
+    }
+
+    /** One line of player state for the diagnostics report. */
+    fun describe(): String {
+        val current = controller ?: return "player: not connected"
+        val error = current.playerError?.let { ", error ${it.errorCodeName}" }.orEmpty()
+        return "player: ${PlaybackEvents.stateName(current.playbackState)}" +
+            (if (current.isPlaying) ", playing" else ", not playing") +
+            ", playWhenReady ${current.playWhenReady}" +
+            ", item ${current.currentMediaItemIndex + 1}/${current.mediaItemCount}" +
+            " song ${current.currentMediaItem?.mediaId}" +
+            ", at ${current.currentPosition / 1000} s, buffered to ${current.bufferedPosition / 1000} s" +
+            error
     }
 
     private fun publish(player: Player) {

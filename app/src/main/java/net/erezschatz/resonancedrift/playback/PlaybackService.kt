@@ -2,11 +2,14 @@ package net.erezschatz.resonancedrift.playback
 
 import android.app.PendingIntent
 import android.content.Intent
+import android.net.ConnectivityManager
 import androidx.media3.common.MediaItem
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
 import net.erezschatz.resonancedrift.MainActivity
 import net.erezschatz.resonancedrift.graph
 
@@ -22,10 +25,23 @@ import net.erezschatz.resonancedrift.graph
 class PlaybackService : MediaSessionService() {
 
     private var mediaSession: MediaSession? = null
+    private var recovery: NetworkRecovery? = null
+
+    /** Main-thread scope for recovery's backoff timers; cancelled with the service. */
+    private val scope = MainScope()
 
     override fun onCreate() {
         super.onCreate()
+        graph.playbackLog.startRun("run started · ${graph.appVersion} · ${graph.deviceDescription}")
         val player = PlayerFactory.create(this, graph.httpClient, graph.mediaCache, graph.songUriResolver)
+        player.addAnalyticsListener(PlaybackEvents(graph.playbackLog))
+        recovery = NetworkRecovery(
+            player,
+            graph.session,
+            graph.playbackLog,
+            getSystemService(ConnectivityManager::class.java),
+            scope,
+        ).also { it.start() }
         mediaSession = MediaSession.Builder(this, player)
             .setCallback(SessionCallback())
             .setSessionActivity(openAppIntent())
@@ -35,6 +51,10 @@ class PlaybackService : MediaSessionService() {
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaSession? = mediaSession
 
     override fun onDestroy() {
+        graph.playbackLog.log("service destroyed")
+        recovery?.stop()
+        recovery = null
+        scope.cancel()
         mediaSession?.let { session ->
             session.player.release()
             session.release()

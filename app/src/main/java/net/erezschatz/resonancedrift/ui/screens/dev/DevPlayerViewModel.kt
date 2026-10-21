@@ -10,11 +10,13 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.media3.common.MediaItem
 import kotlinx.coroutines.launch
+import java.time.ZonedDateTime
 import net.erezschatz.resonancedrift.ampache.AlbumNames
 import net.erezschatz.resonancedrift.ampache.AmpacheClient
 import net.erezschatz.resonancedrift.ampache.AmpacheException
 import net.erezschatz.resonancedrift.ampache.Session
 import net.erezschatz.resonancedrift.playback.MediaItems
+import net.erezschatz.resonancedrift.playback.PlaybackLog
 import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 
 /**
@@ -25,6 +27,8 @@ class DevPlayerViewModel(
     private val session: Session,
     private val ampache: AmpacheClient,
     val player: PlayerConnection,
+    private val playbackLog: PlaybackLog,
+    private val reportHeader: List<String>,
 ) : ViewModel() {
 
     var albumLine by mutableStateOf("Loading an album…")
@@ -59,10 +63,22 @@ class DevPlayerViewModel(
 
     fun playAlbum() = player.playQueue(items)
 
+    /** Moves to Now Playing in task 11. */
+    fun diagnosticsReport(): String =
+        playbackLog.report(
+            listOf("ResonanceDrift diagnostics") + reportHeader + "copied ${ZonedDateTime.now()}" + player.describe(),
+        )
+
     companion object {
-        fun factory(session: Session, ampache: AmpacheClient, player: PlayerConnection): ViewModelProvider.Factory =
+        fun factory(
+            session: Session,
+            ampache: AmpacheClient,
+            player: PlayerConnection,
+            playbackLog: PlaybackLog,
+            reportHeader: List<String>,
+        ): ViewModelProvider.Factory =
             viewModelFactory {
-                initializer { DevPlayerViewModel(session, ampache, player) }
+                initializer { DevPlayerViewModel(session, ampache, player, playbackLog, reportHeader) }
             }
     }
 }

@@ -145,6 +145,17 @@ class Session(
         }
     }
 
+    /**
+     * Re-handshake now, for failures [call] cannot see: the stream URL answering
+     * 401/403 (NetworkRecovery). Same rules as a dead API token — concurrent
+     * callers share one handshake; a rejected one logs out.
+     */
+    suspend fun renewToken() {
+        restored.await()
+        val current = login ?: throw AmpacheException.SessionExpired()
+        reauthenticate(current.token)
+    }
+
     /** The token for building stream URLs at request time (SongUriResolver, task 04). */
     fun currentLogin(): StoredLogin? = login
 

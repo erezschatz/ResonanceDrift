@@ -6,6 +6,22 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-21 — Network recovery and playback log (step 05, in progress) · 1.5 (6)
+- Step 05 started before step 04 closed, to explain 1.4's locked-screen
+  hiccups (D24).
+- Failing loads retry ~10 min with backoff instead of failing the song;
+  after that `NetworkRecovery` resumes in place for ~30 min and immediately
+  when the network returns. 401/403 from the stream renews the token. Never
+  skips to the next song. Decision D25.
+- `PlaybackLog`: 300 events, persisted, previous run kept; tokens scrubbed.
+  `PlaybackEvents` logs state with position and buffer, focus/suppression,
+  transitions, loads, audio underruns, errors.
+- Dev screen: "Copy diagnostics" (device, version, player state, this run,
+  previous run).
+- `Session.renewToken()` for the stream's 401/403.
+- Tests: ring buffer, rotation, scrubbing, report; retry schedules and
+  classification; renewToken (19 new, 86 total).
+
 ### 2026-10-21 — Playback service (step 04, in progress) · 1.4 (5)
 - `PlaybackService` (`MediaSessionService`, `foregroundServiceType=
   mediaPlayback`) owns one ExoPlayer: audio focus, pause on unplug,

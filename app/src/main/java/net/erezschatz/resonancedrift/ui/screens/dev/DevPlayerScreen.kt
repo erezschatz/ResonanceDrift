@@ -1,5 +1,7 @@
 package net.erezschatz.resonancedrift.ui.screens.dev
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,13 +15,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
-/** TEMPORARY (task 04): one album, Play, Pause. Deleted in task 07. */
+/** TEMPORARY (task 04): one album, Play, Pause, copy diagnostics. Deleted in task 07. */
 @Composable
 fun DevPlayerScreen(viewModel: DevPlayerViewModel, onLogout: () -> Unit) {
+    val context = LocalContext.current
     val connected by viewModel.player.connected.collectAsStateWithLifecycle()
     val isPlaying by viewModel.player.isPlaying.collectAsStateWithLifecycle()
     val currentTitle by viewModel.player.currentTitle.collectAsStateWithLifecycle()
@@ -52,6 +56,13 @@ fun DevPlayerScreen(viewModel: DevPlayerViewModel, onLogout: () -> Unit) {
             )
             OutlinedButton(onClick = { viewModel.player.togglePlayPause() }, enabled = connected && currentTitle != null) {
                 Text(if (isPlaying) "Pause" else "Resume")
+            }
+            OutlinedButton(onClick = {
+                // Android 13+ confirms the copy itself; no toast of our own.
+                val clipboard = context.getSystemService(ClipboardManager::class.java)
+                clipboard.setPrimaryClip(ClipData.newPlainText("ResonanceDrift diagnostics", viewModel.diagnosticsReport()))
+            }) {
+                Text("Copy diagnostics")
             }
             OutlinedButton(onClick = onLogout) {
                 Text("Log out")
