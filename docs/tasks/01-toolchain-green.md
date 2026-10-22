@@ -2,7 +2,7 @@
 
 ## Promise
 On the Mac, the project opens in Android Studio, syncs, builds, passes
-its unit tests and installs on the Pixel 9 showing the placeholder screen.
+its unit tests and installs on the Pixel 10 showing the placeholder screen.
 Last time, toolchain setup was the biggest hurdle; this step exists so it is
 faced first and alone.
 

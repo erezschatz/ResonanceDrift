@@ -3,7 +3,7 @@
 The Mac is the development machine. A Windows PC is an optional backup
 (D19): step 2 is only for the day it is needed. If it is used, the project
 lives on the **Windows side** of the PC, never inside WSL2, and both machines
-install to the same Pixel 9, so both sign with the same debug key (handled by
+install to the same Pixel 10, so both sign with the same debug key (handled by
 the repo — see step 6).
 
 Do the steps in order. Each ends with a check; don't move on until it passes.
@@ -17,7 +17,7 @@ Do the steps in order. Each ends with a check; don't move on until it passes.
 | Android Studio | The IDE. Bundles its own JDK (JetBrains Runtime) and the Gradle wrapper runs from the repo — **do not install a separate JDK or Gradle** | Mac: `/Applications/Android Studio.app` · Win: `C:\Program Files\Android\Android Studio` |
 | Android SDK | Platform, build tools, `adb`. Installed by Studio's first-run wizard | Mac: `~/Library/Android/sdk` · Win: `%LOCALAPPDATA%\Android\Sdk` |
 | Git | Studio needs a `git` binary. Mac has one via Xcode CLT; Windows needs Git for Windows | — |
-| Pixel 9 in developer mode | The device you run on. The emulator is optional and slower than the phone | — |
+| Pixel 10 in developer mode | The device you run on. The emulator is optional and slower than the phone | — |
 
 Nothing here needs admin rights beyond the installers themselves.
 
@@ -96,7 +96,7 @@ and that change is a commit, not a local preference. Leave *Distribution* on
 
 ## 4. The phone
 
-Do this once on the Pixel 9.
+Do this once on the Pixel 10.
 
 1. **Settings → About phone → tap "Build number" seven times.** Developer
    options appear under **Settings → System**.

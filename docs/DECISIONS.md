@@ -359,3 +359,10 @@ cannot be trusted — a load retrying in BUFFERING keeps the service foreground)
 **Why.** The tunnel case is minutes, not hours; the first 10 minutes are the
 robust layer. The log's job right now is to explain 1.4's hiccups (D24), which
 needs buffering, underrun and focus events told apart.
+
+## D26 · 2026-10-22 · The target phone is a Pixel 10 (correction to D6)
+
+**Decision.** Where D6 and early docs say "Pixel 9", read Pixel 10 — adb
+reports `model:Pixel_10`. D6's decision (`minSdk = 34`, phone only) stands
+unchanged; only the device name was wrong. `SETUP.md` and task 01 were
+corrected; older changelog entries are left as written.

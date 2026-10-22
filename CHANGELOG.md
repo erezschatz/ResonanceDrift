@@ -6,6 +6,10 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-22 — Docs: the phone is a Pixel 10
+- `SETUP.md` and task 01 said Pixel 9; corrected. D26 records the correction
+  to D6 (decision unchanged).
+
 ### 2026-10-22 — Dev screen: random album · 1.6 (7)
 - The dev screen loads a random album and offers "Another album", so phone
   tests stream from the network instead of the media cache filled by earlier
