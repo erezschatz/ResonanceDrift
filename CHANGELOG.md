@@ -6,6 +6,11 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-22 — Dev screen: random album · 1.6 (7)
+- The dev screen loads a random album and offers "Another album", so phone
+  tests stream from the network instead of the media cache filled by earlier
+  tests (the first album was cached by the 1.4 test).
+
 ### 2026-10-21 — Network recovery and playback log (step 05, in progress) · 1.5 (6)
 - Step 05 started before step 04 closed, to explain 1.4's locked-screen
   hiccups (D24).

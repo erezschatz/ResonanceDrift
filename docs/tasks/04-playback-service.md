@@ -30,7 +30,9 @@ Do not add shuffle, queue persistence or recovery here; keep the first proof
 small. The dev screen is deleted in step 07.
 
 Built 1.4 (5), 2026-10-21: the dev screen plays the first album `albums`
-returns (offset 0). Not yet run on the phone — the two Pixel criteria are the
+returns (offset 0). From 1.6 it picks a random album and has "Another album":
+the media cache keeps everything played, so re-testing the same album would
+read from storage, not the network. Not yet run on the phone — the two Pixel criteria are the
 real test. When something misbehaves, note what the notification and lock
 screen showed; `PlaybackLog` does not exist until step 05.
 

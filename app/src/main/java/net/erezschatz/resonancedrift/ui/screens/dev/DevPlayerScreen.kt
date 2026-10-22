@@ -49,6 +49,9 @@ fun DevPlayerScreen(viewModel: DevPlayerViewModel, onLogout: () -> Unit) {
             ) {
                 Text("Play album")
             }
+            OutlinedButton(onClick = { viewModel.load() }) {
+                Text("Another album")
+            }
             Text(
                 text = currentTitle?.let { "Now: $it" } ?: "Nothing playing",
                 style = MaterialTheme.typography.bodyMedium,

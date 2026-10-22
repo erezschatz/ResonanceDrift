@@ -11,6 +11,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.media3.common.MediaItem
 import kotlinx.coroutines.launch
 import java.time.ZonedDateTime
+import kotlin.random.Random
 import net.erezschatz.resonancedrift.ampache.AlbumNames
 import net.erezschatz.resonancedrift.ampache.AmpacheClient
 import net.erezschatz.resonancedrift.ampache.AmpacheException
@@ -20,7 +21,8 @@ import net.erezschatz.resonancedrift.playback.PlaybackLog
 import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 
 /**
- * TEMPORARY (task 04): the first album the server returns, ready to play.
+ * TEMPORARY (task 04): a random album, ready to play — random so a test hits
+ * the network, not the media cache filled by earlier tests.
  * Exists only to prove playback through a locked screen; deleted in task 07.
  */
 class DevPlayerViewModel(
@@ -42,10 +44,14 @@ class DevPlayerViewModel(
     }
 
     fun load() {
+        albumLine = "Loading an album…"
+        items = emptyList()
         viewModelScope.launch {
             try {
-                val album = session.call { server, token -> ampache.albums(server, token, offset = 0, limit = 1) }
-                    .firstOrNull()
+                // The server has ~2,700 albums; an offset past the end returns nothing, so fall back to the first.
+                val offset = Random.nextInt(0, RANDOM_OFFSET_LIMIT)
+                val album = session.call { server, token -> ampache.albums(server, token, offset, limit = 1) }.firstOrNull()
+                    ?: session.call { server, token -> ampache.albums(server, token, offset = 0, limit = 1) }.firstOrNull()
                 if (album == null) {
                     albumLine = "The server returned no albums."
                     return@launch
@@ -70,6 +76,8 @@ class DevPlayerViewModel(
         )
 
     companion object {
+        private const val RANDOM_OFFSET_LIMIT = 2_500
+
         fun factory(
             session: Session,
             ampache: AmpacheClient,
