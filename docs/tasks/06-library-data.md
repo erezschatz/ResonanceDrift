@@ -20,7 +20,7 @@ behind the scenes. Playlist edits never get undone by a slow background fetch.
 ## Notes
 Built 2026-10-24, no UI (screens arrive in 07–11), not installed on the phone;
 `versionCode` unchanged. Verified by `./gradlew test` (94 JVM tests) and
-`connectedDebugAndroidTest` on the API 37 emulator (13 Room tests). Choices
+`connectedDebugAndroidTest` on the API 37 emulator (Room tests). Choices
 with rejected alternatives are D27.
 
 - `data/entity/` one file per table; `data/dao/` four DAOs (`LibraryDao`,
@@ -31,6 +31,11 @@ with rejected alternatives are D27.
   songs, a playlist's songs. API-only: the random Albums page (offset range
   from the handshake's album count, now in `StoredLogin`), Genre detail's
   albums and songs. Search stays in step 10.
+- Lists follow the server on every refetch: whole-list replace (a removed
+  playlist's cached songs go too); a playlist refresh skipped by the version
+  counter fetches once more; `Done` comes with a fresh read, not Room's
+  pending one. Covered by `LibraryRepositoryTest` against a fake server
+  (18 instrumented tests in all).
 - `ui/components/AlbumArt.kt` builds the Coil request with an album-id cache
   key; the loader (`AppGraph.imageLoader`) is installed by `ResonanceDriftApp`.
   First used on screen in step 08.

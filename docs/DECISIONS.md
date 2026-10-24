@@ -385,8 +385,15 @@ corrected; older changelog entries are left as written.
   indexed columns); Genre detail stays API-only.
 - Art requests are keyed `album-art-<id>-<size>` in Coil's caches.
 - No destructive migration fallback.
+- Every refresh writes the server's whole answer for its list, so rows
+  removed on the server leave the cache (a removed playlist takes its cached
+  song order with it). A playlist refresh skipped by the version counter
+  fetches once more. `Done` is reported only with a fresh read of the list
+  after the write, never with Room's not-yet-updated rows.
 
 **Rejected.**
+- Upsert-only refreshes: rows deleted on the server would stay on screen
+  forever.
 - One `playlist_songs` row per (playlist, position): the version would need
   a home of its own, and every refresh of a 2000-song playlist rewrites 2000
   rows.

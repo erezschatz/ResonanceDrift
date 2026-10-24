@@ -292,6 +292,8 @@ real server.
   artist's albums (year, then name), an album's songs, a playlist's songs.
   API-only: the Albums view (random page, as in ReDrift; the offset range is
   the handshake's `albums` count, kept in `StoredLogin`) and Genre detail.
+  A refresh writes the server's whole answer for that list, so additions,
+  changes and removals on the server all show up on the next open.
 - `playlist_songs` is one row per playlist (ordered song ids + `version`);
   the songs themselves live in `songs`. It keeps the version counter trick
   from ReDrift: every write bumps the version, and a refresh writes only if

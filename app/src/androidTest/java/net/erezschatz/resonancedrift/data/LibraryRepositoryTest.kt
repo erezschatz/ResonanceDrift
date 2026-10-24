@@ -1,0 +1,122 @@
+package net.erezschatz.resonancedrift.data
+
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
+import net.erezschatz.resonancedrift.ampache.AmpacheClient
+import net.erezschatz.resonancedrift.ampache.CredentialStore
+import net.erezschatz.resonancedrift.ampache.LastAccount
+import net.erezschatz.resonancedrift.ampache.Session
+import net.erezschatz.resonancedrift.ampache.StoredLogin
+import okhttp3.Interceptor
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Protocol
+import okhttp3.Response
+import okhttp3.ResponseBody.Companion.toResponseBody
+import org.junit.Assert.assertEquals
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+
+/**
+ * Refetches against a fake server: the cached lists follow what the server
+ * says now. The "server" is an OkHttp interceptor, so no socket is opened.
+ */
+@RunWith(AndroidJUnit4::class)
+class LibraryRepositoryTest {
+
+    @get:Rule val rule = DbTestRule()
+    private lateinit var repository: LibraryRepository
+
+    /** What the fake server answers to playlist_songs, by request number (0-based). */
+    private var playlistAnswers: (Int) -> List<Long> = { emptyList() }
+    private var artistsAnswer: List<String> = emptyList()
+    private var playlistSongsRequests = 0
+
+    @Before
+    fun setUp() = runBlocking {
+        val http = OkHttpClient.Builder().addInterceptor(Interceptor { chain -> answer(chain) }).build()
+        val client = AmpacheClient(http, AmpacheClient.json)
+        val login = StoredLogin("https://music.test", "erez", "hash", "token", Long.MAX_VALUE)
+        val session = Session(client, FixedLogin(login))
+        session.restore()
+        repository = LibraryRepository(session, client, rule.db.library(), rule.db.playlistSongs())
+    }
+
+    private fun answer(chain: Interceptor.Chain): Response {
+        val body = when (chain.request().url.queryParameter("action")) {
+            "playlist_songs" -> songsJson(playlistAnswers(playlistSongsRequests++))
+            "artists" -> artistsJson(artistsAnswer)
+            else -> """{"error":{"errorCode":"4705","errorMessage":"unexpected action"}}"""
+        }
+        return Response.Builder()
+            .request(chain.request())
+            .protocol(Protocol.HTTP_1_1)
+            .code(200)
+            .message("OK")
+            .header("Content-Type", "application/json")
+            .body(body.toResponseBody("application/json".toMediaType()))
+            .build()
+    }
+
+    @Test
+    fun artistsRemovedOnTheServerLeaveTheCachedList() = runTest {
+        artistsAnswer = listOf("Alpha", "Beta", "Gamma")
+        repository.artists().first { it.refresh == Refresh.Done }
+
+        artistsAnswer = listOf("Alpha", "Gamma", "Delta")
+        val refetched = repository.artists().first { it.refresh == Refresh.Done }
+
+        assertEquals(listOf("Alpha", "Delta", "Gamma"), refetched.items.map { it.name })
+    }
+
+    @Test
+    fun playlistSongsFollowTheServerAcrossRefetches() = runTest {
+        playlistAnswers = { request -> if (request == 0) listOf(1, 2, 3) else listOf(3, 4) }
+
+        repository.playlistSongs("12").first { it.refresh == Refresh.Done }
+        val refetched = repository.playlistSongs("12").first { it.refresh == Refresh.Done }
+
+        assertEquals(listOf(3L, 4L), refetched.items.map { it.id })
+    }
+
+    @Test
+    fun aRemovalDuringTheFetchIsKeptAndTheSecondFetchBringsTheServersList() = runTest {
+        rule.db.playlistSongs().replaceIfUnchanged("12", 0, listOf(1, 2, 3))
+        playlistAnswers = { request ->
+            if (request == 0) {
+                // The user removes song 2 while this first answer is on its way.
+                runBlocking { rule.db.playlistSongs().removeSong("12", index = 1, songId = 2) }
+                listOf(1, 2, 3)
+            } else {
+                // Meanwhile the server also gained a song from elsewhere.
+                listOf(1, 3, 5)
+            }
+        }
+
+        val listing = repository.playlistSongs("12").first { it.refresh == Refresh.Done }
+
+        assertEquals(2, playlistSongsRequests)
+        assertEquals(listOf(1L, 3L, 5L), listing.items.map { it.id })
+    }
+
+    private fun songsJson(ids: List<Long>): String {
+        val songs = ids.joinToString(",") { """{"id":"$it","title":"Song $it"}""" }
+        return """{"song":[$songs]}"""
+    }
+
+    private fun artistsJson(names: List<String>): String {
+        val artists = names.mapIndexed { i, name -> """{"id":"${i + 1}${name.length}","name":"$name"}""" }
+        return """{"artist":[${artists.joinToString(",")}]}"""
+    }
+
+    private class FixedLogin(private val login: StoredLogin) : CredentialStore {
+        override suspend fun load() = login
+        override suspend fun save(login: StoredLogin) {}
+        override suspend fun lastAccount() = LastAccount(login.serverUrl, login.username)
+        override suspend fun clearSecrets() {}
+    }
+}

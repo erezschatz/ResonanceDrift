@@ -4,6 +4,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.ampache.AmpacheClient
@@ -34,7 +36,9 @@ data class Listing<T>(val items: List<T>, val refresh: Refresh)
  * The only thing ViewModels read the library from (docs/SPEC.md → Data).
  * Lists are cache-first: the cached rows come out at once, the server is asked
  * in the background, the answer is written to Room, and Room's Flow brings it
- * to the screen. The Albums page and Genre detail are API-only, as in ReDrift.
+ * to the screen. Every refresh writes the server's whole answer for that list,
+ * so rows added, changed or removed on the server are added, changed or
+ * removed here too. The Albums page and Genre detail are API-only, as in ReDrift.
  */
 class LibraryRepository(
     private val session: Session,
@@ -89,17 +93,21 @@ class LibraryRepository(
     /**
      * A playlist's songs in playlist order. The refresh writes only if no
      * removal happened while it was fetching (PlaylistSongsDao's version counter).
+     * When one did, it fetches once more: the removal reached the server before
+     * the cache, so the second answer already reflects it.
      */
     fun playlistSongs(playlistId: String): Flow<Listing<SongEntity>> {
         val cached = playlistSongs.observe(playlistId).map { row ->
             if (row == null) emptyList() else library.songsInOrder(row.songIds)
         }
         return cacheThenRefresh(cached) {
-            val versionAtStart = playlistSongs.versionOf(playlistId)
-            val songs = session.call { server, token -> client.playlistSongs(server, token, playlistId) }
-            // Songs first: the playlist row's Flow reads them as soon as the row changes.
-            library.upsertSongs(songs.map { SongEntity.from(it) })
-            playlistSongs.replaceIfUnchanged(playlistId, versionAtStart, songs.map { it.id })
+            for (attempt in 1..PLAYLIST_FETCH_ATTEMPTS) {
+                val versionAtStart = playlistSongs.versionOf(playlistId)
+                val songs = session.call { server, token -> client.playlistSongs(server, token, playlistId) }
+                // Songs first: the playlist row's Flow reads them as soon as the row changes.
+                library.upsertSongs(songs.map { SongEntity.from(it) })
+                if (playlistSongs.replaceIfUnchanged(playlistId, versionAtStart, songs.map { it.id })) break
+            }
         }
     }
 
@@ -145,6 +153,9 @@ class LibraryRepository(
     }
 
     companion object {
+        /** A second fetch covers a removal made during the first; more would only chase the user's taps. */
+        const val PLAYLIST_FETCH_ATTEMPTS = 2
+
         /** ReDrift showed 100 albums per random page. */
         const val RANDOM_PAGE_SIZE = 100
 
@@ -159,19 +170,27 @@ class LibraryRepository(
          * background [refresh] started on collection. The refresh writes to the
          * database, and [cached] — a Room Flow — carries the result out.
          * A failed refresh keeps the cached items and reports the error.
+         *
+         * Room re-runs its query a moment after a write, so `Done` is not taken
+         * from that: the list is read once more after the refresh, and only
+         * then is the refresh reported finished, with those items.
          */
         fun <T> cacheThenRefresh(cached: Flow<List<T>>, refresh: suspend () -> Unit): Flow<Listing<T>> =
             channelFlow {
+                val items = MutableStateFlow<List<T>?>(null)
                 val status = MutableStateFlow<Refresh>(Refresh.Running)
+                launch { cached.collect { items.value = it } }
                 launch {
-                    status.value = try {
+                    val result = try {
                         refresh()
                         Refresh.Done
                     } catch (e: AmpacheException) {
                         Refresh.Failed(e)
                     }
+                    items.value = cached.first()
+                    status.value = result
                 }
-                cached.combine(status) { items, refresh -> Listing(items, refresh) }
+                items.filterNotNull().combine(status) { current, refresh -> Listing(current, refresh) }
                     .collect { send(it) }
             }
     }

@@ -9,6 +9,7 @@ import net.erezschatz.resonancedrift.data.entity.GenreTag
 import net.erezschatz.resonancedrift.data.entity.PlaylistEntity
 import net.erezschatz.resonancedrift.data.entity.SongEntity
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -41,6 +42,30 @@ class LibraryDaoTest {
         dao.upsertAlbums(listOf(album(4, "Someone else's", 8, 1999)))
 
         assertEquals(listOf(3L, 2L, 1L), dao.observeArtistAlbums(7).first().map { it.id })
+    }
+
+    @Test
+    fun artistAlbumsFollowTheServerAcrossRefetches() = runTest {
+        dao.replaceArtistAlbums(7, listOf(album(1, "Kept", 7, 2001), album(2, "Removed", 7, 2002)))
+        dao.replaceArtistAlbums(7, listOf(album(1, "Kept (renamed)", 7, 2001), album(3, "Added", 7, 2005)))
+
+        val albums = dao.observeArtistAlbums(7).first()
+        assertEquals(listOf(1L, 3L), albums.map { it.id })
+        assertEquals("Kept (renamed)", albums.first().name)
+    }
+
+    @Test
+    fun aPlaylistGoneFromTheServerTakesItsCachedSongsWithIt() = runTest {
+        val playlistSongs = rule.db.playlistSongs()
+        dao.replacePlaylists(listOf(PlaylistEntity("12", "Drive", 2, "erez", "private"), PlaylistEntity("13", "Old", 1, "erez", "private")))
+        playlistSongs.replaceIfUnchanged("12", 0, listOf(1, 2))
+        playlistSongs.replaceIfUnchanged("13", 0, listOf(3))
+
+        dao.replacePlaylists(listOf(PlaylistEntity("12", "Drive", 2, "erez", "private")))
+
+        assertEquals(listOf("12"), dao.observePlaylists().first().map { it.id })
+        assertEquals(listOf(1L, 2L), playlistSongs.get("12")?.songIds)
+        assertNull(playlistSongs.get("13"))
     }
 
     @Test

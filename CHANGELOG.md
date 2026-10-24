@@ -6,6 +6,14 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Cached lists follow the server on refetch (step 06)
+- A removed playlist's cached songs are dropped with it; a playlist refresh
+  skipped because of a removal fetches once more.
+- Fix: a finished refresh could be reported with the list as it was before
+  the refresh wrote; `Done` now comes with a fresh read.
+- Tests: refetch against a fake server (artists, playlist songs, removal
+  during a fetch), artist albums and playlist removal (18 instrumented).
+
 ### 2026-10-24 — Library data layer (step 06)
 - Room `Db` with `albums`, `artists`, `genres`, `songs`, `playlists`,
   `playlist_songs`, `shuffle_history`, `queue_state`; schema exported to

@@ -65,10 +65,15 @@ abstract class LibraryDao {
     @Upsert
     protected abstract suspend fun upsertPlaylists(playlists: List<PlaylistEntity>)
 
+    /** A playlist's cached song order goes when the playlist does. */
+    @Query("DELETE FROM playlist_songs WHERE playlistId NOT IN (SELECT id FROM playlists)")
+    protected abstract suspend fun deleteOrphanPlaylistSongs()
+
     @Transaction
     open suspend fun replacePlaylists(playlists: List<PlaylistEntity>) {
         deletePlaylists()
         upsertPlaylists(playlists)
+        deleteOrphanPlaylistSongs()
     }
 
     // --- Albums
