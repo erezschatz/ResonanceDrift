@@ -505,3 +505,24 @@ restored on failure.
 playlist in use; build what is used, and grow it if the habit changes.
 Narrows SPEC → Scope for playlists only.
 
+## D32 · 2026-10-24 · Playlist removal control; ReDrift's app icon
+
+**Decision.**
+- Removing a song is a ⋮ menu on each playlist row with one item, "Remove
+  from playlist". Smart playlists get no menu (the server computes them).
+- The launcher icon is ReDrift's art (`icon-512.png`), as an adaptive icon:
+  the opaque centre of the art scaled to 80 of the 108 dp layer, padded with
+  its own navy, so the Pixel's circle shows nearly all of the wave. No
+  monochrome layer.
+
+**Rejected.**
+- A delete icon on every row, or swipe-to-remove: one stray tap or swipe on a
+  long list would delete from the server.
+- The art filling the whole 108 dp layer: the launcher shows only the centre
+  two thirds, which on this art is mostly navy.
+- ReDrift's `icon-512.svg`: it is an "RD" placeholder, not the icon ReDrift
+  shipped. The old waveform-bars icon: a placeholder of this repo's own.
+
+**Why.** Removal writes to the server and cannot be undone from the app;
+the icon is the one Erez already knows on his home screen.
+

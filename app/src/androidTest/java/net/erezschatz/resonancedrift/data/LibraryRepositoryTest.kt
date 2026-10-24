@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import net.erezschatz.resonancedrift.ampache.AmpacheClient
+import net.erezschatz.resonancedrift.ampache.AmpacheException
 import net.erezschatz.resonancedrift.ampache.CredentialStore
 import net.erezschatz.resonancedrift.ampache.LastAccount
 import net.erezschatz.resonancedrift.ampache.Session
@@ -16,6 +17,7 @@ import okhttp3.Protocol
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -36,6 +38,9 @@ class LibraryRepositoryTest {
     private var artistsAnswer: List<String> = emptyList()
     private var playlistSongsRequests = 0
 
+    /** playlist_remove_song: null answers success, otherwise this error envelope's message. */
+    private var removeRefusal: String? = null
+
     @Before
     fun setUp() = runBlocking {
         val http = OkHttpClient.Builder().addInterceptor(Interceptor { chain -> answer(chain) }).build()
@@ -50,6 +55,8 @@ class LibraryRepositoryTest {
         val body = when (chain.request().url.queryParameter("action")) {
             "playlist_songs" -> songsJson(playlistAnswers(playlistSongsRequests++))
             "artists" -> artistsJson(artistsAnswer)
+            "playlist_remove_song" -> removeRefusal?.let { """{"error":{"errorCode":"4742","errorMessage":"$it"}}""" }
+                ?: """{"success":"song removed from playlist"}"""
             "genre_albums" -> """{"album":[
                 {"id":"1","name":"b later","year":"2010"},
                 {"id":"2","name":"Zed","year":"1999"},
@@ -106,6 +113,27 @@ class LibraryRepositoryTest {
 
         assertEquals(2, playlistSongsRequests)
         assertEquals(listOf(1L, 3L, 5L), listing.items.map { it.id })
+    }
+
+    @Test
+    fun aRemovalTheServerAcceptsLeavesTheCachedList() = runTest {
+        rule.db.playlistSongs().replaceIfUnchanged("12", 0, listOf(1, 2, 3))
+
+        repository.removeFromPlaylist("12", index = 1, songId = 2)
+
+        assertEquals(listOf(1L, 3L), rule.db.playlistSongs().get("12")?.songIds)
+    }
+
+    @Test
+    fun aRemovalTheServerRefusesLeavesTheCacheAlone() = runTest {
+        rule.db.playlistSongs().replaceIfUnchanged("12", 0, listOf(1, 2, 3))
+        removeRefusal = "Access denied"
+
+        val thrown = runCatching { repository.removeFromPlaylist("12", index = 1, songId = 2) }.exceptionOrNull()
+
+        assertTrue(thrown is AmpacheException)
+        assertEquals(listOf(1L, 2L, 3L), rule.db.playlistSongs().get("12")?.songIds)
+        assertEquals("version unchanged", 1, rule.db.playlistSongs().versionOf("12"))
     }
 
     @Test

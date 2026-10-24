@@ -2,6 +2,7 @@
 <resources>
     <!-- Only what the launcher icon and the window background need. Every
          other colour is a Compose value in ui/theme/Color.kt. -->
-    <color name="ic_launcher_background">#6366F1</color>
+    <!-- The art's navy, behind the foreground during a parallax wiggle. -->
+    <color name="ic_launcher_background">#262A55</color>
     <color name="window_background">#FFFFFF</color>
 </resources>

@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -44,14 +45,27 @@ fun ListRow(title: String, detail: String, onClick: () -> Unit) {
     }
 }
 
-/** A track: number, title, duration. Tapping it plays the list from here. */
+/**
+ * A track: number, title (and [detail] below it, e.g. the artist), duration,
+ * then [trailing] (a menu). Tapping it plays the list from here. A disabled
+ * row is dimmed and ignores taps (a removal in flight).
+ */
 @Composable
-fun SongRow(number: Int, title: String, durationSeconds: Int, onClick: () -> Unit) {
+fun SongRow(
+    number: Int,
+    title: String,
+    durationSeconds: Int,
+    onClick: () -> Unit,
+    detail: String = "",
+    enabled: Boolean = true,
+    trailing: @Composable () -> Unit = {},
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .alpha(if (enabled) 1f else 0.4f)
+            .clickable(enabled = enabled, onClick = onClick)
+            .padding(start = 16.dp, end = 4.dp, top = 10.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -62,18 +76,30 @@ fun SongRow(number: Int, title: String, durationSeconds: Int, onClick: () -> Uni
             textAlign = TextAlign.End,
             modifier = Modifier.width(28.dp),
         )
-        Text(
-            text = title,
-            style = MaterialTheme.typography.bodyLarge,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.weight(1f),
-        )
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.bodyLarge,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            if (detail.isNotEmpty()) {
+                Text(
+                    text = detail,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
         Text(
             text = formatDuration(durationSeconds),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(end = 12.dp),
         )
+        trailing()
     }
 }
 

@@ -31,7 +31,10 @@ import net.erezschatz.resonancedrift.ui.screens.genres.GenresScreen
 import net.erezschatz.resonancedrift.ui.screens.genres.GenresViewModel
 import net.erezschatz.resonancedrift.ui.screens.nowplaying.NowPlayingScreen
 import net.erezschatz.resonancedrift.ui.screens.nowplaying.NowPlayingViewModel
+import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistDetailScreen
+import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistDetailViewModel
 import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistsScreen
+import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistsViewModel
 import net.erezschatz.resonancedrift.ui.screens.search.SearchScreen
 
 /**
@@ -100,7 +103,10 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator) {
             viewModel = viewModel(factory = GenresViewModel.factory(graph.library)),
             onOpen = { navigator.open(Route.GenreDetail(it.id, it.name)) },
         )
-        Route.Playlists -> PlaylistsScreen()
+        Route.Playlists -> PlaylistsScreen(
+            viewModel = viewModel(factory = PlaylistsViewModel.factory(graph.library)),
+            onOpen = { navigator.open(Route.PlaylistDetail(it.id, it.name)) },
+        )
         Route.Search -> SearchScreen()
         is Route.AlbumDetail -> AlbumDetailScreen(
             viewModel = viewModel(
@@ -118,6 +124,13 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator) {
             viewModel = viewModel(factory = GenreDetailViewModel.factory(route.genreId, graph.session, graph.library)),
             name = route.name,
             onOpenAlbum = openAlbum,
+        )
+        is Route.PlaylistDetail -> PlaylistDetailScreen(
+            viewModel = viewModel(
+                factory = PlaylistDetailViewModel.factory(route.playlistId, graph.session, graph.library, graph.playerConnection),
+            ),
+            name = route.name,
+            onPlayed = openNowPlaying,
         )
         Route.NowPlaying -> NowPlayingScreen(
             viewModel = viewModel(

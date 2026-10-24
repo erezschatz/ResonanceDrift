@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Playlists (step 09, light) and ReDrift's icon · 1.10 (11)
+- Playlists list (cache-first, song counts) → Playlist detail: every song
+  with artist and duration; Play; tap a song to play the playlist from it.
+- Remove a song via its ⋮ menu: server first, then the cache with the
+  version bump; the row dims meanwhile; a refusal shows the error and keeps
+  the row. Not on smart playlists. Decision D32.
+- The launcher icon is ReDrift's wave art (adaptive, sized for the circle).
+- Tests: removal accepted / refused (21 instrumented; 107 JVM).
+
 ### 2026-10-24 — Docs: step 09 (Playlists) kept light
 - Task 09 rewritten: list, full-list detail, play from any song, remove song;
   no collapsed "now playing / next up" view. Decision D31; SPEC scope updated.

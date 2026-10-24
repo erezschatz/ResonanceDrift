@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModel
 
 /**
  * Every destination. Details carry the name they were opened with, so the
- * header shows at once while the rest loads. Playlist detail joins in step 09.
+ * header shows at once while the rest loads.
  */
 sealed interface Route {
     data object Albums : Route
@@ -26,6 +26,9 @@ sealed interface Route {
     data class AlbumDetail(val albumId: Long) : Route
     data class ArtistDetail(val artistId: Long, val name: String) : Route
     data class GenreDetail(val genreId: Long, val name: String) : Route
+
+    /** [playlistId] is a String: smart playlists are "smart_<n>" (D22). */
+    data class PlaylistDetail(val playlistId: String, val name: String) : Route
 
     /** Full screen: no mini player, no bottom bar. */
     data object NowPlaying : Route
