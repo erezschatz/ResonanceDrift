@@ -6,6 +6,14 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Now Playing spacing and bigger controls · 1.13 (14)
+- Step 11 verified on the phone on 1.12, airplane-mode previous included;
+  Ampache sends no Content-Length on streams (every `stream` line said so).
+  Step 11 closed.
+- Now Playing: the art, the song's lines and the seek bar with controls are
+  spread over the full height instead of stacked at the top; transport icons
+  40 dp (in 56 dp targets), play/pause 64 dp.
+
 ### 2026-10-24 — Now Playing (step 11) and the media cache fix · 1.12 (13)
 - **Fix: songs were mostly not being cached.** ExoPlayer marks song loads
   "don't cache if the length is unknown", and the OkHttp source knows a length

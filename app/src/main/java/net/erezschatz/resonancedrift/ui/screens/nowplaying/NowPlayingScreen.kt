@@ -14,8 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.Album
@@ -40,6 +38,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -82,14 +81,15 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
 
     Column(modifier = Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 16.dp)) {
         TopRow(viewModel, links.onClose, onShowQueue = { showQueue = true }, queueEnabled = queue.isNotEmpty())
+        // Three groups — art, the song's lines, seek bar + controls — spread over the
+        // whole height (the phone is the one screen size, D6), not stacked at the top.
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+            modifier = Modifier.fillMaxSize().padding(bottom = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(6.dp),
+            verticalArrangement = Arrangement.SpaceEvenly,
         ) {
             val current = entry
             if (current == null) {
-                Spacer(Modifier.size(48.dp))
                 Text("Nothing playing", style = MaterialTheme.typography.bodyLarge)
                 return@Column
             }
@@ -97,17 +97,21 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
                 current.albumId,
                 viewModel.login(),
                 ArtSizes.HEADER_PX,
-                Modifier.fillMaxWidth().widthIn(max = 360.dp).aspectRatio(1f).padding(vertical = 8.dp),
+                Modifier.fillMaxWidth().widthIn(max = 360.dp).aspectRatio(1f),
             )
-            SongLines(current, links)
-            SeekBar(position, onSeek = { player.seekTo(it) })
-            Controls(
-                isPlaying = isPlaying,
-                isWaiting = isWaiting,
-                onPrevious = { player.previous() },
-                onToggle = { player.togglePlayPause() },
-                onNext = { player.next() },
-            )
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                SongLines(current, links)
+            }
+            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                SeekBar(position, onSeek = { player.seekTo(it) })
+                Controls(
+                    isPlaying = isPlaying,
+                    isWaiting = isWaiting,
+                    onPrevious = { player.previous() },
+                    onToggle = { player.togglePlayPause() },
+                    onNext = { player.next() },
+                )
+            }
         }
     }
 
@@ -248,20 +252,24 @@ private fun Controls(
     onToggle: () -> Unit,
     onNext: () -> Unit,
 ) {
-    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceEvenly,
+    ) {
         // Album shuffle and Next album are wired in step 12.
-        IconButton(onClick = {}, enabled = false) {
-            Icon(Icons.Filled.Shuffle, contentDescription = "Album shuffle")
-        }
-        IconButton(onClick = onPrevious) {
-            Icon(Icons.Filled.SkipPrevious, contentDescription = "Previous", modifier = Modifier.size(36.dp))
-        }
-        PlayPauseButton(isPlaying, isWaiting, onToggle, sizeDp = 56)
-        IconButton(onClick = onNext) {
-            Icon(Icons.Filled.SkipNext, contentDescription = "Next", modifier = Modifier.size(36.dp))
-        }
-        IconButton(onClick = {}, enabled = false) {
-            Icon(Icons.Filled.Album, contentDescription = "Next album")
-        }
+        ControlButton(Icons.Filled.Shuffle, "Album shuffle", enabled = false, onClick = {})
+        ControlButton(Icons.Filled.SkipPrevious, "Previous", onClick = onPrevious)
+        PlayPauseButton(isPlaying, isWaiting, onToggle, sizeDp = 64)
+        ControlButton(Icons.Filled.SkipNext, "Next", onClick = onNext)
+        ControlButton(Icons.Filled.Album, "Next album", enabled = false, onClick = {})
+    }
+}
+
+/** One transport button: a 40 dp icon in a 56 dp touch target. */
+@Composable
+private fun ControlButton(icon: ImageVector, description: String, onClick: () -> Unit, enabled: Boolean = true) {
+    IconButton(onClick = onClick, enabled = enabled, modifier = Modifier.size(56.dp)) {
+        Icon(icon, contentDescription = description, modifier = Modifier.size(40.dp))
     }
 }

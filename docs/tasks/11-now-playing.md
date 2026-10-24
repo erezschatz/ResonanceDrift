@@ -18,7 +18,7 @@ report when something misbehaves.
 - [x] Diagnostics button → `PlaybackLog.report()` to clipboard with a toast
 - [x] Album-name prefix stripping (`AlbumNames.display`) applied here and in
       the media notification metadata
-- [ ] Prev while offline plays the previous song from the media cache when
+- [x] Prev while offline plays the previous song from the media cache when
       it was fully loaded (bug from 1.6, see Notes); phone test in airplane mode
 - [x] The copied report is complete: its event lines match the header's count
 - [x] Log out has a home (it sits on the step-07 Now Playing stand-in; D28)
@@ -73,3 +73,12 @@ header. The `stream` log line now says the length, or "no length".
 the queue panel (jump, remove); Copy diagnostics and Log out (Cancel, then
 for real if you like — the server and username stay filled in); then play
 two songs online, airplane mode, previous → the first song plays.
+
+Phone, 1.12 (13), 2026-10-24 (Erez): **step closed.** Layout and links, seek,
+queue panel, diagnostics and log out all good; **airplane mode → previous
+played the earlier song from the cache.** Every `stream` line said "no
+length": Ampache sends no Content-Length, which is exactly why nothing was
+cached before 1.12. Asked for: the screen was bunched at the top with a large
+empty gap below, and the buttons were small (the shuffle ones most). 1.13
+spreads art / song lines / seek + controls over the height and makes the
+controls 40 dp icons in 56 dp targets, play/pause 64 dp.

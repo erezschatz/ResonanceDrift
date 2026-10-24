@@ -21,7 +21,7 @@ result has been run on the phone (not just compiled).
 | 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | done 2026-10-24 (1.8 on phone) |
 | 09 | [Playlists (light)](tasks/09-playlists.md) | done 2026-10-24 (1.10 on phone) |
 | 10 | [Search](tasks/10-search.md) | done 2026-10-24 (1.11 on phone) |
-| 11 | [Now Playing](tasks/11-now-playing.md) | in progress (built 1.12; awaiting phone test) |
+| 11 | [Now Playing](tasks/11-now-playing.md) | done 2026-10-24 (1.12 on phone; 1.13 spacing) |
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | todo |
 | 13 | [Queue persistence and scrobbling](tasks/13-queue-persistence.md) | todo |
 | 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | todo |
