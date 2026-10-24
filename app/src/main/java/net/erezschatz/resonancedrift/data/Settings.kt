@@ -4,6 +4,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.first
@@ -29,6 +30,7 @@ class Settings(private val store: DataStore<Preferences>) : CredentialStore {
             passwordHash = passwordHash,
             token = prefs[TOKEN].orEmpty(),
             expiresAtMillis = prefs[EXPIRES_AT] ?: 0L,
+            albumCount = prefs[ALBUM_COUNT] ?: 0,
         )
     }
 
@@ -39,6 +41,7 @@ class Settings(private val store: DataStore<Preferences>) : CredentialStore {
             prefs[PASSWORD_HASH] = login.passwordHash
             prefs[TOKEN] = login.token
             prefs[EXPIRES_AT] = login.expiresAtMillis
+            prefs[ALBUM_COUNT] = login.albumCount
         }
     }
 
@@ -70,6 +73,7 @@ class Settings(private val store: DataStore<Preferences>) : CredentialStore {
         val PASSWORD_HASH = stringPreferencesKey("password_hash")
         val TOKEN = stringPreferencesKey("session_token")
         val EXPIRES_AT = longPreferencesKey("session_expires_at")
+        val ALBUM_COUNT = intPreferencesKey("album_count")
         val NOTIFICATION_PERMISSION_ASKED = booleanPreferencesKey("notification_permission_asked")
     }
 }

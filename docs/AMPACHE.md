@@ -65,7 +65,7 @@ larger value is silently capped, so page until a short page comes back).
 
 | Action | Params | Response key | Notes |
 |---|---|---|---|
-| `albums` | `offset`, `limit` | `album[]` | Albums screen uses a random `offset` for variety |
+| `albums` | `offset`, `limit` | `album[]` | Albums screen uses a random `offset` for variety, up to the handshake's `albums` count |
 | `album` | `filter=id` | `album` or `album[]` | Server sometimes wraps a single object in an array — unwrap both. The client also accepts the object at the top level (Ampache 6's documented form) |
 | `album_songs` | `filter=albumId` | `song[]` | Track order as given |
 | `artists` | `offset`, `limit` | `artist[]` | |

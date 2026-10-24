@@ -16,7 +16,7 @@ result has been run on the phone (not just compiled).
 | 03 | [Ampache client](tasks/03-ampache-client.md) | done 2026-10-21 (no UI; verified by fixtures from the real server) |
 | 04 | [Playback service — one album through a locked screen](tasks/04-playback-service.md) | done 2026-10-23 (1.6 on phone: album through a locked screen, Bluetooth) |
 | 05 | [Network recovery and playback log](tasks/05-network-recovery-and-log.md) | done 2026-10-23 (1.6 on phone: airplane mode, handovers; two open notes in the task) |
-| 06 | [Library data layer](tasks/06-library-data.md) | todo |
+| 06 | [Library data layer](tasks/06-library-data.md) | done 2026-10-24 (no UI; JVM tests + Room tests on the emulator) |
 | 07 | [Navigation, bottom bar, mini player](tasks/07-navigation-and-chrome.md) | todo |
 | 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | todo |
 | 09 | [Playlists](tasks/09-playlists.md) | todo |

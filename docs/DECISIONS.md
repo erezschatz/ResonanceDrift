@@ -366,3 +366,41 @@ needs buffering, underrun and focus events told apart.
 reports `model:Pixel_10`. D6's decision (`minSdk = 34`, phone only) stands
 unchanged; only the device name was wrong. `SETUP.md` and task 01 were
 corrected; older changelog entries are left as written.
+
+## D27 · 2026-10-24 · Library data layer shape (step 06)
+
+**Decision.**
+- `playlist_songs` is one row per playlist: the ordered song ids (text,
+  repeats allowed) and a `version`. Songs are rows in `songs`, shared with
+  albums and genres.
+- Repository lists are `Flow<Listing<T>>`: Room's Flow combined with the
+  state of one background refresh, started when the screen collects.
+- Artists, genres and playlists are cached as **full** lists (every page).
+  ReDrift's Artists view showed a random page of 50; that is a browse
+  question for step 08, and a full cached list serves either answer.
+- The random Albums page takes its offset range from the handshake's
+  `albums` count, stored in `StoredLogin.albumCount` and refreshed on every
+  handshake.
+- Cache-first detail for an artist's albums and an album's songs (both are
+  indexed columns); Genre detail stays API-only.
+- Art requests are keyed `album-art-<id>-<size>` in Coil's caches.
+- No destructive migration fallback.
+
+**Rejected.**
+- One `playlist_songs` row per (playlist, position): the version would need
+  a home of its own, and every refresh of a 2000-song playlist rewrites 2000
+  rows.
+- ReDrift's album-count guess (start at 1000, grow when a full page comes
+  back): on a library under 1000 albums it picks offsets past the end and
+  shows an empty page.
+- An `album_genres` join table so Genre detail could be cache-first: a
+  ninth table for one screen ReDrift never cached.
+- Coil's default URL cache key: the token in the URL changes with every
+  re-handshake, so the cache would miss.
+- `fallbackToDestructiveMigration`: it would silently drop the saved queue
+  and the shuffle history.
+
+**Why.** Each choice is the plainest one that keeps ReDrift's behaviour —
+the version counter, random albums, cache-first lists — without a structure
+that exists only for the database's sake.
+

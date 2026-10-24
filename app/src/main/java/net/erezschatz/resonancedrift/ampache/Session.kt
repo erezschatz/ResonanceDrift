@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import net.erezschatz.resonancedrift.ampache.model.Handshake
 import java.time.OffsetDateTime
 import java.time.format.DateTimeParseException
 
@@ -17,6 +18,8 @@ data class StoredLogin(
     val passwordHash: String,
     val token: String,
     val expiresAtMillis: Long,
+    /** Albums on the server, from the last handshake; 0 = unknown. The Albums screen's random page needs it. */
+    val albumCount: Int = 0,
 )
 
 /**
@@ -93,7 +96,14 @@ class Session(
             ?: throw AmpacheException.BadAddress()
         val passwordHash = AmpacheClient.sha256Hex(password)
         val handshake = client.handshake(server, username, passwordHash)
-        val fresh = StoredLogin(server, username, passwordHash, handshake.auth, parseExpiry(handshake.sessionExpire))
+        val fresh = StoredLogin(
+            server,
+            username,
+            passwordHash,
+            handshake.auth,
+            parseExpiry(handshake.sessionExpire),
+            albumCountOf(handshake, previous = 0),
+        )
         store.save(fresh)
         login = fresh
         _state.value = SessionState.LoggedIn(server, username)
@@ -174,7 +184,11 @@ class Session(
             _state.value = SessionState.LoggedOut(current.serverUrl, current.username)
             throw e
         }
-        val fresh = current.copy(token = handshake.auth, expiresAtMillis = parseExpiry(handshake.sessionExpire))
+        val fresh = current.copy(
+            token = handshake.auth,
+            expiresAtMillis = parseExpiry(handshake.sessionExpire),
+            albumCount = albumCountOf(handshake, previous = current.albumCount),
+        )
         store.save(fresh)
         login = fresh
         fresh
@@ -188,6 +202,9 @@ class Session(
             if (nowMillis - lastCheckMillis < PING_CHECK_THROTTLE_MILLIS) return false
             return expiresAtMillis - nowMillis < PING_WHEN_REMAINING_UNDER_MILLIS
         }
+
+        /** The handshake's album count, or [previous] when it sent none. */
+        fun albumCountOf(handshake: Handshake, previous: Int): Int = handshake.albums?.toInt() ?: previous
 
         /** `session_expire` is ISO 8601 with an offset, e.g. `2026-10-12T15:04:05+00:00`. */
         fun parseExpiry(sessionExpire: String): Long =

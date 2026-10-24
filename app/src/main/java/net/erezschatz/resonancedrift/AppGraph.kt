@@ -14,7 +14,14 @@ import net.erezschatz.resonancedrift.ampache.Session
 import androidx.media3.database.StandaloneDatabaseProvider
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
+import androidx.room.Room
+import coil3.ImageLoader
+import coil3.network.okhttp.OkHttpNetworkFetcherFactory
+import net.erezschatz.resonancedrift.data.Db
+import net.erezschatz.resonancedrift.data.LibraryRepository
+import net.erezschatz.resonancedrift.data.QueueStateStore
 import net.erezschatz.resonancedrift.data.Settings
+import net.erezschatz.resonancedrift.data.ShuffleHistory
 import net.erezschatz.resonancedrift.playback.PlaybackLog
 import net.erezschatz.resonancedrift.playback.SongUriResolver
 import net.erezschatz.resonancedrift.ui.player.PlayerConnection
@@ -98,9 +105,25 @@ class AppGraph(private val context: Context) {
     val deviceDescription: String =
         "${Build.MANUFACTURER} ${Build.MODEL}, Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})"
 
-    // Next, in this order, as they are implemented:
-    //   db            (Room)
-    //   library       (LibraryRepository over ampache + db)
+    /** Room opens the file on first query, not here. */
+    val db: Db = Room.databaseBuilder(appContext, Db::class.java, Db.FILE_NAME).build()
+
+    val library: LibraryRepository = LibraryRepository(session, ampache, db.library(), db.playlistSongs())
+
+    val shuffleHistory: ShuffleHistory = ShuffleHistory(db.shuffleHistory())
+
+    val queueStateStore: QueueStateStore = QueueStateStore(db.queueState())
+
+    /**
+     * Coil's loader for album art, on the shared HTTP client. Memory and disk
+     * caches are Coil's defaults; art URLs carry the token, so requests set a
+     * cache key by album id (ui/components/AlbumArt.kt).
+     */
+    val imageLoader: ImageLoader by lazy {
+        ImageLoader.Builder(appContext)
+            .components { add(OkHttpNetworkFetcherFactory(callFactory = { httpClient })) }
+            .build()
+    }
 
     private companion object {
         const val MEDIA_CACHE_BYTES = 512L * 1024 * 1024

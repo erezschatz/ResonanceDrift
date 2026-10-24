@@ -285,11 +285,24 @@ real server.
   `albums`, `artists`, `genres`, `songs`, `playlists`, `playlist_songs`,
   `shuffle_history`, `queue_state`.
 - `LibraryRepository` is the only thing ViewModels read from. Pattern:
-  emit cached rows, fetch, upsert, emit again. Albums view is the exception
-  (random page straight from the API, as in ReDrift).
-- `playlist_songs` keeps the version counter trick from ReDrift: a removal
-  bumps the version so a slow background refresh cannot resurrect the row.
-- Album art is Coil's job (memory + disk cache). No art blobs in Room.
+  emit cached rows, fetch, upsert, emit again — as a `Flow<Listing<T>>`
+  (the items plus the refresh's state: running, done, or failed with the
+  cached items kept). Room's Flows carry the refreshed rows out.
+  Cache-first: artists, genres, playlists (full lists, every page), an
+  artist's albums (year, then name), an album's songs, a playlist's songs.
+  API-only: the Albums view (random page, as in ReDrift; the offset range is
+  the handshake's `albums` count, kept in `StoredLogin`) and Genre detail.
+- `playlist_songs` is one row per playlist (ordered song ids + `version`);
+  the songs themselves live in `songs`. It keeps the version counter trick
+  from ReDrift: every write bumps the version, and a refresh writes only if
+  the version is unchanged since it started, so a removal during a slow
+  fetch is not undone.
+- `shuffle_history` keeps the newest 50 album ids, trimmed on insert;
+  `queue_state` is a single row. No destructive migration fallback: these
+  two cannot be re-fetched.
+- Album art is Coil's job (memory + disk cache), on the shared OkHttp
+  client. Art URLs carry the token, so requests use `album-art-<id>-<size>`
+  as the cache key (`ui/components/AlbumArt.kt`). No art blobs in Room.
 - Credentials: server URL, username, and the password hash (not the password)
   in DataStore. Single account.
 

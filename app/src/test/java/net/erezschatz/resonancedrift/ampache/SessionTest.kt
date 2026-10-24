@@ -2,6 +2,7 @@ package net.erezschatz.resonancedrift.ampache
 
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json
+import net.erezschatz.resonancedrift.ampache.model.Handshake
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
@@ -87,6 +88,7 @@ class SessionTest {
         val saved = savedLogin()
         assertEquals(AmpacheClient.sha256Hex("demodemo"), saved.passwordHash)
         assertEquals("tok1", saved.token)
+        assertEquals("album count from the handshake", 2, saved.albumCount)
         assertEquals(SessionState.LoggedIn(serverUrl, "demo"), session.state.value)
         val request = takeUrl()
         assertEquals("handshake", request.queryParameter("action"))
@@ -193,6 +195,13 @@ class SessionTest {
         assertEquals("handshake", takeUrl().queryParameter("action"))
         assertEquals("new", session.currentLogin()?.token)
         assertEquals("new", savedLogin().token)
+        assertEquals("a re-handshake refreshes the album count", 2, savedLogin().albumCount)
+    }
+
+    @Test
+    fun `a handshake without an album count keeps the previous one`() {
+        val handshake = Handshake(auth = "t", sessionExpire = "x", albums = null)
+        assertEquals(7, Session.albumCountOf(handshake, previous = 7))
     }
 
     @Test

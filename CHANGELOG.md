@@ -6,6 +6,24 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Library data layer (step 06)
+- Room `Db` with `albums`, `artists`, `genres`, `songs`, `playlists`,
+  `playlist_songs`, `shuffle_history`, `queue_state`; schema exported to
+  `app/schemas/`. Decision D27.
+- `LibraryRepository`: cache-first `Flow<Listing<T>>` for artists, genres,
+  playlists, an artist's albums, an album's songs, a playlist's songs;
+  API-only random Albums page and Genre detail; remove song from playlist.
+- `playlist_songs` version counter: a removal during a refresh survives it.
+- `ShuffleHistory` (newest 50) and `QueueStateStore`, not yet wired in
+  (steps 12, 13).
+- `StoredLogin.albumCount` from the handshake, for the random page's offset.
+- Coil's image loader on the shared OkHttp client; art requests keyed by
+  album id, not by the token-bearing URL.
+- Tests: refresh flow, offsets, converters, song round-trip, album count
+  (JVM, 94 total); DAOs, version counter, 50-cap, queue state (13
+  instrumented, run on the API 37 emulator). No version bump: nothing to
+  install yet.
+
 ### 2026-10-23 — Offline-previous bug attached to step 11
 - "Previous song offline did not play" and "one truncated diagnostics copy"
   moved from task 05's notes to step 11 as acceptance criteria.
