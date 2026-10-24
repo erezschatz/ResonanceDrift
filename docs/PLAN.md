@@ -19,7 +19,7 @@ result has been run on the phone (not just compiled).
 | 06 | [Library data layer](tasks/06-library-data.md) | done 2026-10-24 (no UI; JVM tests + Room tests on the emulator) |
 | 07 | [Navigation, bottom bar, mini player](tasks/07-navigation-and-chrome.md) | done 2026-10-24 (1.7 on phone) |
 | 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | done 2026-10-24 (1.8 on phone) |
-| 09 | [Playlists (light)](tasks/09-playlists.md) | in progress (built 1.10; awaiting phone test) |
+| 09 | [Playlists (light)](tasks/09-playlists.md) | done 2026-10-24 (1.10 on phone) |
 | 10 | [Search](tasks/10-search.md) | todo |
 | 11 | [Now Playing](tasks/11-now-playing.md) | todo |
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | todo |

@@ -14,6 +14,8 @@ what has not yet been installed on the phone as a numbered version.
   the row. Not on smart playlists. Decision D32.
 - The launcher icon is ReDrift's wave art (adaptive, sized for the circle).
 - Tests: removal accepted / refused (21 instrumented; 107 JVM).
+- Verified on the phone the same day, with a 2718-song smart playlist; step
+  09 closed.
 
 ### 2026-10-24 — Docs: step 09 (Playlists) kept light
 - Task 09 rewritten: list, full-list detail, play from any song, remove song;

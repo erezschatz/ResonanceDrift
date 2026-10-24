@@ -13,7 +13,7 @@ album shuffle is the daily habit, playlists are occasional.
 - [x] Remove song: `playlist_remove_song`, then the cache (version bump,
       step 06); while it runs the row is disabled; on failure the row stays
       and the error shows
-- [ ] A large playlist (a 2000-song smart playlist made for the test) opens,
+- [x] A large playlist (a 2000-song smart playlist made for the test) opens,
       scrolls and starts playing without a visible stall — on the phone
 
 ## Not in this step (D31)
@@ -36,3 +36,9 @@ there (no test server).
   opening, scrolling and playing from a song deep in the list; removing a
   song from the small ordinary playlist (row dims, then leaves); reopening it
   later — the song stays gone.
+
+Phone, 1.10 (11), 2026-10-24 (Erez): **step closed.** Playlists list,
+removal (stays gone), and the new icon all landed. A 2718-song smart
+playlist played from item 694: queue set, stream answered in 0.64 s on a
+new connection (0.24 s of it connecting), playing 1.3 s after the tap; the
+next song started loading 2.6 s later.
