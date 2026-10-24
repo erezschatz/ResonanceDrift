@@ -12,7 +12,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.ViewModel
 
-/** Every destination. Detail screens (artist, album, genre, playlist) join in steps 08–09. */
+/**
+ * Every destination. Details carry the name they were opened with, so the
+ * header shows at once while the rest loads. Playlist detail joins in step 09.
+ */
 sealed interface Route {
     data object Albums : Route
     data object Artists : Route
@@ -20,9 +23,20 @@ sealed interface Route {
     data object Playlists : Route
     data object Search : Route
 
+    data class AlbumDetail(val albumId: Long) : Route
+    data class ArtistDetail(val artistId: Long, val name: String) : Route
+    data class GenreDetail(val genreId: Long, val name: String) : Route
+
     /** Full screen: no mini player, no bottom bar. */
     data object NowPlaying : Route
 }
+
+/**
+ * One screen on the back stack. [id] is unique per push, so the same route
+ * can be on the stack twice (an album, its artist, the album again) and each
+ * keeps its own state and ViewModel — NavDisplay keys entries by it.
+ */
+data class StackEntry(val id: Long, val route: Route)
 
 /** The five bottom-bar tabs, in bar order, each with the route at the bottom of its stack. */
 enum class Tab(val label: String, val icon: ImageVector, val root: Route) {
@@ -48,10 +62,13 @@ class Navigator : ViewModel() {
     var currentTab by mutableStateOf(Tab.Albums)
         private set
 
-    private var stacks by mutableStateOf(Tab.entries.associateWith { listOf(it.root) })
+    /** Roots take ids 0–4 (one per tab); pushed screens count up from there. */
+    private var nextId = Tab.entries.size.toLong()
+
+    private var stacks by mutableStateOf(Tab.entries.associateWith { listOf(StackEntry(it.ordinal.toLong(), it.root)) })
 
     /** What NavDisplay shows: Albums' stack, with the current tab's stacked on top of it. */
-    val backStack: List<Route>
+    val backStack: List<StackEntry>
         get() = if (currentTab == Tab.Albums) {
             stackOf(Tab.Albums)
         } else {
@@ -59,12 +76,12 @@ class Navigator : ViewModel() {
         }
 
     val current: Route
-        get() = stackOf(currentTab).last()
+        get() = stackOf(currentTab).last().route
 
     /** A tap on a tab: switch to it, or, if it is already current, back to its root. */
     fun selectTab(tab: Tab) {
         if (tab == currentTab) {
-            setStack(tab, listOf(tab.root))
+            setStack(tab, stackOf(tab).take(1))
         } else {
             currentTab = tab
         }
@@ -72,7 +89,7 @@ class Navigator : ViewModel() {
 
     fun open(route: Route) {
         if (current == route) return
-        setStack(currentTab, stackOf(currentTab) + route)
+        setStack(currentTab, stackOf(currentTab) + StackEntry(nextId++, route))
     }
 
     /** NavDisplay's onBack; it is only called when [backStack] has more than one entry. */
@@ -85,9 +102,9 @@ class Navigator : ViewModel() {
         }
     }
 
-    private fun stackOf(tab: Tab): List<Route> = stacks.getValue(tab)
+    private fun stackOf(tab: Tab): List<StackEntry> = stacks.getValue(tab)
 
-    private fun setStack(tab: Tab, stack: List<Route>) {
+    private fun setStack(tab: Tab, stack: List<StackEntry>) {
         stacks = stacks + (tab to stack)
     }
 }

@@ -18,7 +18,7 @@ result has been run on the phone (not just compiled).
 | 05 | [Network recovery and playback log](tasks/05-network-recovery-and-log.md) | done 2026-10-23 (1.6 on phone: airplane mode, handovers; two open notes in the task) |
 | 06 | [Library data layer](tasks/06-library-data.md) | done 2026-10-24 (no UI; JVM tests + Room tests on the emulator) |
 | 07 | [Navigation, bottom bar, mini player](tasks/07-navigation-and-chrome.md) | done 2026-10-24 (1.7 on phone) |
-| 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | todo |
+| 08 | [Browse: Albums, Artists, Genres and their detail screens](tasks/08-browse.md) | done 2026-10-24 (1.8 on phone) |
 | 09 | [Playlists](tasks/09-playlists.md) | todo |
 | 10 | [Search](tasks/10-search.md) | todo |
 | 11 | [Now Playing](tasks/11-now-playing.md) | todo |

@@ -439,3 +439,34 @@ that exists only for the database's sake.
 **Why.** Android's own bottom-navigation back rule, kept as plain lists; and
 the phone must stay a working test rig between steps.
 
+## D29 · 2026-10-24 · Browse screens (step 08)
+
+**Decision.**
+- A ViewModel per back-stack entry, from `lifecycle-viewmodel-navigation3`
+  (decided here, as D28 left it). Every pushed entry gets a unique id, which
+  NavDisplay uses as the entry's key.
+- Tapping an album card opens Album detail (task 08); Play there starts the
+  album.
+- Artist detail lists albums newest first, then by name — the order the
+  server sends — by sorting the cached rows. This replaces D27's "year, then
+  name".
+- Album detail's artist name opens Artist detail.
+- The predictive-back swipe uses the same 700 ms fade as every other screen
+  change, following the finger.
+
+**Rejected.**
+- Navigation 3's default swipe-back animation (shrinks the outgoing screen to
+  70%): Erez found it jarring on the phone; the fade alone was fine.
+- Activity-scoped ViewModels keyed by hand (`viewModel(key = "album-70")`):
+  they would never be cleared, and the same key twice on the stack would
+  share one.
+- Keying entries by route: album → artist → the same album puts one route on
+  the stack twice, which NavDisplay does not allow.
+- ReDrift's play-on-tap for album cards: it leaves no way to see an album's
+  tracks from the grid.
+- A position column so Artist detail keeps the server's exact order: a schema
+  change and migration for an order the sort already reproduces.
+
+**Why.** Detail screens nest (album → artist → album), so each screen needs
+its own state; and the task's promise is "tapping an album shows its tracks".
+

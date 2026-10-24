@@ -81,8 +81,8 @@ abstract class LibraryDao {
     @Query("SELECT * FROM albums WHERE id = :albumId")
     abstract fun observeAlbum(albumId: Long): Flow<AlbumEntity?>
 
-    /** Year, then name: discography order without relying on the server's. */
-    @Query("SELECT * FROM albums WHERE artistId = :artistId ORDER BY year, name COLLATE NOCASE")
+    /** Newest first, as the server sends artist_albums (task 08: server order); name breaks ties. */
+    @Query("SELECT * FROM albums WHERE artistId = :artistId ORDER BY year DESC, name COLLATE NOCASE")
     abstract fun observeArtistAlbums(artistId: Long): Flow<List<AlbumEntity>>
 
     @Upsert

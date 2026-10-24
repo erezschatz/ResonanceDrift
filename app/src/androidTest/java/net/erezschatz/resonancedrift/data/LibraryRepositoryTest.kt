@@ -50,6 +50,11 @@ class LibraryRepositoryTest {
         val body = when (chain.request().url.queryParameter("action")) {
             "playlist_songs" -> songsJson(playlistAnswers(playlistSongsRequests++))
             "artists" -> artistsJson(artistsAnswer)
+            "genre_albums" -> """{"album":[
+                {"id":"1","name":"b later","year":"2010"},
+                {"id":"2","name":"Zed","year":"1999"},
+                {"id":"3","name":"a later","year":"2010"},
+                {"id":"4","name":"No year","year":"0"}]}"""
             else -> """{"error":{"errorCode":"4705","errorMessage":"unexpected action"}}"""
         }
         return Response.Builder()
@@ -101,6 +106,13 @@ class LibraryRepositoryTest {
 
         assertEquals(2, playlistSongsRequests)
         assertEquals(listOf(1L, 3L, 5L), listing.items.map { it.id })
+    }
+
+    @Test
+    fun genreAlbumsComeSortedByYearThenName() = runTest {
+        val albums = repository.genreAlbums(genreId = 5)
+
+        assertEquals(listOf("No year", "Zed", "a later", "b later"), albums.map { it.name })
     }
 
     private fun songsJson(ids: List<Long>): String {

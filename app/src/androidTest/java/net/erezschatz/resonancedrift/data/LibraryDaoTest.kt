@@ -37,11 +37,11 @@ class LibraryDaoTest {
     }
 
     @Test
-    fun artistAlbumsInYearThenNameOrder() = runTest {
+    fun artistAlbumsNewestFirstThenByName() = runTest {
         dao.replaceArtistAlbums(7, listOf(album(1, "Later", 7, 2010), album(2, "b side", 7, 2001), album(3, "A side", 7, 2001)))
         dao.upsertAlbums(listOf(album(4, "Someone else's", 8, 1999)))
 
-        assertEquals(listOf(3L, 2L, 1L), dao.observeArtistAlbums(7).first().map { it.id })
+        assertEquals(listOf(1L, 3L, 2L), dao.observeArtistAlbums(7).first().map { it.id })
     }
 
     @Test
@@ -50,8 +50,8 @@ class LibraryDaoTest {
         dao.replaceArtistAlbums(7, listOf(album(1, "Kept (renamed)", 7, 2001), album(3, "Added", 7, 2005)))
 
         val albums = dao.observeArtistAlbums(7).first()
-        assertEquals(listOf(1L, 3L), albums.map { it.id })
-        assertEquals("Kept (renamed)", albums.first().name)
+        assertEquals(listOf(3L, 1L), albums.map { it.id })
+        assertEquals("Kept (renamed)", albums.last().name)
     }
 
     @Test

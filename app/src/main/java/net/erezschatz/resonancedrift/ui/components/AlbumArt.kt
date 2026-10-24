@@ -9,7 +9,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
@@ -32,22 +34,33 @@ fun albumArtRequest(context: Context, login: StoredLogin?, albumId: Long, sizePx
         .build()
 }
 
-/** Square album art; an empty tile when there is no album or no login. */
+/** Album art at [sizePx] (the request size), clipped to the card shape; an empty tile without an album. */
 @Composable
-fun AlbumArtThumbnail(albumId: Long?, login: StoredLogin?, sizeDp: Int) {
-    val modifier = Modifier
-        .size(sizeDp.dp)
-        .clip(RoundedCornerShape(4.dp))
+fun AlbumArt(albumId: Long?, login: StoredLogin?, sizePx: Int, modifier: Modifier = Modifier) {
+    val shaped = modifier
+        .clip(RoundedCornerShape(6.dp))
         .background(MaterialTheme.colorScheme.outline)
     if (albumId == null) {
-        Box(modifier)
+        Box(shaped)
         return
     }
-    // Pixels for the request: density × dp, so the art is sharp without being oversized.
-    val density = LocalContext.current.resources.displayMetrics.density
     AsyncImage(
-        model = albumArtRequest(LocalContext.current, login, albumId, (sizeDp * density).toInt()),
+        model = albumArtRequest(LocalContext.current, login, albumId, sizePx),
         contentDescription = null,
-        modifier = modifier,
+        contentScale = ContentScale.Crop,
+        modifier = shaped,
     )
+}
+
+/** Square art of a fixed size in dp, requested at that many pixels on this screen. */
+@Composable
+fun AlbumArtThumbnail(albumId: Long?, login: StoredLogin?, sizeDp: Int) {
+    val sizePx = with(LocalDensity.current) { sizeDp.dp.roundToPx() }
+    AlbumArt(albumId, login, sizePx, Modifier.size(sizeDp.dp))
+}
+
+/** Request sizes shared across screens, so one cached image serves every card of that size. */
+object ArtSizes {
+    const val CARD_PX = 400
+    const val HEADER_PX = 800
 }

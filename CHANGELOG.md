@@ -6,6 +6,22 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Browse: Albums, Artists, Genres and their details (step 08) · 1.8 (9)
+- Albums: a random page as a grid (art, name, artist · year), Refresh for
+  another page; "Shuffle all" shown disabled until step 12.
+- Album detail: art, name, artist (opens Artist detail), songs · year; Play;
+  tap a track to play the album from it and open Now Playing.
+- Artists and Genres: full cached lists → Artist detail (albums newest first)
+  and Genre detail (Play all; albums by year, then name).
+- A ViewModel per back-stack entry (`lifecycle-viewmodel-navigation3`) and a
+  unique id per stack entry, so the same album can be on the stack twice.
+  Decision D29.
+- The step-07 "Play a random album" stop-gap is gone; Albums is the real grid.
+- Swipe back fades like every other screen change instead of shrinking the
+  screen.
+- Verified on the phone the same day; step 08 closed.
+- Tests: formatting, deep stacks, genre sort (105 JVM, 19 instrumented).
+
 ### 2026-10-24 — Step 07 verified on the phone (1.7)
 - Tabs, back and predictive back, mini player, Now Playing and Copy
   diagnostics checked on the Pixel. Step 07 closed.

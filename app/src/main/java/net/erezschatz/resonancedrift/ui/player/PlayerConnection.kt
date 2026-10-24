@@ -18,6 +18,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import net.erezschatz.resonancedrift.ampache.StoredLogin
+import net.erezschatz.resonancedrift.data.entity.SongEntity
 import net.erezschatz.resonancedrift.playback.MediaItems
 import net.erezschatz.resonancedrift.playback.PlaybackEvents
 import net.erezschatz.resonancedrift.playback.PlaybackService
@@ -120,6 +122,11 @@ class PlayerConnection(private val context: Context) {
         current.setMediaItems(items, startIndex, 0L)
         current.prepare()
         current.play()
+    }
+
+    /** The screens' way to play: [songs] as the queue, from [startIndex]. */
+    fun playSongs(songs: List<SongEntity>, startIndex: Int, login: StoredLogin?) {
+        playQueue(songs.map { MediaItems.fromSong(it.toSong(), login) }, startIndex)
     }
 
     fun togglePlayPause() {

@@ -8,57 +8,50 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import net.erezschatz.resonancedrift.ampache.AlbumNames
 import net.erezschatz.resonancedrift.ampache.AmpacheException
 import net.erezschatz.resonancedrift.ampache.Session
 import net.erezschatz.resonancedrift.data.LibraryRepository
 import net.erezschatz.resonancedrift.data.Refresh
-import net.erezschatz.resonancedrift.playback.MediaItems
-import net.erezschatz.resonancedrift.ui.player.PlayerConnection
+import net.erezschatz.resonancedrift.data.entity.AlbumEntity
 
 /**
- * TEMPORARY (step 07): the dev screen's "random album" carried over so the
- * phone can keep testing playback until step 08 puts the real grid here (D28).
+ * A random page of albums, straight from the server (as in ReDrift). The page
+ * stays while the screen is on the back stack; Refresh fetches another.
  */
 class AlbumsViewModel(
     private val session: Session,
     private val library: LibraryRepository,
-    private val player: PlayerConnection,
 ) : ViewModel() {
 
-    var status by mutableStateOf<String?>(null)
+    var albums by mutableStateOf<List<AlbumEntity>>(emptyList())
         private set
 
-    fun playRandomAlbum() {
-        status = "Loading an album…"
+    var refresh by mutableStateOf<Refresh>(Refresh.Running)
+        private set
+
+    init {
+        load()
+    }
+
+    fun login() = session.currentLogin()
+
+    fun load() {
+        refresh = Refresh.Running
         viewModelScope.launch {
-            try {
-                val album = library.randomAlbums(count = 1).firstOrNull()
-                if (album == null) {
-                    status = "The server returned no albums."
-                    return@launch
-                }
-                val listing = library.albumSongs(album.id).first { it.refresh != Refresh.Running }
-                val failed = listing.refresh as? Refresh.Failed
-                if (failed != null && listing.items.isEmpty()) {
-                    status = failed.error.userMessage
-                    return@launch
-                }
-                val login = session.currentLogin()
-                player.playQueue(listing.items.map { MediaItems.fromSong(it.toSong(), login) })
-                status = "${AlbumNames.display(album.name, album.artistName)} — ${album.artistName}"
+            refresh = try {
+                albums = library.randomAlbums()
+                Refresh.Done
             } catch (e: AmpacheException) {
-                status = e.userMessage
+                Refresh.Failed(e)
             }
         }
     }
 
     companion object {
-        fun factory(session: Session, library: LibraryRepository, player: PlayerConnection): ViewModelProvider.Factory =
+        fun factory(session: Session, library: LibraryRepository): ViewModelProvider.Factory =
             viewModelFactory {
-                initializer { AlbumsViewModel(session, library, player) }
+                initializer { AlbumsViewModel(session, library) }
             }
     }
 }

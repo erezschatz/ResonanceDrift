@@ -70,6 +70,7 @@ not impose an application architecture. Nothing here hides control flow.
 |---|---|---|
 | Language | Kotlin (current stable), compiled by AGP 9's built-in Kotlin | A separate `org.jetbrains.kotlin.android` plugin — AGP 9 rejects it |
 | UI | Jetpack Compose, Material 3, Navigation 3 (`navigation3-*`; the back stack is a plain list we own) | Views/XML, Navigation 2 (maintenance mode) |
+| ViewModel per screen | `lifecycle-viewmodel-navigation3` (same version as the rest of lifecycle): a ViewModel per back-stack entry, cleared when the entry is popped | Activity-scoped ViewModels keyed by hand, which never clear (D29) |
 | Icons | `material-icons-extended` (every Material icon, free) | Core `Icons.Default` only — too small, which is what bit the Kotlin attempt last time |
 | Playback | Media3: ExoPlayer, `MediaSessionService`, `MediaController` | ExoPlayer 2.x, `MediaBrowserService`, any wrapper |
 | HTTP | OkHttp | Retrofit, Ktor |
@@ -289,7 +290,7 @@ real server.
   (the items plus the refresh's state: running, done, or failed with the
   cached items kept). Room's Flows carry the refreshed rows out.
   Cache-first: artists, genres, playlists (full lists, every page), an
-  artist's albums (year, then name), an album's songs, a playlist's songs.
+  artist's albums (newest first, as the server sends them), an album's songs, a playlist's songs.
   API-only: the Albums view (random page, as in ReDrift; the offset range is
   the handshake's `albums` count, kept in `StoredLogin`) and Genre detail.
   A refresh writes the server's whole answer for that list, so additions,
@@ -325,6 +326,11 @@ real server.
   at Albums' root it leaves the app. The stack handed to `NavDisplay` is
   Albums' stack with the current tab's on top, so predictive back previews
   what back will actually show. Tapping the current tab returns to its root.
+  Every pushed screen gets its own id, so the same route can be on the stack
+  twice (album → its artist → the album again) with separate state.
+- Browse (step 08): tapping an album card opens Album detail; tapping a
+  track there plays the album from it and opens Now Playing. Album detail's
+  artist name opens Artist detail.
 - The UI keys album art by album id, carried in each `MediaItem`'s metadata
   extras (`MediaItems.albumIdOf`).
 - Lists use `LazyColumn` / `LazyVerticalGrid` — virtualisation is free, so
