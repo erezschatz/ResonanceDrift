@@ -19,7 +19,7 @@ this step cannot be made to work, nothing after it matters.
       URI) so the notification and lock screen are correct
 - [x] A **temporary** dev screen: one hard-coded or first-returned album, a
       play button, nothing else
-- [ ] On the Pixel: full album plays with screen locked; lock-screen prev/next/
+- [x] On the Pixel: full album plays with screen locked; lock-screen prev/next/
       pause work; headphone unplug pauses; Bluetooth play/pause works
 - [x] Killing the Activity from Recents does not stop playback
 - [x] Unit test: `SongUriResolver` resolves with the current token and reflects
@@ -43,3 +43,14 @@ hiccups mid-song with the screen locked, and the whole album has not yet been
 played through (the first album has 7–10 minute tracks). With 2–3 minutes of
 buffer a short network drop should be inaudible, so the hiccups are not yet
 explained — they need `PlaybackLog` (step 05) to diagnose.
+
+Phone, 1.6 (7), 2026-10-23 (Erez): **step closed.** A 10-song album played
+through on a drive with the phone locked and dark ~90% of the time, and again
+in a pocket, over Bluetooth; car Bluetooth pause/resume and voice input while
+playing all behaved. The 1.4 hiccups did not recur. One perceived ~1-minute
+silence before the last song ("Saturn Return", 38 s): the log
+(`docs/logs/2026-10-23-1015-run.txt`) shows the transition at 10:41:51.181 and
+`ENDED` 38.0 s later, with the song fully cached two minutes earlier — the
+player was not stalled, so per D24 the log explains it as far as the player
+goes. If it recurs, suspect trailing/leading silence in the files or the
+audio output, not playback.

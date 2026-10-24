@@ -6,6 +6,14 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-23 — Steps 04 and 05 verified on the phone (1.6)
+- A full album played through a locked screen and in a pocket over Bluetooth;
+  airplane mode, elevator and Wi-Fi handovers all resumed in place. The
+  milestone after 04 holds: the rewrite's reason is proven.
+- Steps 04 and 05 closed. Kept the 10:15 run's report as
+  `docs/logs/2026-10-23-1015-run.txt`. Open notes in task 05: previous song
+  offline did not play; one diagnostics copy came out truncated.
+
 ### 2026-10-22 — Docs: the phone is a Pixel 10
 - `SETUP.md` and task 01 said Pixel 9; corrected. D26 records the correction
   to D6 (decision unchanged).

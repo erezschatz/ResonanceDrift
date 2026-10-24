@@ -1,0 +1,62 @@
+# ResonanceDrift diagnostics — 2026-10-23 10:15 run (copied 10:45)
+
+ResonanceDrift diagnostics
+1.6-debug (7)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-10-23T10:45:04.755239+03:00[Asia/Jerusalem]
+player: ENDED, not playing, playWhenReady true, item 10/10 song 14835, at 38 s, buffered to 38 s
+
+== This run (48 events) ==
+10-23 10:15:57.653  run started · 1.6-debug (7) · Google Pixel 10, Android 17 (API 37)
+10-23 10:15:57.749  network: available
+10-23 10:16:01.639  → item 1 song 14840 "Bleomycin" (new queue)
+10-23 10:16:01.644  state BUFFERING @0.0s buf +0.0s
+10-23 10:16:01.646  playWhenReady true (user)
+10-23 10:16:01.679  load start song-14840
+10-23 10:16:03.064  state READY @0.0s buf +7.6s
+10-23 10:16:03.069  playing @0.0s buf +7.6s
+10-23 10:16:04.247  load done song-14840: 1449 KB in 2600 ms
+10-23 10:16:04.248  load start song-14838
+10-23 10:16:07.478  load done song-14838: 4896 KB in 3230 ms
+10-23 10:16:07.508  load start song-14839
+10-23 10:16:43.427  → item 2 song 14838 "Aim Slow" (auto)
+10-23 10:19:17.354  → item 3 song 14839 "Getting Clean" (auto)
+10-23 10:19:53.832  load done song-14839: 6858 KB in 226323 ms
+10-23 10:19:53.889  load start song-14833
+10-23 10:22:45.896  → item 4 song 14833 "Get Better Soon" (auto)
+10-23 10:23:02.014  playWhenReady false (user)
+10-23 10:23:02.015  not playing @16.1s buf +148.6s
+10-23 10:23:02.301  suppressed: transient audio focus loss @16.4s buf +148.3s
+10-23 10:23:08.877  suppressed: none @16.4s buf +148.3s
+10-23 10:23:10.575  playWhenReady true (user)
+10-23 10:23:10.579  playing @16.4s buf +148.3s
+10-23 10:23:10.960  playWhenReady false (user)
+10-23 10:23:10.962  not playing @16.8s buf +147.9s
+10-23 10:23:20.055  playWhenReady true (user)
+10-23 10:23:20.059  playing @16.9s buf +147.8s
+10-23 10:23:48.541  load done song-14833: 6268 KB in 234650 ms
+10-23 10:23:48.553  load start song-14841
+10-23 10:26:29.010  → item 5 song 14841 "Only Child" (auto)
+10-23 10:27:32.952  load done song-14841: 8127 KB in 224397 ms
+10-23 10:27:33.198  load start song-14836
+10-23 10:30:09.273  load done song-14836: 4352 KB in 156074 ms
+10-23 10:30:09.278  load start song-14832
+10-23 10:30:35.783  → item 6 song 14836 "Raincoat" (auto)
+10-23 10:32:16.641  load done song-14832: 5113 KB in 127363 ms
+10-23 10:32:16.875  load start song-14837
+10-23 10:32:52.218  → item 7 song 14832 "Leaving California" (auto)
+10-23 10:35:22.145  → item 8 song 14837 "Stereo" (auto)
+10-23 10:35:37.444  load done song-14837: 4744 KB in 200567 ms
+10-23 10:35:37.598  load start song-14834
+10-23 10:38:02.216  → item 9 song 14834 "Eyes of Vermont" (auto)
+10-23 10:39:15.062  load done song-14834: 7233 KB in 217463 ms
+10-23 10:39:15.140  load start song-14835
+10-23 10:39:18.854  load done song-14835: 1389 KB in 3713 ms
+10-23 10:41:51.181  → item 10 song 14835 "Saturn Return" (auto)
+10-23 10:42:29.205  state ENDED @38.0s buf +0.0s
+10-23 10:42:29.211  not playing @38.0s buf +0.0s
+
+== Previous run (3 events) ==
+10-22 19:55:59.231  run started · 1.6-debug (7) · Google Pixel 10, Android 17 (API 37)
+10-22 19:55:59.262  network: available
+10-22 19:56:00.870  service destroyed
