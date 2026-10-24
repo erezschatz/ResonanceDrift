@@ -411,3 +411,31 @@ corrected; older changelog entries are left as written.
 the version counter, random albums, cache-first lists — without a structure
 that exists only for the database's sake.
 
+## D28 · 2026-10-24 · Navigation shape and the dev screen's leftovers (step 07)
+
+**Decision.**
+- One back stack per tab in `Navigator` (a ViewModel, for rotation); the
+  stack given to `NavDisplay` is Albums' stack plus the current tab's, so
+  back and predictive back agree: pop within the tab, then to Albums, then out.
+- Screen ViewModels are scoped to the Activity for now (one per screen type).
+- The dev screen is deleted, but what it did for phone testing moves to the
+  stand-ins: "Play a random album" on Albums (until step 08), Copy
+  diagnostics and Log out on Now Playing (until step 11).
+- The mini player and Now Playing key art by album id, carried in the
+  `MediaItem`'s metadata extras.
+- `PlayerConnection` reads the position twice a second while playing.
+
+**Rejected.**
+- A single flat back stack where a tab tap clears it: switching tabs would
+  lose where you were in the other tab.
+- `lifecycle-viewmodel-navigation3` for per-entry ViewModels: a new
+  dependency before there are two entries of the same screen type (detail
+  screens in step 08 may need it; decide there).
+- Deleting the dev screen's functions with it: the phone could not start
+  playback or copy diagnostics until steps 08 and 11.
+- Art from the metadata's artwork URI: it carries the token of the moment it
+  was built, so Coil's cache would miss after a re-handshake.
+
+**Why.** Android's own bottom-navigation back rule, kept as plain lists; and
+the phone must stay a working test rig between steps.
+

@@ -1,6 +1,7 @@
 package net.erezschatz.resonancedrift.playback
 
 import android.net.Uri
+import android.os.Bundle
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import net.erezschatz.resonancedrift.ampache.AlbumNames
@@ -16,6 +17,14 @@ object MediaItems {
 
     /** Art for the notification and lock screen; ReDrift used 512px for the media session. */
     private const val ART_SIZE_PX = 512
+
+    private const val EXTRA_ALBUM_ID = "net.erezschatz.resonancedrift.albumId"
+
+    /** The album id set by [fromSong], or null for an item without one. */
+    fun albumIdOf(metadata: MediaMetadata): Long? {
+        val extras = metadata.extras ?: return null
+        return if (extras.containsKey(EXTRA_ALBUM_ID)) extras.getLong(EXTRA_ALBUM_ID) else null
+    }
 
     /**
      * [login] supplies the art URL's token. Unlike the stream URL, the art URL
@@ -46,6 +55,8 @@ object MediaItems {
             .setMediaType(MediaMetadata.MEDIA_TYPE_MUSIC)
             .setIsPlayable(true)
             .setIsBrowsable(false)
+            // The UI keys album art by album id (the art URL's token changes); extras cross to the controller.
+            .setExtras(albumId?.let { Bundle().apply { putLong(EXTRA_ALBUM_ID, it) } })
             .build()
 
         return MediaItem.Builder()

@@ -17,10 +17,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.ampache.SessionState
+import net.erezschatz.resonancedrift.ui.nav.AppScaffold
 import net.erezschatz.resonancedrift.ui.screens.auth.AuthScreen
 import net.erezschatz.resonancedrift.ui.screens.auth.AuthViewModel
-import net.erezschatz.resonancedrift.ui.screens.dev.DevPlayerScreen
-import net.erezschatz.resonancedrift.ui.screens.dev.DevPlayerViewModel
 import net.erezschatz.resonancedrift.ui.theme.ResonanceDriftTheme
 
 /**
@@ -45,19 +44,7 @@ class MainActivity : ComponentActivity() {
                     // Credentials not read yet — a blank frame, not a flash of the auth screen.
                     SessionState.Unknown -> Box(Modifier.fillMaxSize())
                     is SessionState.LoggedOut -> AuthScreen(viewModel(factory = AuthViewModel.factory(session)))
-                    // TEMPORARY until navigation (task 07).
-                    is SessionState.LoggedIn -> DevPlayerScreen(
-                        viewModel = viewModel(
-                            factory = DevPlayerViewModel.factory(
-                                session,
-                                graph.ampache,
-                                graph.playerConnection,
-                                graph.playbackLog,
-                                listOf(graph.appVersion, graph.deviceDescription),
-                            ),
-                        ),
-                        onLogout = { lifecycleScope.launch { session.logout() } },
-                    )
+                    is SessionState.LoggedIn -> AppScaffold(graph)
                 }
             }
         }

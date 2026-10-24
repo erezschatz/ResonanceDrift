@@ -312,13 +312,21 @@ real server.
 - Light theme only: `lightColorScheme(...)` with our palette, `dynamicColor`
   off, system dark mode ignored. Simple and clean; no gradients, no blur.
 - `PlayerConnection` wraps the `MediaController` and exposes `StateFlow`s
-  (current item, position, playing, queue, shuffle state). Everything in the
+  (current item, position, playing, queue, shuffle state). Position is read
+  twice a second while playing, for display only. Everything in the
   UI reads those; nothing in the UI touches ExoPlayer. It lives in `AppGraph`;
   `MainActivity` connects it in `onStart` and releases it in `onStop` (D23).
 - Items sent from the controller lose their URI on the way to the session;
   the service's `onAddMediaItems` rebuilds `rd://song/<id>` from the media id.
 - Persistent chrome (mini player, bottom bar) lives in the scaffold around `NavDisplay`.
   Now Playing is a full-screen destination, not an overlay hack.
+- Navigation (`ui/nav/Navigator.kt`): one back stack per tab, kept across
+  tab switches. Back pops within the tab; at a tab's root it goes to Albums;
+  at Albums' root it leaves the app. The stack handed to `NavDisplay` is
+  Albums' stack with the current tab's on top, so predictive back previews
+  what back will actually show. Tapping the current tab returns to its root.
+- The UI keys album art by album id, carried in each `MediaItem`'s metadata
+  extras (`MediaItems.albumIdOf`).
 - Lists use `LazyColumn` / `LazyVerticalGrid` — virtualisation is free, so
   the 2000-song playlist needs nothing special.
 - Every string the server sends is rendered via `Text(...)` — Compose does

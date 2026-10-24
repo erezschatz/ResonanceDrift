@@ -21,6 +21,7 @@ report when something misbehaves.
 - [ ] Prev while offline plays the previous song from the media cache when
       it was fully loaded (bug from 1.6, see Notes); phone test in airplane mode
 - [ ] The copied report is complete: its event lines match the header's count
+- [ ] Log out has a home (it sits on the step-07 Now Playing stand-in; D28)
 - [ ] Unit test: genre line formatting (none / one / two / three → two)
 
 ## Notes

@@ -6,6 +6,19 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Navigation, bottom bar, mini player (step 07) · 1.7 (8)
+- Five tabs (Albums, Artists, Genres, Playlists, Search) with a back stack
+  per tab; back pops within a tab, then to Albums, then out; predictive back.
+  Decision D28.
+- Mini player above the bar on every tab (art, title, artist, play/pause);
+  tap opens Now Playing, a full-screen route without the bars.
+- `PlayerConnection` now exposes the current item, queue, index and position.
+- Tab screens are placeholders. The dev screen is deleted: "Play a random
+  album" is on Albums until step 08; Copy diagnostics and Log out are on
+  Now Playing until step 11.
+- Coil art keyed by album id from the MediaItem's extras.
+- Tests: `Navigator` back rules (6 new, 100 JVM).
+
 ### 2026-10-24 — Cached lists follow the server on refetch (step 06)
 - A removed playlist's cached songs are dropped with it; a playlist refresh
   skipped because of a removal fetches once more.
