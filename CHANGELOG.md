@@ -6,6 +6,10 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-23 — Offline-previous bug attached to step 11
+- "Previous song offline did not play" and "one truncated diagnostics copy"
+  moved from task 05's notes to step 11 as acceptance criteria.
+
 ### 2026-10-23 — Steps 04 and 05 verified on the phone (1.6)
 - A full album played through a locked screen and in a pocket over Bluetooth;
   airplane mode, elevator and Wi-Fi handovers all resumed in place. The

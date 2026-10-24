@@ -44,13 +44,6 @@ report (not kept in full): network lost 18:57 and 19:30–19:31; on item 13 the
 buffer ran dry during the outage (≈30 s silent) and the retry right after the
 network returned succeeded.
 
-Open, not blocking:
-- **Previous song offline did not play.** Expected to work: the song had been
-  fully loaded and the 512 MB cache is keyed by song id. Not yet explained —
-  next time, copy diagnostics right after it fails (the `load error` line for
-  that song says whether the cache was missed).
-- **One diagnostics copy came out truncated** (two copies ~20 KB, cut
-  mid-line); a later copy of the same run was complete (27 KB, header count =
-  event lines). Unclear whether the app or the paste cut it. Check a copy by
-  the header's event count against its lines; if the app is at fault, write
-  the report to a shareable file (D-entry then).
+Two open notes moved to step 11 (it has the prev button and the diagnostics
+button): previous song offline did not play; one diagnostics copy came out
+truncated.

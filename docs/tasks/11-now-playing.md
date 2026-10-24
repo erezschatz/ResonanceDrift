@@ -18,7 +18,23 @@ report when something misbehaves.
 - [ ] Diagnostics button → `PlaybackLog.report()` to clipboard with a toast
 - [ ] Album-name prefix stripping (`AlbumNames.display`) applied here and in
       the media notification metadata
+- [ ] Prev while offline plays the previous song from the media cache when
+      it was fully loaded (bug from 1.6, see Notes); phone test in airplane mode
+- [ ] The copied report is complete: its event lines match the header's count
 - [ ] Unit test: genre line formatting (none / one / two / three → two)
 
 ## Notes
 ReDrift TODO steps 1 and 2a are folded in here.
+
+**Bug carried from step 05 (1.6, 2026-10-23):** in airplane mode, going back
+to the previous song did not play it, although that song had been fully
+loaded and the 512 MB media cache is keyed by song id, so it should play from
+storage. Not yet explained, and there is no log of it. To explore: reproduce in
+airplane mode, copy diagnostics right after, and see whether the `load` lines
+for that song show a cache miss (a network open that fails) or something else,
+such as the player sitting in an errored state. The fix belongs in `playback/`,
+not in this screen's button.
+
+**Truncated report (1.6):** two copies of one run came out cut mid-line at
+~20 KB; a later copy of the same run was complete. Unclear whether the app or
+the paste cut it. If the app is at fault, write the report to a shareable file.
