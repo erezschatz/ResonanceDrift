@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Spinner while a song starts, stream timing, no Genre "Play all" · 1.9 (10)
+- The mini player's and Now Playing's play/pause shows a spinner while a song
+  is starting or the buffer refills; tapping it pauses (toggle by
+  playWhenReady). Decision D30.
+- Playback log: a `stream song-N: answered in … ms, first bytes at … ms
+  (new/reused connection)` line per stream request (`StreamTiming`).
+- Genre detail: "Play all" removed; `LibraryRepository.genreSongs` with it.
+- Tests: `StreamTiming` (2 new, 107 JVM).
+
 ### 2026-10-24 — Browse: Albums, Artists, Genres and their details (step 08) · 1.8 (9)
 - Albums: a random page as a grid (art, name, artist · year), Refresh for
   another page; "Shuffle all" shown disabled until step 12.

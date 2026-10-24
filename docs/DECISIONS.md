@@ -470,3 +470,24 @@ the phone must stay a working test rig between steps.
 **Why.** Detail screens nest (album → artist → album), so each screen needs
 its own state; and the task's promise is "tapping an album shows its tracks".
 
+## D30 · 2026-10-24 · Start-of-song feedback, stream timing, no Genre "Play all"
+
+**Decision.**
+- While the player is asked to play but is buffering, the mini player's and
+  Now Playing's play/pause shows a spinner; tapping it pauses. Play/pause
+  toggles by `playWhenReady`, not `isPlaying`.
+- `StreamTiming` logs one line per stream request: answered in, first bytes
+  at, new or reused connection. Only the song id is logged.
+- Genre detail has no "Play all".
+
+**Rejected.**
+- Lowering `bufferForPlaybackMs` below 2.5 s to start sooner: on the phone the
+  audio arrived in one burst after a ~2 s wait (6.3 s buffered at READY), so
+  the threshold is not what is slow. Revisit if `StreamTiming` says otherwise.
+- Keeping "Play all": it carried over ReDrift's tap-a-genre-to-play from its
+  TODO step 2b; with Genre detail's grid it is not wanted.
+
+**Why.** A ~2 s start is mostly the server answering (step 08 phone test);
+a spinner where the eye already is makes the wait legible, and the timing
+line says which part to look at next.
+

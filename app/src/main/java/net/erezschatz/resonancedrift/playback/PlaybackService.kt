@@ -33,7 +33,7 @@ class PlaybackService : MediaSessionService() {
     override fun onCreate() {
         super.onCreate()
         graph.playbackLog.startRun("run started · ${graph.appVersion} · ${graph.deviceDescription}")
-        val player = PlayerFactory.create(this, graph.httpClient, graph.mediaCache, graph.songUriResolver)
+        val player = PlayerFactory.create(this, graph.httpClient, graph.mediaCache, graph.songUriResolver, graph.playbackLog)
         player.addAnalyticsListener(PlaybackEvents(graph.playbackLog))
         recovery = NetworkRecovery(
             player,

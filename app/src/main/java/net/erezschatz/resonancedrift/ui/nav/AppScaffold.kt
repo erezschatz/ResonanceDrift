@@ -43,6 +43,7 @@ fun AppScaffold(graph: AppGraph, navigator: Navigator = viewModel()) {
     val player = graph.playerConnection
     val current by player.current.collectAsStateWithLifecycle()
     val isPlaying by player.isPlaying.collectAsStateWithLifecycle()
+    val isWaiting by player.isWaiting.collectAsStateWithLifecycle()
     val showChrome = navigator.current != Route.NowPlaying
 
     Scaffold(
@@ -53,6 +54,7 @@ fun AppScaffold(graph: AppGraph, navigator: Navigator = viewModel()) {
                         MiniPlayer(
                             entry = entry,
                             isPlaying = isPlaying,
+                            isWaiting = isWaiting,
                             login = graph.session.currentLogin(),
                             onTogglePlay = { player.togglePlayPause() },
                             onOpen = { navigator.open(Route.NowPlaying) },
@@ -113,12 +115,9 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator) {
             onOpenAlbum = openAlbum,
         )
         is Route.GenreDetail -> GenreDetailScreen(
-            viewModel = viewModel(
-                factory = GenreDetailViewModel.factory(route.genreId, graph.session, graph.library, graph.playerConnection),
-            ),
+            viewModel = viewModel(factory = GenreDetailViewModel.factory(route.genreId, graph.session, graph.library)),
             name = route.name,
             onOpenAlbum = openAlbum,
-            onPlaying = openNowPlaying,
         )
         Route.NowPlaying -> NowPlayingScreen(
             viewModel = viewModel(

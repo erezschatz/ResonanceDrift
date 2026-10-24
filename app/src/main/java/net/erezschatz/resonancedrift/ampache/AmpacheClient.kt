@@ -102,6 +102,7 @@ class AmpacheClient(
     suspend fun genreAlbums(server: String, token: String, genreId: Long): List<Album> =
         list(get(AmpacheUrls.api(server, "genre_albums", token, filter(genreId))), "album", Album.serializer())
 
+    /** Unused since Genre detail dropped "Play all" (D30); kept so the client covers what ReDrift's did. */
     suspend fun genreSongs(server: String, token: String, genreId: Long): List<Song> =
         list(get(AmpacheUrls.api(server, "genre_songs", token, filter(genreId))), "song", Song.serializer())
 

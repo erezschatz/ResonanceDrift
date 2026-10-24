@@ -47,3 +47,7 @@ network returned succeeded.
 Two open notes moved to step 11 (it has the prev button and the diagnostics
 button): previous song offline did not play; one diagnostics copy came out
 truncated.
+
+1.9 (10), 2026-10-24: `StreamTiming` adds a line per stream request (time to
+answer, to first bytes, new or reused connection), to split a slow song start
+into network vs server.

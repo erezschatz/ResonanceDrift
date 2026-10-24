@@ -50,3 +50,7 @@ album takes about 2 s — the log puts it between the stream request and the
 first audio (app's own part under 0.1 s), not yet split into server vs
 network; "Play all" on Genre detail came from ReDrift's
 TODO step 2b, not from a new request.
+
+After sign-off, 1.9 (10): "Play all" removed from Genre detail at Erez's
+request (D30; it came from ReDrift's TODO, not from him). The criterion above
+is left as written and ticked for the record.

@@ -10,8 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.Pause
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material3.Icon
@@ -28,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.erezschatz.resonancedrift.ui.components.AlbumArtThumbnail
+import net.erezschatz.resonancedrift.ui.components.PlayPauseButton
 
 /**
  * A full-screen route (no bars). TEMPORARY layout until step 11: art, title,
@@ -38,6 +37,7 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, onClose: () -> Unit) {
     val context = LocalContext.current
     val entry by viewModel.player.current.collectAsStateWithLifecycle()
     val isPlaying by viewModel.player.isPlaying.collectAsStateWithLifecycle()
+    val isWaiting by viewModel.player.isWaiting.collectAsStateWithLifecycle()
 
     Column(modifier = Modifier.fillMaxSize().safeDrawingPadding().padding(16.dp)) {
         IconButton(onClick = onClose) {
@@ -64,12 +64,7 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, onClose: () -> Unit) {
                     IconButton(onClick = { viewModel.player.previous() }) {
                         Icon(Icons.Filled.SkipPrevious, contentDescription = "Previous")
                     }
-                    IconButton(onClick = { viewModel.player.togglePlayPause() }) {
-                        Icon(
-                            if (isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                            contentDescription = if (isPlaying) "Pause" else "Play",
-                        )
-                    }
+                    PlayPauseButton(isPlaying, isWaiting, onToggle = { viewModel.player.togglePlayPause() })
                     IconButton(onClick = { viewModel.player.next() }) {
                         Icon(Icons.Filled.SkipNext, contentDescription = "Next")
                     }

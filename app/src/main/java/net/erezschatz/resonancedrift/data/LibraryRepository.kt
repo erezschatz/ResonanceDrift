@@ -144,14 +144,6 @@ class LibraryRepository(
         return albums.sortedWith(compareBy<AlbumEntity> { it.year }.thenBy(String.CASE_INSENSITIVE_ORDER) { it.name })
     }
 
-    /** Genre detail's "Play all". */
-    suspend fun genreSongs(genreId: Long): List<SongEntity> {
-        val songs = session.call { server, token -> client.genreSongs(server, token, genreId) }
-            .map { SongEntity.from(it) }
-        library.upsertSongs(songs)
-        return songs
-    }
-
     companion object {
         /** A second fetch covers a removal made during the first; more would only chase the user's taps. */
         const val PLAYLIST_FETCH_ATTEMPTS = 2

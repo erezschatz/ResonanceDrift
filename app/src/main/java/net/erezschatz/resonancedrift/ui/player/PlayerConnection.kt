@@ -61,6 +61,10 @@ class PlayerConnection(private val context: Context) {
     private val _isPlaying = MutableStateFlow(false)
     val isPlaying: StateFlow<Boolean> = _isPlaying.asStateFlow()
 
+    /** Asked to play but waiting for audio (a song starting, or the buffer ran dry): the UI shows a spinner. */
+    private val _isWaiting = MutableStateFlow(false)
+    val isWaiting: StateFlow<Boolean> = _isWaiting.asStateFlow()
+
     /** The item playing (or paused on); null when the queue is empty. */
     private val _current = MutableStateFlow<QueueEntry?>(null)
     val current: StateFlow<QueueEntry?> = _current.asStateFlow()
@@ -114,6 +118,7 @@ class PlayerConnection(private val context: Context) {
         ticker = null
         _connected.value = false
         _isPlaying.value = false
+        _isWaiting.value = false
     }
 
     /** Replace the queue with [items] and play from [startIndex]. */
@@ -129,9 +134,10 @@ class PlayerConnection(private val context: Context) {
         playQueue(songs.map { MediaItems.fromSong(it.toSong(), login) }, startIndex)
     }
 
+    /** By playWhenReady, not isPlaying: a tap while a song is still starting pauses it. */
     fun togglePlayPause() {
         val current = controller ?: return
-        if (current.isPlaying) current.pause() else current.play()
+        if (current.playWhenReady) current.pause() else current.play()
     }
 
     fun next() {
@@ -161,6 +167,7 @@ class PlayerConnection(private val context: Context) {
 
     private fun publish(player: Player) {
         _isPlaying.value = player.isPlaying
+        _isWaiting.value = player.playWhenReady && player.playbackState == Player.STATE_BUFFERING
         _current.value = player.currentMediaItem?.let { entryFor(it) }
         _currentIndex.value = if (player.mediaItemCount == 0) -1 else player.currentMediaItemIndex
         publishPosition(player)

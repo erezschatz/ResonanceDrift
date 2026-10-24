@@ -7,9 +7,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -27,6 +29,7 @@ import net.erezschatz.resonancedrift.ui.player.QueueEntry
 fun MiniPlayer(
     entry: QueueEntry,
     isPlaying: Boolean,
+    isWaiting: Boolean,
     login: StoredLogin?,
     onTogglePlay: () -> Unit,
     onOpen: () -> Unit,
@@ -56,7 +59,20 @@ fun MiniPlayer(
                 overflow = TextOverflow.Ellipsis,
             )
         }
-        IconButton(onClick = onTogglePlay) {
+        PlayPauseButton(isPlaying, isWaiting, onTogglePlay)
+    }
+}
+
+/**
+ * Play/pause, or a spinner while a song is starting or the buffer is refilling.
+ * The spinner stays tappable as pause, so a slow start can still be cancelled.
+ */
+@Composable
+fun PlayPauseButton(isPlaying: Boolean, isWaiting: Boolean, onToggle: () -> Unit) {
+    IconButton(onClick = onToggle) {
+        if (isWaiting) {
+            CircularProgressIndicator(modifier = Modifier.size(24.dp), strokeWidth = 2.5.dp)
+        } else {
             Icon(
                 imageVector = if (isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
                 contentDescription = if (isPlaying) "Pause" else "Play",

@@ -30,7 +30,7 @@ Feature parity with ReDrift v5.13 **plus** ReDrift's TODO steps 1, 2 and 4:
 - Auth against an Ampache 6 server (URL, user, password); session kept alive
 - Albums (random page, "Shuffle all"), Album detail
 - Artists → Artist detail (albums grid with year)
-- **Genres → Genre detail** (play all, albums grid sorted by year, then name)
+- **Genres → Genre detail** (albums grid sorted by year, then name; no "Play all", D30)
 - Playlists → Playlist detail (large lists, "now playing / next up" collapsed
   view, full list, remove song from playlist)
 - Search: albums by title, albums by artist, albums containing a matching song,
@@ -245,7 +245,10 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   `PlaybackEvents` (an `AnalyticsListener`): state with position and buffered
   time, playWhenReady reasons, suppression, transitions, load start/done/error,
   audio underruns, errors with their cause chain; and by `NetworkRecovery`.
-  `ssid=`/`auth=` values are scrubbed from every line.
+  `ssid=`/`auth=` values are scrubbed from every line. `StreamTiming` (an
+  OkHttp `EventListener` on the streaming client only) adds one line per
+  stream request: time to the server's answer, to the first audio bytes, and
+  whether a new connection was opened.
 - **Persistence.** On every transition, pause, and every ~10 s while playing,
   save `[song ids]`, index, position, shuffle flag to `QueueStateStore`.
   Restore on service create as a prepared, **paused** playlist at the saved
@@ -326,6 +329,8 @@ real server.
   at Albums' root it leaves the app. The stack handed to `NavDisplay` is
   Albums' stack with the current tab's on top, so predictive back previews
   what back will actually show. Tapping the current tab returns to its root.
+  While a song is starting (or the buffer refills) the mini player's and Now
+  Playing's play/pause shows a spinner; tapping it pauses.
   Every pushed screen gets its own id, so the same route can be on the stack
   twice (album → its artist → the album again) with separate state.
 - Browse (step 08): tapping an album card opens Album detail; tapping a

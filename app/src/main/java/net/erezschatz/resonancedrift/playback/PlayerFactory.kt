@@ -26,9 +26,11 @@ object PlayerFactory {
     private const val BUFFER_FOR_PLAYBACK_MS = 2_500
     private const val BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS = 5_000
 
-    fun create(context: Context, http: OkHttpClient, cache: Cache, resolver: SongUriResolver): ExoPlayer {
+    fun create(context: Context, http: OkHttpClient, cache: Cache, resolver: SongUriResolver, log: PlaybackLog): ExoPlayer {
         // rd://song/<id> → stream URL (token fresh per request) → cache by song id → network.
-        val network = OkHttpDataSource.Factory(http)
+        // Same client (connections, timeouts), plus timing lines for the playback log.
+        val streaming = http.newBuilder().eventListenerFactory(StreamTiming.factory(log)).build()
+        val network = OkHttpDataSource.Factory(streaming)
         val cached = CacheDataSource.Factory()
             .setCache(cache)
             .setUpstreamDataSourceFactory(network)

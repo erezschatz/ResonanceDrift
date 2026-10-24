@@ -74,7 +74,7 @@ larger value is silently capped, so page until a short page comes back).
 | `artist_songs` | `filter=artistId` | `song[]` | Unused in phase 1 UI; kept in the client |
 | `genres` | `offset`, `limit` | `genre[]` | |
 | `genre` | `filter=id` | `genre` / `genre[]` | |
-| `genre_songs` | `filter=genreId` | `song[]` | Genre detail "Play all" |
+| `genre_songs` | `filter=genreId` | `song[]` | Unused since D30 removed Genre detail's "Play all"; kept in the client |
 | `genre_albums` | `filter=genreId` | `album[]` | **New in ResonanceDrift** (ReDrift TODO step 2b); sort by year asc, then name |
 | `playlists` | `offset`, `limit` | `playlist[]` | |
 | `playlist` | `filter=id` | `playlist` / `playlist[]` | |
