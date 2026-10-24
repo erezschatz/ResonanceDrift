@@ -54,3 +54,9 @@ TODO step 2b, not from a new request.
 After sign-off, 1.9 (10): "Play all" removed from Genre detail at Erez's
 request (D30; it came from ReDrift's TODO, not from him). The criterion above
 is left as written and ticked for the record.
+
+Phone, 1.9 (10), 2026-10-24 (Erez): the spinner sits where it should. Three
+starts took 0.65–1.15 s tap to sound: the server answered in 0.2–0.35 s on
+a reused connection, the rest was the first 2.5 s of audio arriving. The
+earlier ~2 s starts were not reproduced; when one recurs, its `stream` line
+says whether it was a new connection or the server.

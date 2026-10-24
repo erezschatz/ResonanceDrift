@@ -14,6 +14,7 @@ what has not yet been installed on the phone as a numbered version.
   (new/reused connection)` line per stream request (`StreamTiming`).
 - Genre detail: "Play all" removed; `LibraryRepository.genreSongs` with it.
 - Tests: `StreamTiming` (2 new, 107 JVM).
+- Verified on the phone the same day: spinner placement good; starts 0.65–1.15 s.
 
 ### 2026-10-24 — Browse: Albums, Artists, Genres and their details (step 08) · 1.8 (9)
 - Albums: a random page as a grid (art, name, artist · year), Refresh for
