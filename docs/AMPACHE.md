@@ -85,7 +85,8 @@ larger value is silently capped, so page until a short page comes back).
 | `advanced_search` | see below | `album[]` or `song[]` | |
 
 ### advanced_search
-Four queries run in parallel for one search string `q`:
+Four purposes, three requests in parallel (the two song rows are one request,
+read twice) for one search string `q`:
 
 | Purpose | Params |
 |---|---|

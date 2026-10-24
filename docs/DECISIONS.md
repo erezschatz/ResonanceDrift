@@ -526,3 +526,26 @@ Narrows SPEC → Scope for playlists only.
 **Why.** Removal writes to the server and cannot be undone from the app;
 the icon is the one Erez already knows on his home screen.
 
+## D33 · 2026-10-24 · Search (step 10)
+
+**Decision.**
+- Three parallel `advanced_search` requests: album/title, album/artist,
+  song/title. The song answer is both the Songs section and the source of
+  "albums containing a matching song".
+- Search starts at 2 characters, 350 ms after typing stops; `collectLatest`
+  cancels a search made stale by newer typing.
+- The Search ViewModel is scoped to the Activity, so the query and results
+  survive a trip to another tab.
+- Albums made up from song results are shown but not written to the
+  `albums` table (they lack counts); real album results and all songs are.
+- A song from the results plays on its own (`setQueue([song])`, task 10).
+
+**Rejected.**
+- Sending the song/title query twice, as "four queries" reads literally.
+- Searching from the first character: one letter matches most of the library.
+- A per-entry Search ViewModel like the other screens: switching to another
+  tab drops the Search entry from the back stack, and the query with it.
+
+**Why.** Same results as ReDrift with one request fewer; and a search is the
+one screen where coming back to an empty box loses real work.
+

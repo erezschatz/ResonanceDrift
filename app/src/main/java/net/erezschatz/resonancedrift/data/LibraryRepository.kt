@@ -1,5 +1,7 @@
 package net.erezschatz.resonancedrift.data
 
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.channelFlow
@@ -33,12 +35,24 @@ sealed interface Refresh {
 data class Listing<T>(val items: List<T>, val refresh: Refresh)
 
 /**
+ * One search's answer. Each section degrades on its own: [albumsError] is the
+ * first album query that failed (the others' albums are still there),
+ * [songsError] the song query's failure.
+ */
+data class SearchResult(
+    val albums: List<AlbumEntity>,
+    val songs: List<SongEntity>,
+    val albumsError: AmpacheException? = null,
+    val songsError: AmpacheException? = null,
+)
+
+/**
  * The only thing ViewModels read the library from (docs/SPEC.md → Data).
  * Lists are cache-first: the cached rows come out at once, the server is asked
  * in the background, the answer is written to Room, and Room's Flow brings it
  * to the screen. Every refresh writes the server's whole answer for that list,
  * so rows added, changed or removed on the server are added, changed or
- * removed here too. The Albums page and Genre detail are API-only, as in ReDrift.
+ * removed here too. The Albums page, Genre detail and Search are API-only, as in ReDrift.
  */
 class LibraryRepository(
     private val session: Session,
@@ -144,7 +158,74 @@ class LibraryRepository(
         return albums.sortedWith(compareBy<AlbumEntity> { it.year }.thenBy(String.CASE_INSENSITIVE_ORDER) { it.name })
     }
 
+    // --- Search (API-only; docs/AMPACHE.md → advanced_search)
+
+    /**
+     * Albums by title, albums by artist, and songs by title, in parallel. The
+     * song query serves twice: its songs are the Songs section, and their
+     * albums join the album results. One failed query does not fail the rest.
+     */
+    suspend fun search(query: String): SearchResult = coroutineScope {
+        val byTitle = async { attempt { session.call { server, token -> client.searchAlbums(server, token, "title", query) } } }
+        val byArtist = async { attempt { session.call { server, token -> client.searchAlbums(server, token, "artist", query) } } }
+        val songs = async { attempt { session.call { server, token -> client.searchSongs(server, token, query) } } }
+
+        val titleAlbums = byTitle.await()
+        val artistAlbums = byArtist.await()
+        val songResults = songs.await()
+
+        val titleEntities = titleAlbums.getOrNull().orEmpty().map { AlbumEntity.from(it) }
+        val artistEntities = artistAlbums.getOrNull().orEmpty().map { AlbumEntity.from(it) }
+        val songEntities = songResults.getOrNull().orEmpty().map { SongEntity.from(it) }
+        // Real album rows only: an album made up from a song would overwrite the cached counts with zeros.
+        library.upsertAlbums(titleEntities + artistEntities)
+        library.upsertSongs(songEntities)
+
+        SearchResult(
+            albums = mergeAlbums(titleEntities, artistEntities, songEntities),
+            songs = songEntities,
+            // attempt() only ever stores AmpacheExceptions.
+            albumsError = (titleAlbums.exceptionOrNull() ?: artistAlbums.exceptionOrNull()) as? AmpacheException,
+            songsError = songResults.exceptionOrNull() as? AmpacheException,
+        )
+    }
+
+    /** The block's value, or its AmpacheException as a failure; anything else still throws. */
+    private suspend fun <T> attempt(block: suspend () -> T): Result<T> =
+        try {
+            Result.success(block())
+        } catch (e: AmpacheException) {
+            Result.failure(e)
+        }
+
     companion object {
+        /** ReDrift's cap on the merged album results. */
+        const val SEARCH_ALBUM_LIMIT = 50
+
+        /**
+         * Albums by title first, then by artist, then the albums of matching
+         * songs, each album once, at most [SEARCH_ALBUM_LIMIT]. An album from a
+         * song has only what the song carries: name, artist, year.
+         */
+        fun mergeAlbums(byTitle: List<AlbumEntity>, byArtist: List<AlbumEntity>, songs: List<SongEntity>): List<AlbumEntity> {
+            val merged = LinkedHashMap<Long, AlbumEntity>()
+            for (album in byTitle + byArtist) merged.putIfAbsent(album.id, album)
+            for (song in songs) {
+                val albumId = song.albumId ?: continue
+                if (merged.containsKey(albumId)) continue
+                merged[albumId] = AlbumEntity(
+                    id = albumId,
+                    name = song.albumName,
+                    artistId = song.albumArtistId ?: song.artistId,
+                    artistName = song.albumArtistName.ifEmpty { song.artistName },
+                    year = song.year,
+                    songCount = 0,
+                    durationSeconds = 0,
+                )
+            }
+            return merged.values.take(SEARCH_ALBUM_LIMIT)
+        }
+
         /** A second fetch covers a removal made during the first; more would only chase the user's taps. */
         const val PLAYLIST_FETCH_ATTEMPTS = 2
 

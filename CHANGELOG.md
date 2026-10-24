@@ -6,6 +6,17 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Search (step 10) · 1.11 (12)
+- One box: albums (by title, by artist, from matching songs; de-duplicated,
+  up to 50) as a grid, then the matching songs; "No results" only when both
+  are empty. Three parallel requests; a failed one degrades its section.
+- Album → Album detail; song → plays alone → Now Playing.
+- Debounced (350 ms, from 2 characters); the query survives tab switches.
+  Decision D33.
+- The step-07 placeholder screen is gone; every tab is real now.
+- Tests: album merging (3 JVM, 110 total), search and degradation against a
+  fake server (2 instrumented, 23 total).
+
 ### 2026-10-24 — Playlists (step 09, light) and ReDrift's icon · 1.10 (11)
 - Playlists list (cache-first, song counts) → Playlist detail: every song
   with artist and duration; Play; tap a song to play the playlist from it.

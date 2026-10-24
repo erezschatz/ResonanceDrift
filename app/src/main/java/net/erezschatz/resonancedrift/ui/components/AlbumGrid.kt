@@ -24,8 +24,9 @@ import net.erezschatz.resonancedrift.ampache.StoredLogin
 import net.erezschatz.resonancedrift.data.entity.AlbumEntity
 
 /**
- * The album grid used by Albums, Artist detail and Genre detail. [header]
- * spans the full width above the cards (title, buttons, status line).
+ * The album grid used by Albums, Artist detail, Genre detail and Search.
+ * [header] spans the full width above the cards (title, buttons, status line);
+ * [footer] adds full-width items below them (Search's songs).
  * Columns adapt to the width, ~150 dp each, as ReDrift's CSS grid did.
  */
 @Composable
@@ -34,6 +35,7 @@ fun AlbumGrid(
     login: StoredLogin?,
     subtitle: (AlbumEntity) -> String,
     onOpen: (AlbumEntity) -> Unit,
+    footer: LazyGridScope.() -> Unit = {},
     header: @Composable () -> Unit,
 ) {
     LazyVerticalGrid(
@@ -47,10 +49,12 @@ fun AlbumGrid(
         items(albums, key = { it.id }) { album ->
             AlbumCard(album, login, subtitle(album), onClick = { onOpen(album) })
         }
+        footer()
     }
 }
 
-private fun LazyGridScope.fullWidth(content: @Composable () -> Unit) {
+/** An item across all columns of the grid. */
+fun LazyGridScope.fullWidth(content: @Composable () -> Unit) {
     item(span = { GridItemSpan(maxLineSpan) }) { content() }
 }
 

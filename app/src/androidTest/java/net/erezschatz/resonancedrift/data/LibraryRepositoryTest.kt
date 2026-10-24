@@ -38,6 +38,9 @@ class LibraryRepositoryTest {
     private var artistsAnswer: List<String> = emptyList()
     private var playlistSongsRequests = 0
 
+    /** advanced_search answers by "type/rule"; a missing key answers with an error envelope. */
+    private var searchAnswers: Map<String, String> = emptyMap()
+
     /** playlist_remove_song: null answers success, otherwise this error envelope's message. */
     private var removeRefusal: String? = null
 
@@ -52,7 +55,10 @@ class LibraryRepositoryTest {
     }
 
     private fun answer(chain: Interceptor.Chain): Response {
-        val body = when (chain.request().url.queryParameter("action")) {
+        val url = chain.request().url
+        val body = when (url.queryParameter("action")) {
+            "advanced_search" -> searchAnswers["${url.queryParameter("type")}/${url.queryParameter("rule_1")}"]
+                ?: """{"error":{"errorCode":"4710","errorMessage":"search broke"}}"""
             "playlist_songs" -> songsJson(playlistAnswers(playlistSongsRequests++))
             "artists" -> artistsJson(artistsAnswer)
             "playlist_remove_song" -> removeRefusal?.let { """{"error":{"errorCode":"4742","errorMessage":"$it"}}""" }
@@ -134,6 +140,38 @@ class LibraryRepositoryTest {
         assertTrue(thrown is AmpacheException)
         assertEquals(listOf(1L, 2L, 3L), rule.db.playlistSongs().get("12")?.songIds)
         assertEquals("version unchanged", 1, rule.db.playlistSongs().versionOf("12"))
+    }
+
+    @Test
+    fun searchMergesAlbumsAndKeepsTheSongs() = runTest {
+        searchAnswers = mapOf(
+            "album/title" to """{"album":[{"id":"1","name":"Blue"},{"id":"2","name":"Blue Train"}]}""",
+            "album/artist" to """{"album":[{"id":"2","name":"Blue Train"},{"id":"3","name":"Kind of Blue"}]}""",
+            "song/title" to """{"song":[{"id":"30","title":"Blue in Green","album":{"id":"3","name":"Kind of Blue"}},
+                {"id":"40","title":"Blues","album":{"id":"4","name":"Elsewhere"}}]}""",
+        )
+
+        val result = repository.search("blue")
+
+        assertEquals(listOf(1L, 2L, 3L, 4L), result.albums.map { it.id })
+        assertEquals(listOf(30L, 40L), result.songs.map { it.id })
+        assertEquals(null, result.albumsError)
+        assertEquals(null, result.songsError)
+    }
+
+    @Test
+    fun aFailedQueryDegradesOnlyItsSection() = runTest {
+        searchAnswers = mapOf(
+            "album/title" to """{"album":[{"id":"1","name":"Blue"}]}""",
+            // album/artist and song/title answer with an error envelope
+        )
+
+        val result = repository.search("blue")
+
+        assertEquals(listOf(1L), result.albums.map { it.id })
+        assertTrue(result.albumsError is AmpacheException)
+        assertTrue(result.songs.isEmpty())
+        assertTrue(result.songsError is AmpacheException)
     }
 
     @Test

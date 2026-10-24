@@ -6,7 +6,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavEntry
@@ -36,6 +38,7 @@ import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistDetailViewMode
 import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistsScreen
 import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistsViewModel
 import net.erezschatz.resonancedrift.ui.screens.search.SearchScreen
+import net.erezschatz.resonancedrift.ui.screens.search.SearchViewModel
 
 /**
  * The logged-in app: NavDisplay over the Navigator's back stack, with the
@@ -48,6 +51,8 @@ fun AppScaffold(graph: AppGraph, navigator: Navigator = viewModel()) {
     val isPlaying by player.isPlaying.collectAsStateWithLifecycle()
     val isWaiting by player.isWaiting.collectAsStateWithLifecycle()
     val showChrome = navigator.current != Route.NowPlaying
+    // The Activity's ViewModel store, for the one screen whose state outlives its entry (Search, D33).
+    val activityStore = checkNotNull(LocalViewModelStoreOwner.current)
 
     Scaffold(
         bottomBar = {
@@ -81,13 +86,13 @@ fun AppScaffold(graph: AppGraph, navigator: Navigator = viewModel()) {
             ),
             // The swipe-back preview is the same fade as every other move; the default shrinks the screen (D29).
             predictivePopTransitionSpec = { _ -> defaultPopTransitionSpec<StackEntry>()(this) },
-            entryProvider = { entry -> NavEntry(entry, contentKey = entry.id) { Screen(entry.route, graph, navigator) } },
+            entryProvider = { entry -> NavEntry(entry, contentKey = entry.id) { Screen(entry.route, graph, navigator, activityStore) } },
         )
     }
 }
 
 @Composable
-private fun Screen(route: Route, graph: AppGraph, navigator: Navigator) {
+private fun Screen(route: Route, graph: AppGraph, navigator: Navigator, activityStore: ViewModelStoreOwner) {
     val openAlbum = { album: AlbumEntity -> navigator.open(Route.AlbumDetail(album.id)) }
     val openNowPlaying = { navigator.open(Route.NowPlaying) }
     when (route) {
@@ -107,7 +112,14 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator) {
             viewModel = viewModel(factory = PlaylistsViewModel.factory(graph.library)),
             onOpen = { navigator.open(Route.PlaylistDetail(it.id, it.name)) },
         )
-        Route.Search -> SearchScreen()
+        Route.Search -> SearchScreen(
+            viewModel = viewModel(
+                viewModelStoreOwner = activityStore,
+                factory = SearchViewModel.factory(graph.session, graph.library, graph.playerConnection),
+            ),
+            onOpenAlbum = openAlbum,
+            onPlayed = openNowPlaying,
+        )
         is Route.AlbumDetail -> AlbumDetailScreen(
             viewModel = viewModel(
                 factory = AlbumDetailViewModel.factory(route.albumId, graph.session, graph.library, graph.playerConnection),

@@ -35,7 +35,8 @@ Feature parity with ReDrift v5.13 **plus** ReDrift's TODO steps 1, 2 and 4:
   playlist via each row's ⋮ menu; not on smart playlists). Light by choice
   (D31): no collapsed "now playing / next up" view.
 - Search: albums by title, albums by artist, albums containing a matching song,
-  **and songs by title** (songs section under the albums grid)
+  **and songs by title** (songs section under the albums grid). Three parallel
+  requests; each section degrades on its own; the query survives tab switches.
 - Album shuffle: whole-album random play, 50-album no-repeat history, next
   album chained before the current one ends, "Next album" button
 - Now Playing: art, title, **artist (tappable) · album (tappable) · year**,
