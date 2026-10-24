@@ -31,8 +31,8 @@ Feature parity with ReDrift v5.13 **plus** ReDrift's TODO steps 1, 2 and 4:
 - Albums (random page, "Shuffle all"), Album detail
 - Artists → Artist detail (albums grid with year)
 - **Genres → Genre detail** (albums grid sorted by year, then name; no "Play all", D30)
-- Playlists → Playlist detail (large lists, "now playing / next up" collapsed
-  view, full list, remove song from playlist)
+- Playlists → Playlist detail (large lists, full list, remove song from
+  playlist). Light by choice (D31): no collapsed "now playing / next up" view.
 - Search: albums by title, albums by artist, albums containing a matching song,
   **and songs by title** (songs section under the albums grid)
 - Album shuffle: whole-album random play, 50-album no-repeat history, next

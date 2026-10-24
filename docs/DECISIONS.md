@@ -491,3 +491,17 @@ its own state; and the task's promise is "tapping an album shows its tracks".
 a spinner where the eye already is makes the wait legible, and the timing
 line says which part to look at next.
 
+## D31 · 2026-10-24 · Playlists step kept light
+
+**Decision.** Step 09 is list → detail (full list) → play from any song, plus
+remove song (server first, then the cache with the version bump). It is
+verified with a ~2000-song smart playlist made for the test.
+
+**Rejected.** ReDrift's full playlist screen: the collapsed "Now playing /
+Next up" view with "Show full list", and optimistic removal with the row
+restored on failure.
+
+**Why.** Erez mostly listens through album shuffle now and has no large
+playlist in use; build what is used, and grow it if the habit changes.
+Narrows SPEC → Scope for playlists only.
+

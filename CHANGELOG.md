@@ -6,6 +6,10 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Docs: step 09 (Playlists) kept light
+- Task 09 rewritten: list, full-list detail, play from any song, remove song;
+  no collapsed "now playing / next up" view. Decision D31; SPEC scope updated.
+
 ### 2026-10-24 — Spinner while a song starts, stream timing, no Genre "Play all" · 1.9 (10)
 - The mini player's and Now Playing's play/pause shows a spinner while a song
   is starting or the buffer refills; tapping it pauses (toggle by
