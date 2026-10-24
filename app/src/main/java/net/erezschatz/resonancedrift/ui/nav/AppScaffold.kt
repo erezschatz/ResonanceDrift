@@ -98,8 +98,9 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator, activity
     val openNowPlaying = { navigator.open(Route.NowPlaying) }
     when (route) {
         Route.Albums -> AlbumsScreen(
-            viewModel = viewModel(factory = AlbumsViewModel.factory(graph.session, graph.library)),
+            viewModel = viewModel(factory = AlbumsViewModel.factory(graph.session, graph.library, graph.playerConnection)),
             onOpenAlbum = openAlbum,
+            onPlayed = openNowPlaying,
         )
         Route.Artists -> ArtistsScreen(
             viewModel = viewModel(factory = ArtistsViewModel.factory(graph.library)),

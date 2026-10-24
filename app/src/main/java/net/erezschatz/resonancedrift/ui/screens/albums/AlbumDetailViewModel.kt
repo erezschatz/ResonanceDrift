@@ -18,7 +18,7 @@ import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 
 /** One album: its cached row and tracks at once, refreshed from the server behind them. */
 class AlbumDetailViewModel(
-    albumId: Long,
+    private val albumId: Long,
     private val session: Session,
     library: LibraryRepository,
     private val player: PlayerConnection,
@@ -31,6 +31,9 @@ class AlbumDetailViewModel(
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MS), Listing(emptyList(), Refresh.Running))
 
     fun login() = session.currentLogin()
+
+    /** Album shuffle, starting with this album. */
+    fun shuffleFromHere() = player.startShuffle(albumId)
 
     /** The album as the queue, from track [index]. */
     fun playFrom(index: Int) = player.playSongs(songs.value.items, index, session.currentLogin())

@@ -225,9 +225,13 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   songs and `addMediaItems` — before the current album ends, so the transition
   is gapless and needs no UI. It talks to the player only through
   `QueueController`, an interface we own, so it is unit-tested with a fake.
-  "Next album" clears the remainder of the queue and appends a fresh album.
-  Shuffle state is exposed to the UI via session extras + custom commands
-  (`Commands.kt`): `SHUFFLE_START(albumId?)`, `SHUFFLE_STOP`, `NEXT_ALBUM`.
+  "Next album" replaces the queue with a fresh album. Shuffle state is
+  exposed to the UI via session extras + custom commands (`Commands.kt`):
+  `SHUFFLE_START(albumId?)`, `SHUFFLE_CONTINUE` (keep the queue, random albums
+  after it — Now Playing's button), `SHUFFLE_STOP`, `NEXT_ALBUM`. A queue set
+  by a controller turns shuffle off (`onAddMediaItems`). The pool is every
+  album, paged and cached; offline, the cached ids. A failed next-album fetch
+  retries after 30 s (D35).
 - **`NetworkRecovery`.** The one place we still "fight": ExoPlayer stops on an
   unrecoverable load error. Policy: a custom `LoadErrorHandlingPolicy` retries
   I/O errors with backoff for a long time instead of failing; if the player

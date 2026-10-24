@@ -3,9 +3,13 @@ package net.erezschatz.resonancedrift.playback
 import android.app.PendingIntent
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.os.Bundle
 import androidx.media3.common.MediaItem
 import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
+import androidx.media3.session.SessionCommand
+import androidx.media3.session.SessionError
+import androidx.media3.session.SessionResult
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import kotlinx.coroutines.MainScope
@@ -26,6 +30,7 @@ class PlaybackService : MediaSessionService() {
 
     private var mediaSession: MediaSession? = null
     private var recovery: NetworkRecovery? = null
+    private var shuffle: AlbumShuffle? = null
 
     /** Main-thread scope for recovery's backoff timers; cancelled with the service. */
     private val scope = MainScope()
@@ -42,9 +47,17 @@ class PlaybackService : MediaSessionService() {
             getSystemService(ConnectivityManager::class.java),
             scope,
         ).also { it.start() }
+        shuffle = AlbumShuffle(
+            PlayerQueueController(player),
+            AppShuffleLibrary(graph.library, graph.shuffleHistory, graph.session),
+            graph.playbackLog,
+            scope,
+            onStateChanged = { state, message -> mediaSession?.setSessionExtras(Commands.extras(state, message)) },
+        ).also { player.addListener(it) }
         mediaSession = MediaSession.Builder(this, player)
             .setCallback(SessionCallback())
             .setSessionActivity(openAppIntent())
+            .setSessionExtras(Commands.extras(ShuffleState.OFF, null))
             .build()
     }
 
@@ -54,6 +67,7 @@ class PlaybackService : MediaSessionService() {
         graph.playbackLog.log("service destroyed")
         recovery?.stop()
         recovery = null
+        shuffle = null
         scope.cancel()
         mediaSession?.let { session ->
             session.player.release()
@@ -72,13 +86,48 @@ class PlaybackService : MediaSessionService() {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
 
-    private class SessionCallback : MediaSession.Callback {
-        /** Items arrive from the controller without their URI; put it back. */
+    private inner class SessionCallback : MediaSession.Callback {
+
+        /** Every controller (our UI) may send the shuffle commands. */
+        override fun onConnect(session: MediaSession, controller: MediaSession.ControllerInfo): MediaSession.ConnectionResult {
+            val commands = MediaSession.ConnectionResult.DEFAULT_SESSION_COMMANDS.buildUpon()
+            for (command in Commands.ALL) commands.add(command)
+            return MediaSession.ConnectionResult.AcceptedResultBuilder(session)
+                .setAvailableSessionCommands(commands.build())
+                .build()
+        }
+
+        override fun onCustomCommand(
+            session: MediaSession,
+            controller: MediaSession.ControllerInfo,
+            customCommand: SessionCommand,
+            args: Bundle,
+        ): ListenableFuture<SessionResult> {
+            val shuffle = shuffle ?: return Futures.immediateFuture(SessionResult(SessionError.ERROR_INVALID_STATE))
+            when (customCommand.customAction) {
+                Commands.SHUFFLE_START.customAction -> shuffle.start(
+                    if (args.containsKey(Commands.ARG_ALBUM_ID)) args.getLong(Commands.ARG_ALBUM_ID) else null,
+                )
+                Commands.SHUFFLE_CONTINUE.customAction -> shuffle.continueFromCurrent()
+                Commands.SHUFFLE_STOP.customAction -> shuffle.stop()
+                Commands.NEXT_ALBUM.customAction -> shuffle.nextAlbum()
+                else -> return Futures.immediateFuture(SessionResult(SessionError.ERROR_NOT_SUPPORTED))
+            }
+            return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
+        }
+
+        /**
+         * Items arrive from the controller without their URI; put it back. A queue
+         * set from outside the service (a screen's Play) turns album shuffle off —
+         * shuffle's own appends go to the player directly, not through here.
+         */
         override fun onAddMediaItems(
             mediaSession: MediaSession,
             controller: MediaSession.ControllerInfo,
             mediaItems: MutableList<MediaItem>,
-        ): ListenableFuture<MutableList<MediaItem>> =
-            Futures.immediateFuture(mediaItems.map { MediaItems.withPlaybackUri(it) }.toMutableList())
+        ): ListenableFuture<MutableList<MediaItem>> {
+            shuffle?.stop()
+            return Futures.immediateFuture(mediaItems.map { MediaItems.withPlaybackUri(it) }.toMutableList())
+        }
     }
 }

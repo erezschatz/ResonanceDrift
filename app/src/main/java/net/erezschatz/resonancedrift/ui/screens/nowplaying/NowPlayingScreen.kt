@@ -27,6 +27,7 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -38,6 +39,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
@@ -45,7 +47,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.erezschatz.resonancedrift.ui.components.AlbumArt
 import net.erezschatz.resonancedrift.ui.components.ArtSizes
+import net.erezschatz.resonancedrift.playback.ShuffleState
 import net.erezschatz.resonancedrift.ui.components.PlayPauseButton
+import net.erezschatz.resonancedrift.ui.components.StatusText
 import net.erezschatz.resonancedrift.ui.components.TappableText
 import net.erezschatz.resonancedrift.ui.components.formatDuration
 import net.erezschatz.resonancedrift.ui.components.genreLine
@@ -65,8 +69,8 @@ class NowPlayingLinks(
 /**
  * Full screen, no bars. Art; title; artist (→ Artist detail); album · year
  * (→ Album detail); genre line (→ Genre detail, hidden when none); seek bar;
- * shuffle / previous / play-pause / next / next album; the queue panel; and
- * the ⋮ menu with Copy diagnostics and Log out.
+ * album shuffle / previous / play-pause / next / next album; the queue panel;
+ * and the ⋮ menu with Copy diagnostics and Log out.
  */
 @Composable
 fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
@@ -77,6 +81,8 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
     val position by player.position.collectAsStateWithLifecycle()
     val queue by player.queue.collectAsStateWithLifecycle()
     val currentIndex by player.currentIndex.collectAsStateWithLifecycle()
+    val shuffle by player.shuffle.collectAsStateWithLifecycle()
+    val shuffleMessage by player.shuffleMessage.collectAsStateWithLifecycle()
     var showQueue by remember { mutableStateOf(false) }
 
     Column(modifier = Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 16.dp)) {
@@ -90,7 +96,11 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
         ) {
             val current = entry
             if (current == null) {
-                Text("Nothing playing", style = MaterialTheme.typography.bodyLarge)
+                Text(
+                    if (shuffle == ShuffleState.STARTING) "Picking an album…" else "Nothing playing",
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                shuffleMessage?.let { StatusText(it) }
                 return@Column
             }
             AlbumArt(
@@ -107,10 +117,14 @@ fun NowPlayingScreen(viewModel: NowPlayingViewModel, links: NowPlayingLinks) {
                 Controls(
                     isPlaying = isPlaying,
                     isWaiting = isWaiting,
+                    shuffle = shuffle,
+                    onShuffle = { if (shuffle == ShuffleState.OFF) player.continueShuffle() else player.stopShuffle() },
                     onPrevious = { player.previous() },
                     onToggle = { player.togglePlayPause() },
                     onNext = { player.next() },
+                    onNextAlbum = { player.nextAlbum() },
                 )
+                shuffleMessage?.let { StatusText("Album shuffle: $it") }
             }
         }
     }
@@ -248,28 +262,41 @@ private fun clock(ms: Long): String = formatDuration((ms / 1000).toInt()).ifEmpt
 private fun Controls(
     isPlaying: Boolean,
     isWaiting: Boolean,
+    shuffle: ShuffleState,
+    onShuffle: () -> Unit,
     onPrevious: () -> Unit,
     onToggle: () -> Unit,
     onNext: () -> Unit,
+    onNextAlbum: () -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly,
     ) {
-        // Album shuffle and Next album are wired in step 12.
-        ControlButton(Icons.Filled.Shuffle, "Album shuffle", enabled = false, onClick = {})
+        // Album shuffle: lit while on. Turning it on keeps the queue; random albums follow it.
+        ControlButton(
+            Icons.Filled.Shuffle,
+            if (shuffle == ShuffleState.OFF) "Album shuffle on" else "Album shuffle off",
+            onClick = onShuffle,
+            tint = if (shuffle == ShuffleState.OFF) LocalContentColor.current else MaterialTheme.colorScheme.primary,
+        )
         ControlButton(Icons.Filled.SkipPrevious, "Previous", onClick = onPrevious)
-        PlayPauseButton(isPlaying, isWaiting, onToggle, sizeDp = 64)
+        PlayPauseButton(isPlaying, isWaiting || shuffle == ShuffleState.STARTING, onToggle, sizeDp = 64)
         ControlButton(Icons.Filled.SkipNext, "Next", onClick = onNext)
-        ControlButton(Icons.Filled.Album, "Next album", enabled = false, onClick = {})
+        ControlButton(Icons.Filled.Album, "Next album", onClick = onNextAlbum)
     }
 }
 
 /** One transport button: a 40 dp icon in a 56 dp touch target. */
 @Composable
-private fun ControlButton(icon: ImageVector, description: String, onClick: () -> Unit, enabled: Boolean = true) {
-    IconButton(onClick = onClick, enabled = enabled, modifier = Modifier.size(56.dp)) {
-        Icon(icon, contentDescription = description, modifier = Modifier.size(40.dp))
+private fun ControlButton(
+    icon: ImageVector,
+    description: String,
+    onClick: () -> Unit,
+    tint: Color = LocalContentColor.current,
+) {
+    IconButton(onClick = onClick, modifier = Modifier.size(56.dp)) {
+        Icon(icon, contentDescription = description, tint = tint, modifier = Modifier.size(40.dp))
     }
 }

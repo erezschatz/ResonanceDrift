@@ -158,6 +158,34 @@ class LibraryRepository(
         return albums.sortedWith(compareBy<AlbumEntity> { it.year }.thenBy(String.CASE_INSENSITIVE_ORDER) { it.name })
     }
 
+    // --- Album shuffle (playback/AlbumShuffle.kt)
+
+    /**
+     * Every album id on the server, paged past the 5000 cap and cached in Room;
+     * the cached ids when the server cannot be reached and some are known.
+     */
+    suspend fun albumPool(): List<Long> =
+        try {
+            val all = AmpacheClient.fetchAllPages { offset, limit ->
+                session.call { server, token -> client.albums(server, token, offset, limit) }
+            }.map { AlbumEntity.from(it) }
+            library.upsertAlbums(all)
+            all.map { it.id }
+        } catch (e: AmpacheException) {
+            library.allAlbumIds().ifEmpty { throw e }
+        }
+
+    /** An album's songs for playing now: fresh from the server, the cached ones if it cannot be reached. */
+    suspend fun albumSongsForPlayback(albumId: Long): List<SongEntity> =
+        try {
+            val album = session.call { server, token -> client.album(server, token, albumId) }
+            val songs = session.call { server, token -> client.albumSongs(server, token, albumId) }.map { SongEntity.from(it) }
+            library.replaceAlbum(AlbumEntity.from(album), songs)
+            songs
+        } catch (e: AmpacheException) {
+            library.albumSongsNow(albumId).ifEmpty { throw e }
+        }
+
     // --- Search (API-only; docs/AMPACHE.md → advanced_search)
 
     /**

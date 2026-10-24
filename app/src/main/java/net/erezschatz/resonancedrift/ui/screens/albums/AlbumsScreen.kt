@@ -20,7 +20,7 @@ import net.erezschatz.resonancedrift.ui.components.ScreenHeader
 import net.erezschatz.resonancedrift.ui.components.artistAndYear
 
 @Composable
-fun AlbumsScreen(viewModel: AlbumsViewModel, onOpenAlbum: (AlbumEntity) -> Unit) {
+fun AlbumsScreen(viewModel: AlbumsViewModel, onOpenAlbum: (AlbumEntity) -> Unit, onPlayed: () -> Unit) {
     AlbumGrid(
         albums = viewModel.albums,
         login = viewModel.login(),
@@ -33,8 +33,13 @@ fun AlbumsScreen(viewModel: AlbumsViewModel, onOpenAlbum: (AlbumEntity) -> Unit)
                     Icon(Icons.Filled.Refresh, contentDescription = "Load different albums")
                 }
             }
-            // Wired in step 12 (album shuffle).
-            OutlinedButton(onClick = {}, enabled = false, modifier = Modifier.padding(bottom = 8.dp)) {
+            OutlinedButton(
+                onClick = {
+                    viewModel.player.startShuffle(albumId = null)
+                    onPlayed()
+                },
+                modifier = Modifier.padding(bottom = 8.dp),
+            ) {
                 Icon(Icons.Filled.Shuffle, contentDescription = null, modifier = Modifier.padding(end = 8.dp))
                 Text("Shuffle all")
             }

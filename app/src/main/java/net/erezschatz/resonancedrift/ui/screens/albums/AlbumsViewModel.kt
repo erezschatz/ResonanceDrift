@@ -14,6 +14,7 @@ import net.erezschatz.resonancedrift.ampache.Session
 import net.erezschatz.resonancedrift.data.LibraryRepository
 import net.erezschatz.resonancedrift.data.Refresh
 import net.erezschatz.resonancedrift.data.entity.AlbumEntity
+import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 
 /**
  * A random page of albums, straight from the server (as in ReDrift). The page
@@ -22,6 +23,7 @@ import net.erezschatz.resonancedrift.data.entity.AlbumEntity
 class AlbumsViewModel(
     private val session: Session,
     private val library: LibraryRepository,
+    val player: PlayerConnection,
 ) : ViewModel() {
 
     var albums by mutableStateOf<List<AlbumEntity>>(emptyList())
@@ -49,9 +51,9 @@ class AlbumsViewModel(
     }
 
     companion object {
-        fun factory(session: Session, library: LibraryRepository): ViewModelProvider.Factory =
+        fun factory(session: Session, library: LibraryRepository, player: PlayerConnection): ViewModelProvider.Factory =
             viewModelFactory {
-                initializer { AlbumsViewModel(session, library) }
+                initializer { AlbumsViewModel(session, library, player) }
             }
     }
 }

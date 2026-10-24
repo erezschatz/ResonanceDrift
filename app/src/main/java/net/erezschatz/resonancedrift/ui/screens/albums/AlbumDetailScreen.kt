@@ -89,8 +89,11 @@ fun AlbumDetailScreen(
                         Icon(Icons.Filled.PlayArrow, contentDescription = null, modifier = Modifier.padding(end = 8.dp))
                         Text("Play")
                     }
-                    // "Shuffle mode from this album" — wired in step 12.
-                    OutlinedButton(onClick = {}, enabled = false) {
+                    // Album shuffle starting with this album (ReDrift's "Shuffle Mode").
+                    OutlinedButton(onClick = {
+                        viewModel.shuffleFromHere()
+                        onPlayed()
+                    }) {
                         Icon(Icons.Filled.Shuffle, contentDescription = null, modifier = Modifier.padding(end = 8.dp))
                         Text("Shuffle")
                     }

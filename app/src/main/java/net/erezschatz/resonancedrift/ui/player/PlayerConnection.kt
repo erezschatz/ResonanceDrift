@@ -5,7 +5,9 @@ import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
+import android.os.Bundle
 import androidx.media3.session.MediaController
+import androidx.media3.session.SessionCommand
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import kotlinx.coroutines.CoroutineScope
@@ -21,9 +23,11 @@ import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.ampache.StoredLogin
 import net.erezschatz.resonancedrift.data.entity.GenreTag
 import net.erezschatz.resonancedrift.data.entity.SongEntity
+import net.erezschatz.resonancedrift.playback.Commands
 import net.erezschatz.resonancedrift.playback.MediaItems
 import net.erezschatz.resonancedrift.playback.PlaybackEvents
 import net.erezschatz.resonancedrift.playback.PlaybackService
+import net.erezschatz.resonancedrift.playback.ShuffleState
 import java.util.concurrent.CancellationException
 import java.util.concurrent.ExecutionException
 
@@ -84,6 +88,18 @@ class PlayerConnection(private val context: Context) {
     private val _position = MutableStateFlow(Position(0, 0))
     val position: StateFlow<Position> = _position.asStateFlow()
 
+    /** Album shuffle, as the service reports it in the session extras. */
+    private val _shuffle = MutableStateFlow(ShuffleState.OFF)
+    val shuffle: StateFlow<ShuffleState> = _shuffle.asStateFlow()
+
+    /** Why the last shuffle start failed (offline, empty library); null otherwise. */
+    private val _shuffleMessage = MutableStateFlow<String?>(null)
+    val shuffleMessage: StateFlow<String?> = _shuffleMessage.asStateFlow()
+
+    private val controllerListener = object : MediaController.Listener {
+        override fun onExtrasChanged(controller: MediaController, extras: Bundle) = publishShuffle(extras)
+    }
+
     private val listener = object : Player.Listener {
         override fun onEvents(player: Player, events: Player.Events) {
             if (events.contains(Player.EVENT_TIMELINE_CHANGED)) publishQueue(player)
@@ -96,7 +112,7 @@ class PlayerConnection(private val context: Context) {
         if (controllerFuture != null) return
         scope = MainScope()
         val token = SessionToken(context, ComponentName(context, PlaybackService::class.java))
-        val future = MediaController.Builder(context, token).buildAsync()
+        val future = MediaController.Builder(context, token).setListener(controllerListener).buildAsync()
         controllerFuture = future
         future.addListener({
             val connectedController = try {
@@ -110,6 +126,7 @@ class PlayerConnection(private val context: Context) {
             controller = connectedController
             connectedController.addListener(listener)
             _connected.value = true
+            publishShuffle(connectedController.sessionExtras)
             publishQueue(connectedController)
             publish(connectedController)
         }, ContextCompat.getMainExecutor(context))
@@ -138,6 +155,20 @@ class PlayerConnection(private val context: Context) {
     /** The screens' way to play: [songs] as the queue, from [startIndex]. */
     fun playSongs(songs: List<SongEntity>, startIndex: Int, login: StoredLogin?) {
         playQueue(songs.map { MediaItems.fromSong(it.toSong(), login) }, startIndex)
+    }
+
+    /** Shuffle all (null) or "shuffle from this album": the queue becomes that album. */
+    fun startShuffle(albumId: Long?) = send(Commands.SHUFFLE_START, Commands.startArgs(albumId))
+
+    /** Keep what is queued; random albums follow it. */
+    fun continueShuffle() = send(Commands.SHUFFLE_CONTINUE, Bundle.EMPTY)
+
+    fun stopShuffle() = send(Commands.SHUFFLE_STOP, Bundle.EMPTY)
+
+    fun nextAlbum() = send(Commands.NEXT_ALBUM, Bundle.EMPTY)
+
+    private fun send(command: SessionCommand, args: Bundle) {
+        controller?.sendCustomCommand(command, args)
     }
 
     /** By playWhenReady, not isPlaying: a tap while a song is still starting pauses it. */
@@ -190,6 +221,11 @@ class PlayerConnection(private val context: Context) {
         // The controller reports state changes, not the clock; while playing the
         // position is read twice a second for the seek bar. Display only.
         if (player.isPlaying) startTicker() else stopTicker()
+    }
+
+    private fun publishShuffle(extras: Bundle) {
+        _shuffle.value = Commands.stateOf(extras)
+        _shuffleMessage.value = extras.getString(Commands.EXTRA_SHUFFLE_MESSAGE)
     }
 
     private fun publishQueue(player: Player) {

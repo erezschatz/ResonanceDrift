@@ -88,6 +88,10 @@ abstract class LibraryDao {
     @Upsert
     abstract suspend fun upsertAlbums(albums: List<AlbumEntity>)
 
+    /** Album shuffle's pool when the server cannot be reached. */
+    @Query("SELECT id FROM albums")
+    abstract suspend fun allAlbumIds(): List<Long>
+
     @Query("DELETE FROM albums WHERE artistId = :artistId")
     protected abstract suspend fun deleteArtistAlbums(artistId: Long)
 
@@ -104,6 +108,9 @@ abstract class LibraryDao {
 
     @Upsert
     abstract suspend fun upsertSongs(songs: List<SongEntity>)
+
+    @Query("SELECT * FROM songs WHERE albumId = :albumId ORDER BY track, title COLLATE NOCASE")
+    abstract suspend fun albumSongsNow(albumId: Long): List<SongEntity>
 
     @Query("DELETE FROM songs WHERE albumId = :albumId")
     protected abstract suspend fun deleteAlbumSongs(albumId: Long)

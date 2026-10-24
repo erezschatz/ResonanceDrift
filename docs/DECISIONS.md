@@ -578,3 +578,35 @@ one screen where coming back to an empty box loses real work.
 because the previous song had never been saved. The rest follows task 11 and
 keeps the screen the one place for player things.
 
+## D35 · 2026-10-24 · Album shuffle shape (step 12)
+
+**Decision.**
+- `AlbumShuffle` is a `Player.Listener` in the service; it reaches the
+  player only through `QueueController`, and its albums and history through
+  `ShuffleLibrary` — both ours, both faked in `AlbumShuffleTest`.
+- Four session commands: the three in task 12 plus `SHUFFLE_CONTINUE`, which
+  turns shuffle on without replacing the queue (Now Playing's button).
+- Next album replaces the queue; it does not trim the tail and seek.
+- "From outside" means a controller's `setMediaItems`/`addMediaItems`, seen in
+  the session's `onAddMediaItems`; that stops shuffle.
+- State reaches the UI as session extras: OFF / STARTING / ON, plus the reason
+  a start failed.
+- Picks avoid the 50-album history and every album already in the queue;
+  when nothing is left, history is ignored (but the queue still is not).
+
+**Rejected.**
+- Toggling shuffle on in Now Playing as `SHUFFLE_START(current album)`: it
+  would restart the album from its first track.
+- A "did we set this queue?" flag around our own calls: brittle against the
+  order of player callbacks; the session boundary already separates the UI's
+  queue changes from the service's.
+- Removing an already-queued next album on stop: the album is fetched and
+  buffered, and playing it out surprises less than a queue that shrinks.
+- ReDrift's `queueend`-driven start: the append happens a song ahead, so the
+  boundary is an ordinary transition; the end-of-queue case is only the
+  fallback when a fetch failed.
+
+**Why.** The promise is hours of albums with the phone locked and the app
+closed; everything that decides lives where playback does, and the UI only
+sends four commands and reads one extra.
+

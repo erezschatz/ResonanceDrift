@@ -6,6 +6,20 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Album shuffle (step 12) · 1.14 (15)
+- `AlbumShuffle` in the service: a random album from the whole library;
+  at the last-but-one song the next one (not in the last 50, not in the
+  queue) is fetched and appended, so album boundaries are ordinary gapless
+  transitions. History written when an album starts. Failed fetches retry
+  after 30 s. Decision D35.
+- Pool: every album, paged past 5000 and cached; offline, the cached ids.
+- Commands `SHUFFLE_START(albumId?)`, `SHUFFLE_CONTINUE`, `SHUFFLE_STOP`,
+  `NEXT_ALBUM`; state to the UI through session extras.
+- Wired: Shuffle all (Albums), Shuffle (Album detail), the shuffle toggle and
+  Next album (Now Playing). Playing anything from a list turns shuffle off.
+- Tests: 9 against a fake queue and library (121 JVM); three album boundaries
+  on the real player (29 instrumented).
+
 ### 2026-10-24 — Now Playing spacing and bigger controls · 1.13 (14)
 - Step 11 verified on the phone on 1.12, airplane-mode previous included;
   Ampache sends no Content-Length on streams (every `stream` line said so).
