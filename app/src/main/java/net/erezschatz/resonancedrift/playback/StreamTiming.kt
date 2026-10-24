@@ -11,8 +11,9 @@ import java.net.Proxy
 /**
  * Times each stream request, for the playback log: how long the server took
  * to answer (response headers) and to send the first audio bytes, and whether
- * a new connection had to be opened. That splits "the song took 2 s to start"
- * into network setup vs the server getting ready. One listener per call.
+ * a new connection had to be opened, and whether it sent a length. That
+ * splits "the song took 2 s to start" into network setup vs the server getting
+ * ready. One listener per call.
  * Only the song id from the URL is logged, never the URL (it carries the token).
  */
 class StreamTiming(
@@ -22,6 +23,7 @@ class StreamTiming(
 
     private var startNanos = 0L
     private var headersMs = -1L
+    private var lengthText = "no length"
     private var connectMs = -1L
     private var connectStartNanos = 0L
 
@@ -39,11 +41,14 @@ class StreamTiming(
 
     override fun responseHeadersEnd(call: Call, response: Response) {
         headersMs = msSince(startNanos)
+        // Whether the server said how big the song is (Content-Length): it decides
+        // whether the cache knows the length up front (task 11).
+        lengthText = response.header("Content-Length")?.toLongOrNull()?.let { "${it / 1024} KB" } ?: "no length"
     }
 
     override fun responseBodyStart(call: Call) {
         val connection = if (connectMs >= 0) "new connection in $connectMs ms" else "reused connection"
-        log.log("stream ${songOf(call)}: answered in $headersMs ms, first bytes at ${msSince(startNanos)} ms ($connection)")
+        log.log("stream ${songOf(call)}: answered in $headersMs ms, first bytes at ${msSince(startNanos)} ms ($connection, $lengthText)")
     }
 
     override fun callFailed(call: Call, ioe: IOException) {

@@ -8,6 +8,7 @@ import net.erezschatz.resonancedrift.ampache.AlbumNames
 import net.erezschatz.resonancedrift.ampache.AmpacheUrls
 import net.erezschatz.resonancedrift.ampache.StoredLogin
 import net.erezschatz.resonancedrift.ampache.model.Song
+import net.erezschatz.resonancedrift.data.entity.GenreTag
 
 /**
  * Song ↔ MediaItem. The metadata set here is what the notification, the lock
@@ -19,11 +20,33 @@ object MediaItems {
     private const val ART_SIZE_PX = 512
 
     private const val EXTRA_ALBUM_ID = "net.erezschatz.resonancedrift.albumId"
+    private const val EXTRA_ARTIST_ID = "net.erezschatz.resonancedrift.artistId"
+    private const val EXTRA_GENRE_IDS = "net.erezschatz.resonancedrift.genreIds"
+    private const val EXTRA_GENRE_NAMES = "net.erezschatz.resonancedrift.genreNames"
 
-    /** The album id set by [fromSong], or null for an item without one. */
-    fun albumIdOf(metadata: MediaMetadata): Long? {
-        val extras = metadata.extras ?: return null
-        return if (extras.containsKey(EXTRA_ALBUM_ID)) extras.getLong(EXTRA_ALBUM_ID) else null
+    /**
+     * What Now Playing links to, carried in the metadata extras (they cross to
+     * the controller; the plain metadata fields have no ids). Null/empty when
+     * the song had none.
+     */
+    data class Links(val albumId: Long?, val artistId: Long?, val genres: List<GenreTag>)
+
+    fun linksOf(metadata: MediaMetadata): Links {
+        val extras = metadata.extras ?: return Links(null, null, emptyList())
+        val genreIds = extras.getLongArray(EXTRA_GENRE_IDS) ?: LongArray(0)
+        val genreNames = extras.getStringArray(EXTRA_GENRE_NAMES) ?: emptyArray()
+        return Links(
+            albumId = if (extras.containsKey(EXTRA_ALBUM_ID)) extras.getLong(EXTRA_ALBUM_ID) else null,
+            artistId = if (extras.containsKey(EXTRA_ARTIST_ID)) extras.getLong(EXTRA_ARTIST_ID) else null,
+            genres = genreIds.zip(genreNames) { id, name -> GenreTag(id, name) },
+        )
+    }
+
+    private fun linkExtras(song: Song): Bundle = Bundle().apply {
+        song.album?.id?.let { putLong(EXTRA_ALBUM_ID, it) }
+        song.artist?.id?.let { putLong(EXTRA_ARTIST_ID, it) }
+        putLongArray(EXTRA_GENRE_IDS, song.genre.map { it.id }.toLongArray())
+        putStringArray(EXTRA_GENRE_NAMES, song.genre.map { it.name }.toTypedArray())
     }
 
     /**
@@ -55,8 +78,8 @@ object MediaItems {
             .setMediaType(MediaMetadata.MEDIA_TYPE_MUSIC)
             .setIsPlayable(true)
             .setIsBrowsable(false)
-            // The UI keys album art by album id (the art URL's token changes); extras cross to the controller.
-            .setExtras(albumId?.let { Bundle().apply { putLong(EXTRA_ALBUM_ID, it) } })
+            // Ids for Now Playing's links and for album art keyed by album (the art URL's token changes).
+            .setExtras(linkExtras(song))
             .build()
 
         return MediaItem.Builder()

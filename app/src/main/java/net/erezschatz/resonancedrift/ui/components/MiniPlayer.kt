@@ -68,14 +68,15 @@ fun MiniPlayer(
  * The spinner stays tappable as pause, so a slow start can still be cancelled.
  */
 @Composable
-fun PlayPauseButton(isPlaying: Boolean, isWaiting: Boolean, onToggle: () -> Unit) {
-    IconButton(onClick = onToggle) {
+fun PlayPauseButton(isPlaying: Boolean, isWaiting: Boolean, onToggle: () -> Unit, sizeDp: Int = 24) {
+    IconButton(onClick = onToggle, modifier = Modifier.size((sizeDp + 24).dp)) {
         if (isWaiting) {
-            CircularProgressIndicator(modifier = Modifier.size(24.dp), strokeWidth = 2.5.dp)
+            CircularProgressIndicator(modifier = Modifier.size(sizeDp.dp), strokeWidth = 2.5.dp)
         } else {
             Icon(
                 imageVector = if (isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
                 contentDescription = if (isPlaying) "Pause" else "Play",
+                modifier = Modifier.size(sizeDp.dp),
             )
         }
     }

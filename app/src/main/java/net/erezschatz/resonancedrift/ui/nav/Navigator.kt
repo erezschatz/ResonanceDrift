@@ -95,6 +95,12 @@ class Navigator : ViewModel() {
         setStack(currentTab, stackOf(currentTab) + StackEntry(nextId++, route))
     }
 
+    /** From [from] (the screen showing, e.g. Now Playing) to [to]: [from] is closed, not kept under [to]. */
+    fun leave(from: Route, to: Route) {
+        if (current == from) back()
+        open(to)
+    }
+
     /** NavDisplay's onBack; it is only called when [backStack] has more than one entry. */
     fun back() {
         val stack = stackOf(currentTab)

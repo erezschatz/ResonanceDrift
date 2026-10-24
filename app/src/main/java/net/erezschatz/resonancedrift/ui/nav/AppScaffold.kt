@@ -31,6 +31,7 @@ import net.erezschatz.resonancedrift.ui.screens.genres.GenreDetailScreen
 import net.erezschatz.resonancedrift.ui.screens.genres.GenreDetailViewModel
 import net.erezschatz.resonancedrift.ui.screens.genres.GenresScreen
 import net.erezschatz.resonancedrift.ui.screens.genres.GenresViewModel
+import net.erezschatz.resonancedrift.ui.screens.nowplaying.NowPlayingLinks
 import net.erezschatz.resonancedrift.ui.screens.nowplaying.NowPlayingScreen
 import net.erezschatz.resonancedrift.ui.screens.nowplaying.NowPlayingViewModel
 import net.erezschatz.resonancedrift.ui.screens.playlists.PlaylistDetailScreen
@@ -153,7 +154,12 @@ private fun Screen(route: Route, graph: AppGraph, navigator: Navigator, activity
                     listOf(graph.appVersion, graph.deviceDescription),
                 ),
             ),
-            onClose = { navigator.back() },
+            links = NowPlayingLinks(
+                onClose = { navigator.back() },
+                onOpenArtist = { id, name -> navigator.leave(Route.NowPlaying, Route.ArtistDetail(id, name)) },
+                onOpenAlbum = { id -> navigator.leave(Route.NowPlaying, Route.AlbumDetail(id)) },
+                onOpenGenre = { id, name -> navigator.leave(Route.NowPlaying, Route.GenreDetail(id, name)) },
+            ),
         )
     }
 }

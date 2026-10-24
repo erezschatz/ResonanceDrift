@@ -11,7 +11,7 @@ import net.erezschatz.resonancedrift.playback.PlaybackLog
 import net.erezschatz.resonancedrift.ui.player.PlayerConnection
 import java.time.ZonedDateTime
 
-/** Now Playing's state is the player's; this adds the diagnostics report and, for now, log out. */
+/** Now Playing's state is the player's; this adds the diagnostics report and log out (D34). */
 class NowPlayingViewModel(
     private val session: Session,
     val player: PlayerConnection,
@@ -26,7 +26,7 @@ class NowPlayingViewModel(
             listOf("ResonanceDrift diagnostics") + reportHeader + "copied ${ZonedDateTime.now()}" + player.describe(),
         )
 
-    /** TEMPORARY home for log out (D28); it had none outside the dev screen. */
+    /** Log out lives in Now Playing's ⋮ menu, behind a confirmation (D34). */
     fun logout() {
         viewModelScope.launch { session.logout() }
     }

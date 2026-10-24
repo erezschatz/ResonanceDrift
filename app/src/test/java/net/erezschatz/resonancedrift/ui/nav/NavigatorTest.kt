@@ -95,4 +95,14 @@ class NavigatorTest {
         assertEquals(4, routes().size)
         assertEquals("every entry has its own id", 4, navigator.backStack.map { it.id }.distinct().size)
     }
+
+    @Test
+    fun `a link from Now Playing replaces it instead of stacking on top`() {
+        navigator.selectTab(Tab.Genres)
+        navigator.open(Route.NowPlaying)
+
+        navigator.leave(Route.NowPlaying, Route.ArtistDetail(7, "Artist"))
+
+        assertEquals(listOf(Route.Albums, Route.Genres, Route.ArtistDetail(7, "Artist")), routes())
+    }
 }

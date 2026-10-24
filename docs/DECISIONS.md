@@ -549,3 +549,32 @@ the icon is the one Erez already knows on his home screen.
 **Why.** Same results as ReDrift with one request fewer; and a search is the
 one screen where coming back to an empty box loses real work.
 
+## D34 · 2026-10-24 · Now Playing (step 11) and the media cache fix
+
+**Decision.**
+- `SongUriResolver` clears `DataSpec.FLAG_DONT_CACHE_IF_LENGTH_UNKNOWN` on
+  every song request, so streams without `Content-Length` are cached too.
+- Now Playing's ⋮ menu holds Copy diagnostics and Log out; log out asks
+  first. Android's own clipboard confirmation stands in for a toast.
+- The queue is a bottom sheet: jump and remove, no reordering.
+- Links from Now Playing (artist, album, genre) close it and open the detail
+  screen in its place (`Navigator.leave`), so back does not return to it.
+- Tappable text is plain text with a pressed-state alpha, Album detail's
+  artist included (it had used the link colour).
+
+**Rejected.**
+- Giving the DataSpec a length from the song's `size` field or a HEAD request:
+  more moving parts for what the cache records anyway at the end of the file.
+- A custom CacheDataSink that ignores the flag (the sink is where it is
+  checked): a class of our own, where the resolver already shapes every
+  DataSpec and one line there does it.
+- Log out on a settings screen: there is no settings screen, and adding one for
+  a button used once a year is the opposite of light.
+- A toast of our own on copy: Android 13+ already shows one; two would stack.
+- Drag-to-reorder in the queue: not cheap in Compose's LazyColumn without a
+  library (task 11 said skip if not cheap).
+
+**Why.** The cache bug was the step-05 open item: offline "previous" failed
+because the previous song had never been saved. The rest follows task 11 and
+keeps the screen the one place for player things.
+

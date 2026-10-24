@@ -6,6 +6,21 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Now Playing (step 11) and the media cache fix · 1.12 (13)
+- **Fix: songs were mostly not being cached.** ExoPlayer marks song loads
+  "don't cache if the length is unknown", and the OkHttp source knows a length
+  only from `Content-Length`; streams without it were never saved, so offline
+  "previous" failed (the step-05 bug). The resolver now clears the flag.
+  Reproduced and verified in `OfflinePreviousTest` against a fake server.
+- Now Playing: big art; artist, album · year and genre line as plain-looking
+  links to their detail screens; seek bar; shuffle and Next album shown
+  (step 12); queue bottom sheet with jump and remove; ⋮ menu with Copy
+  diagnostics and Log out (confirmed). Decision D34.
+- The `stream` log line also says the length the server sent, or "no length".
+- MediaItems carry artist id and genres for the links.
+- Tests: genre line, Navigator.leave (112 JVM); offline previous with and
+  without a length, a direct cached read, MediaItems links (28 instrumented).
+
 ### 2026-10-24 — Search (step 10) · 1.11 (12)
 - One box: albums (by title, by artist, from matching songs; de-duplicated,
   up to 50) as a grid, then the matching songs; "No results" only when both

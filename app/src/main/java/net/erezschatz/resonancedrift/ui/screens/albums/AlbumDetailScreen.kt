@@ -1,6 +1,5 @@
 package net.erezschatz.resonancedrift.ui.screens.albums
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -29,6 +28,7 @@ import net.erezschatz.resonancedrift.ui.components.AlbumArt
 import net.erezschatz.resonancedrift.ui.components.ArtSizes
 import net.erezschatz.resonancedrift.ui.components.ListStatus
 import net.erezschatz.resonancedrift.ui.components.SongRow
+import net.erezschatz.resonancedrift.ui.components.TappableText
 import net.erezschatz.resonancedrift.ui.components.joinKnown
 import net.erezschatz.resonancedrift.ui.components.plural
 import net.erezschatz.resonancedrift.ui.components.yearText
@@ -64,15 +64,10 @@ fun AlbumDetailScreen(
                         modifier = Modifier.padding(top = 8.dp),
                     )
                     val artistId = current.artistId
-                    Text(
-                        current.artistName,
+                    TappableText(
+                        text = current.artistName,
                         style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = if (artistId != null) {
-                            Modifier.clickable { onOpenArtist(artistId, current.artistName) }
-                        } else {
-                            Modifier
-                        },
+                        onClick = artistId?.let { id -> { onOpenArtist(id, current.artistName) } },
                     )
                     Text(
                         joinKnown(if (songs.isEmpty()) "" else plural(songs.size, "song"), yearText(current.year)),

@@ -3,6 +3,7 @@ package net.erezschatz.resonancedrift.playback
 import android.content.Context
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
+import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.ResolvingDataSource
 import androidx.media3.datasource.cache.Cache
 import androidx.media3.datasource.cache.CacheDataSource
@@ -26,9 +27,12 @@ object PlayerFactory {
     private const val BUFFER_FOR_PLAYBACK_MS = 2_500
     private const val BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS = 5_000
 
-    fun create(context: Context, http: OkHttpClient, cache: Cache, resolver: SongUriResolver, log: PlaybackLog): ExoPlayer {
-        // rd://song/<id> → stream URL (token fresh per request) → cache by song id → network.
-        // Same client (connections, timeouts), plus timing lines for the playback log.
+    /**
+     * rd://song/<id> → stream URL (token fresh per request) → cache by song id → network.
+     * Same HTTP client (connections, timeouts), plus timing lines for the playback log.
+     * Separate from [create] so a test can read through exactly this chain.
+     */
+    fun dataSourceFactory(http: OkHttpClient, cache: Cache, resolver: SongUriResolver, log: PlaybackLog): DataSource.Factory {
         val streaming = http.newBuilder().eventListenerFactory(StreamTiming.factory(log)).build()
         val network = OkHttpDataSource.Factory(streaming)
         val cached = CacheDataSource.Factory()
@@ -36,7 +40,11 @@ object PlayerFactory {
             .setUpstreamDataSourceFactory(network)
             // A broken cache must never stop playback; fall through to the network.
             .setFlags(CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR)
-        val resolving = ResolvingDataSource.Factory(cached, resolver)
+        return ResolvingDataSource.Factory(cached, resolver)
+    }
+
+    fun create(context: Context, http: OkHttpClient, cache: Cache, resolver: SongUriResolver, log: PlaybackLog): ExoPlayer {
+        val resolving = dataSourceFactory(http, cache, resolver, log)
 
         val loadControl = DefaultLoadControl.Builder()
             .setBufferDurationsMs(

@@ -216,7 +216,9 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   `rd://song/<id>`. The resolver turns that into the real stream URL with the
   *current* session token at request time. Token refresh therefore never
   touches the playlist, and `customCacheKey = song id` keeps the cache valid
-  across sessions. This replaces ReDrift's `token-refreshed` URL rewriting.
+  across sessions. It also clears ExoPlayer's `FLAG_DONT_CACHE_IF_LENGTH_UNKNOWN`:
+  the OkHttp source knows a length only from `Content-Length`, and without
+  this a stream lacking that header is never cached (D34). This replaces ReDrift's `token-refreshed` URL rewriting.
 - **`AlbumShuffle`** is a `Player.Listener` living in the service. When shuffle
   mode is on and the current item is the last-but-one (or last) in the
   playlist, it picks the next album (pool minus 50-album history), fetches its
@@ -331,6 +333,11 @@ real server.
   at Albums' root it leaves the app. The stack handed to `NavDisplay` is
   Albums' stack with the current tab's on top, so predictive back previews
   what back will actually show. Tapping the current tab returns to its root.
+  Now Playing: art; title; artist and album · year as tappable text (to their
+  detail screens); genre line (first two, tap → first genre; hidden when
+  none); seek bar; shuffle / prev / play-pause / next / next album; a queue
+  bottom sheet (jump, remove); ⋮ menu with Copy diagnostics and Log out
+  (confirmed). A link from Now Playing replaces it on the stack.
   While a song is starting (or the buffer refills) the mini player's and Now
   Playing's play/pause shows a spinner; tapping it pauses.
   Every pushed screen gets its own id, so the same route can be on the stack

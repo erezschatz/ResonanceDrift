@@ -19,7 +19,15 @@ class SongUriResolver(private val currentLogin: () -> StoredLogin?) : ResolvingD
         val url = streamUrl(dataSpec.uri.toString()) ?: return dataSpec
         // The cache key (song id, set on the MediaItem) travels with the DataSpec
         // unchanged, so the token in the URL never affects caching.
-        return dataSpec.withUri(Uri.parse(url))
+        return dataSpec.buildUpon()
+            .setUri(Uri.parse(url))
+            // ExoPlayer marks progressive loads "don't cache if the length is unknown"
+            // (meant for endless live streams). Media3's OkHttp source learns the length
+            // only from a Content-Length header, so without this, streams that arrive
+            // without one were never cached — and a song played earlier could not play
+            // offline (task 11, D34). A song is always finite: cache it regardless.
+            .setFlags(dataSpec.flags and DataSpec.FLAG_DONT_CACHE_IF_LENGTH_UNKNOWN.inv())
+            .build()
     }
 
     /**

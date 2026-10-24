@@ -58,10 +58,11 @@ fun SongRow(
     onClick: () -> Unit,
     detail: String = "",
     enabled: Boolean = true,
+    modifier: Modifier = Modifier,
     trailing: @Composable () -> Unit = {},
 ) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .alpha(if (enabled) 1f else 0.4f)
             .clickable(enabled = enabled, onClick = onClick)

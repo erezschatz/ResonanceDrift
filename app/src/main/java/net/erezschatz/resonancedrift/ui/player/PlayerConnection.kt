@@ -19,6 +19,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.ampache.StoredLogin
+import net.erezschatz.resonancedrift.data.entity.GenreTag
 import net.erezschatz.resonancedrift.data.entity.SongEntity
 import net.erezschatz.resonancedrift.playback.MediaItems
 import net.erezschatz.resonancedrift.playback.PlaybackEvents
@@ -31,9 +32,14 @@ data class QueueEntry(
     val mediaId: String,
     val title: String,
     val artist: String,
+    /** Already prefix-stripped (AlbumNames.display, in MediaItems). */
     val album: String,
-    /** For album art (ui/components/AlbumArt.kt); null when the item has none. */
+    /** 0 when unknown. */
+    val year: Int,
+    /** For album art and the album link; null when the item has none. */
     val albumId: Long?,
+    val artistId: Long?,
+    val genres: List<GenreTag>,
 )
 
 /** Where playback is in the current item, for a seek bar. Duration 0 = not known yet. */
@@ -152,6 +158,16 @@ class PlayerConnection(private val context: Context) {
         controller?.seekTo(positionMs)
     }
 
+    /** Queue panel: play the item at [index] from its start. */
+    fun jumpTo(index: Int) {
+        controller?.seekTo(index, 0L)
+    }
+
+    /** Queue panel: take the item at [index] out of the queue. */
+    fun removeFromQueue(index: Int) {
+        controller?.removeMediaItem(index)
+    }
+
     /** One line of player state for the diagnostics report. */
     fun describe(): String {
         val current = controller ?: return "player: not connected"
@@ -202,12 +218,16 @@ class PlayerConnection(private val context: Context) {
 
     private fun entryFor(item: MediaItem): QueueEntry {
         val metadata = item.mediaMetadata
+        val links = MediaItems.linksOf(metadata)
         return QueueEntry(
             mediaId = item.mediaId,
             title = metadata.title?.toString().orEmpty(),
             artist = metadata.artist?.toString().orEmpty(),
             album = metadata.albumTitle?.toString().orEmpty(),
-            albumId = MediaItems.albumIdOf(metadata),
+            year = metadata.releaseYear ?: 0,
+            albumId = links.albumId,
+            artistId = links.artistId,
+            genres = links.genres,
         )
     }
 

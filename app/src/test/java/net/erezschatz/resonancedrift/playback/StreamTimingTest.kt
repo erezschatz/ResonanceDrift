@@ -37,15 +37,15 @@ class StreamTimingTest {
     @Test
     fun `a stream request logs its timing, the song id and the connection, not the token`() {
         server.enqueue(MockResponse().setBody("audio"))
-        server.enqueue(MockResponse().setBody("audio"))
+        server.enqueue(MockResponse().setChunkedBody("audio", 2))
 
         fetch("/play/index.php?ssid=SECRET&type=song&oid=58040&format=raw")
         fetch("/play/index.php?ssid=SECRET&type=song&oid=58041&format=raw")
 
         val lines = log.entries().map { it.text }.drop(1)
         assertEquals(2, lines.size)
-        assertTrue(lines[0], lines[0].matches(Regex("stream song-58040: answered in \\d+ ms, first bytes at \\d+ ms \\(new connection in \\d+ ms\\)")))
-        assertTrue("the second request reuses the connection: ${lines[1]}", lines[1].endsWith("(reused connection)"))
+        assertTrue(lines[0], lines[0].matches(Regex("stream song-58040: answered in \\d+ ms, first bytes at \\d+ ms \\(new connection in \\d+ ms, 0 KB\\)")))
+        assertTrue("the second request reuses the connection: ${lines[1]}", lines[1].endsWith("(reused connection, no length)"))
         assertFalse(lines.any { it.contains("SECRET") })
     }
 
