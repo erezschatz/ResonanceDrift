@@ -31,3 +31,8 @@ play/pause, Now Playing opening from it and closing with back.
   on the Albums placeholder until step 08; Copy diagnostics and Log out sit
   on Now Playing until step 11. Log out has no planned home after that —
   decide in step 11.
+
+Phone, 1.7 (8), 2026-10-24 (Erez): **step closed.** Tabs and back, predictive
+back, random album with the mini player, Now Playing open/close and Copy
+diagnostics all behave. Back from any tab's root goes to Albums by design
+(D28); per-tab depth is first exercised by the detail screens in step 08.

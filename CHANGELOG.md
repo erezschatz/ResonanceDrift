@@ -6,6 +6,10 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-24 — Step 07 verified on the phone (1.7)
+- Tabs, back and predictive back, mini player, Now Playing and Copy
+  diagnostics checked on the Pixel. Step 07 closed.
+
 ### 2026-10-24 — Navigation, bottom bar, mini player (step 07) · 1.7 (8)
 - Five tabs (Albums, Artists, Genres, Playlists, Search) with a back stack
   per tab; back pops within a tab, then to Albums, then out; predictive back.
