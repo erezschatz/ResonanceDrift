@@ -16,6 +16,7 @@ what has not yet been installed on the phone as a numbered version.
 - The step-07 placeholder screen is gone; every tab is real now.
 - Tests: album merging (3 JVM, 110 total), search and degradation against a
   fake server (2 instrumented, 23 total).
+- Verified on the phone the same day; step 10 closed.
 
 ### 2026-10-24 — Playlists (step 09, light) and ReDrift's icon · 1.10 (11)
 - Playlists list (cache-first, song counts) → Playlist detail: every song

@@ -31,3 +31,10 @@ Decisions in D33.
 - **On the phone, check:** typing gives albums then songs; an album opens
   Album detail; a song plays alone and opens Now Playing; switch tabs and
   back — the search is still there; a nonsense query says "No results".
+
+Phone, 1.11 (12), 2026-10-24 (Erez): **step closed.** All five checks
+landed. A song played from the results took 3.7 s to start although the
+server answered in 0.24 s and bytes flowed at 0.27 s; it started with 18.7 s
+buffered instead of the usual ~2.5 s, so the time went on reading the file
+before its audio — most likely embedded art or a large tag block at the
+front. A property of the file, not the app; noted for the ~2 s starts too.
