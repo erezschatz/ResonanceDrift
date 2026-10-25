@@ -58,6 +58,7 @@ class AlbumShufflePlayerTest {
     /** Albums 1..20; song id = album id × 10. */
     private val library = object : ShuffleLibrary {
         override suspend fun albumPool() = (1L..20L).toList()
+        override suspend fun cachedAlbumPool() = emptyList<Long>()
         override suspend fun albumSongs(albumId: Long): List<MediaItem> =
             listOf(MediaItems.fromSong(Song(id = albumId * 10, title = "Song of $albumId", album = Ref(albumId, "Album $albumId")), login))
         override suspend fun recentAlbumIds() = synchronized(history) { history.toList() }

@@ -18,7 +18,11 @@ enum class ShuffleState { OFF, STARTING, ON }
 
 /** Where AlbumShuffle gets albums and keeps its history; a fake in the tests. */
 interface ShuffleLibrary {
+    /** Every album id, from the server (slow: the whole library, paged). */
     suspend fun albumPool(): List<Long>
+
+    /** The whole library's album ids if they are already stored; empty if not (fast). */
+    suspend fun cachedAlbumPool(): List<Long>
     suspend fun albumSongs(albumId: Long): List<MediaItem>
     suspend fun recentAlbumIds(): List<Long>
     suspend fun recordStarted(albumId: Long)
@@ -46,7 +50,10 @@ class AlbumShuffle(
     var state = ShuffleState.OFF
         private set
 
-    /** Loaded once per service run: the whole library's album ids. */
+    /**
+     * The whole library's album ids, once per service run: the stored ones at
+     * once if there are enough, refreshed from the server behind them (D37).
+     */
     private var pool: List<Long>? = null
 
     private var starting: Job? = null
@@ -143,12 +150,37 @@ class AlbumShuffle(
 
     /** A random album from the pool, avoiding recent history and [exclude]; history is relaxed before giving up. */
     private suspend fun pickNext(exclude: Set<Long>): Long {
-        val all = pool ?: library.albumPool().also { pool = it }
+        val all = albumPool()
         val recent = library.recentAlbumIds().toSet()
         val fresh = all.filter { it !in recent && it !in exclude }
         val candidates = fresh.ifEmpty { all.filter { it !in exclude } }
         if (candidates.isEmpty()) throw NoAlbumException("The library has no albums to shuffle.")
         return candidates[random.nextInt(candidates.size)]
+    }
+
+    private suspend fun albumPool(): List<Long> {
+        pool?.let { return it }
+        val cached = library.cachedAlbumPool()
+        if (cached.isEmpty()) return fetchPool()
+        pool = cached
+        log.log("shuffle: album pool ${cached.size} albums (stored; refreshing)")
+        // Not one of cancelJobs(): Next album or stop must not cut the refresh short.
+        scope.launch {
+            try {
+                fetchPool()
+            } catch (e: AmpacheException) {
+                log.log("shuffle: album pool not refreshed (${e.userMessage}); keeping the stored one")
+            }
+        }
+        return cached
+    }
+
+    private suspend fun fetchPool(): List<Long> {
+        val started = System.nanoTime()
+        val fresh = library.albumPool()
+        pool = fresh
+        log.log("shuffle: album pool ${fresh.size} albums in ${(System.nanoTime() - started) / 1_000_000} ms")
+        return fresh
     }
 
     private fun albumsInQueue(): Set<Long> =
@@ -195,6 +227,8 @@ class AppShuffleLibrary(
     private val session: Session,
 ) : ShuffleLibrary {
     override suspend fun albumPool(): List<Long> = library.albumPool()
+
+    override suspend fun cachedAlbumPool(): List<Long> = library.cachedAlbumPool()
 
     override suspend fun albumSongs(albumId: Long): List<MediaItem> {
         val login = session.currentLogin()

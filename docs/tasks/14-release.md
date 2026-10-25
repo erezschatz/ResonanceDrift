@@ -36,3 +36,18 @@ an album, Artists, an artist, Genres, a genre, Playlists, a playlist, Search,
 Now Playing and its queue, Shuffle all, Next album, Copy diagnostics). The
 version line in the report should read `1.0 (18)` with no `-debug`. Then the
 week of daily use.
+
+## 1.0 on the phone, 2026-10-25 (Erez) → 1.0.1 (19)
+Release key made (SETUP §6), debug build uninstalled, 1.0 (18) installed and
+logged in; every list loaded (first opens slow on a weak home network, as
+expected after the uninstall: Artists, the 2300-song playlist). Two fixes:
+- **Shrinking renamed exception classes in the log** (`n41` for Media3's
+  `HttpDataSourceException`). `proguard-rules.pro` now keeps the names of
+  every `Throwable` subclass; the mapping confirms it. +16 KB.
+- **The first shuffle of a service run waited for the whole album list** (over
+  a minute here). It now starts from the stored ids and refreshes behind them
+  (D37). `AlbumShuffleTest` +2.
+
+`./gradlew test` (137) passes; `assembleRelease` signs with the release key.
+Not yet on the phone. Then the week of daily use begins, with diagnostics
+copies every couple of hours and right after anything odd.

@@ -175,6 +175,18 @@ class LibraryRepository(
             library.allAlbumIds().ifEmpty { throw e }
         }
 
+    /**
+     * The album ids already in Room when they look like the whole library: at
+     * least as many as the server reported at the last handshake. Empty when
+     * only some albums have been seen (browsing, search), so shuffle does not
+     * pick from a corner of the library.
+     */
+    suspend fun cachedAlbumPool(): List<Long> {
+        val ids = library.allAlbumIds()
+        val total = session.awaitLogin()?.albumCount ?: 0
+        return if (total > 0 && ids.size >= total) ids else emptyList()
+    }
+
     /** An album's songs for playing now: fresh from the server, the cached ones if it cannot be reached. */
     suspend fun albumSongsForPlayback(albumId: Long): List<SongEntity> =
         try {

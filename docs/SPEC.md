@@ -232,8 +232,10 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   `SHUFFLE_START(albumId?)`, `SHUFFLE_CONTINUE` (keep the queue, random albums
   after it — Now Playing's button), `SHUFFLE_STOP`, `NEXT_ALBUM`. A queue set
   by a controller turns shuffle off (`onAddMediaItems`). The pool is every
-  album, paged and cached; offline, the cached ids. A failed next-album fetch
-  retries after 30 s (D35).
+  album, paged and cached, loaded once per service run: the stored ids at once
+  when there are at least as many as the handshake's album count, refreshed
+  from the server behind them; otherwise fetched first. Offline, the cached
+  ids. A failed next-album fetch retries after 30 s (D35, D37).
 - **`NetworkRecovery`.** The one place we still "fight": ExoPlayer stops on an
   unrecoverable load error. Policy: a custom `LoadErrorHandlingPolicy` retries
   I/O errors with backoff for a long time instead of failing; if the player

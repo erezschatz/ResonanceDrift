@@ -6,6 +6,13 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Readable error names in the release log; faster first shuffle · 1.0.1 (19)
+- R8 keeps exception class names, so the playback log's error lines read
+  `HttpDataSourceException`, not `n41`.
+- Shuffle starts from the album ids stored on the phone and refreshes them
+  from the server behind it, instead of waiting for the whole list on the
+  first shuffle after each app start. Decision D37.
+
 ### 2026-10-25 — Release build (step 14) · 1.0 (18)
 - `versionName` 1.0. The R8-shrunk release build is 5.1 MB (debug: 75 MB);
   no keep rules were needed. It launches on the emulator.

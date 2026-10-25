@@ -640,3 +640,24 @@ sends four commands and reads one extra.
 
 **Why.** D8's promise is "open the app tomorrow, one tap resumes"; the
 server's play counts are the other half, and both live where playback does.
+
+## D37 · 2026-10-25 · Shuffle starts from the stored album pool (amends D35)
+
+**Decision.** `AlbumShuffle` loads its pool once per service run as before,
+but takes the album ids already in Room at once when there are at least as
+many as the last handshake's album count, and refreshes them from the server
+in the background (logged: `shuffle: album pool N albums (stored; refreshing)`,
+then `… in X ms`). With fewer stored, it waits for the server, as in 1.0.
+
+**Rejected.**
+- Waiting for the full fetch every service run (D35 as built): on the 1.0
+  field test the first shuffle took over a minute on a weak home network, and
+  a service run ends every time the app is closed while paused.
+- Using whatever ids are stored, however few: before the first full fetch
+  Room holds only the albums browsed or searched, and shuffle would play from
+  that corner of the library.
+- A separate "pool fetched" flag or table: the handshake's album count already
+  says how many to expect, with no schema change.
+
+**Why.** Shuffle all should start in a second; a pool a day old picks just as
+well, and the refresh catches albums added since.

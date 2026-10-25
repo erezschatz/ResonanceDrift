@@ -3,6 +3,7 @@ package net.erezschatz.resonancedrift.playback
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Timeline
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceTimeBy
@@ -52,8 +53,19 @@ class AlbumShuffleTest {
         val history = mutableListOf<Long>()
         val fetched = mutableListOf<Long>()
         var failures = 0
+        /** What is already stored; empty = nothing usable yet. */
+        var storedPool: List<Long> = emptyList()
+        var poolFetches = 0
+        /** When set, the server's pool answers only once it completes. */
+        var poolGate: CompletableDeferred<Unit>? = null
 
-        override suspend fun albumPool() = (1L..albumCount).toList()
+        override suspend fun albumPool(): List<Long> {
+            poolGate?.await()
+            poolFetches++
+            return (1L..albumCount).toList()
+        }
+
+        override suspend fun cachedAlbumPool() = storedPool
 
         override suspend fun albumSongs(albumId: Long): List<MediaItem> {
             if (failures > 0) {
@@ -231,5 +243,41 @@ class AlbumShuffleTest {
         assertEquals("album 7 \"Burst Apart\" (1 song)", AlbumShuffle.describe(7, listOf(song("Burst Apart"))))
         assertEquals("album 7 \"Burst Apart\" (2 songs)", AlbumShuffle.describe(7, listOf(song("Burst Apart"), song("Burst Apart"))))
         assertEquals("album 7 (2 songs)", AlbumShuffle.describe(7, listOf(song(null), song(null))))
+    }
+
+    @Test
+    fun `a stored pool starts shuffle at once and is refreshed behind it, once`() = runTest {
+        val library = FakeLibrary(albumCount = 10)
+        library.storedPool = listOf(7L)
+        library.poolGate = CompletableDeferred()
+        val shuffle = shuffle(library)
+
+        shuffle.start(albumId = null)
+        runCurrent()
+        assertEquals("started from the stored pool while the server is still answering", 3, queue.itemCount)
+        assertEquals(listOf(7L), library.fetched)
+
+        library.poolGate?.complete(Unit)
+        runCurrent()
+        shuffle.nextAlbum()
+        runCurrent()
+        assertEquals("one refresh per run", 1, library.poolFetches)
+        assertTrue("the refreshed pool is used", library.fetched.last() in 1L..10L)
+    }
+
+    @Test
+    fun `nothing stored - shuffle waits for the server's pool`() = runTest {
+        val library = FakeLibrary(albumCount = 10)
+        library.poolGate = CompletableDeferred()
+        val shuffle = shuffle(library)
+
+        shuffle.start(albumId = null)
+        runCurrent()
+        assertEquals(0, queue.itemCount)
+
+        library.poolGate?.complete(Unit)
+        runCurrent()
+        assertEquals(3, queue.itemCount)
+        assertEquals(1, library.poolFetches)
     }
 }
