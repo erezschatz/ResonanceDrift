@@ -6,6 +6,10 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Step 13 verified on the phone (1.16)
+- Force-stop restore, restore with shuffle on, and Ampache play counts all
+  checked on 1.16. Step 13 closed.
+
 ### 2026-10-25 — Queue persistence and scrobbling (step 13) · 1.16 (17)
 - The queue, song and position are saved as you listen (every 10 s, and on
   every change) and come back paused when the app is opened again; shuffle

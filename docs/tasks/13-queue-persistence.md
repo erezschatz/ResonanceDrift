@@ -12,7 +12,7 @@ it, paused — one tap resumes. The server's play counts stay correct.
       API for ids not cached
 - [x] `record_play` once per song on `onMediaItemTransition`, fire and forget
 - [x] Shuffle flag restored means shuffle continues when the queue ends
-- [ ] Phone test: force-stop the app mid-track, relaunch, position within 10 s
+- [x] Phone test: force-stop the app mid-track, relaunch, position within 10 s
 
 ## Built 1.16 (17), 2026-10-25
 `./gradlew test` (135; 13 new in `ScrobblerTest` and `QueuePersistenceTest`)
@@ -34,3 +34,8 @@ overwrite the saved queue) pass. Not yet on the phone. Decision D36.
   next album is queued near the end. Swipe the app away while paused, reopen:
   the same. Ampache's recent plays show each song once, and not the restored
   one again on resume.
+
+Phone, 1.16 (17), 2026-10-25 (Erez): **passes**. Force-stop mid-track and
+relaunch: the same song, within 10 s, paused; one tap plays. The same with
+shuffle on: shuffle lit and carrying on. Ampache's recent plays show each song
+once, the restored one not again on resume. Step 13 closed.
