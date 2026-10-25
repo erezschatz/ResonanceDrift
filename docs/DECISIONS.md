@@ -610,3 +610,33 @@ keeps the screen the one place for player things.
 closed; everything that decides lives where playback does, and the UI only
 sends four commands and reads one extra.
 
+## D36 · 2026-10-25 · Queue persistence and scrobbling (step 13)
+
+**Decision.**
+- `QueuePersistence` and `Scrobbler` are `Player.Listener`s in the service,
+  beside `AlbumShuffle`. The saved row is the existing `queue_state` (ids,
+  index, position, shuffle flag); no schema change.
+- Saves on transition, queue change, seek, playback stopping, every 10 s
+  while playing, and in `onDestroy`; written on the app scope behind a mutex.
+- Restore: cached songs first, the `song` call for the rest, missing ones
+  dropped (the next song that loaded takes the saved one's place, from its
+  start). A queue a screen set during the restore wins.
+- A song counts for `record_play` when it starts *playing*, not at its
+  transition: a song only queued up paused (the restored one, or a list's
+  Play landing while paused) is not a play until play follows.
+- Not counted again: the restored song resumed the next day (it counted when
+  it first started), and a new queue that starts on the song already playing.
+
+**Rejected.**
+- `record_play` on every `onMediaItemTransition`, as the task first said: it
+  would count the restored song each launch and the doubled "new queue"
+  transitions seen in the 1.14 field test.
+- Restoring before the session is read: art URLs need the token, so the
+  restore awaits `Session.awaitLogin()`.
+- Saving on the service's scope: it is cancelled in `onDestroy`, so the last
+  save would be lost.
+- Media3's playback resumption (`onPlaybackResumption`, Bluetooth play with
+  the app dead): not asked for; the restore covers the app's own launch.
+
+**Why.** D8's promise is "open the app tomorrow, one tap resumes"; the
+server's play counts are the other half, and both live where playback does.

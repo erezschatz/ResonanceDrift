@@ -141,6 +141,8 @@ ResonanceDrift/
         │       │   ├── SongUriResolver.kt     rd://song/<id> → stream URL w/ live token
         │       │   ├── AlbumShuffle.kt        Player.Listener; appends next album
         │       │   ├── QueueController.kt     the small interface AlbumShuffle talks to
+        │       │   ├── QueuePersistence.kt    Player.Listener; saves the queue, restores it paused
+        │       │   ├── Scrobbler.kt           Player.Listener; record_play once per song start
         │       │   ├── MediaItems.kt          Song ↔ MediaItem mapping
         │       │   ├── NetworkRecovery.kt     retry-on-error + connectivity callback
         │       │   ├── RecoveryPolicy.kt      retry decisions (pure) + the loader's retry policy
@@ -257,13 +259,22 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   OkHttp `EventListener` on the streaming client only) adds one line per
   stream request: time to the server's answer, to the first audio bytes, and
   whether a new connection was opened.
-- **Persistence.** On every transition, pause, and every ~10 s while playing,
-  save `[song ids]`, index, position, shuffle flag to `QueueStateStore`.
-  Restore on service create as a prepared, **paused** playlist at the saved
-  position. Never auto-resume: ReDrift's auto-resume was unreliable after a
-  session expiry and startled when it worked; the user taps play.
-- **`record_play`** is sent once per song on `onMediaItemTransition`, fire and
-  forget, failures logged not surfaced.
+- **Persistence.** `QueuePersistence` saves `[song ids]`, index, position and
+  the shuffle flag to `QueueStateStore` on every transition, queue change,
+  seek and stop of playback (pause, focus loss, buffering), every 10 s while
+  playing, and in `onDestroy`. Writes run on the app scope, in order, so the
+  last one lands after the service is gone. On service create the saved queue
+  is rebuilt — songs from Room, a `song` call for any id not cached, missing
+  ones left out — and set as a prepared, **paused** playlist at the saved song
+  and position; shuffle continues after it if the flag was on. No saves until
+  the restore is done (the empty new player would overwrite it); if a screen
+  set a queue meanwhile, the restore is dropped. Logged out: nothing restored.
+  Never auto-resume: ReDrift's auto-resume was unreliable after a session
+  expiry and startled when it worked; the user taps play (D8).
+- **`record_play`** (`Scrobbler`) is sent once per song start — at its
+  transition when the player is playing, else when play follows — fire and
+  forget, failures logged not surfaced. Not counted: the restored song when
+  resumed, and a new queue that starts with the song already playing (D36).
 
 ### Ampache contract (`ampache/`)
 Replicate ReDrift's `AmpacheAPI.js` exactly — it is known to work against the
@@ -376,6 +387,10 @@ Contract enforcement at the boundaries, not a unit/integration/e2e taxonomy.
   - `playback/AlbumShuffleTest`: against `FakeQueueController` — appends when
     near the end and not before; respects history; "next album" replaces the
     tail; stopping shuffle stops appending; a failed fetch retries.
+  - `playback/ScrobblerTest`: once per start; not when only queued paused;
+    not on pause/resume, a restored song, or a new queue keeping the song;
+    again on repeat. `QueuePersistenceTest`: where a restored queue starts
+    when songs are missing.
   - `playback/SongUriResolverTest`: resolves with the current token; a token
     change is reflected on the next resolve without touching items.
   - Album-name prefix stripping; genre line formatting (cap at two).

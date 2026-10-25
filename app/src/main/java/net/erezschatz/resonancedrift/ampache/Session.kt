@@ -169,6 +169,12 @@ class Session(
     /** The token for building stream URLs at request time (SongUriResolver, task 04). */
     fun currentLogin(): StoredLogin? = login
 
+    /** [currentLogin] once the stored credentials are read: the service can start before they are (task 13). */
+    suspend fun awaitLogin(): StoredLogin? {
+        restored.await()
+        return login
+    }
+
     private suspend fun reauthenticate(deadToken: String): StoredLogin = reauthLock.withLock {
         val current = login ?: throw AmpacheException.SessionExpired()
         // Another caller already replaced the token while we waited for the lock.

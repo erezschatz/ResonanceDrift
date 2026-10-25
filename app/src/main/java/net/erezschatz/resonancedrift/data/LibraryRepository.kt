@@ -186,6 +186,26 @@ class LibraryRepository(
             library.albumSongsNow(albumId).ifEmpty { throw e }
         }
 
+    // --- Queue restore (playback/QueuePersistence.kt)
+
+    /**
+     * The songs for a saved queue, in order: from the cache, and one `song`
+     * call for each id the cache does not have. An id the server cannot give
+     * back (removed, or offline) is left out.
+     */
+    suspend fun songsForQueue(songIds: List<Long>): List<SongEntity> {
+        val cachedIds = library.songsInOrder(songIds).map { it.id }.toSet()
+        val fetched = songIds.distinct().filter { it !in cachedIds }.mapNotNull { id ->
+            try {
+                SongEntity.from(session.call { server, token -> client.song(server, token, id) })
+            } catch (e: AmpacheException) {
+                null
+            }
+        }
+        if (fetched.isNotEmpty()) library.upsertSongs(fetched)
+        return library.songsInOrder(songIds)
+    }
+
     // --- Search (API-only; docs/AMPACHE.md → advanced_search)
 
     /**

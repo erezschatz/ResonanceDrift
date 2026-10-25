@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Queue persistence and scrobbling (step 13) · 1.16 (17)
+- The queue, song and position are saved as you listen (every 10 s, and on
+  every change) and come back paused when the app is opened again; shuffle
+  carries on if it was on. Songs not in the cache are fetched; missing ones
+  are skipped. Decision D36.
+- `record_play` once per song start, so the server's play counts and recent
+  plays follow what was heard; a resumed restored song is not counted twice.
+- Tests: 13 JVM (135), 2 on the real player (31 instrumented).
+
 ### 2026-10-25 — Step 12 verified; log tweaks · 1.15 (16)
 - Album shuffle field test passed on 1.14: albums changed on their own with the
   screen locked and the app swiped away, over 2 h in one service run, no

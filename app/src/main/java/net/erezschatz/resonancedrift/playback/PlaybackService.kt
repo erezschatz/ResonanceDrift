@@ -14,6 +14,7 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.MainActivity
 import net.erezschatz.resonancedrift.graph
 
@@ -31,6 +32,7 @@ class PlaybackService : MediaSessionService() {
     private var mediaSession: MediaSession? = null
     private var recovery: NetworkRecovery? = null
     private var shuffle: AlbumShuffle? = null
+    private var persistence: QueuePersistence? = null
 
     /** Main-thread scope for recovery's backoff timers; cancelled with the service. */
     private val scope = MainScope()
@@ -52,8 +54,26 @@ class PlaybackService : MediaSessionService() {
             AppShuffleLibrary(graph.library, graph.shuffleHistory, graph.session),
             graph.playbackLog,
             scope,
-            onStateChanged = { state, message -> mediaSession?.setSessionExtras(Commands.extras(state, message)) },
+            onStateChanged = { state, message ->
+                mediaSession?.setSessionExtras(Commands.extras(state, message))
+                persistence?.save()
+            },
         ).also { player.addListener(it) }
+        val scrobbler = Scrobbler(
+            record = { songId -> graph.session.call { server, token -> graph.ampache.recordPlay(server, token, songId) } },
+            graph.playbackLog,
+            scope,
+        ).also { player.addListener(it) }
+        val persistence = QueuePersistence(
+            player,
+            graph.queueStateStore,
+            graph.playbackLog,
+            tickScope = scope,
+            writeScope = graph.appScope,
+            shuffleOn = { shuffle?.state == ShuffleState.ON },
+        ).also { player.addListener(it) }
+        this.persistence = persistence
+        scope.launch { restoreQueue(persistence, scrobbler) }
         mediaSession = MediaSession.Builder(this, player)
             .setCallback(SessionCallback())
             .setSessionActivity(openAppIntent())
@@ -65,6 +85,8 @@ class PlaybackService : MediaSessionService() {
 
     override fun onDestroy() {
         graph.playbackLog.log("service destroyed")
+        persistence?.save()
+        persistence = null
         recovery?.stop()
         recovery = null
         shuffle = null
@@ -75,6 +97,17 @@ class PlaybackService : MediaSessionService() {
         }
         mediaSession = null
         super.onDestroy()
+    }
+
+    /** Yesterday's queue, paused at its song and position (D8); shuffle carries on after it if it was on. */
+    private suspend fun restoreQueue(persistence: QueuePersistence, scrobbler: Scrobbler) {
+        val restored = persistence.restore { songIds ->
+            // Logged out: nothing to stream with, so nothing to restore.
+            val login = graph.session.awaitLogin() ?: return@restore emptyList()
+            graph.library.songsForQueue(songIds).map { MediaItems.fromSong(it.toSong(), login) }
+        } ?: return
+        scrobbler.skipCurrent()
+        if (restored.shuffle) shuffle?.continueFromCurrent()
     }
 
     /** Tapping the notification opens the app where it was. */
