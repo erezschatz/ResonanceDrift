@@ -5,16 +5,14 @@ A small, fast, signed build on my phone that I live with, and a repo that is
 finished: everything documented, nothing half-done.
 
 ## Acceptance
-- [ ] Release key generated once, stored outside the repo on the Mac (and on the Windows PC, if it is in use)
+- [x] Release key generated once, stored outside the repo on the Mac (and on the Windows PC, if it is in use)
       (`docs/SETUP.md` §6); `assembleRelease` builds with R8 and no crashes
       attributable to shrinking (run through every screen once)
 - [x] `versionName` 1.0, `versionCode` as it stands
-- [ ] One week of daily use with no playback failure that ReDrift would also
-      not have had; any failure found goes through `PlaybackLog` and either a
-      fix or a `DECISIONS.md` entry explaining why it is accepted
-- [ ] `docs/SPEC.md` matches the code; `docs/PLAN.md` all done; `CHANGELOG.md`
+- [x] `docs/SPEC.md` matches the code; `docs/PLAN.md` all done; `CHANGELOG.md`
       has a `1.0` section
-- [ ] ReDrift's home-screen icon removed from the phone
+- Moved to [step 15](15-testing-and-fixes.md) (D38): the week of daily use,
+  and removing ReDrift's home-screen icon.
 
 ## Started 2026-10-25 · 1.0 (18)
 - `versionName` 1.0; `versionCode` 18 (one on from 1.16's 17, as for every
@@ -51,3 +49,10 @@ expected after the uninstall: Artists, the 2300-song playlist). Two fixes:
 `./gradlew test` (137) passes; `assembleRelease` signs with the release key.
 Not yet on the phone. Then the week of daily use begins, with diagnostics
 copies every couple of hours and right after anything odd.
+
+## Closed 2026-10-25 (Erez)
+1.0 is done; what is left is living with it. The week of daily use and
+ReDrift's icon move to step 15 (D38). Release key made and the release build
+on the phone; every list screen loaded on 1.0. `docs/SPEC.md` checked against
+the code (its file tree was missing `StreamTiming.kt`); `CHANGELOG.md` has a
+`1.0` section.

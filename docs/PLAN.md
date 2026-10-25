@@ -24,7 +24,8 @@ result has been run on the phone (not just compiled).
 | 11 | [Now Playing](tasks/11-now-playing.md) | done 2026-10-24 (1.12 on phone; 1.13 spacing) |
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | done 2026-10-25 (1.14 field test on phone; 1.15 log tweaks) |
 | 13 | [Queue persistence and scrobbling](tasks/13-queue-persistence.md) | done 2026-10-25 (1.16 on phone) |
-| 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | in progress (1.0 release build ready; awaiting key, install, week of use) |
+| 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | done 2026-10-25 (1.0 release on phone; the week moved to 15, D38) |
+| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (1.0.1; a week of daily use) |
 
 ## Milestones
 
@@ -33,7 +34,8 @@ result has been run on the phone (not just compiled).
   button. Nothing after 04 is worth building if 04 fails.
 - **After 11:** daily use is possible (browse, play, Now Playing). ReDrift can
   be left behind at this point if shuffle is not missed.
-- **After 14:** phase 1 complete; the project goes quiet.
+- **After 14:** 1.0 — the release build is the one on the phone.
+- **After 15:** phase 1 complete; the project goes quiet.
 
 ## Not in phase 1
 

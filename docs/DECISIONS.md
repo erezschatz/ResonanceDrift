@@ -661,3 +661,18 @@ then `… in X ms`). With fewer stored, it waits for the server, as in 1.0.
 
 **Why.** Shuffle all should start in a second; a pool a day old picks just as
 well, and the refresh catches albums added since.
+
+## D38 · 2026-10-25 · 1.0 closes step 14; the week of use is step 15
+
+**Decision.** Step 14 closes with the release build on the phone (1.0, then
+1.0.1). Its two remaining criteria — a week of daily use without a failure
+ReDrift would not have had, and removing ReDrift's icon — move unchanged to
+a new step 15, "Testing and fixes", which is now the end of phase 1.
+
+**Rejected.**
+- Ticking them in step 14 unverified: PLAN.md's rule is that a step is done
+  when every criterion is met on the phone.
+- Keeping step 14 open for the week: the build work is finished, and the
+  week produces fixes of its own (1.0.x) that deserve a step to be logged in.
+
+**Why.** Erez: "We are done with 1.0, now it's testing and fixes."

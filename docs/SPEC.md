@@ -147,6 +147,7 @@ ResonanceDrift/
         │       │   ├── NetworkRecovery.kt     retry-on-error + connectivity callback
         │       │   ├── RecoveryPolicy.kt      retry decisions (pure) + the loader's retry policy
         │       │   ├── PlaybackEvents.kt      ExoPlayer analytics events → PlaybackLog lines
+        │       │   ├── StreamTiming.kt        OkHttp timings per stream request → PlaybackLog
         │       │   ├── Commands.kt            custom SessionCommands (shuffle, next album)
         │       │   └── PlaybackLog.kt         1500-entry ring buffer + report
         │       └── ui/

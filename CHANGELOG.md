@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Step 14 closed; step 15 (testing and fixes) opened
+- 1.0 is on the phone as a signed release build. The week of daily use and
+  ReDrift's icon move to step 15, which now ends phase 1. Decision D38.
+
+## 1.0 — 2026-10-25
+
+Phase 1's app: everything below, steps 00–14. 1.0 (18) is the first release
+build on the phone; 1.0.1 (19) its first fixes.
+
 ### 2026-10-25 — Readable error names in the release log; faster first shuffle · 1.0.1 (19)
 - R8 keeps exception class names, so the playback log's error lines read
   `HttpDataSourceException`, not `n41`.
