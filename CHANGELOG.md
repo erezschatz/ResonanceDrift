@@ -6,6 +6,12 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Release build (step 14) · 1.0 (18)
+- `versionName` 1.0. The R8-shrunk release build is 5.1 MB (debug: 75 MB);
+  no keep rules were needed. It launches on the emulator.
+- `docs/SETUP.md` §6: how to choose the release password, generate the key,
+  and install the release build on the phone (once: uninstall the debug build).
+
 ### 2026-10-25 — Step 13 verified on the phone (1.16)
 - Force-stop restore, restore with shuffle on, and Ampache play counts all
   checked on 1.16. Step 13 closed.

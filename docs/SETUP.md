@@ -158,21 +158,86 @@ and Windows would force an uninstall and lose the saved queue.
   `app/build.gradle.kts` points `signingConfigs.debug` at it. Both machines
   therefore sign identically. Nothing for you to do. (Committing a *debug*
   key to a private personal repo is fine; it can only sign debug builds.)
-- **Release builds** (only needed when you want a smaller, faster APK to live
-  with): generate the key **once**, on the Mac —
-  **Build → Generate Signed App Bundle / APK → APK → Create new…** — and save
-  it **outside the repo**, e.g. `~/.android/resonancedrift.jks`. Then create
-  `keystore.properties` in the repo root (gitignored):
-  ```properties
-  storeFile=/Users/<you>/.android/resonancedrift.jks
-  storePassword=…
-  keyAlias=resonancedrift
-  keyPassword=…
-  ```
-  Copy the `.jks` to the Windows machine at `C:\Users\ErezSchatz\.android\resonancedrift.jks`
-  and write the same `keystore.properties` there with that path. Back the
-  `.jks` up somewhere that is not either machine. Losing it means uninstalling
-  on the phone to install the next release.
+- **Release builds** (the build you live with from step 14 on): signed with
+  your own key, which lives **outside the repo**. Steps 6.1–6.4.
+
+### 6.1 Choose the password
+
+One password protects the key. (Modern keystores are PKCS12, where the store
+password and the key password are the same; `keytool` will not ask for a
+second one.)
+
+- Let your password manager generate it: **20+ random characters**, letters
+  and digits only (no `\`, `=`, `#` or `!`: `keystore.properties` is a Java
+  properties file, and those characters need escaping there).
+- Save it in the password manager as "ResonanceDrift release key", with a
+  note saying where the `.jks` file is.
+- It never goes in the repo, in chat, or in a commit message. The one place
+  it is written in plain text is `keystore.properties`, which is gitignored
+  and stays on your machines.
+
+### 6.2 Generate the key (once, on the Mac)
+
+In Terminal (not Studio's wizard: this way the password is typed at a prompt
+and never lands in shell history):
+
+```sh
+"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/keytool" -genkeypair \
+  -keystore ~/.android/resonancedrift.jks -storetype PKCS12 \
+  -alias resonancedrift -keyalg RSA -keysize 4096 -validity 36500 \
+  -dname "CN=Erez Schatz, O=ResonanceDrift"
+```
+
+It asks for the password twice: paste the one from 6.1. `-validity 36500` is
+100 years, so the key never expires under you.
+
+**Back it up now:** copy `~/.android/resonancedrift.jks` somewhere that is
+neither machine (the password manager's file attachment, or an encrypted
+drive). Losing the file means the next release cannot update the installed
+app: uninstall, and lose the saved queue and the login.
+
+### 6.3 Point the build at it
+
+Create `keystore.properties` in the repo root (it is gitignored; check with
+`git status` that it does not show up):
+
+```properties
+storeFile=/Users/erez/.android/resonancedrift.jks
+storePassword=<the password>
+keyAlias=resonancedrift
+keyPassword=<the same password>
+```
+
+Windows, if it is in use: copy the `.jks` to
+`C:\Users\ErezSchatz\.android\resonancedrift.jks` and write the same file
+with `storeFile=C:/Users/ErezSchatz/.android/resonancedrift.jks` (forward
+slashes: a backslash is an escape character in properties files).
+
+Check: `./gradlew assembleRelease` no longer prints "keystore.properties not
+found — signing release with the debug key".
+
+### 6.4 Install the release build on the phone
+
+**The first time only:** the release build is signed with your new key, the
+installed debug build with the shared debug key, and Android will not update
+one with the other (`INSTALL_FAILED_UPDATE_INCOMPATIBLE`). So:
+
+1. Copy diagnostics once if you want to keep the last log.
+2. Uninstall ResonanceDrift from the phone (long-press the icon → Uninstall).
+   This drops the login, the saved queue, the shuffle history and the caches.
+3. Install the release build, by either:
+   - **Studio:** View → Tool Windows → **Build Variants**, set `app` to
+     **release**, then Run ▶ as usual. Studio installs and launches the
+     signed, shrunk build. (Run ▶ keeps building release until you switch
+     the variant back.)
+   - **Terminal:** `./gradlew installRelease` with the phone connected, then
+     open the app from the launcher.
+4. Log in again, allow notifications, and play something.
+
+**From then on:** installs of the release build update in place, keeping
+everything, as debug builds did. Use the release variant for every install
+on the phone. A debug build will not install over the release one (and vice
+versa) without uninstalling again; for debugging, use the emulator.
 
 ---
 
@@ -203,7 +268,8 @@ Install from the command line instead, if you prefer:
 | Run unit tests | `./gradlew test` | `.\gradlew.bat test` |
 | Run instrumented tests (phone connected) | `./gradlew connectedAndroidTest` | `.\gradlew.bat connectedAndroidTest` |
 | Install debug build | Run ▶ or `./gradlew installDebug` | Run ▶ or `.\gradlew.bat installDebug` |
-| Build release APK | Build → Generate Signed APK, or `./gradlew assembleRelease` | same |
+| Install release build (step 14 on) | Build Variants → release, Run ▶; or `./gradlew installRelease` | same, `.\gradlew.bat installRelease` |
+| Build release APK only | `./gradlew assembleRelease` → `app/build/outputs/apk/release/` | same |
 | Read the app's logs | **Logcat** tab in Studio, filter `package:net.erezschatz.resonancedrift` | same |
 | Pull the playback diagnostics | Now Playing → bug icon → paste anywhere | — |
 

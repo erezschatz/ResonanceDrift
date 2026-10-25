@@ -31,8 +31,8 @@ android {
         targetSdk = libs.versions.targetSdk.get().toInt()
 
         // Bump both on every installable change. See docs/SPEC.md → Versioning.
-        versionCode = 17
-        versionName = "1.16"
+        versionCode = 18
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
