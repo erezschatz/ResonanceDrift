@@ -67,7 +67,7 @@ class AlbumShuffle(
                 // ON before replacing, so the transition that follows records the album as started.
                 setState(ShuffleState.ON, null)
                 queue.replace(items)
-                log.log("shuffle: started album $id (${items.size} songs)")
+                log.log("shuffle: started ${describe(id, items)}")
             } catch (e: AmpacheException) {
                 failStart(e.userMessage)
             } catch (e: NoAlbumException) {
@@ -123,7 +123,7 @@ class AlbumShuffle(
                 if (items.isEmpty()) throw NoAlbumException("album $id has no songs")
                 if (state != ShuffleState.ON) return@launch
                 queue.append(items)
-                log.log("shuffle: queued album $id (${items.size} songs)")
+                log.log("shuffle: queued ${describe(id, items)}")
             } catch (e: AmpacheException) {
                 scheduleRetry(e.userMessage)
             } catch (e: NoAlbumException) {
@@ -178,6 +178,13 @@ class AlbumShuffle(
     companion object {
         /** Long enough not to hammer a dead network, short enough to beat the end of a typical song. */
         const val RETRY_MS = 30_000L
+
+        /** For the log: `album 4876 "Name" (14 songs)`; the name from the first song, as the screens show it. */
+        fun describe(albumId: Long, items: List<MediaItem>): String {
+            val name = items.firstOrNull()?.mediaMetadata?.albumTitle?.let { " \"$it\"" }.orEmpty()
+            val songs = if (items.size == 1) "1 song" else "${items.size} songs"
+            return "album $albumId$name ($songs)"
+        }
     }
 }
 

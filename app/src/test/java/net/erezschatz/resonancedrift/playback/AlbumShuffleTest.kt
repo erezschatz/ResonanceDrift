@@ -1,6 +1,7 @@
 package net.erezschatz.resonancedrift.playback
 
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Timeline
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
@@ -218,5 +219,17 @@ class AlbumShuffleTest {
         assertEquals(ShuffleState.OFF, shuffle.state)
         assertEquals(listOf(ShuffleState.STARTING, ShuffleState.OFF), states)
         assertEquals(0, queue.itemCount)
+    }
+
+    @Test
+    fun `log lines name the album and count songs in English`() {
+        fun song(album: String?) = MediaItem.Builder()
+            .setMediaId("1")
+            .setMediaMetadata(MediaMetadata.Builder().setAlbumTitle(album).build())
+            .build()
+
+        assertEquals("album 7 \"Burst Apart\" (1 song)", AlbumShuffle.describe(7, listOf(song("Burst Apart"))))
+        assertEquals("album 7 \"Burst Apart\" (2 songs)", AlbumShuffle.describe(7, listOf(song("Burst Apart"), song("Burst Apart"))))
+        assertEquals("album 7 (2 songs)", AlbumShuffle.describe(7, listOf(song(null), song(null))))
     }
 }

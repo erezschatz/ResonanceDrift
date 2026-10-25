@@ -6,6 +6,13 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-25 — Step 12 verified; log tweaks · 1.15 (16)
+- Album shuffle field test passed on 1.14: albums changed on their own with the
+  screen locked and the app swiped away, over 2 h in one service run, no
+  album twice. Step 12 closed.
+- Playback log: `shuffle:` lines name the album and say "1 song"; seeks within
+  a song are logged; 1500 events kept instead of 300 (300 was about two hours).
+
 ### 2026-10-24 — Album shuffle (step 12) · 1.14 (15)
 - `AlbumShuffle` in the service: a random album from the whole library;
   at the last-but-one song the next one (not in the last 50, not in the

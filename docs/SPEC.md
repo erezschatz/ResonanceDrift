@@ -146,7 +146,7 @@ ResonanceDrift/
         │       │   ├── RecoveryPolicy.kt      retry decisions (pure) + the loader's retry policy
         │       │   ├── PlaybackEvents.kt      ExoPlayer analytics events → PlaybackLog lines
         │       │   ├── Commands.kt            custom SessionCommands (shuffle, next album)
-        │       │   └── PlaybackLog.kt         300-entry ring buffer + report
+        │       │   └── PlaybackLog.kt         1500-entry ring buffer + report
         │       └── ui/
         │           ├── theme/                 light colour scheme, typography
         │           ├── nav/                   route keys, NavDisplay, bottom bar wiring
@@ -245,13 +245,13 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   for ~30 min (5→60 s). `prepare()` alone resumes — it keeps playWhenReady, so
   a pause pressed during the outage holds. An HTML/wrong-type answer gets one
   re-handshake before being given up on.
-- **`PlaybackLog`.** 300-entry ring buffer of player events (state, transition,
+- **`PlaybackLog`.** 1500-entry ring buffer (about ten hours of listening) of player events (state, transition,
   error with cause, recovery attempts, shuffle decisions) persisted to a file
   in app storage, rotated on service start. Now Playing's bug button copies a
   report (device, app version, current state, previous run, this run) to the
   clipboard. Smaller than ReDrift's but the same workflow. Lines are logged by
   `PlaybackEvents` (an `AnalyticsListener`): state with position and buffered
-  time, playWhenReady reasons, suppression, transitions, load start/done/error,
+  time, playWhenReady reasons, suppression, transitions, seeks within a song, load start/done/error,
   audio underruns, errors with their cause chain; and by `NetworkRecovery`.
   `ssid=`/`auth=` values are scrubbed from every line. `StreamTiming` (an
   OkHttp `EventListener` on the streaming client only) adds one line per

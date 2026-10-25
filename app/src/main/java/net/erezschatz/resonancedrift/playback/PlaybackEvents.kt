@@ -36,6 +36,17 @@ class PlaybackEvents(private val log: PlaybackLog) : AnalyticsListener {
         log.log("→ item ${eventTime.currentWindowIndex + 1} song ${mediaItem?.mediaId} \"$title\" (${transitionReason(reason)})")
     }
 
+    /** Seeks within a song; a seek to another song is already its `→ item` line. */
+    override fun onPositionDiscontinuity(
+        eventTime: AnalyticsListener.EventTime,
+        oldPosition: Player.PositionInfo,
+        newPosition: Player.PositionInfo,
+        reason: Int,
+    ) {
+        if (reason != Player.DISCONTINUITY_REASON_SEEK || oldPosition.mediaItemIndex != newPosition.mediaItemIndex) return
+        log.log("seek @${seconds(oldPosition.positionMs)} → ${seconds(newPosition.positionMs)}")
+    }
+
     override fun onPlayerError(eventTime: AnalyticsListener.EventTime, error: PlaybackException) =
         log.log("ERROR ${error.errorCodeName} ${where(eventTime)}: ${causeChain(error)}")
 

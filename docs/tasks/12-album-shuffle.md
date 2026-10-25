@@ -16,7 +16,7 @@ any of the last 50. "Next album" skips to a fresh one instantly.
       `NEXT_ALBUM`; state exposed to the UI via session extras
 - [x] "Shuffle all" (Albums) and shuffle / Next album (Now Playing) wired
 - [x] Any `setQueue` from outside shuffle turns shuffle off
-- [ ] Phone test: ≥ 3 album boundaries with the screen locked and the app
+- [x] Phone test: ≥ 3 album boundaries with the screen locked and the app
       swiped away from Recents
 - [x] Unit tests against `FakeQueueController`: appends near the end and not
       before; respects history; Next album replaces the tail; stop stops
@@ -45,3 +45,31 @@ their own with no album twice. Not yet on the phone. Decision D35.
   button off and on in Now Playing; tapping a song in any list turns it off;
   then the real test — ≥ 3 album boundaries with the screen locked and the
   app swiped away from Recents, and a diagnostics copy after (`shuffle:` lines).
+
+Phone, 1.14 (15), 2026-10-24 (Erez), first pass: checks 1–4 pass (Shuffle
+all, Album detail's Shuffle, Next album twice, toggle off/on keeping the
+queue — next album queued at the last-but-one song — and a song from a list
+turning shuffle off). The server answered streams slowly this session
+(1.4–3.9 s against 0.2–0.35 s earlier). **Still open:** the field test (≥ 3
+album boundaries, screen locked, app swiped from Recents) — Erez, next day,
+with a diagnostics copy. With it, two log tweaks: "1 songs" → "1 song", and
+the album name in the `shuffle:` lines.
+
+Phone, 1.14 (15), 2026-10-25 (Erez), field test — **passes**. Two runs, screen
+locked and the app swiped from Recents. Morning: one service run for 2 h+
+(06:51–09:01, no restart), albums 4876 → 9345 → 9896 → the next, each
+queued at its last-but-one song; boundaries 28 → 29 and 52 → 53 on their own
+(14 → 15 was a skip of the last song). A load timed out twice at 08:06 and
+recovered on the third try with 65 s still buffered, unheard. Evening: 9 → 10
+on its own; Now Playing's shuffle-on queued at once on the last song; shuffle
+off, list taps and Shuffle all as expected. No album twice across nine.
+Two oddities, not shuffle's, left open: at 16:29:59 the queue was replaced
+three times in 210 ms and the position jumped to 23.6 s (probably taps and a
+seek-bar drag; seeks were not logged); at 16:37:02 song 2158 took 40 s to
+READY although its first bytes came at 0.2 s (server or file format — check
+that song's file type if it recurs).
+
+Built 1.15 (16), 2026-10-25, the log tweaks from the field test: `shuffle:`
+lines name the album and say "1 song"; seeks within a song are logged
+(`seek @x → y`); the log keeps 1500 events (300 lost the start of a two-hour
+run). `./gradlew test` passes (122). Not yet on the phone.

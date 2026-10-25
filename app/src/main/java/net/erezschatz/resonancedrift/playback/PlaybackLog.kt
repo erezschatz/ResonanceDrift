@@ -77,7 +77,7 @@ class PlaybackLog(
 
     /**
      * Appends; when the file holds twice the capacity, rewrites it with the
-     * ring buffer, so the file stays bounded without a write per event of 300 lines.
+     * ring buffer, so the file stays bounded without rewriting the whole buffer per event.
      */
     private fun persist(entry: Entry) {
         try {
@@ -104,7 +104,8 @@ class PlaybackLog(
         TIME_FORMAT.format(Instant.ofEpochMilli(entry.timeMillis).atZone(zone)) + "  " + entry.text
 
     companion object {
-        const val DEFAULT_CAPACITY = 300
+        // About ten hours of listening (~140 events an hour); 300 lost the start of a two-hour test (task 12).
+        const val DEFAULT_CAPACITY = 1500
 
         private val TIME_FORMAT: DateTimeFormatter = DateTimeFormatter.ofPattern("MM-dd HH:mm:ss.SSS")
 
