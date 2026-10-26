@@ -24,3 +24,11 @@ accepted.
 ## Log
 - 2026-10-25: 1.0.1 (19) built — exception names kept by R8, shuffle starts
   from the stored album pool (D37). The week starts when it is on the phone.
+- 2026-10-26: day 1 of the week on 1.0.1 (19), clean. Three diagnostics
+  copies (morning drive, lunch, afternoon): no load errors or stalls,
+  gapless auto-advance throughout, restore resumed at the saved song and
+  position, the stored-pool shuffle queued the next album in under a second.
+  Noted, not failures: "load done" times run as long as playback (one held
+  89 min across a pause); one slow first READY (5.2 s, "United in Grief");
+  restore logs `load start` twice for the restored song; two 3 s service
+  runs (app opened and closed while paused).

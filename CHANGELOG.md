@@ -6,6 +6,9 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-26 — Step 15, day 1 clean
+- A full day on 1.0.1 (19) with no playback failure in the log.
+
 ### 2026-10-25 — Step 14 closed; step 15 (testing and fixes) opened
 - 1.0 is on the phone as a signed release build. The week of daily use and
   ReDrift's icon move to step 15, which now ends phase 1. Decision D38.
