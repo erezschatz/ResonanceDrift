@@ -8,6 +8,9 @@ what has not yet been installed on the phone as a numbered version.
 
 ### 2026-10-26 — Step 15, day 1 clean
 - A full day on 1.0.1 (19) with no playback failure in the log.
+- Step 15 gains a watch list for log peculiarities that are not failures
+  (W1–W6), and a rule for when they are reviewed: the week's end
+  (2026-11-01), a proven bug, or a test needed on the phone.
 
 ### 2026-10-25 — Step 14 closed; step 15 (testing and fixes) opened
 - 1.0 is on the phone as a signed release build. The week of daily use and
