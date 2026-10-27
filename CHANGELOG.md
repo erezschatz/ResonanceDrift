@@ -6,6 +6,14 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-27 — Step 15, day 2 clean
+- A second day on 1.0.1 (19) with no playback failure.
+- New on the watch list: W7, an expired token gave a 403 on the restored
+  queue's next song (not heard, recovery not exercised); W8, audio
+  underruns with a full buffer; W9, a glitch heard that the log does not
+  show; W10, one slow connection. W5 explained (the headset switches itself
+  off 35 s after a pause); W6 now has a pattern.
+
 ### 2026-10-27 — README
 - A public README: what the app is, why it replaced ReDrift, what it does,
   how it is built, and how it was made (the Unities). No setup and no
