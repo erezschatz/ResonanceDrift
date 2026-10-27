@@ -6,6 +6,11 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-10-27 — README
+- A public README: what the app is, why it replaced ReDrift, what it does,
+  how it is built, and how it was made (the Unities). No setup and no
+  screenshots yet; those stay with phase 2.
+
 ### 2026-10-26 — Step 15, day 1 clean
 - A full day on 1.0.1 (19) with no playback failure in the log.
 - Step 15 gains a watch list for log peculiarities that are not failures
