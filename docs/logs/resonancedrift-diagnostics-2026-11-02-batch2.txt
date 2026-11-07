@@ -1,0 +1,102 @@
+Description: This one mostly was uneventful but at the end you could see. I guess the breast play on a couple of songs that I didn't mean to so they just started playing. Now I don't know if that's a bug or me. Just butt dialing when I took off the phone or deleted songs from the playlist
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-02T17:46:13.277824+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 3/4 song 68189, at 5 s, buffered to 158 s
+
+== This run (8 events) ==
+11-02 17:46:09.698  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-02 17:46:09.703  network: available
+11-02 17:46:09.710  → item 3 song 68189 "De Dood Hebben Het Goed III" (new queue)
+11-02 17:46:09.711  state BUFFERING @5.6s buf +0.0s
+11-02 17:46:09.711  queue restored: 4 songs, item 3 at 5.6s
+11-02 17:46:09.728  load start song-68189
+11-02 17:46:09.741  load start song-68189
+11-02 17:46:09.768  state READY @5.6s buf +101.3s
+
+== Previous run (83 events) ==
+11-02 16:49:37.632  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-02 16:49:37.665  network: available
+11-02 16:49:37.686  → item 7 song 28311 "Infrared" (new queue)
+11-02 16:49:37.688  state BUFFERING @85.0s buf +0.0s
+11-02 16:49:37.688  queue restored: 7 songs, item 7 at 85.0s
+11-02 16:49:37.698  load start song-28311
+11-02 16:49:37.734  load start song-28311
+11-02 16:49:37.809  state READY @85.0s buf +26.2s
+11-02 16:49:37.862  load done song-28311: 3328 KB in 130 ms
+11-02 16:49:55.500  → item 1 song 68192 "Prowl" (new queue)
+11-02 16:49:55.503  state BUFFERING @0.0s buf +0.0s
+11-02 16:49:55.505  playWhenReady true (user)
+11-02 16:49:55.507  shuffle: started album 10063 "De Doden Hebben Het Goed III" (4 songs)
+11-02 16:49:55.520  load start song-68192
+11-02 16:49:55.719  stream song-68192: answered in 198 ms, first bytes at 203 ms (reused connection, no length)
+11-02 16:49:56.052  state READY @0.0s buf +6.1s
+11-02 16:49:56.053  playing @0.0s buf +6.1s
+11-02 16:54:20.490  load done song-68192: 15036 KB in 264976 ms
+11-02 16:54:20.703  load start song-68190
+11-02 16:54:21.307  stream song-68190: answered in 589 ms, first bytes at 597 ms (new connection in 323 ms, no length)
+11-02 16:57:10.850  → item 2 song 68190 "Doodskalm" (auto)
+11-02 17:02:23.857  load done song-68190: 17532 KB in 483155 ms
+11-02 17:02:23.965  load start song-68189
+11-02 17:02:24.697  stream song-68189: answered in 704 ms, first bytes at 729 ms (new connection in 335 ms, no length)
+11-02 17:05:20.613  → item 3 song 68189 "De Dood Hebben Het Goed III" (auto)
+11-02 17:05:20.662  shuffle: album pool 2765 albums (stored; refreshing)
+11-02 17:05:21.551  shuffle: queued album 5683 "Benny the Butcher & DJ Drama Present: The Respected Sopranos" (8 songs)
+11-02 17:05:31.250  shuffle: album pool 2765 albums in 10587 ms
+11-02 17:14:54.181  load done song-68189: 24962 KB in 750216 ms
+11-02 17:14:54.383  load start song-68191
+11-02 17:14:55.094  stream song-68191: answered in 699 ms, first bytes at 708 ms (new connection in 384 ms, no length)
+11-02 17:17:31.187  shuffle: off
+11-02 17:17:31.201  → item 1 song 62669 "State of Hip Hop (Interlude)" (new queue)
+11-02 17:17:31.203  state BUFFERING @0.0s buf +0.0s
+11-02 17:17:31.204  not playing @0.0s buf +0.0s
+11-02 17:17:31.234  load start song-62669
+11-02 17:17:31.274  → item 1 song 62669 "State of Hip Hop (Interlude)" (new queue)
+11-02 17:17:31.279  stream song-62669: failed after 68 ms (IOException)
+11-02 17:17:31.283  load start song-62669
+11-02 17:17:31.859  stream song-62669: answered in 581 ms, first bytes at 581 ms (new connection in 303 ms, 0 KB)
+11-02 17:17:31.861  load error song-62669 @0.0s buf +0.0s: HttpDataSource$InvalidResponseCodeException: Response code: 429
+11-02 17:17:32.861  load start song-62669 (retry 1)
+11-02 17:17:33.127  stream song-62669: answered in 258 ms, first bytes at 264 ms (reused connection, no length)
+11-02 17:17:33.549  state READY @0.0s buf +6.3s
+11-02 17:17:33.551  playing @0.0s buf +6.3s
+11-02 17:17:34.297  load done song-62669: 1642 KB in 3020 ms
+11-02 17:17:34.535  load start song-62658
+11-02 17:17:35.045  stream song-62658: answered in 498 ms, first bytes at 504 ms (reused connection, no length)
+11-02 17:17:39.326  → item 2 song 62658 "Uplift" (seek/skip)
+11-02 17:17:39.332  state BUFFERING @0.0s buf +0.0s
+11-02 17:17:39.334  not playing @0.0s buf +0.0s
+11-02 17:17:39.395  state READY @0.0s buf +95.2s
+11-02 17:17:39.398  playing @0.0s buf +95.2s
+11-02 17:17:56.309  load done song-62658: 7501 KB in 21774 ms
+11-02 17:17:56.311  load start song-62664
+11-02 17:17:56.881  stream song-62664: answered in 557 ms, first bytes at 568 ms (new connection in 232 ms, no length)
+11-02 17:20:48.924  → item 3 song 62664 "I Know" (auto)
+11-02 17:21:50.046  load done song-62664: 9775 KB in 233735 ms
+11-02 17:21:50.129  load start song-62665
+11-02 17:21:50.794  stream song-62665: answered in 643 ms, first bytes at 662 ms (new connection in 311 ms, no length)
+11-02 17:23:09.976  playWhenReady false (user)
+11-02 17:23:09.979  not playing @140.9s buf +182.3s
+11-02 17:23:44.702  playWhenReady false (headphones disconnected)
+11-02 17:24:09.866  → item 4 song 62662 "I'll Be There (Feat. Nneaka Morton)" (new queue)
+11-02 17:24:09.867  state BUFFERING @0.0s buf +0.0s
+11-02 17:24:09.870  playWhenReady true (user)
+11-02 17:24:09.902  load start song-62662
+11-02 17:24:10.534  stream song-62662: answered in 644 ms, first bytes at 645 ms (new connection in 323 ms, no length)
+11-02 17:24:11.308  state READY @0.0s buf +3.9s
+11-02 17:24:11.309  playing @0.0s buf +3.9s
+11-02 17:24:16.023  playWhenReady false (user)
+11-02 17:24:16.025  not playing @4.5s buf +56.5s
+11-02 17:24:58.030  → item 3 song 68189 "De Dood Hebben Het Goed III" (new queue)
+11-02 17:24:58.031  state BUFFERING @0.0s buf +0.0s
+11-02 17:24:58.033  playWhenReady true (user)
+11-02 17:24:58.055  load start song-68189
+11-02 17:24:58.209  state READY @0.0s buf +68.5s
+11-02 17:24:58.210  playing @0.0s buf +68.5s
+11-02 17:25:03.947  playWhenReady false (user)
+11-02 17:25:03.948  not playing @5.5s buf +181.3s
+11-02 17:25:13.030  network: available
+11-02 17:29:55.226  playWhenReady false (audio focus lost)
+11-02 17:38:30.879  service destroyed

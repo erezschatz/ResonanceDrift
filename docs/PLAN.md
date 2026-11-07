@@ -25,7 +25,9 @@ result has been run on the phone (not just compiled).
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | done 2026-10-25 (1.14 field test on phone; 1.15 log tweaks) |
 | 13 | [Queue persistence and scrobbling](tasks/13-queue-persistence.md) | done 2026-10-25 (1.16 on phone) |
 | 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | done 2026-10-25 (1.0 release on phone; the week moved to 15, D38) |
-| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (1.0.1; a week of daily use) |
+| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (the week on 1.0.1 is done, 2026-10-26 to 11-06, no playback failure; closes when 1.0.2 is on the phone — `logs/2026-11-07-week-review.md`) |
+| 16 | [Scrobbling: one play per song](tasks/16-scrobble-doubles.md) | todo (cause found in the server log 2026-11-01; fix proposed, unbuilt) |
+| 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | todo (cause open) |
 
 ## Milestones
 
@@ -35,7 +37,8 @@ result has been run on the phone (not just compiled).
 - **After 11:** daily use is possible (browse, play, Now Playing). ReDrift can
   be left behind at this point if shuffle is not missed.
 - **After 14:** 1.0 — the release build is the one on the phone.
-- **After 15:** phase 1 complete; the project goes quiet.
+- **After 15, 16 and 17:** phase 1 complete; the project goes quiet. 16 and
+  17 come out of 15's week (D39) and may be built while it runs.
 
 ## Not in phase 1
 

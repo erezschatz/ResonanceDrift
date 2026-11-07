@@ -1,0 +1,131 @@
+Description: Honestly there was nothing interesting. Today is listening and I'm just pasting it here because we want a week-long evidence. Otherwise this is just business as usual
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-10-30T12:43:57.414559+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 16/28 song 60947, at 120 s, buffered to 213 s
+
+== This run (48 events) ==
+10-30 12:20:48.394  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-30 12:20:48.428  network: available
+10-30 12:20:48.438  → item 9 song 25270 "Goin Home" (new queue)
+10-30 12:20:48.439  state BUFFERING @120.4s buf +0.0s
+10-30 12:20:48.439  queue restored: 28 songs, item 9 at 120.4s, shuffle on
+10-30 12:20:48.439  shuffle: on, continuing after the current queue
+10-30 12:20:48.442  load start song-25270
+10-30 12:20:48.460  load start song-25270
+10-30 12:20:48.501  state READY @120.4s buf +52.5s
+10-30 12:20:48.521  load done song-25270: 5448 KB in 64 ms
+10-30 12:20:49.515  load start song-25269
+10-30 12:20:50.068  stream song-25269: answered in 528 ms, first bytes at 537 ms (new connection in 225 ms, no length)
+10-30 12:20:50.991  playWhenReady true (user)
+10-30 12:20:50.993  playing @120.4s buf +139.6s
+10-30 12:23:10.992  → item 10 song 25269 "I Ain't Sayin" (auto)
+10-30 12:23:12.262  load done song-25269: 6378 KB in 142746 ms
+10-30 12:23:12.264  load start song-60953
+10-30 12:23:12.476  stream song-60953: answered in 210 ms, first bytes at 212 ms (reused connection, no length)
+10-30 12:25:44.256  → item 11 song 60953 "Reflecting" (auto)
+10-30 12:25:54.350  load done song-60953: 7722 KB in 162087 ms
+10-30 12:25:54.487  load start song-60950
+10-30 12:25:55.041  stream song-60950: answered in 541 ms, first bytes at 553 ms (new connection in 218 ms, no length)
+10-30 12:28:18.526  load done song-60950: 5560 KB in 144040 ms
+10-30 12:28:18.655  load start song-60940
+10-30 12:28:19.301  stream song-60940: answered in 639 ms, first bytes at 642 ms (new connection in 291 ms, no length)
+10-30 12:29:00.777  → item 12 song 60950 "Are You Ready? (Feat. Wiley)" (auto)
+10-30 12:30:36.023  suppressed: transient audio focus loss @95.3s buf +123.4s
+10-30 12:30:36.025  not playing @95.3s buf +123.4s
+10-30 12:30:51.323  suppressed: none @95.5s buf +123.4s
+10-30 12:30:51.324  playing @95.5s buf +123.2s
+10-30 12:30:54.836  load done song-60940: 6012 KB in 156180 ms
+10-30 12:30:54.876  load start song-60954
+10-30 12:30:55.534  stream song-60954: answered in 630 ms, first bytes at 656 ms (new connection in 317 ms, no length)
+10-30 12:31:37.084  → item 13 song 60940 "Oh My Gosh" (auto)
+10-30 12:34:09.777  → item 14 song 60954 "Looking Out (Feat. Giggs)" (auto)
+10-30 12:36:04.741  load done song-60954: 10086 KB in 309865 ms
+10-30 12:36:04.966  load start song-60938
+10-30 12:36:05.718  stream song-60938: answered in 740 ms, first bytes at 749 ms (new connection in 417 ms, no length)
+10-30 12:38:26.800  → item 15 song 60938 "Sticks and Stones" (auto)
+10-30 12:38:37.132  load done song-60938: 7838 KB in 152166 ms
+10-30 12:38:37.155  load start song-60947
+10-30 12:38:37.821  stream song-60947: answered in 655 ms, first bytes at 664 ms (new connection in 330 ms, no length)
+10-30 12:41:46.280  → item 16 song 60947 "Too Many Man (Feat. Boy Better Know)" (auto)
+10-30 12:42:22.596  load done song-60947: 8404 KB in 225441 ms
+10-30 12:42:22.699  load start song-60951
+10-30 12:42:23.455  stream song-60951: answered in 746 ms, first bytes at 753 ms (new connection in 384 ms, no length)
+10-30 12:43:46.906  playWhenReady false (user)
+10-30 12:43:46.909  not playing @120.6s buf +197.0s
+
+== Previous run (72 events) ==
+10-30 08:56:03.878  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-30 08:56:03.908  network: available
+10-30 08:56:03.914  → item 10 song 12402 "Shadowland" (new queue)
+10-30 08:56:03.915  state BUFFERING @109.4s buf +0.0s
+10-30 08:56:03.915  queue restored: 25 songs, item 10 at 109.4s, shuffle on
+10-30 08:56:03.915  shuffle: on, continuing after the current queue
+10-30 08:56:03.918  load start song-12402
+10-30 08:56:03.962  load start song-12402
+10-30 08:56:04.043  state READY @109.4s buf +62.8s
+10-30 08:56:04.044  load done song-12402: 2451 KB in 83 ms
+10-30 08:56:04.044  load start song-12395
+10-30 08:56:15.975  → item 1 song 25281 "Out There" (new queue)
+10-30 08:56:15.977  state BUFFERING @0.0s buf +0.0s
+10-30 08:56:15.979  playWhenReady true (user)
+10-30 08:56:15.980  shuffle: started album 5407 "Where You Been" (10 songs)
+10-30 08:56:16.005  load start song-25281
+10-30 08:56:16.259  stream song-25281: answered in 243 ms, first bytes at 248 ms (reused connection, no length)
+10-30 08:56:17.397  state READY @0.0s buf +3.6s
+10-30 08:56:17.398  playing @0.0s buf +3.6s
+10-30 08:56:26.238  suppressed: transient audio focus loss @8.7s buf +191.0s
+10-30 08:56:26.239  not playing @8.7s buf +191.0s
+10-30 08:56:26.371  playWhenReady false (user)
+10-30 08:56:30.278  playWhenReady true (user)
+10-30 08:56:30.283  suppressed: none @8.7s buf +191.0s
+10-30 08:56:30.285  playing @8.7s buf +191.0s
+10-30 08:56:30.667  playWhenReady false (user)
+10-30 08:56:30.669  not playing @8.8s buf +190.9s
+10-30 08:56:34.341  playWhenReady true (user)
+10-30 08:56:34.343  playing @8.9s buf +190.8s
+10-30 08:59:05.155  load done song-25281: 14256 KB in 169139 ms
+10-30 08:59:05.164  load start song-25271
+10-30 08:59:05.665  stream song-25271: answered in 514 ms, first bytes at 518 ms (new connection in 227 ms, no length)
+10-30 09:02:21.287  → item 2 song 25271 "Start Choppin" (auto)
+10-30 09:05:26.247  load done song-25271: 13677 KB in 381103 ms
+10-30 09:05:26.254  load start song-25273
+10-30 09:05:26.905  stream song-25273: answered in 642 ms, first bytes at 655 ms (new connection in 334 ms, no length)
+10-30 09:08:01.472  → item 3 song 25273 "What Else Is New" (auto)
+10-30 09:10:40.222  load done song-25273: 12497 KB in 313974 ms
+10-30 09:10:40.236  load start song-25275
+10-30 09:10:40.878  stream song-25275: answered in 635 ms, first bytes at 650 ms (new connection in 330 ms, no length)
+10-30 09:13:11.391  → item 4 song 25275 "On the Way" (auto)
+10-30 09:14:31.288  load done song-25275: 8615 KB in 231065 ms
+10-30 09:14:31.292  load start song-25278
+10-30 09:14:31.958  stream song-25278: answered in 658 ms, first bytes at 668 ms (new connection in 288 ms, no length)
+10-30 09:16:41.866  → item 5 song 25278 "Not the Same" (auto)
+10-30 09:19:46.855  load done song-25278: 14529 KB in 315567 ms
+10-30 09:19:46.861  load start song-25280
+10-30 09:19:47.473  stream song-25280: answered in 608 ms, first bytes at 614 ms (new connection in 294 ms, no length)
+10-30 09:22:43.844  → item 6 song 25280 "Get Me" (auto)
+10-30 09:26:14.984  load done song-25280: 14136 KB in 388126 ms
+10-30 09:26:14.987  load start song-25277
+10-30 09:26:15.680  stream song-25277: answered in 676 ms, first bytes at 693 ms (new connection in 363 ms, no length)
+10-30 09:28:35.776  → item 7 song 25277 "Drawerings" (auto)
+10-30 09:30:22.080  load done song-25277: 11768 KB in 247095 ms
+10-30 09:30:22.082  load start song-25272
+10-30 09:30:22.615  stream song-25272: answered in 515 ms, first bytes at 532 ms (new connection in 231 ms, no length)
+10-30 09:33:27.014  → item 8 song 25272 "Hide" (auto)
+10-30 09:35:13.338  load done song-25272: 10485 KB in 291257 ms
+10-30 09:35:13.344  load start song-25270
+10-30 09:35:13.881  stream song-25270: answered in 528 ms, first bytes at 542 ms (new connection in 207 ms, no length)
+10-30 09:37:45.391  → item 9 song 25270 "Goin Home" (auto)
+10-30 09:37:45.450  shuffle: album pool 2758 albums (stored; refreshing)
+10-30 09:37:46.312  shuffle: queued album 9374 "Microphone Champion" (18 songs)
+10-30 09:37:50.664  shuffle: album pool 2758 albums in 5213 ms
+10-30 09:39:05.499  load done song-25270: 10553 KB in 232161 ms
+10-30 09:39:05.508  load start song-25269
+10-30 09:39:06.163  stream song-25269: answered in 651 ms, first bytes at 662 ms (new connection in 332 ms, no length)
+10-30 09:39:45.834  playWhenReady false (user)
+10-30 09:39:45.837  not playing @120.3s buf +139.9s
+10-30 09:40:20.460  playWhenReady false (headphones disconnected)
+10-30 09:43:37.892  playWhenReady false (user)
+10-30 09:43:37.925  service destroyed

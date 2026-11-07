@@ -1,0 +1,189 @@
+Description: Mostly nothing to report. You'll probably notice a lot of stops and starts because I've moved from the car to the earphones to the car. Otherwise, seamless and very enjoyable
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-05T10:25:55.854349+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 4/10 song 67068, at 185 s, buffered to 365 s
+
+== This run (13 events) ==
+11-05 10:25:53.738  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-05 10:25:53.745  network: available
+11-05 10:25:53.752  → item 4 song 67068 "Tamiditin" (new queue)
+11-05 10:25:53.754  state BUFFERING @185.7s buf +0.0s
+11-05 10:25:53.755  queue restored: 10 songs, item 4 at 185.7s, shuffle on
+11-05 10:25:53.756  shuffle: on, continuing after the current queue
+11-05 10:25:53.760  load start song-67068
+11-05 10:25:53.796  load start song-67068
+11-05 10:25:53.847  state READY @185.7s buf +97.5s
+11-05 10:25:54.300  stream song-67068: answered in 425 ms, first bytes at 431 ms (new connection in 204 ms, no length)
+11-05 10:25:54.565  load done song-67068: 5530 KB in 771 ms
+11-05 10:25:54.861  load start song-67064
+11-05 10:25:55.100  stream song-67064: answered in 230 ms, first bytes at 240 ms (reused connection, no length)
+
+== Previous run (165 events) ==
+11-05 08:32:05.733  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-05 08:32:05.761  network: available
+11-05 08:32:05.772  → item 8 song 17120 "Fighter Pilot Korean War" (new queue)
+11-05 08:32:05.773  state BUFFERING @154.4s buf +0.0s
+11-05 08:32:05.774  queue restored: 25 songs, item 8 at 154.4s, shuffle on
+11-05 08:32:05.774  shuffle: on, continuing after the current queue
+11-05 08:32:05.779  load start song-17120
+11-05 08:32:05.858  load start song-17120
+11-05 08:32:06.045  state READY @154.4s buf +52.4s
+11-05 08:32:06.079  load done song-17120: 4496 KB in 223 ms
+11-05 08:32:07.078  load start song-17115
+11-05 08:32:07.296  stream song-17115: answered in 156 ms, first bytes at 163 ms (reused connection, no length)
+11-05 08:32:16.732  → item 1 song 18074 "Rawhide" (new queue)
+11-05 08:32:16.733  state BUFFERING @0.0s buf +0.0s
+11-05 08:32:16.735  playWhenReady true (user)
+11-05 08:32:16.736  shuffle: started album 4951 "Climate of Hunter" (8 songs)
+11-05 08:32:16.751  load start song-18074
+11-05 08:32:17.014  stream song-18074: answered in 262 ms, first bytes at 263 ms (reused connection, no length)
+11-05 08:32:17.617  state READY @0.0s buf +9.8s
+11-05 08:32:17.620  playing @0.0s buf +9.8s
+11-05 08:33:24.338  load done song-18074: 10038 KB in 67587 ms
+11-05 08:33:24.458  load start song-18073
+11-05 08:33:25.238  stream song-18073: answered in 751 ms, first bytes at 777 ms (new connection in 174 ms, no length)
+11-05 08:36:11.240  → item 2 song 18073 "Dealer" (auto)
+11-05 08:38:36.061  load done song-18073: 13174 KB in 311604 ms
+11-05 08:38:36.085  load start song-18070
+11-05 08:38:37.014  stream song-18070: answered in 911 ms, first bytes at 926 ms (new connection in 321 ms, no length)
+11-05 08:38:39.735  playWhenReady false (user)
+11-05 08:38:39.738  not playing @148.5s buf +193.3s
+11-05 08:38:53.232  playWhenReady true (user)
+11-05 08:38:53.235  playing @148.5s buf +193.2s
+11-05 08:41:38.341  → item 3 song 18070 "Track Three" (auto)
+11-05 08:42:29.373  playWhenReady false (audio focus lost)
+11-05 08:42:29.380  not playing @51.1s buf +134.8s
+11-05 08:42:38.001  playWhenReady true (user)
+11-05 08:42:38.003  playing @51.1s buf +134.8s
+11-05 08:42:53.101  load done song-18070: 9852 KB in 257017 ms
+11-05 08:42:53.195  load start song-18069
+11-05 08:42:53.878  stream song-18069: answered in 663 ms, first bytes at 678 ms (new connection in 277 ms, no length)
+11-05 08:43:19.500  playWhenReady false (user)
+11-05 08:43:19.503  not playing @92.3s buf +164.4s
+11-05 08:43:48.733  playWhenReady false (headphones disconnected)
+11-05 08:52:34.533  playWhenReady true (user)
+11-05 08:52:34.535  playing @92.5s buf +164.2s
+11-05 08:54:37.590  stream song-18069: failed after 399115 ms (SocketException)
+11-05 08:54:37.594  load error song-18069 @215.5s buf +136.1s: HttpDataSource$HttpDataSourceException: java.net.SocketException: Connection reset ← SocketException: Connection reset
+11-05 08:54:38.595  load start song-18069 (retry 1)
+11-05 08:54:39.227  stream song-18069: answered in 608 ms, first bytes at 632 ms (new connection in 340 ms, no length)
+11-05 08:54:43.960  playWhenReady false (user)
+11-05 08:54:43.963  not playing @221.7s buf +199.2s
+11-05 08:54:55.811  playWhenReady false (headphones disconnected)
+11-05 08:55:03.175  playWhenReady true (user)
+11-05 08:55:03.177  playing @221.9s buf +199.0s
+11-05 08:55:09.369  → item 4 song 18069 "Sleepwalkers Woman" (auto)
+11-05 08:56:22.863  load done song-18069: 10804 KB in 809667 ms
+11-05 08:56:22.866  load start song-18068
+11-05 08:56:23.768  stream song-18068: answered in 883 ms, first bytes at 899 ms (new connection in 319 ms, no length)
+11-05 08:59:22.179  → item 5 song 18068 "Track Five" (auto)
+11-05 09:00:28.212  load done song-18068: 9324 KB in 245346 ms
+11-05 09:00:28.380  load start song-18072
+11-05 09:00:29.305  stream song-18072: answered in 912 ms, first bytes at 921 ms (new connection in 162 ms, no length)
+11-05 09:02:56.870  → item 6 song 18072 "Track Six" (auto)
+11-05 09:03:10.539  load done song-18072: 8428 KB in 162158 ms
+11-05 09:03:10.544  load start song-18067
+11-05 09:03:11.343  stream song-18067: answered in 767 ms, first bytes at 795 ms (new connection in 167 ms, no length)
+11-05 09:06:08.737  → item 7 song 18067 "Track Seven" (auto)
+11-05 09:06:08.812  shuffle: album pool 2765 albums (stored; refreshing)
+11-05 09:06:09.904  shuffle: queued album 5379 "Revival" (19 songs)
+11-05 09:06:21.667  shuffle: album pool 2765 albums in 12852 ms
+11-05 09:07:15.017  load done song-18067: 9748 KB in 244472 ms
+11-05 09:07:15.065  load start song-18071
+11-05 09:07:15.765  stream song-18071: answered in 665 ms, first bytes at 697 ms (new connection in 237 ms, no length)
+11-05 09:07:33.800  playWhenReady false (user)
+11-05 09:07:33.804  not playing @85.1s buf +169.0s
+11-05 09:13:31.090  playWhenReady true (user)
+11-05 09:13:31.102  playing @85.1s buf +169.0s
+11-05 09:14:09.991  playWhenReady false (user)
+11-05 09:14:09.994  not playing @123.9s buf +130.2s
+11-05 09:14:24.422  playWhenReady true (user)
+11-05 09:14:24.424  playing @123.9s buf +130.1s
+11-05 09:14:33.249  playWhenReady false (user)
+11-05 09:14:33.251  not playing @132.8s buf +121.2s
+11-05 09:15:43.697  playWhenReady true (user)
+11-05 09:15:43.698  playing @133.0s buf +121.1s
+11-05 09:17:03.921  stream song-18071: failed after 574568 ms (SocketException)
+11-05 09:17:03.933  load error song-18071 @212.8s buf +125.3s: HttpDataSource$HttpDataSourceException: java.net.SocketException: Connection reset ← SocketException: Connection reset
+11-05 09:17:04.934  load start song-18071 (retry 1)
+11-05 09:17:05.661  stream song-18071: answered in 694 ms, first bytes at 725 ms (new connection in 389 ms, no length)
+11-05 09:17:06.699  load done song-18071: 8492 KB in 591634 ms
+11-05 09:17:06.850  load start song-22601
+11-05 09:17:07.312  stream song-22601: answered in 429 ms, first bytes at 458 ms (reused connection, no length)
+11-05 09:17:16.469  → item 8 song 18071 "Blanket Roll Blues" (auto)
+11-05 09:20:29.941  → item 9 song 22601 "Walk on Water (feat. Beyoncé)" (auto)
+11-05 09:22:24.601  load done song-22601: 11936 KB in 317751 ms
+11-05 09:22:24.818  load start song-22597
+11-05 09:22:25.617  stream song-22597: answered in 787 ms, first bytes at 796 ms (new connection in 335 ms, no length)
+11-05 09:25:02.921  playWhenReady false (user)
+11-05 09:25:02.924  not playing @272.9s buf +186.2s
+11-05 09:25:06.387  playWhenReady true (user)
+11-05 09:25:06.394  playing @273.0s buf +186.1s
+11-05 09:25:06.587  playWhenReady false (user)
+11-05 09:25:06.589  not playing @273.3s buf +185.8s
+11-05 09:25:09.467  playWhenReady true (user)
+11-05 09:25:09.469  playing @273.3s buf +185.8s
+11-05 09:25:09.635  playWhenReady false (user)
+11-05 09:25:09.638  not playing @273.3s buf +185.8s
+11-05 09:25:15.256  playWhenReady true (user)
+11-05 09:25:15.258  playing @273.4s buf +185.7s
+11-05 09:25:15.522  playWhenReady false (user)
+11-05 09:25:15.524  not playing @273.6s buf +185.5s
+11-05 09:25:33.716  playWhenReady false (headphones disconnected)
+11-05 09:25:39.049  playWhenReady true (user)
+11-05 09:25:39.050  playing @273.6s buf +185.5s
+11-05 09:26:09.185  → item 10 song 22597 "Believe" (auto)
+11-05 09:26:42.790  playWhenReady false (user)
+11-05 09:26:42.794  not playing @33.6s buf +121.9s
+11-05 09:27:18.317  playWhenReady true (user)
+11-05 09:27:18.321  playing @33.6s buf +121.8s
+11-05 09:28:50.931  playWhenReady false (user)
+11-05 09:28:50.934  not playing @126.0s buf +186.8s
+11-05 09:28:57.362  playWhenReady true (user)
+11-05 09:28:57.363  playing @126.2s buf +186.6s
+11-05 09:30:04.229  load done song-22597: 12393 KB in 459411 ms
+11-05 09:30:04.231  load start song-22614
+11-05 09:30:05.181  stream song-22614: answered in 934 ms, first bytes at 946 ms (new connection in 334 ms, no length)
+11-05 09:32:06.499  → item 11 song 22614 "Chloraseptic (feat. Phresher)" (auto)
+11-05 09:34:01.073  load done song-22614: 11838 KB in 236841 ms
+11-05 09:34:01.075  load start song-22610
+11-05 09:34:02.226  stream song-22610: answered in 1137 ms, first bytes at 1146 ms (new connection in 166 ms, no length)
+11-05 09:36:31.809  → item 1 song 67070 "Ahitmanin" (new queue)
+11-05 09:36:31.811  state BUFFERING @0.0s buf +0.0s
+11-05 09:36:31.812  not playing @0.0s buf +0.0s
+11-05 09:36:31.814  shuffle: started album 9977 "Essam" (10 songs)
+11-05 09:36:31.828  load start song-67070
+11-05 09:36:32.071  stream song-67070: answered in 248 ms, first bytes at 251 ms (reused connection, no length)
+11-05 09:36:32.354  state READY @0.0s buf +4.7s
+11-05 09:36:32.357  playing @0.0s buf +4.7s
+11-05 09:38:03.232  load done song-67070: 9202 KB in 91413 ms
+11-05 09:38:03.286  load start song-67062
+11-05 09:38:04.236  stream song-67062: answered in 934 ms, first bytes at 944 ms (new connection in 274 ms, no length)
+11-05 09:41:07.083  → item 2 song 67062 "Derhan N’Oulhine" (auto)
+11-05 09:42:11.528  load done song-67062: 7008 KB in 248243 ms
+11-05 09:42:11.736  load start song-67074
+11-05 09:42:12.333  stream song-67074: answered in 589 ms, first bytes at 594 ms (new connection in 270 ms, no length)
+11-05 09:44:01.752  playWhenReady false (user)
+11-05 09:44:01.757  not playing @174.7s buf +181.9s
+11-05 09:44:34.769  playWhenReady true (user)
+11-05 09:44:34.773  playing @174.7s buf +181.9s
+11-05 09:45:13.592  → item 3 song 67074 "Tellalt" (auto)
+11-05 09:45:37.423  load done song-67074: 7056 KB in 205687 ms
+11-05 09:45:37.489  load start song-67068
+11-05 09:45:38.201  stream song-67068: answered in 701 ms, first bytes at 709 ms (new connection in 308 ms, no length)
+11-05 09:45:44.972  suppressed: transient audio focus loss @31.4s buf +200.1s
+11-05 09:45:44.974  not playing @31.4s buf +200.1s
+11-05 09:46:20.773  suppressed: none @31.6s buf +200.0s
+11-05 09:46:20.774  playing @31.6s buf +200.0s
+11-05 09:46:38.141  suppressed: transient audio focus loss @48.4s buf +183.2s
+11-05 09:46:38.142  not playing @48.4s buf +183.2s
+11-05 09:46:55.874  suppressed: none @48.4s buf +183.2s
+11-05 09:46:55.876  playing @48.5s buf +183.1s
+11-05 09:49:27.831  → item 4 song 67068 "Tamiditin" (auto)
+11-05 09:52:33.553  playWhenReady false (user)
+11-05 09:52:33.561  not playing @185.5s buf +176.2s
+11-05 09:55:03.541  suppressed: transient audio focus loss @185.7s buf +176.0s
+11-05 10:07:27.129  service destroyed

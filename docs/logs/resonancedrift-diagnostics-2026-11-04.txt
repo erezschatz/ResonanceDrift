@@ -1,0 +1,43 @@
+Description: This was quite a sorry state of affairs. The cars, Bluetooth, malfunctioned and I just kept trying. Then I gave up so it's a very short log
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-04T13:13:57.767402+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 3/9 song 12554, at 57 s, buffered to 247 s
+
+== This run (10 events) ==
+11-04 13:13:47.351  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-04 13:13:47.357  network: available
+11-04 13:13:47.367  → item 3 song 12554 "I'll Pretend" (new queue)
+11-04 13:13:47.369  state BUFFERING @57.7s buf +0.0s
+11-04 13:13:47.369  queue restored: 9 songs, item 3 at 57.7s, shuffle on
+11-04 13:13:47.370  shuffle: on, continuing after the current queue
+11-04 13:13:47.374  load start song-12554
+11-04 13:13:47.400  load start song-12554
+11-04 13:13:47.451  state READY @57.7s buf +97.2s
+11-04 13:13:47.942  stream song-12554: answered in 470 ms, first bytes at 477 ms (new connection in 216 ms, no length)
+
+== Previous run (22 events) ==
+11-04 07:14:32.924  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-04 07:14:32.959  network: available
+11-04 07:14:32.968  → item 1 song 12553 "Answer Me, My Love" (new queue)
+11-04 07:14:32.968  state BUFFERING @89.4s buf +0.0s
+11-04 07:14:32.969  queue restored: 9 songs, item 1 at 89.4s, shuffle on
+11-04 07:14:32.969  shuffle: on, continuing after the current queue
+11-04 07:14:32.986  load start song-12553
+11-04 07:14:33.025  load start song-12553
+11-04 07:14:33.093  state READY @89.4s buf +83.6s
+11-04 07:14:33.093  load done song-12553: 2573 KB in 69 ms
+11-04 07:14:33.095  load start song-12551
+11-04 07:14:33.610  stream song-12551: answered in 486 ms, first bytes at 490 ms (new connection in 185 ms, no length)
+11-04 07:14:44.731  playWhenReady true (user)
+11-04 07:14:44.732  playing @89.4s buf +204.6s
+11-04 07:16:08.457  → item 2 song 12551 "Lonely" (auto)
+11-04 07:16:09.650  load done song-12551: 5318 KB in 96557 ms
+11-04 07:16:09.825  load start song-12554
+11-04 07:16:10.085  stream song-12554: answered in 249 ms, first bytes at 258 ms (reused connection, no length)
+11-04 07:18:47.039  → item 3 song 12554 "I'll Pretend" (auto)
+11-04 07:19:44.674  playWhenReady false (user)
+11-04 07:19:44.676  not playing @57.7s buf +171.0s
+11-04 07:40:15.573  service destroyed

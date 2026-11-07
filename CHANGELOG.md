@@ -6,6 +6,32 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-07 — The week reviewed in full
+- All sixteen diagnostics copies of 2026-10-26 to 11-06 are in `docs/logs/`
+  (thirteen added), with a review and plan (`2026-11-07-week-review.md`):
+  28 runs, no playback failure, one audible 1.3 s gap.
+- That gap is a bug: the restore streams with the stored token before the
+  launch handshake replaces it (W7, 5 of 28 restores got a 403; the recovery
+  path handled the one that reached the player). Fix proposed for 1.0.2,
+  not built.
+- Step 15: acceptance criterion 1 ticked; W2 and W10 explained (connection
+  resets after long pauses and handover outages, all retried unheard); W3,
+  W4, W5, W6, W9 closed; W12 (one 429), W13 (focus-loss bursts) added.
+  Step 18 proposed (lists mark the playing song). No code change.
+
+### 2026-11-01 — Field logs compiled; steps 16 and 17 opened
+- Diagnostics of 2026-10-30 and 11-01 and the Ampache server log of 10-30 are
+  in `docs/logs/`, with a review (`2026-11-01-review.md`): no playback
+  failure in five runs.
+- Step 16: every song is registered twice by the server, once when the
+  prefetch stream starts and once on `record_play`; fix proposed
+  (`cache=1` on the stream URL), not built.
+- Step 17: the Now Playing queue does not open at the current song; cause
+  open.
+- Step 15 gains W11, the review's evidence, a "For Erez" section (the only
+  things asked of him; W3 and W9 downgraded to explained unless they recur)
+  and an agenda for the weekend review. Decision D39. No code change.
+
 ### 2026-10-27 — Step 15, day 2 clean
 - A second day on 1.0.1 (19) with no playback failure.
 - New on the watch list: W7, an expired token gave a 403 on the restored

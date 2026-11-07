@@ -1,0 +1,149 @@
+Description: mostly eventless to seemingly hiccups in during Brave and Strong. It seems there was a millisecond pause and the next zone took another half a second to start. Otherwise, everything was okay.
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-06T12:20:58.961841+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 19/30 song 26475, at 108 s, buffered to 232 s
+
+== This run (55 events) ==
+11-06 11:59:11.137  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-06 11:59:11.146  network: available
+11-06 11:59:11.152  → item 13 song 26466 "Africa Talks to You "The Asphalt Jungle"" (new queue)
+11-06 11:59:11.153  state BUFFERING @328.7s buf +0.0s
+11-06 11:59:11.153  queue restored: 19 songs, item 13 at 328.7s, shuffle on
+11-06 11:59:11.154  shuffle: on, continuing after the current queue
+11-06 11:59:11.157  load start song-26466
+11-06 11:59:11.188  load start song-26466
+11-06 11:59:11.240  state READY @328.7s buf +63.8s
+11-06 11:59:11.684  stream song-26466: answered in 424 ms, first bytes at 426 ms (new connection in 228 ms, 0 KB)
+11-06 11:59:11.685  load error song-26466 @328.7s buf +113.0s: HttpDataSource$InvalidResponseCodeException: Response code: 403
+11-06 11:59:21.359  playWhenReady true (user)
+11-06 11:59:21.361  playing @328.7s buf +139.9s
+11-06 12:01:41.889  ERROR ERROR_CODE_IO_BAD_HTTP_STATUS @468.5s buf +0.0s: ExoPlaybackException: Source error ← HttpDataSource$InvalidResponseCodeException: Response code: 403
+11-06 12:01:41.891  recovery: stream refused; renewing the session token
+11-06 12:01:41.895  state IDLE @468.5s buf +0.0s
+11-06 12:01:41.896  not playing @468.5s buf +0.0s
+11-06 12:01:42.448  recovery: token renewed
+11-06 12:01:42.449  recovery: prepare() at 468 s (new token)
+11-06 12:01:42.450  state BUFFERING @468.5s buf +0.0s
+11-06 12:01:42.467  load start song-26466
+11-06 12:01:42.517  load start song-26466
+11-06 12:01:42.865  stream song-26466: answered in 324 ms, first bytes at 339 ms (reused connection, no length)
+11-06 12:01:43.179  state READY @468.5s buf +3.1s
+11-06 12:01:43.179  recovery: playing again after 0 attempt(s)
+11-06 12:01:43.182  playing @468.5s buf +5.1s
+11-06 12:01:43.588  load done song-26466: 2208 KB in 1071 ms
+11-06 12:01:43.819  load start song-26472
+11-06 12:01:44.162  stream song-26472: answered in 309 ms, first bytes at 338 ms (reused connection, no length)
+11-06 12:02:39.997  → item 14 song 26472 "Brave and Strong" (auto)
+11-06 12:04:06.570  load done song-26472: 8299 KB in 142751 ms
+11-06 12:04:06.570  load start song-26473
+11-06 12:04:07.163  stream song-26473: answered in 591 ms, first bytes at 593 ms (new connection in 289 ms, no length)
+11-06 12:06:08.987  → item 15 song 26473 "(You Caught Me) Smilin'" (auto)
+11-06 12:06:43.138  load done song-26473: 6940 KB in 156567 ms
+11-06 12:06:43.346  load start song-26470
+11-06 12:06:43.989  stream song-26470: answered in 629 ms, first bytes at 641 ms (new connection in 305 ms, no length)
+11-06 12:09:03.196  → item 16 song 26470 "Time" (auto)
+11-06 12:09:11.144  load done song-26470: 7218 KB in 147798 ms
+11-06 12:09:11.312  load start song-26474
+11-06 12:09:11.959  stream song-26474: answered in 636 ms, first bytes at 643 ms (new connection in 254 ms, no length)
+11-06 12:12:04.533  → item 17 song 26474 "Spaced Cowboy" (auto)
+11-06 12:13:04.832  load done song-26474: 9472 KB in 233520 ms
+11-06 12:13:04.949  load start song-26471
+11-06 12:13:05.600  stream song-26471: answered in 638 ms, first bytes at 644 ms (new connection in 314 ms, no length)
+11-06 12:15:45.345  load done song-26471: 7013 KB in 160396 ms
+11-06 12:15:45.487  load start song-26475
+11-06 12:15:46.156  stream song-26475: answered in 650 ms, first bytes at 666 ms (new connection in 308 ms, no length)
+11-06 12:16:03.553  → item 18 song 26471 "Runnin' Away" (auto)
+11-06 12:16:03.593  shuffle: album pool 2765 albums (stored; refreshing)
+11-06 12:16:04.422  shuffle: queued album 10247 "Planet Waves" (11 songs)
+11-06 12:16:08.351  shuffle: album pool 2765 albums in 4757 ms
+11-06 12:18:59.622  → item 19 song 26475 "Thank You for Talkin' to Me Africa" (auto)
+11-06 12:20:48.183  playWhenReady false (user)
+11-06 12:20:48.186  not playing @108.4s buf +124.2s
+
+== Previous run (83 events) ==
+11-06 08:43:10.384  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-06 08:43:10.395  network: available
+11-06 08:43:10.404  → item 9 song 67060 "Adounia Tochal" (new queue)
+11-06 08:43:10.405  state BUFFERING @173.3s buf +0.0s
+11-06 08:43:10.405  queue restored: 12 songs, item 9 at 173.3s, shuffle on
+11-06 08:43:10.405  shuffle: on, continuing after the current queue
+11-06 08:43:10.409  load start song-67060
+11-06 08:43:10.464  load start song-67060
+11-06 08:43:10.561  load done song-67060: 1094 KB in 99 ms
+11-06 08:43:10.562  load start song-67072
+11-06 08:43:10.575  state READY @173.3s buf +34.6s
+11-06 08:43:11.007  stream song-67072: answered in 397 ms, first bytes at 403 ms (new connection in 176 ms, no length)
+11-06 08:43:20.318  shuffle: album pool 2765 albums (stored; refreshing)
+11-06 08:43:20.908  → item 1 song 10375 "Outside" (new queue)
+11-06 08:43:20.909  state BUFFERING @0.0s buf +0.0s
+11-06 08:43:20.912  playWhenReady true (user)
+11-06 08:43:20.913  shuffle: started album 4376 "Furies" (8 songs)
+11-06 08:43:20.937  load start song-10375
+11-06 08:43:21.148  stream song-10375: answered in 212 ms, first bytes at 214 ms (reused connection, no length)
+11-06 08:43:21.407  state READY @0.0s buf +10.9s
+11-06 08:43:21.408  playing @0.0s buf +10.9s
+11-06 08:43:22.482  load done song-10375: 5368 KB in 1549 ms
+11-06 08:43:22.686  load start song-10370
+11-06 08:43:22.966  stream song-10370: answered in 272 ms, first bytes at 277 ms (reused connection, no length)
+11-06 08:43:24.446  shuffle: album pool 2765 albums in 4126 ms
+11-06 08:45:59.831  → item 2 song 10370 "Never Like That" (auto)
+11-06 08:47:26.970  load done song-10370: 7312 KB in 244284 ms
+11-06 08:47:27.207  load start song-10369
+11-06 08:47:28.067  stream song-10369: answered in 848 ms, first bytes at 857 ms (new connection in 302 ms, no length)
+11-06 08:49:31.069  → item 3 song 10369 "Ice Bear" (auto)
+11-06 08:51:03.460  load done song-10369: 7584 KB in 216253 ms
+11-06 08:51:03.702  load start song-10376
+11-06 08:51:04.437  stream song-10376: answered in 729 ms, first bytes at 734 ms (new connection in 349 ms, no length)
+11-06 08:52:12.506  load done song-10376: 3508 KB in 68805 ms
+11-06 08:52:12.695  load start song-10374
+11-06 08:52:13.310  stream song-10374: answered in 606 ms, first bytes at 610 ms (new connection in 243 ms, no length)
+11-06 08:53:16.842  → item 4 song 10376 "Deserve" (auto)
+11-06 08:54:55.001  → item 5 song 10374 "Shock and Repeat" (auto)
+11-06 08:55:48.436  load done song-10374: 9092 KB in 215741 ms
+11-06 08:55:48.513  load start song-10371
+11-06 08:55:49.218  stream song-10371: answered in 677 ms, first bytes at 702 ms (new connection in 311 ms, no length)
+11-06 08:59:13.254  → item 6 song 10371 "Furies" (auto)
+11-06 09:01:32.661  load done song-10371: 8654 KB in 344148 ms
+11-06 09:01:32.893  load start song-10372
+11-06 09:01:33.645  stream song-10372: answered in 736 ms, first bytes at 749 ms (new connection in 359 ms, no length)
+11-06 09:03:46.303  → item 7 song 10372 "No Ground" (auto)
+11-06 09:03:47.117  shuffle: queued album 5858 "There's a Riot Goin' On" (11 songs)
+11-06 09:05:14.917  load done song-10372: 7978 KB in 222025 ms
+11-06 09:05:15.085  load start song-10373
+11-06 09:05:15.800  stream song-10373: answered in 699 ms, first bytes at 712 ms (new connection in 334 ms, no length)
+11-06 09:07:37.356  → item 8 song 10373 "August" (auto)
+11-06 09:07:43.233  → item 9 song 26469 "Luv 'n Haight" (seek/skip)
+11-06 09:07:43.237  state BUFFERING @0.0s buf +0.0s
+11-06 09:07:43.241  not playing @0.0s buf +0.0s
+11-06 09:07:43.257  load start song-26469
+11-06 09:07:43.991  stream song-26469: answered in 723 ms, first bytes at 733 ms (new connection in 356 ms, no length)
+11-06 09:07:44.440  state READY @0.0s buf +5.5s
+11-06 09:07:44.441  playing @0.0s buf +5.5s
+11-06 09:09:11.355  load done song-26469: 9580 KB in 88099 ms
+11-06 09:09:11.542  load start song-26465
+11-06 09:09:12.217  stream song-26465: answered in 639 ms, first bytes at 665 ms (new connection in 252 ms, no length)
+11-06 09:11:46.646  → item 10 song 26465 "Just Like a Baby" (auto)
+11-06 09:14:31.829  load done song-26465: 12289 KB in 320288 ms
+11-06 09:14:31.981  load start song-26467
+11-06 09:14:32.629  stream song-26467: answered in 639 ms, first bytes at 645 ms (new connection in 286 ms, no length)
+11-06 09:16:57.775  → item 11 song 26467 "Poet" (auto)
+11-06 09:17:05.678  load done song-26467: 7208 KB in 153697 ms
+11-06 09:17:05.811  load start song-26468
+11-06 09:17:06.492  stream song-26468: answered in 666 ms, first bytes at 676 ms (new connection in 323 ms, no length)
+11-06 09:19:58.850  → item 12 song 26468 "Family Affair" (auto)
+11-06 09:20:59.087  load done song-26468: 7359 KB in 233277 ms
+11-06 09:20:59.321  load start song-26466
+11-06 09:21:00.123  stream song-26466: answered in 789 ms, first bytes at 797 ms (new connection in 172 ms, no length)
+11-06 09:23:03.783  → item 13 song 26466 "Africa Talks to You "The Asphalt Jungle"" (auto)
+11-06 09:25:34.860  suppressed: transient audio focus loss @151.1s buf +160.2s
+11-06 09:25:34.862  not playing @151.1s buf +160.2s
+11-06 09:25:44.590  suppressed: none @151.1s buf +160.2s
+11-06 09:25:44.592  playing @151.2s buf +160.0s
+11-06 09:28:42.122  playWhenReady false (user)
+11-06 09:28:42.126  not playing @328.6s buf +140.0s
+11-06 09:29:16.864  playWhenReady false (headphones disconnected)
+11-06 09:42:25.503  playWhenReady false (user)
+11-06 09:42:25.570  service destroyed

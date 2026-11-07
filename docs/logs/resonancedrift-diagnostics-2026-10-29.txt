@@ -1,0 +1,117 @@
+Description: New day, new log, absolutely nothing to report, started an album, got bored, skipped one suggestion, stayed for the next. Playback is so much better with zero gaps between tracks
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-10-29T09:03:44.818924+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 4/24 song 61624, at 181 s, buffered to 247 s
+
+== This run (11 events) ==
+10-29 09:03:42.762  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-29 09:03:42.769  network: available
+10-29 09:03:42.785  → item 4 song 61624 "The Singularity" (new queue)
+10-29 09:03:42.787  state BUFFERING @181.4s buf +0.0s
+10-29 09:03:42.788  queue restored: 24 songs, item 4 at 181.4s, shuffle on
+10-29 09:03:42.788  shuffle: on, continuing after the current queue
+10-29 09:03:42.791  load start song-61624
+10-29 09:03:42.825  load start song-61624
+10-29 09:03:42.850  load done song-61624: 2036 KB in 33 ms
+10-29 09:03:42.850  load start song-61627
+10-29 09:03:42.862  state READY @181.4s buf +66.6s
+
+== Previous run (95 events) ==
+10-29 06:50:43.294  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-29 06:50:43.327  network: available
+10-29 06:50:43.340  → item 50 song 58767 "Big Burt" (new queue)
+10-29 06:50:43.342  state BUFFERING @159.5s buf +0.0s
+10-29 06:50:43.342  queue restored: 52 songs, item 50 at 159.5s, shuffle on
+10-29 06:50:43.342  shuffle: on, continuing after the current queue
+10-29 06:50:43.347  load start song-58767
+10-29 06:50:43.388  load start song-58767
+10-29 06:50:43.436  load done song-58767: 1600 KB in 51 ms
+10-29 06:50:43.437  load start song-58762
+10-29 06:50:43.453  state READY @159.5s buf +40.9s
+10-29 06:50:44.395  stream song-58762: answered in 922 ms, first bytes at 922 ms (new connection in 270 ms, 0 KB)
+10-29 06:50:44.401  load error song-58762 @159.5s buf +135.3s: HttpDataSource$InvalidResponseCodeException: Response code: 403
+10-29 06:50:52.822  shuffle: album pool 2758 albums (stored; refreshing)
+10-29 06:50:53.396  → item 1 song 6608 "Down (feat. Joi)" (new queue)
+10-29 06:50:53.398  state BUFFERING @0.0s buf +0.0s
+10-29 06:50:53.400  playWhenReady true (user)
+10-29 06:50:53.400  shuffle: started album 3556 "RTJ3" (14 songs)
+10-29 06:50:53.422  load start song-6608
+10-29 06:50:53.621  stream song-6608: answered in 195 ms, first bytes at 201 ms (reused connection, no length)
+10-29 06:50:54.107  state READY @0.0s buf +3.2s
+10-29 06:50:54.108  playing @0.0s buf +3.2s
+10-29 06:50:56.841  shuffle: album pool 2758 albums in 4017 ms
+10-29 06:52:21.724  load done song-6608: 8298 KB in 88305 ms
+10-29 06:52:21.948  load start song-6615
+10-29 06:52:22.656  stream song-6615: answered in 691 ms, first bytes at 703 ms (new connection in 314 ms, no length)
+10-29 06:53:40.669  load done song-6615: 6014 KB in 78722 ms
+10-29 06:53:40.671  load start song-6620
+10-29 06:53:41.442  stream song-6620: answered in 757 ms, first bytes at 768 ms (new connection in 167 ms, no length)
+10-29 06:54:24.312  → item 2 song 6615 "Talk to Me" (auto)
+10-29 06:56:55.575  → item 3 song 6620 "Legend Has It" (auto)
+10-29 06:57:30.537  load done song-6620: 8148 KB in 229866 ms
+10-29 06:57:30.682  load start song-6619
+10-29 06:57:31.273  stream song-6619: answered in 610 ms, first bytes at 614 ms (new connection in 326 ms, no length)
+10-29 07:00:21.471  → item 4 song 6619 "Call Ticketron" (auto)
+10-29 07:01:22.482  load done song-6619: 7866 KB in 231826 ms
+10-29 07:01:22.639  load start song-6613
+10-29 07:01:23.285  stream song-6613: answered in 632 ms, first bytes at 642 ms (new connection in 321 ms, no length)
+10-29 07:03:40.156  → item 5 song 6613 "Hey Kids (Bumaye) (feat. Danny Brown)" (auto)
+10-29 07:03:48.688  load done song-6613: 7600 KB in 146049 ms
+10-29 07:03:48.805  load start song-6610
+10-29 07:03:49.438  stream song-6610: answered in 627 ms, first bytes at 632 ms (new connection in 345 ms, no length)
+10-29 07:06:52.043  → item 6 song 6610 "Stay Gold" (auto)
+10-29 07:07:26.781  load done song-6610: 8216 KB in 217977 ms
+10-29 07:07:26.938  load start song-6611
+10-29 07:07:27.614  stream song-6611: answered in 654 ms, first bytes at 673 ms (new connection in 354 ms, no length)
+10-29 07:10:19.662  → item 7 song 6611 "Don't Get Captured" (auto)
+10-29 07:11:20.672  load done song-6611: 7616 KB in 233736 ms
+10-29 07:11:20.675  load start song-6607
+10-29 07:11:21.281  stream song-6607: answered in 596 ms, first bytes at 607 ms (new connection in 312 ms, no length)
+10-29 07:13:31.926  → item 8 song 6607 "Thieves! (Screamed the Ghost) (feat. Tunde Adebimpe)" (auto)
+10-29 07:15:25.443  load done song-6607: 9578 KB in 244758 ms
+10-29 07:15:25.449  load start song-6609
+10-29 07:15:26.102  stream song-6609: answered in 648 ms, first bytes at 659 ms (new connection in 312 ms, no length)
+10-29 07:17:34.451  → item 9 song 6609 "2100 (feat. BOOTS)" (auto)
+10-29 07:17:57.679  → item 1 song 27024 "Welcome to INNANET" (new queue)
+10-29 07:17:57.681  state BUFFERING @0.0s buf +0.0s
+10-29 07:17:57.682  not playing @0.0s buf +0.0s
+10-29 07:17:57.685  shuffle: started album 5924 "Innanetape" (14 songs)
+10-29 07:17:57.706  load start song-27024
+10-29 07:17:57.892  stream song-27024: answered in 197 ms, first bytes at 200 ms (reused connection, no length)
+10-29 07:17:58.245  state READY @0.0s buf +15.6s
+10-29 07:17:58.248  playing @0.0s buf +15.6s
+10-29 07:18:05.072  → item 1 song 61626 "The Astronaut Part 1" (new queue)
+10-29 07:18:05.075  state BUFFERING @0.0s buf +0.0s
+10-29 07:18:05.076  not playing @0.0s buf +0.0s
+10-29 07:18:05.079  shuffle: started album 9443 "The Astronaut" (5 songs)
+10-29 07:18:05.096  load start song-61626
+10-29 07:18:05.464  stream song-61626: answered in 373 ms, first bytes at 375 ms (reused connection, no length)
+10-29 07:18:05.849  state READY @0.0s buf +5.7s
+10-29 07:18:05.850  playing @0.0s buf +5.7s
+10-29 07:32:33.060  load done song-61626: 32484 KB in 867973 ms
+10-29 07:32:33.249  load start song-61625
+10-29 07:32:34.052  stream song-61625: answered in 794 ms, first bytes at 799 ms (new connection in 137 ms, no length)
+10-29 07:33:58.145  load done song-61625: 3551 KB in 84896 ms
+10-29 07:33:58.326  load start song-61628
+10-29 07:33:58.999  stream song-61628: answered in 624 ms, first bytes at 667 ms (new connection in 351 ms, no length)
+10-29 07:34:53.793  → item 2 song 61625 "The Event Horizon" (auto)
+10-29 07:36:40.355  → item 3 song 61628 "The Astronaut Part 2" (auto)
+10-29 07:46:38.526  load done song-61628: 23628 KB in 760202 ms
+10-29 07:46:38.527  load start song-61624
+10-29 07:46:39.127  stream song-61624: answered in 597 ms, first bytes at 599 ms (new connection in 316 ms, no length)
+10-29 07:48:40.692  → item 4 song 61624 "The Singularity" (auto)
+10-29 07:48:41.688  shuffle: queued album 3894 "Cynthia's Son" (19 songs)
+10-29 07:50:00.410  load done song-61624: 7662 KB in 201882 ms
+10-29 07:50:00.546  load start song-61627
+10-29 07:50:01.188  stream song-61627: answered in 626 ms, first bytes at 638 ms (new connection in 353 ms, no length)
+10-29 07:51:41.854  playWhenReady false (user)
+10-29 07:51:41.856  not playing @181.1s buf +186.4s
+10-29 07:51:46.068  playWhenReady true (user)
+10-29 07:51:46.074  playing @181.2s buf +186.3s
+10-29 07:51:46.193  playWhenReady false (user)
+10-29 07:51:46.194  not playing @181.4s buf +186.1s
+10-29 07:52:16.467  playWhenReady false (headphones disconnected)
+10-29 08:04:46.644  service destroyed

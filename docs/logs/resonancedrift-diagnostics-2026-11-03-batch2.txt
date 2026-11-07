@@ -1,0 +1,93 @@
+Description: More logs. This one was straight playlist which does remind me playlist does not show. Currently played song and the list itself which should be added as a UI fix otherwise nothing
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-03T18:19:54.665949+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 14/181 song 1108, at 25 s, buffered to 188 s
+
+== This run (71 events) ==
+11-03 17:19:21.332  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-03 17:19:21.339  network: available
+11-03 17:19:21.355  → item 10 song 20241 "Fair Play" (new queue)
+11-03 17:19:21.357  state BUFFERING @135.6s buf +0.0s
+11-03 17:19:21.357  queue restored: 190 songs, item 10 at 135.6s
+11-03 17:19:21.372  load start song-20241
+11-03 17:19:21.386  load start song-20241
+11-03 17:19:21.422  state READY @135.6s buf +52.4s
+11-03 17:19:29.772  → item 1 song 20241 "Fair Play" (new queue)
+11-03 17:19:29.774  state BUFFERING @0.0s buf +0.0s
+11-03 17:19:29.776  playWhenReady true (user)
+11-03 17:19:29.795  load start song-20241
+11-03 17:19:29.885  state READY @0.0s buf +49.3s
+11-03 17:19:29.887  playing @0.0s buf +49.3s
+11-03 17:19:45.416  stream song-20241: failed after 23964 ms (UnknownHostException)
+11-03 17:21:50.299  stream song-20241: answered in 610 ms, first bytes at 623 ms (new connection in 247 ms, no length)
+11-03 17:23:08.163  load done song-20241: 14795 KB in 218376 ms
+11-03 17:23:08.380  load start song-20240
+11-03 17:23:08.996  stream song-20240: answered in 608 ms, first bytes at 613 ms (new connection in 317 ms, no length)
+11-03 17:25:45.925  → item 2 song 20240 "Linden Arden Stole the Highlights" (auto)
+11-03 17:25:53.938  load done song-20240: 6258 KB in 165558 ms
+11-03 17:25:54.096  load start song-20249
+11-03 17:25:54.796  stream song-20249: answered in 681 ms, first bytes at 698 ms (new connection in 381 ms, no length)
+11-03 17:28:22.931  → item 3 song 20249 "Who Was that Masked Man" (auto)
+11-03 17:28:31.193  load done song-20249: 6948 KB in 157097 ms
+11-03 17:28:31.388  load start song-20239
+11-03 17:28:32.054  stream song-20239: answered in 637 ms, first bytes at 641 ms (new connection in 308 ms, no length)
+11-03 17:31:17.630  → item 4 song 20239 "Streets of Arklow" (auto)
+11-03 17:33:36.882  load done song-20239: 10380 KB in 305494 ms
+11-03 17:33:36.884  load start song-20242
+11-03 17:33:37.720  stream song-20242: answered in 821 ms, first bytes at 833 ms (new connection in 286 ms, no length)
+11-03 17:35:40.162  → item 5 song 20242 "You don't Pull no Punches But You don't Push the River" (auto)
+11-03 17:41:29.226  load done song-20242: 20831 KB in 472342 ms
+11-03 17:41:29.399  load start song-20238
+11-03 17:41:31.091  stream song-20238: answered in 1685 ms, first bytes at 1690 ms (new connection in 1087 ms, no length)
+11-03 17:44:30.250  → item 6 song 20238 "Bulbs" (auto)
+11-03 17:46:23.199  load done song-20238: 10229 KB in 293799 ms
+11-03 17:46:23.410  load start song-20245
+11-03 17:46:24.140  stream song-20245: answered in 711 ms, first bytes at 727 ms (new connection in 161 ms, no length)
+11-03 17:48:48.921  → item 7 song 20245 "Cul de Sac" (auto)
+11-03 17:51:34.427  load done song-20245: 13835 KB in 311016 ms
+11-03 17:51:34.613  load start song-20248
+11-03 17:51:35.283  stream song-20248: answered in 663 ms, first bytes at 667 ms (new connection in 357 ms, no length)
+11-03 17:54:39.906  → item 8 song 20248 "Comfort You" (auto)
+11-03 17:56:32.836  load done song-20248: 10468 KB in 298223 ms
+11-03 17:56:33.040  load start song-20247
+11-03 17:56:33.662  stream song-20247: answered in 613 ms, first bytes at 619 ms (new connection in 304 ms, no length)
+11-03 17:59:04.678  → item 9 song 20247 "Come Here My Love" (auto)
+11-03 17:59:12.789  load done song-20247: 5629 KB in 159749 ms
+11-03 17:59:13.010  load start song-20243
+11-03 17:59:13.631  stream song-20243: answered in 610 ms, first bytes at 618 ms (new connection in 319 ms, no length)
+11-03 18:01:25.584  → item 10 song 20243 "Country Fair" (auto)
+11-03 18:04:37.304  load done song-20243: 13836 KB in 324294 ms
+11-03 18:04:37.516  load start song-1109
+11-03 18:04:38.296  stream song-1109: answered in 770 ms, first bytes at 777 ms (new connection in 131 ms, no length)
+11-03 18:07:16.608  → item 11 song 1109 "Wishing Well" (auto)
+11-03 18:07:44.874  load done song-1109: 7431 KB in 187357 ms
+11-03 18:07:44.992  load start song-1106
+11-03 18:07:45.628  stream song-1106: answered in 608 ms, first bytes at 634 ms (new connection in 317 ms, no length)
+11-03 18:10:26.259  load done song-1106: 4757 KB in 161268 ms
+11-03 18:10:26.480  load start song-1110
+11-03 18:10:27.226  stream song-1110: answered in 727 ms, first bytes at 743 ms (new connection in 356 ms, no length)
+11-03 18:10:51.916  → item 12 song 1106 "The Dirty Juice" (auto)
+11-03 18:13:19.162  → item 13 song 1110 "Fruit and Salad" (auto)
+11-03 18:14:52.850  load done song-1110: 7366 KB in 266370 ms
+11-03 18:14:53.089  load start song-1108
+11-03 18:14:53.940  stream song-1108: answered in 838 ms, first bytes at 847 ms (new connection in 240 ms, no length)
+11-03 18:16:58.793  → item 14 song 1108 "Honey You" (auto)
+11-03 18:17:24.361  playWhenReady false (user)
+11-03 18:17:24.363  not playing @25.6s buf +163.3s
+11-03 18:17:58.943  playWhenReady false (headphones disconnected)
+
+== Previous run (11 events) ==
+11-03 17:17:27.182  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-03 17:17:27.194  network: available
+11-03 17:17:27.212  → item 10 song 20241 "Fair Play" (new queue)
+11-03 17:17:27.214  state BUFFERING @135.6s buf +0.0s
+11-03 17:17:27.214  queue restored: 190 songs, item 10 at 135.6s
+11-03 17:17:27.228  load start song-20241
+11-03 17:17:27.264  load start song-20241
+11-03 17:17:27.316  state READY @135.6s buf +78.7s
+11-03 17:17:27.968  stream song-20241: answered in 620 ms, first bytes at 624 ms (new connection in 259 ms, no length)
+11-03 17:17:29.737  service destroyed
+11-03 17:17:34.809  stream song-20241: failed after 7465 ms (SocketException)

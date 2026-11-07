@@ -1,0 +1,122 @@
+Description: This log is interesting. Has a interesting start because there was some sort of a network issue and albums didn't loads so I refreshed and then it fetch them. And I basically moved from car to earphone to car to earphone so there was a lot of stops and starts. But the app was solid throughout
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-01T11:15:35.390219+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 9/16 song 14759, at 89 s, buffered to 149 s
+
+== This run (10 events) ==
+11-01 11:15:32.702  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-01 11:15:32.719  network: available
+11-01 11:15:32.732  → item 9 song 14759 "Embraced by the Evil" (new queue)
+11-01 11:15:32.733  state BUFFERING @89.3s buf +0.0s
+11-01 11:15:32.734  queue restored: 16 songs, item 9 at 89.3s, shuffle on
+11-01 11:15:32.734  shuffle: on, continuing after the current queue
+11-01 11:15:32.754  load start song-14759
+11-01 11:15:32.781  load start song-14759
+11-01 11:15:32.845  state READY @89.3s buf +60.7s
+11-01 11:15:33.413  stream song-14759: answered in 537 ms, first bytes at 544 ms (new connection in 257 ms, no length)
+
+== Previous run (101 events) ==
+11-01 09:58:47.981  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-01 09:58:47.990  network: available
+11-01 09:58:47.997  → item 8 song 6583 "Unforgiving Girl (She's Not an)" (new queue)
+11-01 09:58:47.998  state BUFFERING @204.0s buf +0.0s
+11-01 09:58:47.998  queue restored: 12 songs, item 8 at 204.0s, shuffle on
+11-01 09:58:47.999  shuffle: on, continuing after the current queue
+11-01 09:58:48.002  load start song-6583
+11-01 09:58:48.019  load start song-6583
+11-01 09:58:48.057  state READY @204.0s buf +66.4s
+11-01 09:58:48.074  load done song-6583: 3945 KB in 55 ms
+11-01 09:58:49.071  load start song-6573
+11-01 09:58:49.675  stream song-6573: answered in 534 ms, first bytes at 539 ms (new connection in 289 ms, no length)
+11-01 09:59:01.890  → item 1 song 16803 "Follow Me" (new queue)
+11-01 09:59:01.891  state BUFFERING @0.0s buf +0.0s
+11-01 09:59:01.893  playWhenReady true (user)
+11-01 09:59:01.894  shuffle: started album 4816 "Francis A & Edward K" (8 songs)
+11-01 09:59:01.904  load start song-16803
+11-01 09:59:02.115  stream song-16803: answered in 210 ms, first bytes at 225 ms (reused connection, no length)
+11-01 09:59:02.896  state READY @0.0s buf +3.8s
+11-01 09:59:02.897  playing @0.0s buf +3.8s
+11-01 10:00:17.520  playWhenReady false (user)
+11-01 10:00:17.523  not playing @74.0s buf +128.8s
+11-01 10:00:20.097  playWhenReady true (user)
+11-01 10:00:20.102  playing @74.2s buf +128.6s
+11-01 10:00:20.277  playWhenReady false (user)
+11-01 10:00:20.280  not playing @74.6s buf +128.2s
+11-01 10:00:29.709  playWhenReady false (headphones disconnected)
+11-01 10:00:34.421  playWhenReady true (user)
+11-01 10:00:34.423  playing @74.6s buf +128.2s
+11-01 10:00:43.075  load done song-16803: 9508 KB in 101185 ms
+11-01 10:00:43.087  load start song-16796
+11-01 10:00:43.714  stream song-16796: answered in 631 ms, first bytes at 636 ms (new connection in 285 ms, no length)
+11-01 10:03:16.688  → item 2 song 16796 "Sunny" (auto)
+11-01 10:04:39.964  load done song-16796: 10182 KB in 236886 ms
+11-01 10:04:39.969  load start song-16801
+11-01 10:04:40.711  stream song-16801: answered in 709 ms, first bytes at 744 ms (new connection in 360 ms, no length)
+11-01 10:07:30.405  → item 3 song 16801 "All I Need Is the Girl" (auto)
+11-01 10:09:46.215  load done song-16801: 12024 KB in 306250 ms
+11-01 10:09:46.223  load start song-16797
+11-01 10:09:46.989  stream song-16797: answered in 756 ms, first bytes at 767 ms (new connection in 355 ms, no length)
+11-01 10:09:50.385  playWhenReady false (user)
+11-01 10:09:50.387  not playing @139.5s buf +180.5s
+11-01 10:10:07.471  playWhenReady true (user)
+11-01 10:10:07.485  playing @139.8s buf +180.3s
+11-01 10:12:48.462  → item 4 song 16797 "Indian Summer" (auto)
+11-01 10:13:45.491  load done song-16797: 10168 KB in 239270 ms
+11-01 10:13:45.502  load start song-16798
+11-01 10:13:46.264  stream song-16798: answered in 734 ms, first bytes at 772 ms (new connection in 380 ms, no length)
+11-01 10:17:01.822  → item 5 song 16798 "I Like the Sunrise" (auto)
+11-01 10:18:51.197  load done song-16798: 12038 KB in 305705 ms
+11-01 10:18:51.267  load start song-16802
+11-01 10:18:52.205  stream song-16802: answered in 990 ms, first bytes at 1003 ms (new connection in 377 ms, no length)
+11-01 10:22:03.024  → item 6 song 16802 "Yellow Days" (auto)
+11-01 10:22:04.708  suppressed: transient audio focus loss @1.7s buf +148.7s
+11-01 10:22:04.709  not playing @1.7s buf +148.7s
+11-01 10:22:07.077  suppressed: none @1.9s buf +148.5s
+11-01 10:22:07.079  playing @1.9s buf +148.5s
+11-01 10:23:54.843  load done song-16802: 11946 KB in 303647 ms
+11-01 10:23:54.850  load start song-16800
+11-01 10:23:55.528  stream song-16800: answered in 671 ms, first bytes at 680 ms (new connection in 317 ms, no length)
+11-01 10:24:23.636  playWhenReady false (user)
+11-01 10:24:23.641  not playing @138.2s buf +160.8s
+11-01 10:24:51.277  playWhenReady true (user)
+11-01 10:24:51.282  playing @138.3s buf +160.7s
+11-01 10:27:31.846  → item 7 song 16800 "Poor Butterfly" (auto)
+11-01 10:27:31.903  shuffle: album pool 2758 albums (stored; refreshing)
+11-01 10:27:32.706  shuffle: queued album 4534 "Unstoppable Power" (8 songs)
+11-01 10:27:35.546  shuffle: album pool 2765 albums in 3641 ms
+11-01 10:28:34.098  playWhenReady false (user)
+11-01 10:28:34.102  not playing @62.2s buf +166.8s
+11-01 10:28:36.357  playWhenReady true (user)
+11-01 10:28:36.358  playing @62.3s buf +166.8s
+11-01 10:28:37.584  audio underrun @63.0s buf +166.0s: track buffer 500 ms, last fed 713 ms ago
+11-01 10:28:39.211  audio underrun @63.9s buf +165.1s: track buffer 500 ms, last fed 985 ms ago
+11-01 10:29:24.952  load done song-16800: 10767 KB in 330106 ms
+11-01 10:29:24.959  load start song-16799
+11-01 10:29:25.715  stream song-16799: answered in 749 ms, first bytes at 759 ms (new connection in 307 ms, no length)
+11-01 10:32:04.338  → item 8 song 16799 "Come Back to Me" (auto)
+11-01 10:32:20.876  playWhenReady false (user)
+11-01 10:32:20.878  not playing @16.5s buf +186.3s
+11-01 10:32:55.508  playWhenReady false (headphones disconnected)
+11-01 10:33:11.007  suppressed: transient audio focus loss @16.6s buf +186.3s
+11-01 10:33:39.389  suppressed: none @16.6s buf +186.3s
+11-01 10:33:48.639  suppressed: transient audio focus loss @16.6s buf +186.3s
+11-01 10:34:14.704  playWhenReady true (user)
+11-01 10:34:14.707  suppressed: none @16.6s buf +186.3s
+11-01 10:34:14.708  playing @16.6s buf +186.3s
+11-01 10:35:21.157  load done song-16799: 8239 KB in 356204 ms
+11-01 10:35:21.164  load start song-14759
+11-01 10:35:21.849  stream song-14759: answered in 634 ms, first bytes at 681 ms (new connection in 257 ms, no length)
+11-01 10:37:22.169  → item 9 song 14759 "Embraced by the Evil" (auto)
+11-01 10:38:51.424  playWhenReady false (user)
+11-01 10:38:51.427  not playing @89.2s buf +123.6s
+11-01 10:39:26.142  playWhenReady false (headphones disconnected)
+11-01 10:44:51.616  network: available
+11-01 10:45:24.585  network: lost
+11-01 10:45:24.714  network: available
+11-01 10:45:26.374  network: available
+11-01 10:51:12.541  suppressed: transient audio focus loss @89.3s buf +123.6s
+11-01 10:53:03.933  suppressed: none @89.3s buf +123.6s
+11-01 11:06:42.897  service destroyed

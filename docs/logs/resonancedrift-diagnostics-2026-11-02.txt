@@ -1,0 +1,99 @@
+Description: Nothing to report
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-02T14:04:01.114743+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 27/30 song 58255, at 192 s, buffered to 212 s
+
+== This run (68 events) ==
+11-02 13:12:24.285  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-02 13:12:24.296  network: available
+11-02 13:12:24.302  → item 16 song 58256 "Duel of the Iron Mics" (new queue)
+11-02 13:12:24.303  state BUFFERING @0.0s buf +0.0s
+11-02 13:12:24.304  queue restored: 30 songs, item 16 at 0.0s, shuffle on
+11-02 13:12:24.305  shuffle: on, continuing after the current queue
+11-02 13:12:24.311  load start song-58256
+11-02 13:12:24.372  state READY @0.0s buf +33.0s
+11-02 13:12:24.851  stream song-58256: answered in 453 ms, first bytes at 455 ms (new connection in 203 ms, no length)
+11-02 13:12:25.359  playWhenReady true (user)
+11-02 13:12:25.360  playing @0.0s buf +71.7s
+11-02 13:12:25.545  load done song-58256: 4967 KB in 1242 ms
+11-02 13:12:25.548  load start song-58259
+11-02 13:12:25.762  stream song-58259: answered in 196 ms, first bytes at 212 ms (reused connection, no length)
+11-02 13:15:27.321  → item 17 song 58259 "C.R.E.A.M." (auto)
+11-02 13:15:58.362  load done song-58259: 4647 KB in 212814 ms
+11-02 13:15:58.596  load start song-58251
+11-02 13:15:59.149  stream song-58251: answered in 545 ms, first bytes at 551 ms (new connection in 200 ms, no length)
+11-02 13:17:25.792  load done song-58251: 3070 KB in 87197 ms
+11-02 13:17:25.944  load start song-58250
+11-02 13:17:26.724  stream song-58250: answered in 762 ms, first bytes at 772 ms (new connection in 389 ms, no length)
+11-02 13:18:22.160  → item 18 song 58251 "Mystery of Chessboxin'" (auto)
+11-02 13:20:09.332  → item 19 song 58250 "Can It All Be So Simple" (auto)
+11-02 13:21:25.504  load done song-58250: 5129 KB in 239559 ms
+11-02 13:21:25.729  load start song-58260
+11-02 13:21:26.396  stream song-58260: answered in 612 ms, first bytes at 661 ms (new connection in 256 ms, no length)
+11-02 13:21:38.362  playWhenReady false (user)
+11-02 13:21:38.365  not playing @89.0s buf +170.6s
+11-02 13:22:09.259  playWhenReady true (user)
+11-02 13:22:09.262  playing @89.1s buf +170.6s
+11-02 13:23:58.152  → item 20 song 58260 "Uzi (Pinky Ring)" (auto)
+11-02 13:24:05.126  load done song-58260: 6095 KB in 159396 ms
+11-02 13:24:05.218  load start song-58253
+11-02 13:24:05.856  stream song-58253: answered in 622 ms, first bytes at 633 ms (new connection in 221 ms, no length)
+11-02 13:25:13.708  load done song-58253: 804 KB in 68491 ms
+11-02 13:25:13.919  load start song-58258
+11-02 13:25:14.488  stream song-58258: answered in 557 ms, first bytes at 567 ms (new connection in 239 ms, no length)
+11-02 13:27:10.200  → item 21 song 58253 "Interlude" (auto)
+11-02 13:27:42.629  → item 22 song 58258 "Glaciers of Ice" (auto)
+11-02 13:28:57.004  load done song-58258: 5412 KB in 223084 ms
+11-02 13:28:57.219  load start song-58248
+11-02 13:28:57.910  stream song-58248: answered in 648 ms, first bytes at 687 ms (new connection in 330 ms, no length)
+11-02 13:31:11.407  → item 23 song 58248 "Cherchez La Ghost" (auto)
+11-02 13:32:40.431  load done song-58248: 6390 KB in 223213 ms
+11-02 13:32:40.661  load start song-58249
+11-02 13:32:41.311  stream song-58249: answered in 626 ms, first bytes at 647 ms (new connection in 321 ms, no length)
+11-02 13:34:05.282  load done song-58249: 2584 KB in 84620 ms
+11-02 13:34:05.471  load start song-58261
+11-02 13:34:06.215  stream song-58261: answered in 722 ms, first bytes at 738 ms (new connection in 357 ms, no length)
+11-02 13:34:51.381  → item 24 song 58249 "Criminology" (auto)
+11-02 13:35:38.952  load done song-58261: 3542 KB in 93481 ms
+11-02 13:35:39.052  load start song-58257
+11-02 13:35:39.757  stream song-58257: answered in 696 ms, first bytes at 700 ms (new connection in 282 ms, no length)
+11-02 13:36:26.636  → item 25 song 58261 "Heaven & Hell" (auto)
+11-02 13:38:35.663  → item 26 song 58257 "Bring da Ruckus" (auto)
+11-02 13:39:25.131  load done song-58257: 5672 KB in 226080 ms
+11-02 13:39:25.133  load start song-58255
+11-02 13:39:25.768  stream song-58255: answered in 620 ms, first bytes at 634 ms (new connection in 336 ms, no length)
+11-02 13:41:46.656  → item 27 song 58255 "Protect Ya Neck" (auto)
+11-02 13:43:14.725  load done song-58255: 6223 KB in 229591 ms
+11-02 13:43:14.726  load start song-58252
+11-02 13:43:15.407  stream song-58252: answered in 674 ms, first bytes at 678 ms (new connection in 296 ms, no length)
+11-02 13:44:33.812  load done song-58252: 2720 KB in 79086 ms
+11-02 13:44:34.039  load start song-58247
+11-02 13:44:34.800  stream song-58247: answered in 725 ms, first bytes at 756 ms (new connection in 347 ms, no length)
+11-02 13:44:58.888  playWhenReady false (user)
+11-02 13:44:58.892  not playing @192.1s buf +187.6s
+11-02 13:45:56.404  playWhenReady false (headphones disconnected)
+
+== Previous run (20 events) ==
+11-02 13:12:05.050  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-02 13:12:05.057  network: available
+11-02 13:12:05.069  → item 15 song 14519 "Loaded Gun in the Closet" (new queue)
+11-02 13:12:05.071  state BUFFERING @265.0s buf +0.0s
+11-02 13:12:05.071  queue restored: 30 songs, item 15 at 265.0s, shuffle on
+11-02 13:12:05.072  shuffle: on, continuing after the current queue
+11-02 13:12:05.076  load start song-14519
+11-02 13:12:05.099  load start song-14519
+11-02 13:12:05.148  state READY @265.0s buf +48.7s
+11-02 13:12:05.149  load done song-14519: 1529 KB in 50 ms
+11-02 13:12:05.153  load start song-58256
+11-02 13:12:05.654  stream song-58256: answered in 480 ms, first bytes at 481 ms (new connection in 186 ms, 0 KB)
+11-02 13:12:05.660  load error song-58256 @265.0s buf +89.9s: HttpDataSource$InvalidResponseCodeException: Response code: 403
+11-02 13:12:13.469  → item 16 song 58256 "Duel of the Iron Mics" (seek/skip)
+11-02 13:12:13.471  state BUFFERING @0.0s buf +0.0s
+11-02 13:12:13.485  load start song-58256
+11-02 13:12:13.507  state READY @0.0s buf +71.7s
+11-02 13:12:14.291  stream song-58256: answered in 779 ms, first bytes at 788 ms (new connection in 257 ms, no length)
+11-02 13:12:15.575  service destroyed
+11-02 13:12:20.612  stream song-58256: failed after 7109 ms (SocketException)

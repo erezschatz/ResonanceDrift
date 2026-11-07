@@ -1,0 +1,441 @@
+Description: I chose the first album manually. Later I pressed shuffle, which picked up the next album in order. Think there was a minuscule glitch, like it felt like it missed or jumped a bit somewhere around the footballer's wife
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-10-27T09:39:18.889774+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 19/30 song 62402, at 3 s, buffered to 125 s
+
+== This run (149 events) ==
+10-27 08:47:17.128  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-27 08:47:17.161  network: available
+10-27 08:47:17.168  → item 13 song 23982 "Ummon" (new queue)
+10-27 08:47:17.169  state BUFFERING @258.4s buf +0.0s
+10-27 08:47:17.169  queue restored: 23 songs, item 13 at 258.4s, shuffle on
+10-27 08:47:17.170  shuffle: on, continuing after the current queue
+10-27 08:47:17.174  load start song-23982
+10-27 08:47:17.220  load start song-23982
+10-27 08:47:17.289  state READY @258.4s buf +87.5s
+10-27 08:47:17.294  load done song-23982: 2946 KB in 76 ms
+10-27 08:47:17.294  load start song-23992
+10-27 08:47:17.794  stream song-23992: answered in 473 ms, first bytes at 473 ms (new connection in 246 ms, 0 KB)
+10-27 08:47:17.795  load error song-23992 @258.4s buf +87.2s: HttpDataSource$InvalidResponseCodeException: Response code: 403
+10-27 08:47:25.947  shuffle: off
+10-27 08:47:25.952  → item 1 song 1500 "Mr Rock & Roll" (new queue)
+10-27 08:47:25.953  state BUFFERING @0.0s buf +0.0s
+10-27 08:47:25.956  playWhenReady true (user)
+10-27 08:47:25.982  load start song-1500
+10-27 08:47:26.248  stream song-1500: answered in 263 ms, first bytes at 272 ms (reused connection, no length)
+10-27 08:47:26.733  state READY @0.0s buf +2.8s
+10-27 08:47:26.734  playing @0.0s buf +2.8s
+10-27 08:48:55.426  load done song-1500: 8482 KB in 89457 ms
+10-27 08:48:55.636  load start song-1493
+10-27 08:48:56.353  stream song-1493: answered in 695 ms, first bytes at 711 ms (new connection in 349 ms, no length)
+10-27 08:49:06.196  playWhenReady false (user)
+10-27 08:49:06.198  not playing @99.1s buf +188.4s
+10-27 08:49:26.036  playWhenReady true (user)
+10-27 08:49:26.038  playing @99.1s buf +193.3s
+10-27 08:49:30.444  playWhenReady false (user)
+10-27 08:49:30.446  not playing @103.6s buf +188.8s
+10-27 08:49:34.719  playWhenReady true (user)
+10-27 08:49:34.721  playing @103.7s buf +188.7s
+10-27 08:49:37.271  playWhenReady false (user)
+10-27 08:49:37.274  not playing @106.1s buf +186.3s
+10-27 08:49:38.151  → item 2 song 1493 "This is the Life" (seek/skip)
+10-27 08:49:38.155  state BUFFERING @0.0s buf +0.0s
+10-27 08:49:38.223  state READY @0.0s buf +88.4s
+10-27 08:49:41.137  playWhenReady false (headphones disconnected)
+10-27 08:54:41.877  playWhenReady true (user)
+10-27 08:54:41.879  playing @0.0s buf +181.9s
+10-27 08:54:42.711  audio underrun @0.4s buf +181.5s: track buffer 500 ms, last fed 1006 ms ago
+10-27 08:54:54.085  playWhenReady false (user)
+10-27 08:54:54.088  not playing @11.6s buf +170.3s
+10-27 08:55:03.466  playWhenReady true (user)
+10-27 08:55:03.470  playing @11.6s buf +170.3s
+10-27 08:55:06.633  audio underrun @14.3s buf +167.6s: track buffer 500 ms, last fed 502 ms ago
+10-27 08:55:09.236  playWhenReady false (user)
+10-27 08:55:09.239  not playing @16.8s buf +165.1s
+10-27 08:55:15.314  seek @17.0s → 0.0s
+10-27 08:55:15.315  state BUFFERING @0.0s buf +0.0s
+10-27 08:55:15.327  load start song-1493
+10-27 08:55:15.373  state READY @0.0s buf +52.4s
+10-27 08:55:16.042  stream song-1493: answered in 599 ms, first bytes at 603 ms (new connection in 312 ms, no length)
+10-27 08:55:17.738  playWhenReady true (user)
+10-27 08:55:17.740  playing @0.0s buf +183.6s
+10-27 08:56:21.917  load done song-1493: 7266 KB in 66590 ms
+10-27 08:56:21.918  load start song-1496
+10-27 08:56:22.574  stream song-1496: answered in 646 ms, first bytes at 654 ms (new connection in 331 ms, no length)
+10-27 08:58:24.151  → item 3 song 1496 "Poison Prince" (auto)
+10-27 08:58:59.959  load done song-1496: 8216 KB in 158042 ms
+10-27 08:59:00.119  load start song-1494
+10-27 08:59:00.921  stream song-1494: answered in 795 ms, first bytes at 801 ms (new connection in 320 ms, no length)
+10-27 09:01:32.394  suppressed: transient audio focus loss @188.2s buf +123.6s
+10-27 09:01:32.397  not playing @188.2s buf +123.6s
+10-27 09:01:45.892  suppressed: none @188.2s buf +123.6s
+10-27 09:01:45.897  playing @188.4s buf +123.4s
+10-27 09:01:46.202  playWhenReady false (user)
+10-27 09:01:46.203  not playing @188.6s buf +123.2s
+10-27 09:01:51.396  playWhenReady true (user)
+10-27 09:01:51.401  playing @188.7s buf +123.1s
+10-27 09:02:11.431  → item 4 song 1494 "Youth of Today" (auto)
+10-27 09:02:53.215  → item 5 song 1498 "Run" (seek/skip)
+10-27 09:02:53.224  state BUFFERING @0.0s buf +0.0s
+10-27 09:02:53.226  not playing @0.0s buf +0.0s
+10-27 09:02:53.264  load start song-1498
+10-27 09:02:53.888  stream song-1498: answered in 617 ms, first bytes at 622 ms (new connection in 339 ms, no length)
+10-27 09:02:54.273  state READY @0.0s buf +4.0s
+10-27 09:02:54.276  playing @0.0s buf +4.0s
+10-27 09:03:18.997  shuffle: on, continuing after the current queue
+10-27 09:03:56.905  load done song-1498: 9086 KB in 63642 ms
+10-27 09:03:57.070  load start song-1499
+10-27 09:03:57.649  stream song-1499: answered in 545 ms, first bytes at 568 ms (new connection in 241 ms, no length)
+10-27 09:06:45.578  → item 6 song 1499 "Let's Start a Band" (auto)
+10-27 09:07:47.751  load done song-1499: 9638 KB in 230680 ms
+10-27 09:07:47.935  load start song-1495
+10-27 09:07:48.696  stream song-1495: answered in 736 ms, first bytes at 757 ms (new connection in 143 ms, no length)
+10-27 09:10:50.590  → item 7 song 1495 "Barrowland Ballroom" (auto)
+10-27 09:12:45.197  load done song-1495: 9386 KB in 297262 ms
+10-27 09:12:45.438  load start song-1503
+10-27 09:12:46.063  stream song-1503: answered in 615 ms, first bytes at 622 ms (new connection in 299 ms, no length)
+10-27 09:14:49.159  → item 8 song 1503 "L.A." (auto)
+10-27 09:16:43.537  load done song-1503: 9702 KB in 238099 ms
+10-27 09:16:43.539  load start song-1497
+10-27 09:16:44.106  stream song-1497: answered in 559 ms, first bytes at 564 ms (new connection in 253 ms, no length)
+10-27 09:18:55.820  → item 9 song 1497 "A Wish for Something More" (auto)
+10-27 09:20:24.251  load done song-1497: 8902 KB in 220712 ms
+10-27 09:20:24.449  load start song-1504
+10-27 09:20:25.232  stream song-1504: answered in 769 ms, first bytes at 777 ms (new connection in 362 ms, no length)
+10-27 09:22:42.027  → item 10 song 1504 "Footballer's Wife" (auto)
+10-27 09:25:29.111  load done song-1504: 12044 KB in 304662 ms
+10-27 09:25:29.286  load start song-1501
+10-27 09:25:29.942  stream song-1501: answered in 643 ms, first bytes at 654 ms (new connection in 286 ms, no length)
+10-27 09:27:48.629  → item 11 song 1501 "The Road to Home" (auto)
+10-27 09:27:58.182  load done song-1501: 5700 KB in 148896 ms
+10-27 09:27:58.411  load start song-1505
+10-27 09:27:59.123  stream song-1505: answered in 704 ms, first bytes at 710 ms (new connection in 328 ms, no length)
+10-27 09:29:03.720  load done song-1505: 5046 KB in 65309 ms
+10-27 09:29:03.884  load start song-1502
+10-27 09:29:04.675  stream song-1502: answered in 785 ms, first bytes at 789 ms (new connection in 254 ms, no length)
+10-27 09:30:12.843  → item 12 song 1505 "Caledonia" (auto)
+10-27 09:32:20.305  → item 13 song 1502 "Rock Bottom" (auto)
+10-27 09:32:24.105  → item 14 song 1761 "This Much is True" (seek/skip)
+10-27 09:32:24.109  state BUFFERING @0.0s buf +0.0s
+10-27 09:32:24.110  not playing @0.0s buf +0.0s
+10-27 09:32:24.122  load start song-1761
+10-27 09:32:24.158  shuffle: album pool 2758 albums (stored; refreshing)
+10-27 09:32:24.427  stream song-1761: answered in 303 ms, first bytes at 305 ms (reused connection, no length)
+10-27 09:32:24.874  state READY @0.0s buf +2.6s
+10-27 09:32:24.875  playing @0.0s buf +2.6s
+10-27 09:32:25.145  shuffle: queued album 9511 "Breaking Bread" (15 songs)
+10-27 09:32:27.569  shuffle: album pool 2758 albums in 3406 ms
+10-27 09:32:28.526  → item 15 song 1762 "Somebody New" (seek/skip)
+10-27 09:32:28.532  state BUFFERING @0.0s buf +0.0s
+10-27 09:32:28.533  not playing @0.0s buf +0.0s
+10-27 09:32:28.555  load start song-1762
+10-27 09:32:28.968  stream song-1762: answered in 426 ms, first bytes at 428 ms (reused connection, no length)
+10-27 09:32:29.331  state READY @0.0s buf +4.0s
+10-27 09:32:29.332  playing @0.0s buf +4.0s
+10-27 09:32:31.341  → item 16 song 62389 "Snake Eyes" (seek/skip)
+10-27 09:32:31.346  state BUFFERING @0.0s buf +0.0s
+10-27 09:32:31.347  not playing @0.0s buf +0.0s
+10-27 09:32:31.361  load start song-62389
+10-27 09:32:32.061  stream song-62389: answered in 665 ms, first bytes at 672 ms (new connection in 262 ms, no length)
+10-27 09:32:32.518  state READY @0.0s buf +4.8s
+10-27 09:32:32.519  playing @0.0s buf +4.8s
+10-27 09:32:34.819  load done song-62389: 3026 KB in 3460 ms
+10-27 09:32:34.993  load start song-62403
+10-27 09:32:35.449  stream song-62403: answered in 447 ms, first bytes at 454 ms (reused connection, no length)
+10-27 09:33:47.645  load done song-62403: 4122 KB in 72651 ms
+10-27 09:33:47.885  load start song-62401
+10-27 09:33:48.484  stream song-62401: answered in 571 ms, first bytes at 594 ms (new connection in 276 ms, no length)
+10-27 09:34:11.213  → item 17 song 62403 "Wanted" (auto)
+10-27 09:36:21.534  → item 18 song 62401 "Labor of Love" (auto)
+10-27 09:36:59.807  load done song-62401: 5386 KB in 191922 ms
+10-27 09:37:00.052  load start song-62402
+10-27 09:37:00.642  stream song-62402: answered in 563 ms, first bytes at 589 ms (new connection in 270 ms, no length)
+10-27 09:39:08.183  → item 19 song 62402 "Business as Usual" (auto)
+10-27 09:39:11.598  playWhenReady false (user)
+10-27 09:39:11.600  not playing @3.4s buf +122.0s
+
+== Previous run (281 events) ==
+10-26 13:11:41.144  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-26 13:11:41.150  network: available
+10-26 13:11:41.153  → item 13 song 16633 "Wish We Had More Time" (new queue)
+10-26 13:11:41.154  state BUFFERING @169.4s buf +0.0s
+10-26 13:11:41.155  queue restored: 22 songs, item 13 at 169.4s, shuffle on
+10-26 13:11:41.156  shuffle: on, continuing after the current queue
+10-26 13:11:41.161  load start song-16633
+10-26 13:11:41.177  load start song-16633
+10-26 13:11:41.219  state READY @169.4s buf +51.2s
+10-26 13:11:41.222  load done song-16633: 1749 KB in 47 ms
+10-26 13:11:41.222  load start song-16630
+10-26 13:11:43.058  playWhenReady true (user)
+10-26 13:11:43.059  playing @169.4s buf +184.9s
+10-26 13:12:34.409  → item 14 song 16630 "Heart on Fire" (auto)
+10-26 13:12:49.338  stream song-16630: answered in 570 ms, first bytes at 578 ms (new connection in 269 ms, no length)
+10-26 13:13:57.153  load done song-16630: 7487 KB in 135931 ms
+10-26 13:13:57.255  load start song-16627
+10-26 13:13:58.196  stream song-16627: answered in 920 ms, first bytes at 935 ms (new connection in 320 ms, no length)
+10-26 13:16:41.495  → item 15 song 16627 "The More I Cry" (auto)
+10-26 13:18:07.521  load done song-16627: 8559 KB in 250266 ms
+10-26 13:18:07.611  load start song-16628
+10-26 13:18:08.600  stream song-16628: answered in 971 ms, first bytes at 985 ms (new connection in 302 ms, no length)
+10-26 13:20:41.960  load done song-16628: 5035 KB in 154349 ms
+10-26 13:20:42.006  load start song-16635
+10-26 13:20:42.842  stream song-16635: answered in 821 ms, first bytes at 830 ms (new connection in 289 ms, no length)
+10-26 13:20:52.902  → item 16 song 16628 "Who Knows" (auto)
+10-26 13:21:49.935  → item 14 song 16630 "Heart on Fire" (seek/skip)
+10-26 13:21:49.937  state BUFFERING @0.0s buf +0.0s
+10-26 13:21:49.937  not playing @0.0s buf +0.0s
+10-26 13:21:49.949  load start song-16630
+10-26 13:21:50.012  state READY @0.0s buf +30.2s
+10-26 13:21:50.013  playing @0.0s buf +65.1s
+10-26 13:21:51.845  → item 15 song 16627 "The More I Cry" (seek/skip)
+10-26 13:21:51.848  state BUFFERING @0.0s buf +0.0s
+10-26 13:21:51.849  not playing @0.0s buf +0.0s
+10-26 13:21:51.867  load start song-16627
+10-26 13:21:51.916  state READY @0.0s buf +59.2s
+10-26 13:21:51.917  playing @0.0s buf +59.2s
+10-26 13:21:55.439  → item 16 song 16628 "Who Knows" (seek/skip)
+10-26 13:21:55.440  state BUFFERING @0.0s buf +0.0s
+10-26 13:21:55.441  not playing @0.0s buf +0.0s
+10-26 13:21:55.451  load start song-16628
+10-26 13:21:55.512  state READY @0.0s buf +71.9s
+10-26 13:21:55.513  playing @0.0s buf +71.9s
+10-26 13:21:55.552  load done song-16628: 5035 KB in 105 ms
+10-26 13:21:55.552  load start song-16635
+10-26 13:21:56.016  stream song-16635: answered in 452 ms, first bytes at 458 ms (new connection in 201 ms, no length)
+10-26 13:21:58.053  shuffle: album pool 2758 albums (stored; refreshing)
+10-26 13:21:58.842  → item 1 song 17072 "Loving the Alien" (new queue)
+10-26 13:21:58.846  state BUFFERING @0.0s buf +0.0s
+10-26 13:21:58.848  not playing @0.0s buf +0.0s
+10-26 13:21:58.851  shuffle: started album 4841 "Tonight" (10 songs)
+10-26 13:21:58.868  load start song-17072
+10-26 13:21:59.050  stream song-17072: answered in 191 ms, first bytes at 194 ms (reused connection, no length)
+10-26 13:21:59.467  state READY @0.0s buf +29.4s
+10-26 13:21:59.468  playing @0.0s buf +29.4s
+10-26 13:22:01.403  shuffle: album pool 2758 albums in 3349 ms
+10-26 13:26:09.999  load done song-17072: 7090 KB in 251143 ms
+10-26 13:26:10.006  load start song-17077
+10-26 13:26:10.855  stream song-17077: answered in 841 ms, first bytes at 850 ms (new connection in 263 ms, no length)
+10-26 13:29:10.277  → item 2 song 17077 "Don't Look Down" (auto)
+10-26 13:31:09.455  load done song-17077: 4290 KB in 299455 ms
+10-26 13:31:09.462  load start song-17078
+10-26 13:31:10.264  stream song-17078: answered in 795 ms, first bytes at 803 ms (new connection in 153 ms, no length)
+10-26 13:33:21.602  → item 3 song 17078 "God Only Knows" (auto)
+10-26 13:34:15.233  load done song-17078: 3324 KB in 185775 ms
+10-26 13:34:15.239  load start song-17070
+10-26 13:34:16.152  stream song-17070: answered in 906 ms, first bytes at 915 ms (new connection in 234 ms, no length)
+10-26 13:36:31.115  → item 4 song 17070 "Tonight" (auto)
+10-26 13:37:24.715  load done song-17070: 3910 KB in 189481 ms
+10-26 13:37:24.720  load start song-17075
+10-26 13:37:25.617  stream song-17075: answered in 874 ms, first bytes at 898 ms (new connection in 238 ms, no length)
+10-26 13:40:18.123  → item 5 song 17075 "Neighbourhood Threat" (auto)
+10-26 13:41:11.526  load done song-17075: 3374 KB in 226810 ms
+10-26 13:41:11.531  load start song-17069
+10-26 13:41:12.065  playWhenReady false (user)
+10-26 13:41:12.068  not playing @54.0s buf +138.7s
+10-26 13:41:12.438  stream song-17069: answered in 890 ms, first bytes at 907 ms (new connection in 250 ms, no length)
+10-26 13:41:30.485  playWhenReady true (user)
+10-26 13:41:30.486  playing @54.0s buf +180.9s
+10-26 13:41:33.917  playWhenReady false (user)
+10-26 13:41:33.923  not playing @57.5s buf +177.3s
+10-26 14:15:23.957  playWhenReady false (headphones disconnected)
+10-26 15:07:11.729  playWhenReady true (user)
+10-26 15:07:11.736  playing @57.6s buf +177.3s
+10-26 15:09:26.967  → item 6 song 17069 "Blue Jean" (auto)
+10-26 15:10:20.448  load done song-17069: 3364 KB in 5348921 ms
+10-26 15:10:20.457  load start song-17076
+10-26 15:10:21.145  stream song-17076: answered in 651 ms, first bytes at 688 ms (new connection in 297 ms, no length)
+10-26 15:12:38.985  → item 7 song 17076 "Tumble and Twirl" (auto)
+10-26 15:14:37.991  load done song-17076: 5034 KB in 257540 ms
+10-26 15:14:37.996  load start song-17071
+10-26 15:14:39.084  stream song-17071: answered in 1079 ms, first bytes at 1089 ms (new connection in 483 ms, no length)
+10-26 15:17:25.999  load done song-17071: 2794 KB in 168007 ms
+10-26 15:17:26.007  load start song-17073
+10-26 15:17:26.792  stream song-17073: answered in 776 ms, first bytes at 788 ms (new connection in 230 ms, no length)
+10-26 15:17:37.892  → item 8 song 17071 "I Keep Forgetting" (auto)
+10-26 15:19:05.649  playWhenReady false (user)
+10-26 15:19:05.654  not playing @87.8s buf +175.5s
+10-26 15:19:06.324  playWhenReady true (user)
+10-26 15:19:06.331  playing @87.8s buf +175.5s
+10-26 15:19:10.439  playWhenReady false (user)
+10-26 15:19:10.444  not playing @91.8s buf +171.5s
+10-26 15:19:11.488  playWhenReady true (user)
+10-26 15:19:11.490  playing @91.9s buf +171.4s
+10-26 15:20:15.128  → item 9 song 17073 "Dancing With the Big Boys" (auto)
+10-26 15:20:16.066  shuffle: queued album 4176 "Bastard Universe" (6 songs)
+10-26 15:20:22.555  → item 1 song 15326 "Ruby" (new queue)
+10-26 15:20:22.557  state BUFFERING @0.0s buf +0.0s
+10-26 15:20:22.560  not playing @0.0s buf +0.0s
+10-26 15:20:22.562  shuffle: started album 4321 "A Friend of a Friend" (9 songs)
+10-26 15:20:22.576  load start song-15326
+10-26 15:20:22.799  stream song-15326: answered in 234 ms, first bytes at 237 ms (reused connection, no length)
+10-26 15:20:23.162  state READY @0.0s buf +6.0s
+10-26 15:20:23.163  playing @0.0s buf +6.0s
+10-26 15:23:06.881  load done song-15326: 11718 KB in 164320 ms
+10-26 15:23:07.089  load start song-15327
+10-26 15:23:07.925  stream song-15327: answered in 821 ms, first bytes at 832 ms (new connection in 201 ms, no length)
+10-26 15:25:18.092  → item 2 song 15327 "To Be Young (Is to Be Sad, Is to Be High)" (auto)
+10-26 15:25:50.442  load done song-15327: 9126 KB in 163352 ms
+10-26 15:25:50.672  load start song-15332
+10-26 15:25:51.526  stream song-15332: answered in 836 ms, first bytes at 847 ms (new connection in 279 ms, no length)
+10-26 15:28:20.117  load done song-15332: 5992 KB in 149445 ms
+10-26 15:28:20.143  load start song-15330
+10-26 15:28:20.933  stream song-15330: answered in 752 ms, first bytes at 777 ms (new connection in 186 ms, no length)
+10-26 15:29:06.294  → item 3 song 15332 "I Hear Them All" (auto)
+10-26 15:31:34.237  → item 4 song 15330 "Method Acting / Cortez The Killer" (auto)
+10-26 15:38:39.957  load done song-15330: 24458 KB in 619814 ms
+10-26 15:38:39.960  load start song-15334
+10-26 15:38:40.746  stream song-15334: answered in 771 ms, first bytes at 782 ms (new connection in 198 ms, no length)
+10-26 15:41:54.933  → item 5 song 15334 "Sweet Tooth" (auto)
+10-26 15:45:04.507  load done song-15334: 12734 KB in 384547 ms
+10-26 15:45:04.725  load start song-15328
+10-26 15:45:05.518  stream song-15328: answered in 779 ms, first bytes at 788 ms (new connection in 362 ms, no length)
+10-26 15:47:15.501  → item 6 song 15328 "How's About You" (auto)
+10-26 15:49:06.384  load done song-15328: 9382 KB in 241660 ms
+10-26 15:49:06.609  load start song-15333
+10-26 15:49:07.574  stream song-15333: answered in 941 ms, first bytes at 957 ms (new connection in 331 ms, no length)
+10-26 15:51:10.249  → item 7 song 15333 "It's Too Easy" (auto)
+10-26 15:51:42.550  load done song-15333: 7594 KB in 155942 ms
+10-26 15:51:42.623  load start song-15331
+10-26 15:51:43.397  stream song-15331: answered in 765 ms, first bytes at 771 ms (new connection in 202 ms, no length)
+10-26 15:54:19.205  → item 8 song 15331 "Monkey and the Engineer" (auto)
+10-26 15:54:20.206  shuffle: queued album 9871 "Ben Webster Plays Duke Ellington" (9 songs)
+10-26 15:55:43.693  load done song-15331: 8752 KB in 241069 ms
+10-26 15:55:43.887  load start song-15329
+10-26 15:55:44.658  stream song-15329: answered in 722 ms, first bytes at 767 ms (new connection in 409 ms, no length)
+10-26 15:57:57.782  → item 9 song 15329 "Bells of Harlem" (auto)
+10-26 15:58:05.065  playWhenReady false (user)
+10-26 15:58:05.069  not playing @7.3s buf +144.6s
+10-26 15:58:37.903  playWhenReady true (user)
+10-26 15:58:37.907  playing @7.3s buf +144.6s
+10-26 15:58:58.288  playWhenReady false (user)
+10-26 15:58:58.292  not playing @27.6s buf +124.4s
+10-26 16:01:49.895  playWhenReady true (user)
+10-26 16:01:49.898  playing @27.7s buf +124.3s
+10-26 16:02:09.026  playWhenReady false (user)
+10-26 16:02:09.029  not playing @46.8s buf +183.8s
+10-26 16:02:12.543  playWhenReady true (user)
+10-26 16:02:12.546  playing @46.8s buf +183.8s
+10-26 16:02:15.930  playWhenReady false (headphones disconnected)
+10-26 16:02:15.932  not playing @50.2s buf +180.4s
+10-26 16:08:34.048  playWhenReady true (user)
+10-26 16:08:34.050  playing @50.3s buf +180.3s
+10-26 16:09:34.742  load done song-15329: 9872 KB in 830856 ms
+10-26 16:09:34.948  load start song-65821
+10-26 16:09:35.459  stream song-65821: answered in 490 ms, first bytes at 502 ms (new connection in 194 ms, no length)
+10-26 16:11:51.376  → item 10 song 65821 "Perdido" (auto)
+10-26 16:11:59.036  playWhenReady false (user)
+10-26 16:11:59.037  not playing @7.1s buf +122.9s
+10-26 16:11:59.331  suppressed: transient audio focus loss @7.5s buf +122.4s
+10-26 16:12:02.289  playWhenReady true (user)
+10-26 16:12:02.292  suppressed: none @7.5s buf +122.4s
+10-26 16:12:02.293  playing @7.5s buf +122.4s
+10-26 16:13:09.629  → item 1 song 68899 "Overture, Introduction & Theme" (new queue)
+10-26 16:13:09.630  state BUFFERING @0.0s buf +0.0s
+10-26 16:13:09.631  not playing @0.0s buf +0.0s
+10-26 16:13:09.633  shuffle: started album 10243 "Okie from Muskogee" (19 songs)
+10-26 16:13:09.643  load start song-68899
+10-26 16:13:09.903  stream song-68899: answered in 262 ms, first bytes at 268 ms (reused connection, no length)
+10-26 16:13:10.170  state READY @0.0s buf +4.0s
+10-26 16:13:10.172  playing @0.0s buf +4.0s
+10-26 16:13:11.414  load done song-68899: 1350 KB in 1780 ms
+10-26 16:13:11.430  load start song-68900
+10-26 16:13:11.825  stream song-68900: answered in 387 ms, first bytes at 391 ms (reused connection, no length)
+10-26 16:13:15.380  → item 1 song 60986 "The Journey" (new queue)
+10-26 16:13:15.382  state BUFFERING @0.0s buf +0.0s
+10-26 16:13:15.383  not playing @0.0s buf +0.0s
+10-26 16:13:15.386  shuffle: started album 9376 "Greatest Hits" (14 songs)
+10-26 16:13:15.409  load start song-60986
+10-26 16:13:15.690  stream song-60986: answered in 296 ms, first bytes at 301 ms (reused connection, no length)
+10-26 16:13:16.190  state READY @0.0s buf +3.9s
+10-26 16:13:16.191  playing @0.0s buf +3.9s
+10-26 16:13:18.164  → item 1 song 11458 "Навь" (new queue)
+10-26 16:13:18.167  state BUFFERING @0.0s buf +0.0s
+10-26 16:13:18.168  not playing @0.0s buf +0.0s
+10-26 16:13:18.171  shuffle: started album 4272 "Кров у наших криницях" (6 songs)
+10-26 16:13:18.191  load start song-11458
+10-26 16:13:18.620  stream song-11458: answered in 440 ms, first bytes at 444 ms (reused connection, no length)
+10-26 16:13:20.231  state READY @0.0s buf +4.8s
+10-26 16:13:20.232  playing @0.0s buf +4.8s
+10-26 16:13:21.914  → item 1 song 23412 "Like It Alot" (new queue)
+10-26 16:13:21.915  state BUFFERING @0.0s buf +0.0s
+10-26 16:13:21.916  not playing @0.0s buf +0.0s
+10-26 16:13:21.921  shuffle: started album 5449 "Piece of the Puzzle" (13 songs)
+10-26 16:13:21.930  load start song-23412
+10-26 16:13:22.421  stream song-23412: answered in 500 ms, first bytes at 503 ms (reused connection, no length)
+10-26 16:13:22.959  state READY @0.0s buf +2.8s
+10-26 16:13:22.961  playing @0.0s buf +2.8s
+10-26 16:13:29.070  → item 1 song 60077 "Let England Shake" (new queue)
+10-26 16:13:29.072  state BUFFERING @0.0s buf +0.0s
+10-26 16:13:29.073  not playing @0.0s buf +0.0s
+10-26 16:13:29.076  shuffle: started album 9302 "Let England Shake" (12 songs)
+10-26 16:13:29.089  load start song-60077
+10-26 16:13:29.402  stream song-60077: answered in 322 ms, first bytes at 324 ms (reused connection, no length)
+10-26 16:13:29.696  state READY @0.0s buf +3.3s
+10-26 16:13:29.698  playing @0.0s buf +3.3s
+10-26 16:13:46.229  load done song-60077: 7447 KB in 17152 ms
+10-26 16:13:46.235  load start song-60080
+10-26 16:13:46.624  stream song-60080: answered in 380 ms, first bytes at 386 ms (reused connection, no length)
+10-26 16:16:23.171  load done song-60080: 5572 KB in 156936 ms
+10-26 16:16:23.407  load start song-60072
+10-26 16:16:24.132  stream song-60072: answered in 682 ms, first bytes at 718 ms (new connection in 283 ms, no length)
+10-26 16:16:39.343  → item 2 song 60080 "The Last Living Rose" (auto)
+10-26 16:19:00.625  → item 3 song 60072 "The Glorious Land" (auto)
+10-26 16:20:29.247  load done song-60072: 8440 KB in 245840 ms
+10-26 16:20:29.464  load start song-60069
+10-26 16:20:30.082  stream song-60069: answered in 604 ms, first bytes at 612 ms (new connection in 306 ms, no length)
+10-26 16:20:49.259  suppressed: transient audio focus loss @108.6s buf +183.4s
+10-26 16:20:49.262  not playing @108.6s buf +183.4s
+10-26 16:20:58.804  suppressed: none @108.6s buf +183.4s
+10-26 16:20:58.806  playing @109.1s buf +182.9s
+10-26 16:22:44.729  → item 4 song 60069 "The Words that Maketh Murder" (auto)
+10-26 16:23:21.130  load done song-60069: 8875 KB in 171666 ms
+10-26 16:23:21.220  load start song-60079
+10-26 16:23:21.872  stream song-60079: answered in 626 ms, first bytes at 647 ms (new connection in 351 ms, no length)
+10-26 16:26:30.571  → item 5 song 60079 "All And Everyone" (auto)
+10-26 16:29:43.982  load done song-60079: 13330 KB in 382762 ms
+10-26 16:29:44.188  load start song-60075
+10-26 16:29:44.857  stream song-60075: answered in 658 ms, first bytes at 667 ms (new connection in 282 ms, no length)
+10-26 16:32:10.449  → item 6 song 60075 "On Battleship Hill" (auto)
+10-26 16:33:39.006  load done song-60075: 9728 KB in 234818 ms
+10-26 16:33:39.160  load start song-60071
+10-26 16:33:39.859  stream song-60071: answered in 688 ms, first bytes at 696 ms (new connection in 161 ms, no length)
+10-26 16:36:18.110  → item 7 song 60071 "England" (auto)
+10-26 16:37:20.486  load done song-60071: 7517 KB in 221327 ms
+10-26 16:37:20.735  load start song-60076
+10-26 16:37:21.446  stream song-60076: answered in 701 ms, first bytes at 706 ms (new connection in 338 ms, no length)
+10-26 16:39:29.203  → item 8 song 60076 "In The Dark Places" (auto)
+10-26 16:40:05.450  load done song-60076: 7066 KB in 164715 ms
+10-26 16:40:05.593  load start song-60073
+10-26 16:40:06.451  stream song-60073: answered in 841 ms, first bytes at 854 ms (new connection in 233 ms, no length)
+10-26 16:42:28.753  → item 9 song 60073 "Bitter Branches" (auto)
+10-26 16:42:38.720  load done song-60073: 5899 KB in 153127 ms
+10-26 16:42:38.944  load start song-60074
+10-26 16:42:39.581  stream song-60074: answered in 603 ms, first bytes at 621 ms (new connection in 292 ms, no length)
+10-26 16:44:58.418  → item 10 song 60074 "Hanging in the Wire" (auto)
+10-26 16:45:08.365  load done song-60074: 6395 KB in 149421 ms
+10-26 16:45:08.539  load start song-60078
+10-26 16:45:09.281  stream song-60078: answered in 733 ms, first bytes at 739 ms (new connection in 313 ms, no length)
+10-26 16:47:40.787  → item 11 song 60078 "Written on the Forehead" (auto)
+10-26 16:47:41.710  shuffle: queued album 5657 "UMMON" (11 songs)
+10-26 16:49:09.281  load done song-60078: 8644 KB in 240742 ms
+10-26 16:49:09.517  load start song-60070
+10-26 16:49:10.115  stream song-60070: answered in 591 ms, first bytes at 596 ms (new connection in 304 ms, no length)
+10-26 16:50:38.201  load done song-60070: 6054 KB in 88684 ms
+10-26 16:50:38.377  load start song-23982
+10-26 16:50:39.058  stream song-23982: answered in 653 ms, first bytes at 679 ms (new connection in 296 ms, no length)
+10-26 16:51:20.711  → item 12 song 60070 "The Colour of the Earth" (auto)
+10-26 16:53:54.339  → item 13 song 23982 "Ummon" (auto)
+10-26 16:57:19.786  load done song-23982: 11930 KB in 401408 ms
+10-26 16:57:20.007  load start song-23992
+10-26 16:57:20.717  stream song-23992: answered in 689 ms, first bytes at 706 ms (new connection in 379 ms, no length)
+10-26 16:58:12.755  playWhenReady false (user)
+10-26 16:58:12.760  not playing @258.4s buf +142.6s
+10-26 16:58:47.338  playWhenReady false (headphones disconnected)
+10-26 16:59:20.088  network: available
+10-26 17:03:04.067  suppressed: transient audio focus loss @258.4s buf +142.6s
+10-26 17:03:38.601  suppressed: none @258.4s buf +142.6s
+10-26 17:03:54.045  playWhenReady false (audio focus lost)
+10-26 17:14:37.055  service destroyed

@@ -1,0 +1,258 @@
+Description: Session some interesting car interaction mostly started carried on from the exact point where I stopped yesterday which was good, stopped and started a couple of times. The car autoplayed the song as it's wont
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-10-28T07:40:06.297666+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 33/40 song 22086, at 142 s, buffered to 168 s
+
+== This run (127 events) ==
+10-28 06:46:07.726  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-28 06:46:07.741  network: available
+10-28 06:46:07.743  → item 16 song 8209 "Quarrel" (new queue)
+10-28 06:46:07.744  state BUFFERING @300.0s buf +0.0s
+10-28 06:46:07.745  queue restored: 23 songs, item 16 at 300.0s, shuffle on
+10-28 06:46:07.745  shuffle: on, continuing after the current queue
+10-28 06:46:07.751  load start song-8209
+10-28 06:46:07.768  load start song-8209
+10-28 06:46:07.818  state READY @300.0s buf +100.7s
+10-28 06:46:07.823  load done song-8209: 3217 KB in 57 ms
+10-28 06:46:07.824  load start song-8204
+10-28 06:46:07.842  load done song-8204: 1797 KB in 18 ms
+10-28 06:46:08.838  load start song-8212
+10-28 06:46:09.003  stream song-8212: answered in 146 ms, first bytes at 155 ms (reused connection, no length)
+10-28 06:46:11.603  → item 17 song 8204 "Stoicism" (seek/skip)
+10-28 06:46:11.607  state BUFFERING @0.0s buf +0.0s
+10-28 06:46:11.622  load start song-8212
+10-28 06:46:11.647  state READY @0.0s buf +62.4s
+10-28 06:46:11.820  stream song-8212: answered in 204 ms, first bytes at 204 ms (reused connection, no length)
+10-28 06:46:12.419  stream song-8212: answered in 194 ms, first bytes at 195 ms (reused connection, no length)
+10-28 06:46:15.818  playWhenReady true (user)
+10-28 06:46:15.819  playing @0.0s buf +137.0s
+10-28 06:47:18.393  → item 18 song 8212 "Lonely World" (auto)
+10-28 06:49:13.205  load done song-8212: 8806 KB in 181596 ms
+10-28 06:49:13.238  load start song-8207
+10-28 06:49:28.613  stream song-8207: failed after 15372 ms (SocketTimeoutException)
+10-28 06:49:28.626  load error song-8207 @130.1s buf +158.9s: HttpDataSource$HttpDataSourceException: java.io.IOException: java.util.concurrent.ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 37272) after 15000ms ← IOException: java.util.concurrent.ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 37272) after 15000ms ← ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 37272) after 15000ms ← SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 37272) after 15000ms
+10-28 06:49:29.628  load start song-8207 (retry 1)
+10-28 06:49:44.683  stream song-8207: failed after 15054 ms (SocketTimeoutException)
+10-28 06:49:44.688  load error song-8207 @146.3s buf +142.7s: HttpDataSource$HttpDataSourceException: java.io.IOException: java.util.concurrent.ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 44786) after 15000ms ← IOException: java.util.concurrent.ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 44786) after 15000ms ← ExecutionException: java.net.SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 44786) after 15000ms ← SocketTimeoutException: failed to connect to equinemusic.com/178.62.197.192 (port 443) from /192.168.0.59 (port 44786) after 15000ms
+10-28 06:49:46.690  load start song-8207 (retry 2)
+10-28 06:49:46.912  stream song-8207: failed after 222 ms (ConnectException)
+10-28 06:49:46.923  load error song-8207 @148.5s buf +140.4s: HttpDataSource$HttpDataSourceException: java.io.IOException: java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to equinemusic.com/178.62.197.192:443 ← IOException: java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to equinemusic.com/178.62.197.192:443 ← ExecutionException: java.net.ConnectException: Failed to connect to equinemusic.com/178.62.197.192:443 ← ConnectException: Failed to connect to equinemusic.com/178.62.197.192:443
+10-28 06:49:50.923  load start song-8207 (retry 3)
+10-28 06:49:50.942  stream song-8207: failed after 17 ms (UnknownHostException)
+10-28 06:49:50.946  load error song-8207 @152.5s buf +136.5s: HttpDataSource$HttpDataSourceException: java.io.IOException: java.util.concurrent.ExecutionException: java.net.UnknownHostException: Unable to resolve host "equinemusic.com": No address associated with hostname ← IOException: java.util.concurrent.ExecutionException: java.net.UnknownHostException: Unable to resolve host "equinemusic.com": No address associated with hostname ← ExecutionException: java.net.UnknownHostException: Unable to resolve host "equinemusic.com": No address associated with hostname ← UnknownHostException: Unable to resolve host "equinemusic.com": No address associated with hostname
+10-28 06:49:52.142  network: lost
+10-28 06:49:52.225  network: available
+10-28 06:49:57.215  network: available
+10-28 06:49:58.966  load start song-8207 (retry 4)
+10-28 06:50:02.957  stream song-8207: answered in 3974 ms, first bytes at 3989 ms (new connection in 281 ms, no length)
+10-28 06:50:33.953  stream song-8207: failed after 34985 ms (SocketException)
+10-28 06:50:33.981  load error song-8207 @195.6s buf +94.7s: HttpDataSource$HttpDataSourceException: java.net.SocketException: Software caused connection abort ← SocketException: Software caused connection abort
+10-28 06:50:39.108  network: lost
+10-28 06:50:39.226  network: available
+10-28 06:50:49.984  load start song-8207 (retry 1)
+10-28 06:51:00.077  stream song-8207: answered in 10077 ms, first bytes at 10088 ms (new connection in 195 ms, no length)
+10-28 06:51:18.332  playWhenReady false (user)
+10-28 06:51:18.334  not playing @239.9s buf +182.0s
+10-28 06:51:29.310  playWhenReady true (user)
+10-28 06:51:29.312  playing @239.9s buf +181.9s
+10-28 06:51:29.536  playWhenReady false (user)
+10-28 06:51:29.537  not playing @240.2s buf +181.7s
+10-28 06:51:47.782  playWhenReady false (headphones disconnected)
+10-28 06:53:16.871  playWhenReady true (user)
+10-28 06:53:16.873  playing @240.2s buf +181.7s
+10-28 06:54:05.807  → item 19 song 8207 "Make Out in My Car" (auto)
+10-28 06:54:18.980  load done song-8207: 4798 KB in 305742 ms
+10-28 06:54:19.171  load start song-8211
+10-28 06:54:19.854  stream song-8211: answered in 667 ms, first bytes at 677 ms (new connection in 129 ms, no length)
+10-28 06:55:49.880  load done song-8211: 2066 KB in 90709 ms
+10-28 06:55:50.113  load start song-8210
+10-28 06:55:50.978  stream song-8210: answered in 834 ms, first bytes at 851 ms (new connection in 248 ms, no length)
+10-28 06:56:41.636  → item 20 song 8211 "The Cocoon-Eyed Baby" (auto)
+10-28 06:57:50.786  → item 21 song 8210 "Doomed" (auto)
+10-28 06:59:37.218  load done song-8210: 7270 KB in 227103 ms
+10-28 06:59:37.355  load start song-8203
+10-28 06:59:38.075  stream song-8203: answered in 694 ms, first bytes at 711 ms (new connection in 156 ms, no length)
+10-28 07:02:18.755  → item 22 song 8203 "Indulge Me" (auto)
+10-28 07:02:18.798  shuffle: album pool 2758 albums (stored; refreshing)
+10-28 07:02:19.716  shuffle: queued album 5321 "Otis Blue/Otis Redding Sings Soul" (11 songs)
+10-28 07:02:23.412  shuffle: album pool 2758 albums in 4611 ms
+10-28 07:03:15.625  load done song-8203: 5690 KB in 218270 ms
+10-28 07:03:15.824  load start song-8213
+10-28 07:03:16.678  stream song-8213: answered in 837 ms, first bytes at 849 ms (new connection in 387 ms, no length)
+10-28 07:05:34.776  → item 23 song 8213 "Self-Help Tape" (auto)
+10-28 07:05:42.141  load done song-8213: 5720 KB in 146317 ms
+10-28 07:05:42.292  load start song-22085
+10-28 07:05:42.882  stream song-22085: answered in 539 ms, first bytes at 588 ms (new connection in 266 ms, no length)
+10-28 07:08:15.003  load done song-22085: 6472 KB in 152710 ms
+10-28 07:08:15.107  load start song-22082
+10-28 07:08:15.813  stream song-22082: answered in 669 ms, first bytes at 704 ms (new connection in 341 ms, no length)
+10-28 07:08:35.929  → item 24 song 22085 "Ole Man Trouble" (auto)
+10-28 07:09:17.781  playWhenReady false (user)
+10-28 07:09:17.784  not playing @41.9s buf +190.4s
+10-28 07:09:52.292  playWhenReady false (headphones disconnected)
+10-28 07:10:56.343  playWhenReady true (user)
+10-28 07:10:56.344  playing @41.9s buf +190.4s
+10-28 07:12:06.993  load done song-22082: 5114 KB in 231886 ms
+10-28 07:12:07.135  load start song-22081
+10-28 07:12:07.783  stream song-22081: answered in 630 ms, first bytes at 645 ms (new connection in 317 ms, no length)
+10-28 07:12:54.078  → item 25 song 22082 "Respect" (auto)
+10-28 07:14:58.978  → item 26 song 22081 "A Change Is Gonna Come" (auto)
+10-28 07:17:15.450  load done song-22081: 10248 KB in 308315 ms
+10-28 07:17:15.700  load start song-22083
+10-28 07:17:16.461  stream song-22083: answered in 749 ms, first bytes at 755 ms (new connection in 158 ms, no length)
+10-28 07:19:15.260  → item 27 song 22083 "Down in the Valley" (auto)
+10-28 07:19:46.819  load done song-22083: 7310 KB in 151119 ms
+10-28 07:19:47.031  load start song-22087
+10-28 07:19:47.744  stream song-22087: answered in 705 ms, first bytes at 711 ms (new connection in 136 ms, no length)
+10-28 07:22:16.353  → item 28 song 22087 "I've Been Loving You too Long" (auto)
+10-28 07:22:21.803  load done song-22087: 7166 KB in 154772 ms
+10-28 07:22:21.952  load start song-22078
+10-28 07:22:22.152  stream song-22078: answered in 191 ms, first bytes at 197 ms (reused connection, no length)
+10-28 07:24:52.942  load done song-22078: 6550 KB in 150990 ms
+10-28 07:24:53.089  load start song-22079
+10-28 07:24:53.726  stream song-22079: answered in 623 ms, first bytes at 632 ms (new connection in 340 ms, no length)
+10-28 07:25:13.775  → item 29 song 22078 "Shake" (auto)
+10-28 07:27:55.419  → item 30 song 22079 "My Girl" (auto)
+10-28 07:28:27.098  load done song-22079: 7194 KB in 214009 ms
+10-28 07:28:27.269  load start song-22080
+10-28 07:28:27.889  stream song-22080: answered in 614 ms, first bytes at 617 ms (new connection in 337 ms, no length)
+10-28 07:30:53.520  → item 31 song 22080 "Wonderful World" (auto)
+10-28 07:30:58.749  load done song-22080: 7824 KB in 151481 ms
+10-28 07:30:58.893  load start song-22084
+10-28 07:30:59.215  stream song-22084: answered in 315 ms, first bytes at 319 ms (reused connection, no length)
+10-28 07:34:07.742  → item 32 song 22084 "Rock Me Baby" (auto)
+10-28 07:34:39.222  load done song-22084: 8280 KB in 220329 ms
+10-28 07:34:39.408  load start song-22086
+10-28 07:34:40.076  stream song-22086: answered in 661 ms, first bytes at 667 ms (new connection in 325 ms, no length)
+10-28 07:37:12.866  load done song-22086: 6812 KB in 153458 ms
+10-28 07:37:12.960  load start song-22088
+10-28 07:37:13.536  stream song-22088: answered in 566 ms, first bytes at 573 ms (new connection in 318 ms, no length)
+10-28 07:37:33.678  → item 33 song 22086 "Satisfaction" (auto)
+10-28 07:37:34.502  shuffle: queued album 9198 "Krallice" (6 songs)
+10-28 07:39:55.851  playWhenReady false (user)
+10-28 07:39:55.855  not playing @142.1s buf +177.6s
+
+== Previous run (120 events) ==
+10-27 14:10:24.298  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+10-27 14:10:24.307  network: available
+10-27 14:10:24.315  → item 19 song 62402 "Business as Usual" (new queue)
+10-27 14:10:24.316  state BUFFERING @3.4s buf +0.0s
+10-27 14:10:24.317  queue restored: 30 songs, item 19 at 3.4s, shuffle on
+10-27 14:10:24.317  shuffle: on, continuing after the current queue
+10-27 14:10:24.322  load start song-62402
+10-27 14:10:24.348  load start song-62402
+10-27 14:10:24.401  state READY @3.4s buf +64.2s
+10-27 14:10:24.986  stream song-62402: answered in 569 ms, first bytes at 575 ms (new connection in 209 ms, no length)
+10-27 14:10:25.617  load done song-62402: 5412 KB in 1268 ms
+10-27 14:10:26.426  load start song-62399
+10-27 14:10:26.687  stream song-62399: answered in 248 ms, first bytes at 258 ms (reused connection, no length)
+10-27 14:10:37.808  → item 1 song 20142 "Heaven's on the Way" (new queue)
+10-27 14:10:37.809  state BUFFERING @0.0s buf +0.0s
+10-27 14:10:37.811  playWhenReady true (user)
+10-27 14:10:37.812  shuffle: started album 5150 "Listening to the Music" (12 songs)
+10-27 14:10:37.852  load start song-20142
+10-27 14:10:38.164  stream song-20142: answered in 308 ms, first bytes at 311 ms (reused connection, no length)
+10-27 14:10:38.489  state READY @0.0s buf +2.8s
+10-27 14:10:38.496  playing @0.0s buf +2.8s
+10-27 14:11:05.288  load done song-20142: 6880 KB in 27429 ms
+10-27 14:11:05.290  load start song-20138
+10-27 14:11:12.409  stream song-20138: answered in 7110 ms, first bytes at 7121 ms (new connection in 6767 ms, no length)
+10-27 14:14:06.207  → item 2 song 20138 "Black & Blue" (auto)
+10-27 14:14:38.198  load done song-20138: 6295 KB in 212915 ms
+10-27 14:14:38.348  load start song-20146
+10-27 14:14:39.162  stream song-20146: answered in 803 ms, first bytes at 811 ms (new connection in 251 ms, no length)
+10-27 14:17:16.243  → item 3 song 20146 "It's Not So Easy Today" (auto)
+10-27 14:17:55.546  load done song-20146: 6335 KB in 197198 ms
+10-27 14:17:55.728  load start song-20140
+10-27 14:17:56.475  stream song-20140: answered in 736 ms, first bytes at 744 ms (new connection in 185 ms, no length)
+10-27 14:20:35.176  → item 4 song 20140 "When I've No More Tears to Cry" (auto)
+10-27 14:20:42.839  suppressed: transient audio focus loss @7.7s buf +152.2s
+10-27 14:20:42.841  not playing @7.7s buf +152.2s
+10-27 14:20:58.847  suppressed: none @8.1s buf +151.8s
+10-27 14:20:58.849  playing @8.1s buf +151.8s
+10-27 14:21:31.285  load done song-20140: 6439 KB in 215558 ms
+10-27 14:21:31.485  load start song-20137
+10-27 14:21:32.109  stream song-20137: answered in 611 ms, first bytes at 622 ms (new connection in 331 ms, no length)
+10-27 14:24:15.845  → item 5 song 20137 "All American Singer" (auto)
+10-27 14:26:02.628  load done song-20137: 7440 KB in 271142 ms
+10-27 14:26:02.878  load start song-20143
+10-27 14:26:03.494  stream song-20143: answered in 608 ms, first bytes at 614 ms (new connection in 313 ms, no length)
+10-27 14:28:13.347  → item 6 song 20143 "Listening to the Music" (auto)
+10-27 14:28:21.372  load done song-20143: 5982 KB in 138494 ms
+10-27 14:28:21.512  load start song-20148
+10-27 14:28:22.089  stream song-20148: answered in 558 ms, first bytes at 570 ms (new connection in 251 ms, no length)
+10-27 14:31:27.869  → item 7 song 20148 "Living Too Long" (auto)
+10-27 14:31:58.918  load done song-20148: 7100 KB in 217406 ms
+10-27 14:31:59.075  load start song-20141
+10-27 14:31:59.742  stream song-20141: answered in 652 ms, first bytes at 659 ms (new connection in 363 ms, no length)
+10-27 14:35:00.190  → item 8 song 20141 "We Planned to Have It All" (auto)
+10-27 14:37:16.840  load done song-20141: 8410 KB in 317765 ms
+10-27 14:37:17.057  load start song-20144
+10-27 14:37:17.733  stream song-20144: answered in 649 ms, first bytes at 669 ms (new connection in 328 ms, no length)
+10-27 14:39:24.603  → item 9 song 20144 "Riding That Train" (auto)
+10-27 14:40:30.086  load done song-20144: 6419 KB in 193029 ms
+10-27 14:40:30.291  load start song-20139
+10-27 14:40:30.874  stream song-20139: answered in 563 ms, first bytes at 568 ms (new connection in 242 ms, no length)
+10-27 14:42:40.776  → item 10 song 20139 "Emily" (auto)
+10-27 14:43:49.607  load done song-20139: 6712 KB in 199317 ms
+10-27 14:43:49.848  load start song-20147
+10-27 14:43:50.435  stream song-20147: answered in 579 ms, first bytes at 585 ms (new connection in 305 ms, no length)
+10-27 14:46:09.461  → item 11 song 20147 "You Make It Easy to Love Again" (auto)
+10-27 14:46:09.491  shuffle: album pool 2758 albums (stored; refreshing)
+10-27 14:46:10.629  shuffle: queued album 4062 "Aromanticism" (11 songs)
+10-27 14:46:12.850  shuffle: album pool 2758 albums in 3357 ms
+10-27 14:47:12.478  load done song-20147: 7271 KB in 202630 ms
+10-27 14:47:12.673  load start song-20145
+10-27 14:47:13.381  stream song-20145: answered in 697 ms, first bytes at 706 ms (new connection in 308 ms, no length)
+10-27 14:49:47.662  → item 12 song 20145 "Time Won't Take It's Time" (auto)
+10-27 14:50:22.342  load done song-20145: 7003 KB in 189669 ms
+10-27 14:50:22.462  load start song-8208
+10-27 14:50:23.138  stream song-8208: answered in 668 ms, first bytes at 673 ms (new connection in 297 ms, no length)
+10-27 14:51:23.676  load done song-8208: 1120 KB in 61214 ms
+10-27 14:51:23.887  load start song-8206
+10-27 14:51:24.544  stream song-8206: answered in 625 ms, first bytes at 655 ms (new connection in 280 ms, no length)
+10-27 14:52:53.216  suppressed: transient audio focus loss @185.6s buf +171.0s
+10-27 14:52:53.217  not playing @185.6s buf +171.0s
+10-27 14:53:03.335  suppressed: none @186.0s buf +170.6s
+10-27 14:53:03.340  playing @186.0s buf +170.6s
+10-27 14:53:03.379  playWhenReady false (user)
+10-27 14:53:03.381  not playing @186.0s buf +170.5s
+10-27 14:53:03.689  playWhenReady true (user)
+10-27 14:53:03.690  playing @186.0s buf +170.5s
+10-27 14:53:33.159  → item 13 song 8208 "Man on the Moon (Reprise)" (auto)
+10-27 14:54:10.045  → item 14 song 8206 "Don't Bother Calling" (auto)
+10-27 14:56:01.674  load done song-8206: 7401 KB in 277786 ms
+10-27 14:56:01.915  load start song-8205
+10-27 14:56:02.578  stream song-8205: answered in 656 ms, first bytes at 659 ms (new connection in 320 ms, no length)
+10-27 14:58:09.753  → item 15 song 8205 "Plastic" (auto)
+10-27 14:58:47.720  load done song-8205: 4955 KB in 165805 ms
+10-27 14:58:47.920  load start song-8209
+10-27 14:58:48.543  stream song-8209: answered in 613 ms, first bytes at 620 ms (new connection in 343 ms, no length)
+10-27 14:58:52.797  playWhenReady false (user)
+10-27 14:58:52.801  not playing @43.0s buf +180.1s
+10-27 14:59:27.551  playWhenReady false (headphones disconnected)
+10-27 15:00:41.859  playWhenReady true (user)
+10-27 15:00:41.863  playing @43.1s buf +180.0s
+10-27 15:00:47.491  playWhenReady false (user)
+10-27 15:00:47.493  not playing @48.8s buf +174.3s
+10-27 15:01:22.130  playWhenReady false (headphones disconnected)
+10-27 15:01:24.316  playWhenReady true (user)
+10-27 15:01:24.317  playing @48.9s buf +174.2s
+10-27 15:03:44.267  → item 16 song 8209 "Quarrel" (auto)
+10-27 15:07:59.835  load done song-8209: 12134 KB in 551914 ms
+10-27 15:08:00.005  load start song-8204
+10-27 15:08:00.753  stream song-8204: answered in 725 ms, first bytes at 744 ms (new connection in 356 ms, no length)
+10-27 15:08:17.175  load done song-8204: 1797 KB in 17170 ms
+10-27 15:08:17.410  load start song-8212
+10-27 15:08:17.967  stream song-8212: answered in 539 ms, first bytes at 552 ms (reused connection, no length)
+10-27 15:08:44.252  playWhenReady false (user)
+10-27 15:08:44.258  not playing @300.0s buf +168.3s
+10-27 15:09:18.867  playWhenReady false (headphones disconnected)
+10-27 15:09:56.970  network: available
+10-27 15:12:32.584  playWhenReady false (audio focus lost)
+10-27 15:13:07.365  playWhenReady false (user)
+10-27 15:13:07.375  playWhenReady false (audio focus lost)
+10-27 15:13:07.376  service destroyed

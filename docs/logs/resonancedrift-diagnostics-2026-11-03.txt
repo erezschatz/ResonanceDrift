@@ -1,0 +1,166 @@
+Description: I wasn't in the mood for the random selections, and took about 20 minutes hopping until I went to the playlist
+
+ResonanceDrift diagnostics
+1.0.1 (19)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-03T08:32:33.437142+02:00[Asia/Jerusalem]
+player: READY, not playing, playWhenReady false, item 10/190 song 20241, at 135 s, buffered to 259 s
+
+== This run (146 events) ==
+11-03 07:02:19.490  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-03 07:02:19.525  network: available
+11-03 07:02:19.535  → item 3 song 68189 "De Dood Hebben Het Goed III" (new queue)
+11-03 07:02:19.536  state BUFFERING @5.6s buf +0.0s
+11-03 07:02:19.536  queue restored: 4 songs, item 3 at 5.6s
+11-03 07:02:19.539  load start song-68189
+11-03 07:02:19.584  load start song-68189
+11-03 07:02:19.651  state READY @5.6s buf +101.3s
+11-03 07:02:27.447  shuffle: album pool 2765 albums (stored; refreshing)
+11-03 07:02:28.276  → item 1 song 15963 "FROST (C)" (new queue)
+11-03 07:02:28.278  state BUFFERING @0.0s buf +0.0s
+11-03 07:02:28.281  playWhenReady true (user)
+11-03 07:02:28.282  shuffle: started album 3601 "Pyroclasts" (4 songs)
+11-03 07:02:28.306  load start song-15963
+11-03 07:02:28.531  stream song-15963: answered in 214 ms, first bytes at 224 ms (reused connection, no length)
+11-03 07:02:28.749  state READY @0.0s buf +6.2s
+11-03 07:02:28.751  playing @0.0s buf +6.2s
+11-03 07:02:34.362  shuffle: album pool 2765 albums in 6903 ms
+11-03 07:10:43.307  load done song-15963: 24130 KB in 495000 ms
+11-03 07:10:43.513  load start song-15962
+11-03 07:10:44.372  stream song-15962: answered in 810 ms, first bytes at 857 ms (new connection in 168 ms, no length)
+11-03 07:13:26.169  → item 2 song 15962 "KINGDOMS (G)" (auto)
+11-03 07:19:17.787  → item 1 song 10322 "Fôg el-Nakhel" (new queue)
+11-03 07:19:17.790  state BUFFERING @0.0s buf +0.0s
+11-03 07:19:17.791  not playing @0.0s buf +0.0s
+11-03 07:19:17.797  shuffle: started album 3494 "Duo De Ud" (6 songs)
+11-03 07:19:17.824  load start song-10322
+11-03 07:19:18.023  stream song-10322: answered in 217 ms, first bytes at 221 ms (reused connection, no length)
+11-03 07:19:18.492  state READY @0.0s buf +4.4s
+11-03 07:19:18.493  playing @0.0s buf +4.4s
+11-03 07:29:10.498  load done song-10322: 24073 KB in 592697 ms
+11-03 07:29:10.676  load start song-10323
+11-03 07:29:11.283  stream song-10323: answered in 592 ms, first bytes at 605 ms (new connection in 318 ms, no length)
+11-03 07:32:00.590  → item 2 song 10323 "Pastâ Baghdadiyya" (auto)
+11-03 07:32:05.395  suppressed: transient audio focus loss @4.8s buf +157.2s
+11-03 07:32:05.397  not playing @4.8s buf +157.2s
+11-03 07:32:16.830  suppressed: none @5.0s buf +157.0s
+11-03 07:32:16.833  playing @5.0s buf +157.0s
+11-03 07:32:20.519  suppressed: transient audio focus loss @8.8s buf +153.2s
+11-03 07:32:20.521  not playing @8.8s buf +153.2s
+11-03 07:32:26.312  suppressed: none @8.8s buf +153.2s
+11-03 07:32:26.316  playing @8.8s buf +153.2s
+11-03 07:32:27.841  suppressed: transient audio focus loss @10.4s buf +151.6s
+11-03 07:32:27.844  not playing @10.4s buf +151.6s
+11-03 07:32:49.811  suppressed: none @10.4s buf +151.6s
+11-03 07:32:49.813  playing @10.4s buf +151.6s
+11-03 07:33:16.173  suppressed: transient audio focus loss @36.5s buf +125.5s
+11-03 07:33:16.177  not playing @36.5s buf +125.5s
+11-03 07:33:25.863  suppressed: none @36.7s buf +125.3s
+11-03 07:33:25.869  playing @36.7s buf +125.3s
+11-03 07:33:34.770  suppressed: transient audio focus loss @45.6s buf +181.8s
+11-03 07:33:34.772  not playing @45.6s buf +181.8s
+11-03 07:33:46.626  suppressed: none @45.6s buf +181.8s
+11-03 07:33:46.628  playing @45.6s buf +181.8s
+11-03 07:33:47.849  suppressed: transient audio focus loss @46.7s buf +180.7s
+11-03 07:33:47.850  not playing @46.7s buf +180.7s
+11-03 07:34:21.608  suppressed: none @46.9s buf +180.6s
+11-03 07:34:21.611  playing @46.9s buf +180.6s
+11-03 07:34:52.273  → item 1 song 17709 "Majestic AF" (new queue)
+11-03 07:34:52.275  state BUFFERING @0.0s buf +0.0s
+11-03 07:34:52.278  not playing @0.0s buf +0.0s
+11-03 07:34:52.281  shuffle: started album 4909 "Hurts To Laugh" (5 songs)
+11-03 07:34:52.296  load start song-17709
+11-03 07:34:52.921  stream song-17709: answered in 620 ms, first bytes at 622 ms (new connection in 238 ms, no length)
+11-03 07:34:53.350  state READY @0.0s buf +2.1s
+11-03 07:34:53.351  playing @0.0s buf +6.1s
+11-03 07:35:42.496  playWhenReady false (user)
+11-03 07:35:42.499  not playing @48.8s buf +137.4s
+11-03 07:35:43.319  suppressed: transient audio focus loss @48.8s buf +137.3s
+11-03 07:37:44.663  suppressed: none @48.8s buf +137.3s
+11-03 07:37:46.682  suppressed: transient audio focus loss @48.8s buf +137.3s
+11-03 07:38:55.494  suppressed: none @48.8s buf +137.3s
+11-03 07:38:57.186  playWhenReady true (user)
+11-03 07:38:57.189  playing @48.8s buf +137.3s
+11-03 07:39:14.545  load done song-17709: 7565 KB in 262249 ms
+11-03 07:39:14.739  load start song-17710
+11-03 07:39:16.792  stream song-17710: answered in 2045 ms, first bytes at 2051 ms (new connection in 329 ms, no length)
+11-03 07:41:50.860  playWhenReady false (user)
+11-03 07:41:50.863  not playing @222.6s buf +187.2s
+11-03 07:41:52.491  suppressed: transient audio focus loss @222.6s buf +187.2s
+11-03 07:42:02.793  suppressed: none @222.6s buf +187.2s
+11-03 07:42:10.227  suppressed: transient audio focus loss @222.6s buf +187.2s
+11-03 07:43:10.012  suppressed: none @222.6s buf +187.2s
+11-03 07:43:10.664  playWhenReady true (user)
+11-03 07:43:10.667  playing @222.6s buf +187.2s
+11-03 07:43:18.405  → item 2 song 17710 "Honest" (auto)
+11-03 07:44:18.311  load done song-17710: 8692 KB in 303571 ms
+11-03 07:44:18.413  load start song-17708
+11-03 07:44:19.026  stream song-17708: answered in 603 ms, first bytes at 612 ms (new connection in 335 ms, no length)
+11-03 07:45:04.116  playWhenReady false (user)
+11-03 07:45:04.119  not playing @105.4s buf +151.1s
+11-03 07:45:07.190  suppressed: transient audio focus loss @105.5s buf +151.0s
+11-03 07:45:40.652  suppressed: none @105.5s buf +151.0s
+11-03 07:46:21.554  playWhenReady true (user)
+11-03 07:46:21.558  playing @105.5s buf +151.0s
+11-03 07:47:30.495  shuffle: off
+11-03 07:47:30.501  → item 1 song 62665 "It's the R" (new queue)
+11-03 07:47:30.502  state BUFFERING @0.0s buf +0.0s
+11-03 07:47:30.503  not playing @0.0s buf +0.0s
+11-03 07:47:30.515  load start song-62665
+11-03 07:47:30.579  state READY @0.0s buf +23.4s
+11-03 07:47:30.579  playing @0.0s buf +23.4s
+11-03 07:47:31.147  stream song-62665: answered in 527 ms, first bytes at 537 ms (new connection in 253 ms, no length)
+11-03 07:48:57.981  load done song-62665: 10102 KB in 87476 ms
+11-03 07:48:58.196  load start song-62662
+11-03 07:51:46.696  → item 2 song 62662 "I'll Be There (Feat. Nneaka Morton)" (auto)
+11-03 07:52:48.339  stream song-62662: answered in 682 ms, first bytes at 689 ms (new connection in 148 ms, no length)
+11-03 07:54:06.187  load done song-62662: 12212 KB in 307991 ms
+11-03 07:54:06.335  load start song-62670
+11-03 07:54:06.960  stream song-62670: answered in 617 ms, first bytes at 623 ms (new connection in 319 ms, no length)
+11-03 07:56:56.438  → item 3 song 62670 "It's a Must (Feat. Rahzel)" (auto)
+11-03 07:59:15.864  load done song-62670: 10420 KB in 309530 ms
+11-03 07:59:16.115  load start song-62661
+11-03 07:59:16.786  stream song-62661: answered in 656 ms, first bytes at 669 ms (new connection in 355 ms, no length)
+11-03 08:01:20.315  → item 4 song 62661 "Real Shit" (auto)
+11-03 08:03:13.626  load done song-62661: 10312 KB in 237511 ms
+11-03 08:03:13.833  load start song-62671
+11-03 08:03:14.624  stream song-62671: answered in 760 ms, first bytes at 788 ms (new connection in 159 ms, no length)
+11-03 08:05:41.400  → item 5 song 62671 "How I Get Down" (auto)
+11-03 08:07:08.470  load done song-62671: 9696 KB in 234637 ms
+11-03 08:07:08.599  load start song-62672
+11-03 08:07:09.436  stream song-62672: answered in 818 ms, first bytes at 835 ms (new connection in 257 ms, no length)
+11-03 08:08:36.524  load done song-62672: 2157 KB in 87924 ms
+11-03 08:08:36.525  load start song-62666
+11-03 08:08:36.856  stream song-62666: answered in 326 ms, first bytes at 329 ms (reused connection, no length)
+11-03 08:09:46.720  → item 6 song 62672 "L.I. Interlude" (auto)
+11-03 08:09:49.943  → item 7 song 62666 "Strong Island" (seek/skip)
+11-03 08:09:49.949  state BUFFERING @0.0s buf +0.0s
+11-03 08:09:49.953  not playing @0.0s buf +0.0s
+11-03 08:09:50.018  state READY @0.0s buf +126.7s
+11-03 08:09:50.019  playing @0.0s buf +126.7s
+11-03 08:12:10.110  load done song-62666: 10797 KB in 213585 ms
+11-03 08:12:10.316  load start song-62659
+11-03 08:12:11.430  stream song-62659: answered in 1094 ms, first bytes at 1112 ms (new connection in 181 ms, no length)
+11-03 08:14:23.904  → item 8 song 62659 "Waiting for the World to End" (auto)
+11-03 08:15:50.960  load done song-62659: 9685 KB in 220645 ms
+11-03 08:15:51.097  load start song-62667
+11-03 08:15:51.862  stream song-62667: answered in 756 ms, first bytes at 762 ms (new connection in 167 ms, no length)
+11-03 08:18:28.946  → item 9 song 62667 "We'll Never Stop (Feat. Connie McKendrick)" (auto)
+11-03 08:19:56.154  load done song-62667: 10257 KB in 245056 ms
+11-03 08:19:56.342  load start song-20241
+11-03 08:19:56.971  stream song-20241: answered in 616 ms, first bytes at 625 ms (new connection in 333 ms, no length)
+11-03 08:22:48.638  → item 10 song 20241 "Fair Play" (auto)
+11-03 08:25:04.177  playWhenReady false (user)
+11-03 08:25:04.181  not playing @135.5s buf +123.6s
+11-03 08:25:38.753  playWhenReady false (headphones disconnected)
+
+== Previous run (9 events) ==
+11-02 17:46:09.698  run started · 1.0.1 (19) · Google Pixel 10, Android 17 (API 37)
+11-02 17:46:09.703  network: available
+11-02 17:46:09.710  → item 3 song 68189 "De Dood Hebben Het Goed III" (new queue)
+11-02 17:46:09.711  state BUFFERING @5.6s buf +0.0s
+11-02 17:46:09.711  queue restored: 4 songs, item 3 at 5.6s
+11-02 17:46:09.728  load start song-68189
+11-02 17:46:09.741  load start song-68189
+11-02 17:46:09.768  state READY @5.6s buf +101.3s
+11-02 17:46:14.852  service destroyed

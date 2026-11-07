@@ -676,3 +676,19 @@ a new step 15, "Testing and fixes", which is now the end of phase 1.
   week produces fixes of its own (1.0.x) that deserve a step to be logged in.
 
 **Why.** Erez: "We are done with 1.0, now it's testing and fixes."
+
+## D39 · 2026-11-01 · Two bugs found in the week become steps 16 and 17
+
+**Decision.** The doubled plays in Ampache's history (step 16) and the Now
+Playing queue not opening at the current song (step 17) get steps of their
+own. Step 15 keeps the week of use and the watch list.
+
+**Rejected.**
+- Logging them as watch-list items in 15: both are proven bugs with a
+  known fix path, not peculiarities awaiting evidence.
+- One "fixes" bucket in 15: it would close only when both are built and run
+  on the phone, which delays the end of the week for reasons unrelated to it.
+
+**Why.** Erez asked for the notes to become tasks; the project's rule is one
+file per piece of work with its own acceptance criteria.
+
