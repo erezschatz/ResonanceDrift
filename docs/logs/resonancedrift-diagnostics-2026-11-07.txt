@@ -1,0 +1,68 @@
+ResonanceDrift diagnostics
+1.0.2 (20)
+Google Pixel 10, Android 17 (API 37)
+copied 2026-11-07T15:59:15.278896+02:00[Asia/Jerusalem]
+player: READY, playing, playWhenReady true, item 4/11 song 11360, at 23 s, buffered to 210 s
+
+== This run (13 events) ==
+11-07 15:59:00.197  run started · 1.0.2 (20) · Google Pixel 10, Android 17 (API 37)
+11-07 15:59:00.210  network: available
+11-07 15:59:00.217  session: handshake (stored token expired)
+11-07 15:59:01.668  → item 4 song 11360 "Lost Dreams" (new queue)
+11-07 15:59:01.672  state BUFFERING @11.3s buf +0.0s
+11-07 15:59:01.672  queue restored: 11 songs, item 4 at 11.3s
+11-07 15:59:01.687  load start song-11360
+11-07 15:59:01.750  load canceled song-11360: 726 KB in 74 ms
+11-07 15:59:01.750  load start song-11360
+11-07 15:59:01.827  state READY @11.3s buf +73.4s
+11-07 15:59:02.029  stream song-11360: answered in 161 ms, first bytes at 170 ms (reused connection, no length)
+11-07 15:59:02.749  playWhenReady true (user)
+11-07 15:59:02.751  playing @11.3s buf +116.5s
+
+== Previous run (46 events) ==
+11-07 10:11:40.627  run started · 1.0.2 (20) · Google Pixel 10, Android 17 (API 37)
+11-07 10:11:40.643  network: available
+11-07 10:11:40.665  → item 6 song 59490 "Die Happy" (new queue)
+11-07 10:11:40.668  state BUFFERING @290.6s buf +0.0s
+11-07 10:11:40.668  queue restored: 15 songs, item 6 at 290.6s, shuffle on
+11-07 10:11:40.670  shuffle: on, continuing after the current queue
+11-07 10:11:40.682  load start song-59490
+11-07 10:11:40.786  load canceled song-59490: 227 KB in 110 ms
+11-07 10:11:40.787  load start song-59490
+11-07 10:11:40.833  state READY @290.6s buf +57.5s
+11-07 10:11:40.834  load done song-59490: 1792 KB in 53 ms
+11-07 10:11:40.835  load start song-59494
+11-07 10:12:05.200  shuffle: off
+11-07 10:12:05.206  → item 1 song 11368 "Pleasure" (new queue)
+11-07 10:12:05.210  state BUFFERING @0.0s buf +0.0s
+11-07 10:12:05.213  playWhenReady true (user)
+11-07 10:12:05.240  load canceled song-59494: 5122 KB in 24379 ms
+11-07 10:12:05.287  load start song-11368
+11-07 10:12:05.529  stream song-11368: answered in 227 ms, first bytes at 241 ms (reused connection, no length)
+11-07 10:12:06.589  state READY @0.0s buf +5.5s
+11-07 10:12:06.598  playing @0.0s buf +5.5s
+11-07 10:14:31.586  load done song-11368: 8876 KB in 146299 ms
+11-07 10:14:31.720  load start song-11370
+11-07 10:14:32.238  stream song-11370: answered in 497 ms, first bytes at 514 ms (new connection in 269 ms, no length)
+11-07 10:16:51.912  → item 2 song 11370 "I Wish I Didn't Miss You" (auto)
+11-07 10:18:07.209  load done song-11370: 8021 KB in 215489 ms
+11-07 10:18:07.286  load start song-11364
+11-07 10:18:07.929  stream song-11364: answered in 617 ms, first bytes at 638 ms (new connection in 308 ms, no length)
+11-07 10:20:58.166  playWhenReady false (user)
+11-07 10:20:58.169  not playing @246.1s buf +156.9s
+11-07 10:27:38.293  playWhenReady true (user)
+11-07 10:27:38.297  playing @246.3s buf +156.7s
+11-07 10:27:50.690  → item 3 song 11364 "Get Not High, Get Not Low" (auto)
+11-07 10:27:54.104  → item 4 song 11360 "Lost Dreams" (seek/skip)
+11-07 10:27:54.109  state BUFFERING @0.0s buf +0.0s
+11-07 10:27:54.112  not playing @0.0s buf +0.0s
+11-07 10:27:54.133  load canceled song-11364: 5121 KB in 586838 ms
+11-07 10:27:54.139  load start song-11360
+11-07 10:27:54.655  stream song-11360: answered in 526 ms, first bytes at 530 ms (new connection in 269 ms, no length)
+11-07 10:27:55.304  state READY @0.0s buf +11.0s
+11-07 10:27:55.306  playing @0.0s buf +11.0s
+11-07 10:28:06.799  playWhenReady false (user)
+11-07 10:28:06.802  not playing @11.1s buf +172.7s
+11-07 10:28:10.185  playWhenReady false (audio focus lost)
+11-07 10:39:51.235  service destroyed
+11-07 10:39:51.269  load canceled song-11360: 6146 KB in 717129 ms

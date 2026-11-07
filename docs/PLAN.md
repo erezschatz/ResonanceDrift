@@ -25,9 +25,9 @@ result has been run on the phone (not just compiled).
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | done 2026-10-25 (1.14 field test on phone; 1.15 log tweaks) |
 | 13 | [Queue persistence and scrobbling](tasks/13-queue-persistence.md) | done 2026-10-25 (1.16 on phone) |
 | 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | done 2026-10-25 (1.0 release on phone; the week moved to 15, D38) |
-| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (the week on 1.0.1 is done, 2026-10-26 to 11-06, no playback failure; 1.0.2 (20) built 2026-11-07 with the week's fixes, awaiting the phone — `logs/2026-11-07-week-review.md`) |
-| 16 | [Scrobbling: one play per song](tasks/16-scrobble-doubles.md) | in progress (`cache=1` built in 1.0.2, D41; the one-album test on the phone is what remains) |
-| 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | in progress (scroll-in-effect built in 1.0.2, D40; run on the phone is what remains) |
+| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | done 2026-11-07 (the week on 1.0.1, 2026-10-26 to 11-06, no playback failure; 1.0.2 (20) with the week's fixes on the phone, the W7 test passed the same day — `logs/2026-11-07-week-review.md`) |
+| 16 | [Scrobbling: one play per song](tasks/16-scrobble-doubles.md) | done 2026-11-07 (1.0.2 on phone: one album, each song once, the unreached song absent; D41) |
+| 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | done 2026-11-07 (1.0.2 on phone: opens at the current song and follows; D40) |
 
 ## Milestones
 
@@ -38,7 +38,9 @@ result has been run on the phone (not just compiled).
   be left behind at this point if shuffle is not missed.
 - **After 14:** 1.0 — the release build is the one on the phone.
 - **After 15, 16 and 17:** phase 1 complete; the project goes quiet. 16 and
-  17 come out of 15's week (D39) and may be built while it runs.
+  17 come out of 15's week (D39) and may be built while it runs. **Reached
+  2026-11-07.** A step 18 (lists mark the playing song) is proposed in
+  `logs/2026-11-07-week-review.md` and waits on Erez's decision (D31).
 
 ## Not in phase 1
 

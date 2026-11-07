@@ -7,17 +7,20 @@ in its play count; a song I never heard does not appear at all.
 ## Acceptance
 - [x] Cause seen in the server log (2026-11-01); a never-heard song confirmed
       in the history (Lush)
-- [ ] Cause confirmed by a test: one song played from the app, history
-      read before and after (see Test below)
+- [x] Cause confirmed by a test: one song played from the app, history
+      read before and after (see Test below) — the album test on 1.0.2,
+      Erez 2026-11-07
 - [x] The stream URL no longer registers a play; `record_play` (D36) is the
       only source of plays — `cache=1` in `AmpacheUrls.stream`, 1.0.2 (20),
       2026-11-07; proof is the phone test below
-- [ ] A prefetched song that was never reached (the queue was paused or
-      replaced first) leaves no entry
+- [x] A prefetched song that was never reached (the queue was paused or
+      replaced first) leaves no entry — song 3 absent, Erez 2026-11-07
 - [x] Decision entry in `DECISIONS.md` (D41); `AMPACHE.md` and `SPEC.md` say who
       records plays (2026-11-07)
-- [ ] On the phone, one album listened through: each song once in recent
-      plays, with a time near when it was heard, not ~3 min earlier
+- [x] On the phone, one album listened through: each song once in recent
+      plays, with a time near when it was heard, not ~3 min earlier —
+      songs 1 and 2 once each (1.0.2, Erez 2026-11-07); with the stream no
+      longer counted, the one entry is `record_play`'s, sent at the start
 
 ## Observed (2026-10-30, Erez)
 "Recently Played" on equinemusic.com, screenshot 13:03: four of the five

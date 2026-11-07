@@ -6,6 +6,20 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-07 — Step 15 closed: the W7 test passes (1.0.2); phase 1 complete
+- Paused at 11 s of a song still downloading, app swiped away, launched
+  5.5 h later: the handshake for the expired token ran before the restore,
+  the first stream request carried the new token, no 403, no recovery.
+  `logs/resonancedrift-diagnostics-2026-11-07.txt`. Every acceptance
+  criterion of step 15 is ticked; steps 15, 16 and 17 are done, which is the
+  end of phase 1. Step 18 remains a proposal in the week review.
+
+### 2026-11-07 — Steps 16 and 17 verified on the phone (1.0.2)
+- One album played with a pause near the end of song 2: songs 1 and 2 once
+  each in Ampache's recent plays, song 3 absent. Step 16 done.
+- The queue panel opens at the current song and follows auto-advance while
+  open. Step 17 done.
+
 ### 2026-11-07 — The week's fixes · 1.0.2 (20)
 - The queue restore waits for a live session token: `Session.freshLogin()`
   re-handshakes when the stored expiry has passed, before the saved queue is

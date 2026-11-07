@@ -14,10 +14,8 @@ something here needs you. Nothing is due on a schedule.
 - **Say so only if it happens again:** a glitch or jump you can hear (W9), a
   song that takes several seconds to start (W3). Until then both count as
   explained one-offs; if they were corrupt files they would repeat.
-- **W7, no special test:** you already leave the phone paused overnight. The
-  one case to tell Claude about is: paused near the end of a song overnight,
-  then you press play in the morning and it runs into the next song. Copy the
-  diagnostics right after and say so. Claude reads the log.
+- **W7: done.** The 2026-11-07 test passed (paused 10:28, played 15:59, the
+  token renewed before the first stream). Nothing more to do for this step.
 - **One question (W6):** when a pause shows up a fraction of a second after a
   play, was something speaking (a voice prompt, the car, the headset)? An
   answer from memory is enough, or "no idea".
@@ -34,14 +32,16 @@ there item by item.
 - [x] One week of daily use on the release build with no playback failure
       that ReDrift would also not have had (moved from step 14, D38) —
       2026-10-26 to 2026-11-06 on 1.0.1 (19); `logs/2026-11-07-week-review.md`
-- [ ] Any failure found goes through `PlaybackLog` and ends in a fix or a
+- [x] Any failure found goes through `PlaybackLog` and ends in a fix or a
       `DECISIONS.md` entry explaining why it is accepted — the 403 on restore
-      is fixed in 1.0.2 (D40), the connection resets accepted (D40); ticked
-      when 1.0.2 has run the W7 test on the phone
-- [ ] Findings that become work of their own go to their own steps (D39):
+      is fixed in 1.0.2 (D40) and verified on the phone 2026-11-07 (W7 test:
+      5.5 h paused, handshake before the first stream, no 403), the
+      connection resets accepted (D40)
+- [x] Findings that become work of their own go to their own steps (D39):
       scrobbling doubles → [16](16-scrobble-doubles.md), Now Playing queue
-      position → [17](17-now-playing-current-song.md)
-- [ ] ReDrift's home-screen icon removed from the phone (moved from step 14)
+      position → [17](17-now-playing-current-song.md) — both done 2026-11-07
+- [x] ReDrift's home-screen icon removed from the phone (moved from step 14) —
+      long gone; Erez, 2026-11-07
 
 ## How
 - Erez listens as usual and copies diagnostics every couple of hours and
@@ -115,12 +115,21 @@ Status: **watch** (gather evidence), **test** (needs a run on the phone),
   likely a media button sent by the headset or car when a voice prompt
   ends. Ask Erez what was speaking at those times; settled by naming the
   source.
-- **W7 · 403 on the restored queue's next song** — **bug, fixed in 1.0.2 (20)**
-  (D40; `Session.freshLogin()` before the restore, handshakes logged). Test
-  on the phone: pause with the current song not fully downloaded, leave it
-  3+ hours, open the app, press play within a second, let it run past the
-  buffered point; expected a `session: handshake (stored token expired)`
-  line before the first `stream` line, no 403, no `recovery:`. Cause (review
+- **W7 · 403 on the restored queue's next song** — **bug, fixed in 1.0.2 (20),
+  verified 2026-11-07** (D40; `Session.freshLogin()` before the restore,
+  handshakes logged). Test on the phone: pause with the current song not
+  fully downloaded, leave it 3+ hours, open the app, press play within a
+  second, let it run past the buffered point; expected a
+  `session: handshake (stored token expired)` line before the first `stream`
+  line, no 403, no `recovery:`. Result
+  (`logs/resonancedrift-diagnostics-2026-11-07.txt`): paused 10:28:06 at
+  11 s of "Lost Dreams" with 6.1 MB downloaded (the download was cut when
+  the service died at 10:39), app swiped from recents; launched 15:59:00,
+  5.5 h later: `session: handshake (stored token expired)` 20 ms after start
+  and 1.4 s before the restore, the stream request with the new token
+  answered in 161 ms, play pressed 1.1 s after the restore, buffered 73 s
+  from the cache then 210 s from the network by the copy. No 403, no
+  `recovery:`. Closed. Cause (review
   F1, 2026-11-07): the restore builds stream URLs from the stored
   token before the launch handshake has replaced it; 5 of 28 restores lost
   the race, and on 11-06 12:01 the restored song outran its cache, the
@@ -228,6 +237,15 @@ is not only a headset reconnect.
   for a live token (W7); canceled loads, handshakes and failed library fetches
   are logged (W1, W7, W11); `cache=1` on the stream URL (step 16); the queue
   panel scrolls to the current song in an effect (step 17). JVM tests added
-  for `Session.freshLogin`, `isStale`, the URL and the scroll target. Not yet
-  on the phone; Erez installs (release, Run ▶) and runs the W7 test above, the
-  step 16 album test and the step 17 look.
+  for `Session.freshLogin`, `isStale`, the URL and the scroll target.
+  Installed the same day with `./gradlew installRelease` (Studio's variant
+  had drifted back to debug). Same day, Erez: the step 16 album test and the
+  step 17 look both pass; steps 16 and 17 done. The ReDrift icon has been
+  gone since the app started playing music. Pending: the W7 overnight test,
+  then this step closes.
+- 2026-11-07: **the W7 test passed** (15:59, 5.5 h after a pause at 11 s of
+  a song still downloading; details under W7). All acceptance criteria
+  ticked; **step 15 done, phase 1 complete.** Still owed by Erez, from the
+  week review: W13 (what was speaking 11-03 07:32), F4 (double tap), the
+  step 18 decision (highlight only, or ReDrift's collapsed view, D31), task
+  16's open questions.

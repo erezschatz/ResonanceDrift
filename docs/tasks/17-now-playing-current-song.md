@@ -7,14 +7,14 @@ without scrolling.
 ## Acceptance
 - [x] Cause found and written here (see Open) — narrowed, not proven on a
       device; the fix does not depend on it (2026-11-07)
-- [ ] The queue panel opens with the current song in view, on a short queue
-      and on a long one (28 songs, current item 16)
-- [ ] After an auto-advance or a pick while the panel is open, it follows (or
-      knowingly does not; say which in the task) — built to follow: the
-      effect is keyed on the index (1.0.2); confirm on the phone
+- [x] The queue panel opens with the current song in view, on a short queue
+      and on a long one (28 songs, current item 16) — 1.0.2, Erez 2026-11-07
+- [x] After an auto-advance or a pick while the panel is open, it follows (or
+      knowingly does not; say which in the task) — follows; 1.0.2, Erez
+      2026-11-07
 - [x] A test for the scroll target, if it can be written without a device —
       `ui/nowplaying/QueuePanelTest` on `queueScrollTarget` (2026-11-07)
-- [ ] Run on the phone
+- [x] Run on the phone — 1.0.2 (20), 2026-11-07
 
 ## Observed (2026-10-30, Erez)
 The song list on Now Playing opens at the first song of the queue, not at the
