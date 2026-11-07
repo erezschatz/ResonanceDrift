@@ -114,7 +114,7 @@ class AppGraph(private val context: Context) {
     /** Room opens the file on first query, not here. */
     val db: Db = Room.databaseBuilder(appContext, Db::class.java, Db.FILE_NAME).build()
 
-    val library: LibraryRepository = LibraryRepository(session, ampache, db.library(), db.playlistSongs())
+    val library: LibraryRepository = LibraryRepository(session, ampache, db.library(), db.playlistSongs(), log = { playbackLog.log(it) })
 
     val shuffleHistory: ShuffleHistory = ShuffleHistory(db.shuffleHistory())
 

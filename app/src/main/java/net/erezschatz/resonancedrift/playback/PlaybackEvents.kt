@@ -63,6 +63,18 @@ class PlaybackEvents(private val log: PlaybackLog) : AnalyticsListener {
         mediaLoadData: MediaLoadData,
     ) = log.log("load done ${loadEventInfo.dataSpec.key}: ${loadEventInfo.bytesLoaded / 1024} KB in ${loadEventInfo.loadDurationMs} ms")
 
+    /**
+     * A load the player abandoned: a restore re-reading the song head before
+     * seeking to the saved position, a prefetch dropped by a new queue. Without
+     * this line every such load is a `load start` with no end, and its request's
+     * failure (StreamTiming) looks like a silent playback error (task 15, W1).
+     */
+    override fun onLoadCanceled(
+        eventTime: AnalyticsListener.EventTime,
+        loadEventInfo: LoadEventInfo,
+        mediaLoadData: MediaLoadData,
+    ) = log.log("load canceled ${loadEventInfo.dataSpec.key}: ${loadEventInfo.bytesLoaded / 1024} KB in ${loadEventInfo.loadDurationMs} ms")
+
     override fun onLoadError(
         eventTime: AnalyticsListener.EventTime,
         loadEventInfo: LoadEventInfo,

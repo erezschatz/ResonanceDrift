@@ -283,6 +283,11 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   transition when the player is playing, else when play follows — fire and
   forget, failures logged not surfaced. Not counted: the restored song when
   resumed, and a new queue that starts with the song already playing (D36).
+- **The log beyond the player.** `Session` reports every handshake
+  (`session: handshake (why)` and its failure) and `LibraryRepository` every
+  failed fetch (`library: <what> failed (…)`) into `PlaybackLog`, through a
+  `log` callback wired in `AppGraph`, so `ampache/` and `data/` stay
+  independent of `playback/` (D40). `PlaybackEvents` logs canceled loads.
 
 ### Ampache contract (`ampache/`)
 Replicate ReDrift's `AmpacheAPI.js` exactly — it is known to work against the

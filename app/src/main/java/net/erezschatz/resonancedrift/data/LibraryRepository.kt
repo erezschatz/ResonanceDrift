@@ -59,13 +59,28 @@ class LibraryRepository(
     private val client: AmpacheClient,
     private val library: LibraryDao,
     private val playlistSongs: PlaylistSongsDao,
+    /** Failed fetches go to the playback log, wired in AppGraph (task 15, W11); a callback keeps `data/` off `playback/`. */
+    private val log: (String) -> Unit = {},
     private val random: Random = Random.Default,
 ) {
+
+    /** [cacheThenRefresh] with a failed refresh reported to the log as [what]. */
+    private fun <T> cachedList(what: String, cached: Flow<List<T>>, refresh: suspend () -> Unit): Flow<Listing<T>> =
+        cacheThenRefresh(cached, onFailed = { e -> log("library: $what refresh failed (${e.message})") }, refresh = refresh)
+
+    /** Runs [block]; an [AmpacheException] is logged as [what] and rethrown. */
+    private suspend fun <T> logged(what: String, block: suspend () -> T): T =
+        try {
+            block()
+        } catch (e: AmpacheException) {
+            log("library: $what failed (${e.message})")
+            throw e
+        }
 
     // --- Cache-first lists
 
     fun artists(): Flow<Listing<ArtistEntity>> =
-        cacheThenRefresh(library.observeArtists()) {
+        cachedList("artists", library.observeArtists()) {
             val all = AmpacheClient.fetchAllPages { offset, limit ->
                 session.call { server, token -> client.artists(server, token, offset, limit) }
             }
@@ -73,7 +88,7 @@ class LibraryRepository(
         }
 
     fun genres(): Flow<Listing<GenreEntity>> =
-        cacheThenRefresh(library.observeGenres()) {
+        cachedList("genres", library.observeGenres()) {
             val all = AmpacheClient.fetchAllPages { offset, limit ->
                 session.call { server, token -> client.genres(server, token, offset, limit) }
             }
@@ -81,7 +96,7 @@ class LibraryRepository(
         }
 
     fun playlists(): Flow<Listing<PlaylistEntity>> =
-        cacheThenRefresh(library.observePlaylists()) {
+        cachedList("playlists", library.observePlaylists()) {
             val all = AmpacheClient.fetchAllPages { offset, limit ->
                 session.call { server, token -> client.playlists(server, token, offset, limit) }
             }
@@ -89,7 +104,7 @@ class LibraryRepository(
         }
 
     fun artistAlbums(artistId: Long): Flow<Listing<AlbumEntity>> =
-        cacheThenRefresh(library.observeArtistAlbums(artistId)) {
+        cachedList("artist $artistId albums", library.observeArtistAlbums(artistId)) {
             val albums = session.call { server, token -> client.artistAlbums(server, token, artistId) }
             library.replaceArtistAlbums(artistId, albums.map { AlbumEntity.from(it) })
         }
@@ -98,7 +113,7 @@ class LibraryRepository(
     fun album(albumId: Long): Flow<AlbumEntity?> = library.observeAlbum(albumId)
 
     fun albumSongs(albumId: Long): Flow<Listing<SongEntity>> =
-        cacheThenRefresh(library.observeAlbumSongs(albumId)) {
+        cachedList("album $albumId songs", library.observeAlbumSongs(albumId)) {
             val album = session.call { server, token -> client.album(server, token, albumId) }
             val songs = session.call { server, token -> client.albumSongs(server, token, albumId) }
             library.replaceAlbum(AlbumEntity.from(album), songs.map { SongEntity.from(it) })
@@ -114,7 +129,7 @@ class LibraryRepository(
         val cached = playlistSongs.observe(playlistId).map { row ->
             if (row == null) emptyList() else library.songsInOrder(row.songIds)
         }
-        return cacheThenRefresh(cached) {
+        return cachedList("playlist $playlistId songs", cached) {
             for (attempt in 1..PLAYLIST_FETCH_ATTEMPTS) {
                 val versionAtStart = playlistSongs.versionOf(playlistId)
                 val songs = session.call { server, token -> client.playlistSongs(server, token, playlistId) }
@@ -144,7 +159,7 @@ class LibraryRepository(
     suspend fun randomAlbums(count: Int = RANDOM_PAGE_SIZE): List<AlbumEntity> {
         val total = session.currentLogin()?.albumCount ?: 0
         val offset = randomOffset(total, count, random)
-        val albums = session.call { server, token -> client.albums(server, token, offset, count) }
+        val albums = logged("random albums") { session.call { server, token -> client.albums(server, token, offset, count) } }
             .map { AlbumEntity.from(it) }
         library.upsertAlbums(albums)
         return albums
@@ -152,7 +167,7 @@ class LibraryRepository(
 
     /** Genre detail's grid: year, then name (docs/SPEC.md → Scope). */
     suspend fun genreAlbums(genreId: Long): List<AlbumEntity> {
-        val albums = session.call { server, token -> client.genreAlbums(server, token, genreId) }
+        val albums = logged("genre $genreId albums") { session.call { server, token -> client.genreAlbums(server, token, genreId) } }
             .map { AlbumEntity.from(it) }
         library.upsertAlbums(albums)
         return albums.sortedWith(compareBy<AlbumEntity> { it.year }.thenBy(String.CASE_INSENSITIVE_ORDER) { it.name })
@@ -172,7 +187,9 @@ class LibraryRepository(
             library.upsertAlbums(all)
             all.map { it.id }
         } catch (e: AmpacheException) {
-            library.allAlbumIds().ifEmpty { throw e }
+            val cached = library.allAlbumIds()
+            log("library: album pool refresh failed (${e.message}); ${cached.size} cached")
+            cached.ifEmpty { throw e }
         }
 
     /**
@@ -195,6 +212,7 @@ class LibraryRepository(
             library.replaceAlbum(AlbumEntity.from(album), songs)
             songs
         } catch (e: AmpacheException) {
+            log("library: album $albumId for playback failed (${e.message}); using the cache")
             library.albumSongsNow(albumId).ifEmpty { throw e }
         }
 
@@ -211,6 +229,7 @@ class LibraryRepository(
             try {
                 SongEntity.from(session.call { server, token -> client.song(server, token, id) })
             } catch (e: AmpacheException) {
+                log("library: song $id for the restore failed (${e.message})")
                 null
             }
         }
@@ -226,9 +245,9 @@ class LibraryRepository(
      * albums join the album results. One failed query does not fail the rest.
      */
     suspend fun search(query: String): SearchResult = coroutineScope {
-        val byTitle = async { attempt { session.call { server, token -> client.searchAlbums(server, token, "title", query) } } }
-        val byArtist = async { attempt { session.call { server, token -> client.searchAlbums(server, token, "artist", query) } } }
-        val songs = async { attempt { session.call { server, token -> client.searchSongs(server, token, query) } } }
+        val byTitle = async { attempt("search albums by title") { session.call { server, token -> client.searchAlbums(server, token, "title", query) } } }
+        val byArtist = async { attempt("search albums by artist") { session.call { server, token -> client.searchAlbums(server, token, "artist", query) } } }
+        val songs = async { attempt("search songs") { session.call { server, token -> client.searchSongs(server, token, query) } } }
 
         val titleAlbums = byTitle.await()
         val artistAlbums = byArtist.await()
@@ -251,10 +270,11 @@ class LibraryRepository(
     }
 
     /** The block's value, or its AmpacheException as a failure; anything else still throws. */
-    private suspend fun <T> attempt(block: suspend () -> T): Result<T> =
+    private suspend fun <T> attempt(what: String, block: suspend () -> T): Result<T> =
         try {
             Result.success(block())
         } catch (e: AmpacheException) {
+            log("library: $what failed (${e.message})")
             Result.failure(e)
         }
 
@@ -308,7 +328,11 @@ class LibraryRepository(
          * from that: the list is read once more after the refresh, and only
          * then is the refresh reported finished, with those items.
          */
-        fun <T> cacheThenRefresh(cached: Flow<List<T>>, refresh: suspend () -> Unit): Flow<Listing<T>> =
+        fun <T> cacheThenRefresh(
+            cached: Flow<List<T>>,
+            onFailed: (AmpacheException) -> Unit = {},
+            refresh: suspend () -> Unit,
+        ): Flow<Listing<T>> =
             channelFlow {
                 val items = MutableStateFlow<List<T>?>(null)
                 val status = MutableStateFlow<Refresh>(Refresh.Running)
@@ -318,6 +342,7 @@ class LibraryRepository(
                         refresh()
                         Refresh.Done
                     } catch (e: AmpacheException) {
+                        onFailed(e)
                         Refresh.Failed(e)
                     }
                     items.value = cached.first()

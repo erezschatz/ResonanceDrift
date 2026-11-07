@@ -14,6 +14,10 @@ what has not yet been installed on the phone as a numbered version.
   Every handshake is now logged (`session: handshake (why)`). D40, which
   also accepts W2 (the connection reset after long pauses). Tests:
   `freshLogin` and `isStale` in `SessionTest`.
+- The playback log gains the rest of what it could not say in the week:
+  `load canceled` (W1) and `library: <what> failed (…)` for every refresh
+  and fetch (W11). `LibraryRepository` logs through a callback wired in
+  `AppGraph`, like `Session`.
 
 ### 2026-11-07 — The week reviewed in full
 - All sixteen diagnostics copies of 2026-10-26 to 11-06 are in `docs/logs/`

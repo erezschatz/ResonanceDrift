@@ -62,7 +62,9 @@ there item by item.
 Status: **watch** (gather evidence), **test** (needs a run on the phone),
 **address** (real but small; goes in the next 1.0.x build).
 
-- **W1 · Canceled loads are not logged** — address (1.0.2). First seen 2026-10-26.
+- **W1 · Canceled loads are not logged** — fixed in 1.0.2 (20), `load canceled
+  <key>: N KB in X ms`; leaves the list when a restore on the phone shows it.
+  First seen 2026-10-26.
   `PlaybackEvents` has no `onLoadCanceled`, so an abandoned load leaves a
   `load start` with no end: every restore shows `load start` twice for the
   restored song, and prefetches dropped by Next album just stop. Likely
@@ -162,8 +164,10 @@ Status: **watch** (gather evidence), **test** (needs a run on the phone),
   Wi-Fi to mobile handover, which the log does not show. Note it if it
   recurs; the risk is the same delay on a song that has to start now.
 
-- **W11 · Library fetch failure not logged** — address (1.0.2, with W7's
-  handshake logging). First seen 2026-11-01. Albums did not load after a network problem and came back on
+- **W11 · Library fetch failure not logged** — fixed in 1.0.2 (20): `library:
+  <what> failed (…)` on every refresh and API-only fetch, `session: handshake
+  (why)` on every handshake (D40). Leaves the list on the first field log that
+  shows one. First seen 2026-11-01. Albums did not load after a network problem and came back on
   a manual refresh; `PlaybackLog` has only `network: lost/available`. Same
   gap as W7's session renewals: the log has no line for non-playback API
   calls that fail. Fix with W7: log a failed library fetch and each
