@@ -269,9 +269,14 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   last one lands after the service is gone. On service create the saved queue
   is rebuilt — songs from Room, a `song` call for any id not cached, missing
   ones left out — and set as a prepared, **paused** playlist at the saved song
-  and position; shuffle continues after it if the flag was on. No saves until
-  the restore is done (the empty new player would overwrite it); if a screen
-  set a queue meanwhile, the restore is dropped. Logged out: nothing restored.
+  and position; shuffle continues after it if the flag was on. Before the
+  items are set, the service awaits `Session.freshLogin()`: a re-handshake
+  if the stored `session_expire` has passed, so the restore's first stream
+  request (the restored song, or the next song's prefetch, within a second)
+  never carries yesterday's token (D40; the field showed 5 of 28 restores
+  getting a 403 otherwise). No saves until the restore is done (the empty
+  new player would overwrite it); if a screen set a queue meanwhile, the
+  restore is dropped. Logged out: nothing restored.
   Never auto-resume: ReDrift's auto-resume was unreliable after a session
   expiry and startled when it worked; the user taps play (D8).
 - **`record_play`** (`Scrobbler`) is sent once per song start — at its
@@ -396,6 +401,9 @@ Contract enforcement at the boundaries, not a unit/integration/e2e taxonomy.
     when songs are missing.
   - `playback/SongUriResolverTest`: resolves with the current token; a token
     change is reflected on the next resolve without touching items.
+  - `ampache/SessionTest`: `freshLogin` re-handshakes on a stale stored
+    expiry and not otherwise; unreachable keeps the old token; rejected logs
+    out; handshakes reach the log callback.
   - Album-name prefix stripping; genre line formatting (cap at two).
 - **`androidTest/`:** Room DAOs (version-counter semantics on
   `playlist_songs`, 50-cap on `shuffle_history`); a service smoke test that

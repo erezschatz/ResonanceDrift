@@ -35,7 +35,9 @@ there item by item.
       that ReDrift would also not have had (moved from step 14, D38) —
       2026-10-26 to 2026-11-06 on 1.0.1 (19); `logs/2026-11-07-week-review.md`
 - [ ] Any failure found goes through `PlaybackLog` and ends in a fix or a
-      `DECISIONS.md` entry explaining why it is accepted
+      `DECISIONS.md` entry explaining why it is accepted — the 403 on restore
+      is fixed in 1.0.2 (D40), the connection resets accepted (D40); ticked
+      when 1.0.2 has run the W7 test on the phone
 - [ ] Findings that become work of their own go to their own steps (D39):
       scrobbling doubles → [16](16-scrobble-doubles.md), Now Playing queue
       position → [17](17-now-playing-current-song.md)
@@ -71,7 +73,7 @@ Status: **watch** (gather evidence), **test** (needs a run on the phone),
   restores of the week; and on 11-03 17:19:45 a canceled load's DNS failure
   showed as a `stream … failed` with no `load error`, which misleads.
 - **W2 · Stream connection held open across long pauses** — explained
-  2026-11-07, accepted (decision entry due with 1.0.2). First
+  2026-11-07, accepted (D40). Closed. First
   seen 2026-10-26. A song's download runs as long as it plays (buffer is
   ~3 min ahead), so a pause holds the HTTP connection: song-17069 finished
   after 89 min, across lunch, without error. Risk: a server, proxy or
@@ -111,8 +113,13 @@ Status: **watch** (gather evidence), **test** (needs a run on the phone),
   likely a media button sent by the headset or car when a voice prompt
   ends. Ask Erez what was speaking at those times; settled by naming the
   source.
-- **W7 · 403 on the restored queue's next song** — **bug, fix in 1.0.2**
-  (review F1, 2026-11-07): the restore builds stream URLs from the stored
+- **W7 · 403 on the restored queue's next song** — **bug, fixed in 1.0.2 (20)**
+  (D40; `Session.freshLogin()` before the restore, handshakes logged). Test
+  on the phone: pause with the current song not fully downloaded, leave it
+  3+ hours, open the app, press play within a second, let it run past the
+  buffered point; expected a `session: handshake (stored token expired)`
+  line before the first `stream` line, no 403, no `recovery:`. Cause (review
+  F1, 2026-11-07): the restore builds stream URLs from the stored
   token before the launch handshake has replaced it; 5 of 28 restores lost
   the race, and on 11-06 12:01 the restored song outran its cache, the
   player failed and `NetworkRecovery` brought it back in 1.3 s — the only

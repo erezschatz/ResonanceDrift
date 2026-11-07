@@ -67,7 +67,16 @@ class AppGraph(private val context: Context) {
 
     val ampache: AmpacheClient = AmpacheClient(httpClient, json)
 
-    val session: Session = Session(ampache, settings)
+    /**
+     * Written by the service, read by the diagnostics button; files in
+     * filesDir/playback-log. Built before the session and the library, which
+     * report handshakes and failed fetches into it (task 15: W7, W11). A line
+     * logged before the service's run starts lands at the end of the previous
+     * run's file, which is where a reader looks for it anyway.
+     */
+    val playbackLog: PlaybackLog = PlaybackLog(File(appContext.filesDir, "playback-log"))
+
+    val session: Session = Session(ampache, settings, log = { playbackLog.log(it) })
 
     init {
         appScope.launch { session.restore() }
@@ -92,9 +101,6 @@ class AppGraph(private val context: Context) {
 
     /** The UI's MediaController; MainActivity connects it while visible. */
     val playerConnection: PlayerConnection = PlayerConnection(appContext)
-
-    /** Written by the service, read by the diagnostics button; files in filesDir/playback-log. */
-    val playbackLog: PlaybackLog = PlaybackLog(File(appContext.filesDir, "playback-log"))
 
     /** "1.5 (6)" — for the playback log and the diagnostics report. */
     val appVersion: String by lazy {

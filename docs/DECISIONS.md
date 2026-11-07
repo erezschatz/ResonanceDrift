@@ -692,3 +692,51 @@ own. Step 15 keeps the week of use and the watch list.
 **Why.** Erez asked for the notes to become tasks; the project's rule is one
 file per piece of work with its own acceptance criteria.
 
+## D40 · 2026-11-07 · 1.0.2: the restore waits for a live token; connection resets are accepted; logs by callback
+
+**Decision.**
+- `PlaybackService.restoreQueue` awaits `Session.freshLogin()`, which
+  re-handshakes when the stored `session_expire` has passed (or has a minute
+  left), before the saved queue is set on the player. The stored expiry is a
+  lower bound — streams extend the session server-side without the app
+  knowing — so the cost is at most one handshake per launch after an idle
+  hour, which the activity's ping would make anyway. Unreachable server: the
+  stored login as it is (the cache may do; the 403 recovery stays the
+  backstop). Rejected handshake: logged out, nothing restored.
+- The stream connection the server drops during a pause of 8+ minutes
+  (`Connection reset`, three times in the week) is accepted as is: the
+  loader's retry reconnected in under a second with 95–136 s buffered, and
+  nothing was heard. No keep-alive, no pause-time disconnect.
+- `Session` and `LibraryRepository` take a `log: (String) -> Unit`, wired in
+  `AppGraph` to `PlaybackLog`, and report handshakes (`session: handshake
+  (why)`, `… failed`, `… rejected`) and failed fetches (`library: <what>
+  failed (…)`). `PlaybackEvents` logs `load canceled`.
+- `QueuePanel` scrolls to the current song in a `LaunchedEffect` keyed on the
+  index and the queue size, once the list has a viewport, not through
+  `initialFirstVisibleItemIndex`.
+
+**Rejected.**
+- Re-handshaking inside `SongUriResolver` when the token looks expired: it
+  runs on ExoPlayer's loading thread, and a blocking network call there
+  stalls every load behind it.
+- Gating the restore on `MainActivity`'s ping: the service also starts
+  without the activity (a Bluetooth play, the notification), and the race
+  would only move.
+- Checking the token with a `ping` before each restore: one more round trip
+  on every launch, to learn what the stored expiry already says.
+- Closing the stream connection on pause, or a keep-alive while paused, for
+  the resets: machinery for an event the retry already handles unheard.
+- `Session` and `LibraryRepository` depending on `PlaybackLog` directly:
+  `ampache/` and `data/` would import `playback/`, the wrong direction.
+- Keeping `initialFirstVisibleItemIndex` and hunting the first-measure
+  reason on a device: the effect waits for a measured viewport, so it does
+  the job whether or not the sheet is laid out before it is shown, and gives
+  "follows while open" for free.
+
+**Why.** The week's logs (`logs/2026-11-07-week-review.md`, F1–F3, F6): five
+of 28 restores lost the race between the restore's first stream request and
+the launch handshake, and the one that reached the player cost 1.3 s of
+silence; the connection resets and the outage were absorbed by the layers
+built in step 05; and three times the log could not say what had happened
+because handshakes, canceled loads and library fetches were not in it.
+

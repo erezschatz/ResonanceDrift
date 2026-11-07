@@ -7,6 +7,7 @@ import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
+import okhttp3.mockwebserver.SocketPolicy
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -73,6 +74,14 @@ class SessionTest {
         assertTrue("already expired still pings", Session.shouldPing(now, now - minute, lastCheckMillis = 0))
         assertFalse("throttled", Session.shouldPing(now, now + minute, lastCheckMillis = now - 30_000))
         assertTrue(Session.shouldPing(now, now + minute, lastCheckMillis = now - minute))
+    }
+
+    @Test
+    fun `stale means a minute or less of the stored session left`() {
+        val now = 1_000_000L
+        assertTrue(Session.isStale(now, now - 1))
+        assertTrue(Session.isStale(now, now + 60_000))
+        assertFalse(Session.isStale(now, now + 60_001))
     }
 
     // --- login and restore
@@ -267,6 +276,70 @@ class SessionTest {
         assertEquals(3, server.requestCount)
         assertEquals("new", savedLogin().token)
         assertEquals(Session.parseExpiry(EXPIRE), savedLogin().expiresAtMillis)
+    }
+
+    // --- freshLogin (the queue restore, task 15 W7)
+
+    @Test
+    fun `freshLogin re-handshakes when the stored token has run out, and says so in the log`() = runTest {
+        val now = 1_700_000_000_000L
+        val lines = mutableListOf<String>()
+        store.saved = StoredLogin(serverUrl, "demo", "hash", "old", expiresAtMillis = now - 1)
+        server.enqueue(json(handshakeBody("new")))
+        val session = Session(client, store, clock = { now }, log = { lines.add(it) })
+        session.restore()
+
+        val login = session.freshLogin()
+
+        assertEquals("new", login?.token)
+        assertEquals("handshake", takeUrl().queryParameter("action"))
+        assertEquals("new", savedLogin().token)
+        assertEquals(listOf("session: handshake (stored token expired)"), lines)
+    }
+
+    @Test
+    fun `freshLogin returns the stored login without a request while it has over a minute left`() = runTest {
+        val now = 1_700_000_000_000L
+        store.saved = StoredLogin(serverUrl, "demo", "hash", "tok", expiresAtMillis = now + 2 * 60_000)
+        val session = Session(client, store, clock = { now })
+        session.restore()
+
+        assertEquals("tok", session.freshLogin()?.token)
+        assertEquals(0, server.requestCount)
+    }
+
+    @Test
+    fun `freshLogin with the server unreachable keeps the stored login and logs the failure`() = runTest {
+        val now = 1_700_000_000_000L
+        val lines = mutableListOf<String>()
+        store.saved = StoredLogin(serverUrl, "demo", "hash", "old", expiresAtMillis = now - 1)
+        server.enqueue(MockResponse().setSocketPolicy(SocketPolicy.DISCONNECT_AT_START))
+        val session = Session(client, store, clock = { now }, log = { lines.add(it) })
+        session.restore()
+
+        assertEquals("old", session.freshLogin()?.token)
+        assertEquals(2, lines.size)
+        assertEquals("session: handshake (stored token expired)", lines[0])
+        assertTrue(lines[1], lines[1].startsWith("session: handshake failed ("))
+    }
+
+    @Test
+    fun `freshLogin with a rejected handshake is null and the user is logged out`() = runTest {
+        val now = 1_700_000_000_000L
+        store.saved = StoredLogin(serverUrl, "demo", "hash", "old", expiresAtMillis = now - 1)
+        server.enqueue(json("""{"error":{"errorCode":"4701","errorMessage":"Received Invalid Handshake - Incorrect username or password"}}"""))
+        val session = Session(client, store, clock = { now })
+        session.restore()
+
+        assertNull(session.freshLogin())
+        assertEquals(SessionState.LoggedOut(serverUrl, "demo"), session.state.value)
+    }
+
+    @Test
+    fun `freshLogin logged out is null`() = runTest {
+        val session = Session(client, store)
+        session.restore()
+        assertNull(session.freshLogin())
     }
 
     // --- helpers

@@ -6,6 +6,15 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-07 — The week's fixes · 1.0.2 (20)
+- The queue restore waits for a live session token: `Session.freshLogin()`
+  re-handshakes when the stored expiry has passed, before the saved queue is
+  set, so the first stream request of a run no longer carries yesterday's
+  token (step 15 W7; 5 of 28 restores in the week got a 403, one audibly).
+  Every handshake is now logged (`session: handshake (why)`). D40, which
+  also accepts W2 (the connection reset after long pauses). Tests:
+  `freshLogin` and `isStale` in `SessionTest`.
+
 ### 2026-11-07 — The week reviewed in full
 - All sixteen diagnostics copies of 2026-10-26 to 11-06 are in `docs/logs/`
   (thirteen added), with a review and plan (`2026-11-07-week-review.md`):

@@ -102,8 +102,10 @@ class PlaybackService : MediaSessionService() {
     /** Yesterday's queue, paused at its song and position (D8); shuffle carries on after it if it was on. */
     private suspend fun restoreQueue(persistence: QueuePersistence, scrobbler: Scrobbler) {
         val restored = persistence.restore { songIds ->
-            // Logged out: nothing to stream with, so nothing to restore.
-            val login = graph.session.awaitLogin() ?: return@restore emptyList()
+            // A live token first (W7): the restored song's own stream, or the next
+            // song's prefetch, leaves within a second of this and must not carry
+            // yesterday's token. Logged out: nothing to stream with, nothing to restore.
+            val login = graph.session.freshLogin() ?: return@restore emptyList()
             graph.library.songsForQueue(songIds).map { MediaItems.fromSong(it.toSong(), login) }
         } ?: return
         scrobbler.skipCurrent()

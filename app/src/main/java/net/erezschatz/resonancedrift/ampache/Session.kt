@@ -64,6 +64,11 @@ class Session(
     private val client: AmpacheClient,
     private val store: CredentialStore,
     private val clock: () -> Long = System::currentTimeMillis,
+    /**
+     * Where handshakes are reported: the playback log, wired in AppGraph. A
+     * callback, so `ampache/` does not depend on `playback/` (task 15, W7/W11).
+     */
+    private val log: (String) -> Unit = {},
 ) {
     private val _state = MutableStateFlow<SessionState>(SessionState.Unknown)
     val state: StateFlow<SessionState> = _state.asStateFlow()
@@ -127,7 +132,7 @@ class Session(
         return try {
             block(before.serverUrl, before.token)
         } catch (e: AmpacheException.SessionExpired) {
-            val after = reauthenticate(before.token)
+            val after = reauthenticate(before.token, "token rejected")
             block(after.serverUrl, after.token)
         }
     }
@@ -163,7 +168,30 @@ class Session(
     suspend fun renewToken() {
         restored.await()
         val current = login ?: throw AmpacheException.SessionExpired()
-        reauthenticate(current.token)
+        reauthenticate(current.token, "stream refused")
+    }
+
+    /**
+     * The login with a token that has not run out by its stored expiry; a
+     * re-handshake first when it has. For the service's queue restore (task
+     * 15, W7): its first stream request left with the stored token while the
+     * activity's ping was still replacing it, and 5 of 28 restores in the
+     * field got a 403. The stored expiry is a lower bound (every stream
+     * extends the session server-side without telling the app), so this
+     * handshakes at most once per launch after an idle hour — a request the
+     * activity's ping would make anyway. Unreachable server: the stored login
+     * as it is; the cache may do, and the 403 recovery stays the backstop.
+     */
+    suspend fun freshLogin(): StoredLogin? {
+        restored.await()
+        val current = login ?: return null
+        if (!isStale(clock(), current.expiresAtMillis)) return current
+        return try {
+            reauthenticate(current.token, "stored token expired")
+        } catch (e: AmpacheException) {
+            // A rejected handshake has logged out (login is null); otherwise keep what we have.
+            login
+        }
     }
 
     /** The token for building stream URLs at request time (SongUriResolver, task 04). */
@@ -175,19 +203,24 @@ class Session(
         return login
     }
 
-    private suspend fun reauthenticate(deadToken: String): StoredLogin = reauthLock.withLock {
+    private suspend fun reauthenticate(deadToken: String, why: String): StoredLogin = reauthLock.withLock {
         val current = login ?: throw AmpacheException.SessionExpired()
         // Another caller already replaced the token while we waited for the lock.
         if (current.token != deadToken) return current
 
+        log("session: handshake ($why)")
         val handshake = try {
             client.handshake(current.serverUrl, current.username, current.passwordHash)
         } catch (e: AmpacheException.ServerError) {
             // The stored hash was rejected: the password changed on the server.
             // Keep server and username so the auth screen is prefilled.
+            log("session: handshake rejected, logged out (${e.message})")
             store.clearSecrets()
             login = null
             _state.value = SessionState.LoggedOut(current.serverUrl, current.username)
+            throw e
+        } catch (e: AmpacheException) {
+            log("session: handshake failed (${e.message})")
             throw e
         }
         val fresh = current.copy(
@@ -203,6 +236,12 @@ class Session(
     companion object {
         const val PING_WHEN_REMAINING_UNDER_MILLIS = 20 * 60 * 1000L
         const val PING_CHECK_THROTTLE_MILLIS = 60 * 1000L
+
+        /** [freshLogin] re-handshakes with this much (or less) of the stored session left. */
+        const val STALE_WITHIN_MILLIS = 60 * 1000L
+
+        fun isStale(nowMillis: Long, expiresAtMillis: Long): Boolean =
+            expiresAtMillis - nowMillis <= STALE_WITHIN_MILLIS
 
         fun shouldPing(nowMillis: Long, expiresAtMillis: Long, lastCheckMillis: Long): Boolean {
             if (nowMillis - lastCheckMillis < PING_CHECK_THROTTLE_MILLIS) return false
