@@ -25,9 +25,9 @@ result has been run on the phone (not just compiled).
 | 12 | [Album shuffle](tasks/12-album-shuffle.md) | done 2026-10-25 (1.14 field test on phone; 1.15 log tweaks) |
 | 13 | [Queue persistence and scrobbling](tasks/13-queue-persistence.md) | done 2026-10-25 (1.16 on phone) |
 | 14 | [Release build and phase-1 sign-off](tasks/14-release.md) | done 2026-10-25 (1.0 release on phone; the week moved to 15, D38) |
-| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (the week on 1.0.1 is done, 2026-10-26 to 11-06, no playback failure; closes when 1.0.2 is on the phone — `logs/2026-11-07-week-review.md`) |
+| 15 | [Testing and fixes](tasks/15-testing-and-fixes.md) | in progress (the week on 1.0.1 is done, 2026-10-26 to 11-06, no playback failure; 1.0.2 (20) built 2026-11-07 with the week's fixes, awaiting the phone — `logs/2026-11-07-week-review.md`) |
 | 16 | [Scrobbling: one play per song](tasks/16-scrobble-doubles.md) | in progress (`cache=1` built in 1.0.2, D41; the one-album test on the phone is what remains) |
-| 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | todo (cause open) |
+| 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | in progress (scroll-in-effect built in 1.0.2, D40; run on the phone is what remains) |
 
 ## Milestones
 

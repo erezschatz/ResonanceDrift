@@ -413,6 +413,7 @@ Contract enforcement at the boundaries, not a unit/integration/e2e taxonomy.
   - `ampache/SessionTest`: `freshLogin` re-handshakes on a stale stored
     expiry and not otherwise; unreachable keeps the old token; rejected logs
     out; handshakes reach the log callback.
+  - `ui/nowplaying/QueuePanelTest`: the queue panel's scroll target.
   - Album-name prefix stripping; genre line formatting (cap at two).
 - **`androidTest/`:** Room DAOs (version-counter semantics on
   `playlist_songs`, 50-cap on `shuffle_history`); a service smoke test that

@@ -224,3 +224,10 @@ is not only a headset reconnect.
   the W7 fix, the logging gaps (W1, W7, W11), step 16 and step 17; a new
   step 18 for Erez's 11-03 request (lists mark the playing song). Nothing
   built; decisions in the review's Plan section.
+- 2026-11-07: **1.0.2 (20) built**, four changes (D40, D41): the restore waits
+  for a live token (W7); canceled loads, handshakes and failed library fetches
+  are logged (W1, W7, W11); `cache=1` on the stream URL (step 16); the queue
+  panel scrolls to the current song in an effect (step 17). JVM tests added
+  for `Session.freshLogin`, `isStale`, the URL and the scroll target. Not yet
+  on the phone; Erez installs (release, Run ▶) and runs the W7 test above, the
+  step 16 album test and the step 17 look.

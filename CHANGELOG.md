@@ -22,6 +22,10 @@ what has not yet been installed on the phone as a numbered version.
   the prefetch as a play; `record_play` is the only source of plays. D41.
   Ampache's "now playing" box no longer shows the app's streams (accepted).
   Tests: `AmpacheUrlsTest`, `SongUriResolverTest`.
+- Step 17: the Now Playing queue panel scrolls to the current song in a
+  `LaunchedEffect` once the list has a viewport, and follows auto-advance
+  and picks while open. `QueuePanelTest`. Not yet on the phone: Erez
+  installs and runs the W7, step 16 and step 17 tests.
 
 ### 2026-11-07 — The week reviewed in full
 - All sixteen diagnostics copies of 2026-10-26 to 11-06 are in `docs/logs/`
