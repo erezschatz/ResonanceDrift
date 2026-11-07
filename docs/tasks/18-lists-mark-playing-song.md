@@ -6,23 +6,29 @@ song highlighted, in the middle of the screen. The app feels like one piece:
 every list knows what the player is doing.
 
 ## Acceptance
-- [ ] Album detail and playlist detail highlight the row whose song is the
+- [x] Album detail and playlist detail highlight the row whose song is the
       player's current item, the way the queue panel does; the highlight
-      moves when the song changes while the screen is open
-- [ ] On opening either screen with the current song in its list, the list is
+      moves when the song changes while the screen is open — both screens,
+      1.0.3 on the phone, Erez 2026-11-07
+- [x] On opening either screen with the current song in its list, the list is
       scrolled so that row sits in the middle of the viewport (not the top);
-      a list whose current song is already in view does not jump
-- [ ] The list does not scroll by itself after that: an auto-advance while
-      the screen is open moves the highlight only (D42)
-- [ ] Matching is by song id, not by queue: an album reached from a shuffle
-      queue, or a song in several playlists, is marked wherever it appears
+      a list whose current song is already in view does not jump — both
+      screens, 1.0.3 on the phone, Erez 2026-11-07
+- [x] The list does not scroll by itself after that: an auto-advance while
+      the screen is open moves the highlight only (D42) — Erez, 2026-11-07
+- [x] Matching is by song id, not by queue: an album reached from a shuffle
+      queue, or a song in several playlists, is marked wherever it appears —
+      by construction (`playingRowIndex` on the song id, `PlayingSongTest`);
+      the phone run covered an album and a playlist
 - [x] A JVM test for the pure parts (which row, what scroll offset centres
       it), as `QueuePanelTest` does for the queue panel —
       `ui/components/PlayingSongTest` (2026-11-07)
-- [ ] Run on the phone: an album mid-play opened from Albums and from the
+- [x] Run on the phone: an album mid-play opened from Albums and from the
       Now Playing links; a long playlist (hundreds of songs) with the current
       song deep inside it; an album with nothing of it playing (no highlight,
-      no scroll)
+      no scroll) — 1.0.3 (21), Erez 2026-11-07: album and playlist both
+      land, the list stays put on an auto-advance, an unrelated album shows
+      no mark
 
 ## Observed (2026-11-03, Erez; review 2026-11-07, F4 and the UI note)
 The playlist view does not show which song is playing; after twenty minutes
@@ -57,3 +63,9 @@ a playlist row's ⋮ button.
 - 2026-11-07: opened from the week review's proposal and Erez's decision
   (D42). Built the same day as 1.0.3 (21): helper, view-model flows, the two
   screens, four JVM tests (148 pass). Awaiting the phone.
+- 2026-11-07: 1.0.3 (21) on the phone (install slow after a power failure,
+  nothing to do with the app). Erez: album and playlist "both landed" — the
+  playing song highlighted and centred on opening, on both screens. No
+  flicker reported. Left to confirm: the list stays put on an auto-advance,
+  and an album with nothing of it playing shows no mark.
+- 2026-11-07: both confirmed by Erez. **Step 18 done.**

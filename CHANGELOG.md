@@ -6,6 +6,12 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-07 — Step 18 verified on the phone (1.0.3); nothing left planned
+- Album detail and playlist detail both open with the playing song
+  highlighted mid-screen; the list stays put on an auto-advance; an album
+  with nothing of it playing shows no mark. Step 18 done. The plan has no
+  open step.
+
 ### 2026-11-07 — Lists mark the playing song · 1.0.3 (21)
 - Step 18: album detail and playlist detail highlight the row of the song
   the player is on, by song id, and scroll it to the middle of the screen
