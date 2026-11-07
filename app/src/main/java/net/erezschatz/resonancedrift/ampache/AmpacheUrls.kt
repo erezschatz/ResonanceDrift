@@ -42,13 +42,18 @@ object AmpacheUrls {
     }
 
     /**
-     * `<server>/play/index.php?ssid=<token>&type=song&oid=<songId>&format=raw`.
-     * Concatenated, not built, exactly as ReDrift's getStreamUrl() did: the
-     * token is hex and the id a number, so nothing needs encoding. `format=raw`
-     * asks for the original file — no server-side transcoding.
+     * `<server>/play/index.php?ssid=<token>&type=song&oid=<songId>&format=raw&cache=1`.
+     * Concatenated, not built, as ReDrift's getStreamUrl() did: the token is
+     * hex and the id a number, so nothing needs encoding. `format=raw` asks
+     * for the original file — no server-side transcoding. `cache=1` is the
+     * one addition over ReDrift: it tells Ampache's PlayAction not to count
+     * the request as a play. The app opens a song's stream when it prefetches
+     * it, minutes before it is heard or never; `record_play` is the single
+     * source of plays (D36, D41; task 16). The flag also keeps the stream out
+     * of Ampache's "now playing" box, which is the accepted price.
      */
     fun stream(server: String, token: String, songId: Long): String =
-        "$server/play/index.php?ssid=$token&type=song&oid=$songId&format=raw"
+        "$server/play/index.php?ssid=$token&type=song&oid=$songId&format=raw&cache=1"
 
     /**
      * Album art through the API's `get_art` action, so it carries `auth` like

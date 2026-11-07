@@ -18,6 +18,10 @@ what has not yet been installed on the phone as a numbered version.
   `load canceled` (W1) and `library: <what> failed (…)` for every refresh
   and fetch (W11). `LibraryRepository` logs through a callback wired in
   `AppGraph`, like `Session`.
+- Step 16: the stream URL carries `cache=1`, so the server stops counting
+  the prefetch as a play; `record_play` is the only source of plays. D41.
+  Ampache's "now playing" box no longer shows the app's streams (accepted).
+  Tests: `AmpacheUrlsTest`, `SongUriResolverTest`.
 
 ### 2026-11-07 — The week reviewed in full
 - All sixteen diagnostics copies of 2026-10-26 to 11-06 are in `docs/logs/`

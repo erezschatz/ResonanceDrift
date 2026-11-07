@@ -740,3 +740,25 @@ silence; the connection resets and the outage were absorbed by the layers
 built in step 05; and three times the log could not say what had happened
 because handshakes, canceled loads and library fetches were not in it.
 
+## D41 · 2026-11-07 · The stream URL carries `cache=1`; `record_play` is the only play
+
+**Decision.** `AmpacheUrls.stream` appends `&cache=1`. Ampache's `PlayAction`
+then sets `record_stats = false` for the request: no "Registering stream",
+no `set_played`, no `save_mediaplay`, and no `insert_now_playing` either.
+Plays reach the server through `record_play` alone (D36). The cache key is
+the song id, so songs cached under the old URL stay valid.
+
+**Rejected.**
+- Dropping `record_play` and letting the stream count: it registers at
+  prefetch time (~3 min early), counts songs never reached, and misses songs
+  replayed from the cache.
+- Starting prefetches from byte 1 (the server skips stats when the Range does
+  not start at 0): a hack on the data source for what a documented flag does.
+- Keeping the "now playing" box: it would need `cache` off, which brings the
+  double back. The box is not used; the history and the counts are.
+
+**Why.** Task 16: every song appeared twice in the history and songs never
+heard appeared once, because the server counted the prefetch stream. The
+server tracks Ampache's develop branch (its AutoUpdate compares against
+`commits/develop`), where `cache` is read in one place (read 2026-11-07).
+The proof is the test in task 16, on the phone.

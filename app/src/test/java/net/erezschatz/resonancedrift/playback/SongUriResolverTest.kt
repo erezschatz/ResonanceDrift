@@ -15,7 +15,7 @@ class SongUriResolverTest {
     @Test
     fun `song uri resolves to the stream url with the current token`() {
         assertEquals(
-            "https://music.example.com/play/index.php?ssid=token-1&type=song&oid=58397&format=raw",
+            "https://music.example.com/play/index.php?ssid=token-1&type=song&oid=58397&format=raw&cache=1",
             resolver.streamUrl("rd://song/58397"),
         )
     }
@@ -26,7 +26,7 @@ class SongUriResolverTest {
         resolver.streamUrl(uri)
         login = login?.copy(token = "token-2")
         assertEquals(
-            "https://music.example.com/play/index.php?ssid=token-2&type=song&oid=58397&format=raw",
+            "https://music.example.com/play/index.php?ssid=token-2&type=song&oid=58397&format=raw&cache=1",
             resolver.streamUrl(uri),
         )
     }

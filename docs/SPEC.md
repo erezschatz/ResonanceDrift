@@ -222,6 +222,8 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   across sessions. It also clears ExoPlayer's `FLAG_DONT_CACHE_IF_LENGTH_UNKNOWN`:
   the OkHttp source knows a length only from `Content-Length`, and without
   this a stream lacking that header is never cached (D34). This replaces ReDrift's `token-refreshed` URL rewriting.
+  The URL carries `cache=1`, so the server does not count the request as a
+  play (D41): plays are `record_play`'s alone.
 - **`AlbumShuffle`** is a `Player.Listener` living in the service. When shuffle
   mode is on and the current item is the last-but-one (or last) in the
   playlist, it picks the next album (pool minus 50-album history), fetches its
@@ -283,6 +285,8 @@ says. If the Activity is killed, playback and album shuffle are unaffected.
   transition when the player is playing, else when play follows — fire and
   forget, failures logged not surfaced. Not counted: the restored song when
   resumed, and a new queue that starts with the song already playing (D36).
+  It is the only source of plays: the stream URL's `cache=1` keeps the
+  server from counting the prefetch (D41).
 - **The log beyond the player.** `Session` reports every handshake
   (`session: handshake (why)` and its failure) and `LibraryRepository` every
   failed fetch (`library: <what> failed (…)`) into `PlaybackLog`, through a

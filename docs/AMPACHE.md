@@ -11,7 +11,7 @@ https://ampache.org/api/api-json-methods/ (Ampache 6).
 | What | URL |
 |---|---|
 | API | `<server>/server/json.server.php?action=<action>&auth=<token>&<params>` |
-| Stream | `<server>/play/index.php?ssid=<token>&type=song&oid=<songId>&format=raw` |
+| Stream | `<server>/play/index.php?ssid=<token>&type=song&oid=<songId>&format=raw&cache=1` — `cache=1` stops the server counting the request as a play (it also keeps it out of its "now playing" box); plays come from `record_play` only (D41) |
 | Art | API action `get_art` with `id=<albumId>&type=album&size=<px>` (so it carries `auth` like any other call) |
 
 `<server>` is the user-entered URL with any trailing `/` removed. Everything is
@@ -81,7 +81,7 @@ larger value is silently capped, so page until a short page comes back).
 | `playlist_songs` | `filter=playlistId` | `song[]` | 2000+ rows is normal |
 | `playlist_remove_song` | `filter=playlistId`, `song=songId` | success envelope | Only write call in the app |
 | `song` | `filter=id` | `song` / `song[]` | Also where `lyrics` would be (phase 2 check) |
-| `record_play` | `id=songId`, `client=ResonanceDrift` | success envelope | Fire and forget, once per song start |
+| `record_play` | `id=songId`, `client=ResonanceDrift` | success envelope | Fire and forget, once per song start. The **only** source of plays: the stream URL carries `cache=1` so `PlayAction` records nothing (D41) |
 | `advanced_search` | see below | `album[]` or `song[]` | |
 
 ### advanced_search
@@ -153,7 +153,13 @@ Captured from the real server; these override anything above that disagrees.
 - A bad token gives `errorCode "4701"`, `errorType "account"`,
   `errorMessage "Session Expired"`.
 - The server's own song `url` carries extra params (`uid`, `player`, `name`);
-  we still build ReDrift's shorter stream URL ourselves.
+  we still build ReDrift's shorter stream URL ourselves, plus `cache=1`.
+- `PlayAction` registers a play on any stream request whose Range starts at
+  byte 0 unless `cache=1` is set (develop branch, read 2026-11-07). The app
+  prefetches the next song ~3 min before it is heard, so without the flag
+  every song was counted twice and never-reached songs once (task 16).
+- The server tracks Ampache's develop branch (its AutoUpdate compares
+  against `commits/develop`); the API still answers as `6.x`.
 
 ## Fixtures
 

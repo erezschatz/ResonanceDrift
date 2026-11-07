@@ -46,12 +46,13 @@ class AmpacheUrlsTest {
     }
 
     // Expected strings are what ReDrift's getStreamUrl() / getArtUrl() return
-    // for the same inputs (string concatenation and URLSearchParams, respectively).
+    // for the same inputs (string concatenation and URLSearchParams, respectively),
+    // plus `cache=1` on the stream (D41: the server must not count a prefetch as a play).
 
     @Test
-    fun `stream url matches ReDrift byte for byte`() {
+    fun `stream url is ReDrift's plus cache=1`() {
         assertEquals(
-            "https://music.example.com/play/index.php?ssid=abc123&type=song&oid=9876&format=raw",
+            "https://music.example.com/play/index.php?ssid=abc123&type=song&oid=9876&format=raw&cache=1",
             AmpacheUrls.stream("https://music.example.com", "abc123", 9876),
         )
     }
@@ -59,7 +60,7 @@ class AmpacheUrlsTest {
     @Test
     fun `stream url keeps a server installed under a path`() {
         assertEquals(
-            "https://example.com/ampache/play/index.php?ssid=t&type=song&oid=1&format=raw",
+            "https://example.com/ampache/play/index.php?ssid=t&type=song&oid=1&format=raw&cache=1",
             AmpacheUrls.stream("https://example.com/ampache", "t", 1),
         )
     }

@@ -9,12 +9,13 @@ in its play count; a song I never heard does not appear at all.
       in the history (Lush)
 - [ ] Cause confirmed by a test: one song played from the app, history
       read before and after (see Test below)
-- [ ] The stream URL no longer registers a play; `record_play` (D36) is the
-      only source of plays
+- [x] The stream URL no longer registers a play; `record_play` (D36) is the
+      only source of plays — `cache=1` in `AmpacheUrls.stream`, 1.0.2 (20),
+      2026-11-07; proof is the phone test below
 - [ ] A prefetched song that was never reached (the queue was paused or
       replaced first) leaves no entry
-- [ ] Decision entry in `DECISIONS.md`; `AMPACHE.md` and `SPEC.md` say who
-      records plays
+- [x] Decision entry in `DECISIONS.md` (D41); `AMPACHE.md` and `SPEC.md` say who
+      records plays (2026-11-07)
 - [ ] On the phone, one album listened through: each song once in recent
       plays, with a time near when it was heard, not ~3 min earlier
 
@@ -66,16 +67,19 @@ and the log shows Lush never started (paused during Too Many Man, 12:43:46).
 Why Are You Ready? shows once: not explained by the log. Likeliest the
 screenshot cut off the oldest entry; unverified.
 
-## Fix (proposed)
-Ampache's `PlayAction` (develop branch, read 2026-11-01) skips stats when the
-request has `cache=1`; no other parameter does. Append `&cache=1` in
-`AmpacheUrls.stream` (`ampache/AmpacheUrls.kt:50`). The cache key is a custom
-`song-<id>` (`playback/MediaItems.kt:105`), so existing cached songs stay valid.
-`record_play` then stays the single source (D36).
+## Fix (built 2026-11-07, 1.0.2 (20), D41)
+Ampache's `PlayAction` (develop branch, read 2026-11-01 and again 2026-11-07)
+sets `record_stats = false` when the request has `cache=1`; no other
+parameter does. `&cache=1` is appended in `AmpacheUrls.stream`. The cache key
+is a custom `song-<id>` (`playback/MediaItems.kt`), so existing cached songs
+stay valid. `record_play` is the single source (D36).
 
-**Check before building:** that Erez's server version honours `cache=1` (the
-parameter is read from the develop branch, not from the server he runs), and
-that it does not hide the song from "now playing".
+**Checked before building (2026-11-07):** the server tracks the develop
+branch — its AutoUpdate compares against `commits/develop` in the 10-30 log —
+so the parameter is read on Erez's server. `record_stats` also gates
+`Stream::insert_now_playing`, so the app's streams **do** disappear from
+Ampache's "Now playing" box; accepted in D41 (the history and the counts are
+what is used). `record_play` is the API and is unaffected.
 
 **Rejected (proposed).** Dropping `record_play` and letting the stream count:
 it registers at prefetch time, counts songs never reached, and misses songs
