@@ -33,7 +33,9 @@ Feature parity with ReDrift v5.13 **plus** ReDrift's TODO steps 1, 2 and 4:
 - **Genres → Genre detail** (albums grid sorted by year, then name; no "Play all", D30)
 - Playlists → Playlist detail (large lists, full list, remove song from
   playlist via each row's ⋮ menu; not on smart playlists). Light by choice
-  (D31): no collapsed "now playing / next up" view.
+  (D31): no collapsed "now playing / next up" view; instead the song that is
+  playing is highlighted in album and playlist lists and centred when the
+  screen opens (step 18, D42).
 - Search: albums by title, albums by artist, albums containing a matching song,
   **and songs by title** (songs section under the albums grid). Three parallel
   requests; each section degrades on its own; the query survives tab switches.
@@ -374,6 +376,14 @@ real server.
   Playing's play/pause shows a spinner; tapping it pauses.
   Every pushed screen gets its own id, so the same route can be on the stack
   twice (album → its artist → the album again) with separate state.
+- Lists mark the playing song (step 18, D42): album detail and playlist
+  detail paint the row whose song id is the player's current media id with
+  `primaryContainer`, like the queue panel, and `ScrollToPlayingRowOnce`
+  (`ui/components/PlayingSong.kt`) centres that row once, when the screen
+  opens with the songs loaded. The highlight follows the player; the scroll
+  does not, and it is skipped when the row is already in view or the user
+  has scrolled. The match is by song id, so it holds whatever queue the song
+  plays from.
 - Browse (step 08): tapping an album card opens Album detail; tapping a
   track there plays the album from it and opens Now Playing. Album detail's
   artist name opens Artist detail.
@@ -414,6 +424,8 @@ Contract enforcement at the boundaries, not a unit/integration/e2e taxonomy.
     expiry and not otherwise; unreachable keeps the old token; rejected logs
     out; handshakes reach the log callback.
   - `ui/nowplaying/QueuePanelTest`: the queue panel's scroll target.
+  - `ui/components/PlayingSongTest`: which row is the playing song's; the
+    offset that centres a row.
   - Album-name prefix stripping; genre line formatting (cap at two).
 - **`androidTest/`:** Room DAOs (version-counter semantics on
   `playlist_songs`, 50-cap on `shuffle_history`); a service smoke test that

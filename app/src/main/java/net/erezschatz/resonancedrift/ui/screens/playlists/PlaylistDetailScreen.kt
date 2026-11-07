@@ -1,10 +1,12 @@
 package net.erezschatz.resonancedrift.ui.screens.playlists
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
@@ -13,6 +15,7 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -23,21 +26,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.erezschatz.resonancedrift.ui.components.ListStatus
+import net.erezschatz.resonancedrift.ui.components.ScrollToPlayingRowOnce
 import net.erezschatz.resonancedrift.ui.components.ScreenHeader
 import net.erezschatz.resonancedrift.ui.components.SongRow
 import net.erezschatz.resonancedrift.ui.components.StatusText
+import net.erezschatz.resonancedrift.ui.components.playingRowIndex
 import net.erezschatz.resonancedrift.ui.components.plural
 
 /**
  * Header (name, song count, Play), then every song. Tapping a song plays the
  * playlist from it. Each row's ⋮ menu removes the song (not on smart playlists).
+ * The song that is playing is highlighted and centred when the screen opens
+ * (step 18).
  */
 @Composable
 fun PlaylistDetailScreen(viewModel: PlaylistDetailViewModel, name: String, onPlayed: () -> Unit) {
     val listing by viewModel.songs.collectAsStateWithLifecycle()
     val songs = listing.items
+    val currentSongId by viewModel.currentSongId.collectAsStateWithLifecycle()
+    val playingRow = playingRowIndex(songs.map { it.id }, currentSongId)
 
-    LazyColumn {
+    val listState = rememberLazyListState()
+    // Item 0 is the header, so the row's list index is one more.
+    ScrollToPlayingRowOnce(listState, if (playingRow < 0) -1 else playingRow + 1)
+    LazyColumn(state = listState) {
         item {
             Column(Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp)) {
                 ScreenHeader(name, detail = if (songs.isEmpty()) "" else plural(songs.size, "song"))
@@ -67,6 +79,7 @@ fun PlaylistDetailScreen(viewModel: PlaylistDetailViewModel, name: String, onPla
                     viewModel.playFrom(index)
                     onPlayed()
                 },
+                modifier = if (song.id == currentSongId) Modifier.background(MaterialTheme.colorScheme.primaryContainer) else Modifier,
                 trailing = {
                     if (viewModel.canRemove) {
                         RemoveMenu(enabled = viewModel.removingIndex == null, onRemove = { viewModel.remove(index, song) })

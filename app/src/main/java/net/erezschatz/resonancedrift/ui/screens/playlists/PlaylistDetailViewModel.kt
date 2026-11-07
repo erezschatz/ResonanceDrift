@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import net.erezschatz.resonancedrift.ampache.AmpacheException
@@ -32,7 +33,12 @@ class PlaylistDetailViewModel(
 ) : ViewModel() {
 
     val songs: StateFlow<Listing<SongEntity>> = library.playlistSongs(playlistId)
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Listing(emptyList(), Refresh.Running))
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MS), Listing(emptyList(), Refresh.Running))
+
+    /** The song the player is on, so the list can mark it (step 18, D42). */
+    val currentSongId: StateFlow<Long?> = player.current
+        .map { entry -> entry?.mediaId?.toLongOrNull() }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MS), null)
 
     /** Smart playlists are computed by the server; it does not let songs be removed from them. */
     val canRemove: Boolean = !playlistId.startsWith(SMART_PREFIX)
@@ -63,6 +69,9 @@ class PlaylistDetailViewModel(
 
     companion object {
         private const val SMART_PREFIX = "smart_"
+
+        /** Keeps the refresh alive through a rotation instead of restarting it. */
+        const val STOP_AFTER_MS = 5_000L
 
         fun factory(playlistId: String, session: Session, library: LibraryRepository, player: PlayerConnection): ViewModelProvider.Factory =
             viewModelFactory {

@@ -183,17 +183,20 @@ Status: **watch** (gather evidence), **test** (needs a run on the phone),
   handshake. Erez, 2026-11-01: about a minute before the first song played, so
   around the 09:58 restore, where the log shows only `network: available`.
 
-- **W12 · HTTP 429 after a doubled "new queue"** — watch, low. 2026-11-02
-  17:17:31: two identical stream requests 73 ms apart (two `(new queue)`
-  transitions), the second answered 429; the loader's retry played a second
-  later. Most likely two taps on Play. Settled if it never happens without a
-  double tap; a change only if it does.
-- **W13 · Bursts of transient audio-focus loss** — watch, question for Erez.
-  2026-11-03 07:32–07:46 in the car: eleven `suppressed: transient audio
-  focus loss` pauses of 6–34 s, each resumed at the same position; smaller
-  bursts 10-28 07:40, 11-05 09:45, 11-06 09:25. The player did as asked; the
-  question is what took focus (a prompt that *ducks* would not pause).
-  Settled by naming the source.
+- **W12 · HTTP 429 after a doubled "new queue"** — closed 2026-11-07, cause
+  unknown, nothing heard. 2026-11-02 17:17:31: two identical stream requests
+  73 ms apart (two `(new queue)` transitions), the second answered 429; the
+  loader's retry played a second later. Most likely two taps on Play. Erez
+  cannot say: the daily review did not flag it at the time, so there was
+  nothing to comment on, and five days later there is nothing to recall.
+  The retry policy already covers 429. Reopen only if it recurs.
+- **W13 · Bursts of transient audio-focus loss** — closed 2026-11-07, source
+  unknown, outside the app. 2026-11-03 07:32–07:46 in the car: eleven
+  `suppressed: transient audio focus loss` pauses of 6–34 s, each resumed at
+  the same position; smaller bursts 10-28 07:40, 11-05 09:45, 11-06 09:25.
+  The player did as asked (pause on a full transient loss, resume at the same
+  spot); not flagged by the daily review at the time either, so Erez has no
+  idea what was speaking, and finds the reading plausible. Nothing to change.
 
 Review of 2026-11-01 (`logs/2026-11-01-review.md`): W1, W5, W6, W8 recur;
 W2 gained a 27 min pause without error; W7 not exercised, but a restore
@@ -249,3 +252,9 @@ is not only a headset reconnect.
   week review: W13 (what was speaking 11-03 07:32), F4 (double tap), the
   step 18 decision (highlight only, or ReDrift's collapsed view, D31), task
   16's open questions.
+- 2026-11-07, later: Erez answered. W13: no idea what was speaking, the
+  reading sounds right — closed. F4/W12: no idea, closed unless it recurs.
+  Neither was flagged by the daily review when the logs came in, which is
+  when he could have said; a lesson for the next watch item, not a fix.
+  Step 18: a highlight, centred on the screen, nothing more — opened as
+  [18](18-lists-mark-playing-song.md), D42. The watch list is now W8 only.

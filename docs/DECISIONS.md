@@ -762,3 +762,27 @@ heard appeared once, because the server counted the prefetch stream. The
 server tracks Ampache's develop branch (its AutoUpdate compares against
 `commits/develop`), where `cache` is read in one place (read 2026-11-07).
 The proof is the test in task 16, on the phone.
+
+## D42 · 2026-11-07 · Step 18: lists highlight the playing song and centre it once
+
+**Decision.** Album detail and playlist detail mark the row of the song the
+player is on, with the queue panel's highlight, and scroll once on opening so
+that row sits mid-screen. The highlight follows the player while the screen
+is open; the scroll position does not. Matching is by song id, so the mark
+appears wherever the song is listed, whatever queue it plays from. This is
+step 18, after phase 1; D31 stands.
+
+**Rejected.**
+- ReDrift's collapsed "Now playing / Next up" playlist view (D31): Erez does
+  not want it — "next up was never implemented, and if it was I never
+  noticed it". The queue panel on Now Playing (step 17) is the queue view.
+- Following the current song with the scroll while the screen is open, as
+  the queue panel does: the panel is a short-lived sheet about the queue; a
+  list screen is something the user scrolls, and a list that moves under
+  the finger on every auto-advance is worse than a highlight that walks away.
+- Scrolling the row to the top (the panel's two-rows-of-context rule): Erez
+  asked for the song centred, which also shows what came before it.
+
+**Why.** Erez's 2026-11-03 note and his 2026-11-07 answer to the week
+review's question: a nice-to-have that makes the app feel like one piece.
+No playback change; the player already publishes the current item.

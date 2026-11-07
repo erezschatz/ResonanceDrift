@@ -1,5 +1,6 @@
 package net.erezschatz.resonancedrift.ui.screens.albums
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Shuffle
@@ -27,15 +29,18 @@ import net.erezschatz.resonancedrift.ampache.AlbumNames
 import net.erezschatz.resonancedrift.ui.components.AlbumArt
 import net.erezschatz.resonancedrift.ui.components.ArtSizes
 import net.erezschatz.resonancedrift.ui.components.ListStatus
+import net.erezschatz.resonancedrift.ui.components.ScrollToPlayingRowOnce
 import net.erezschatz.resonancedrift.ui.components.SongRow
 import net.erezschatz.resonancedrift.ui.components.TappableText
 import net.erezschatz.resonancedrift.ui.components.joinKnown
+import net.erezschatz.resonancedrift.ui.components.playingRowIndex
 import net.erezschatz.resonancedrift.ui.components.plural
 import net.erezschatz.resonancedrift.ui.components.yearText
 
 /**
  * Header (art, name, artist, year), Play and Shuffle, then the tracks.
- * Tapping a track plays the album from it and opens Now Playing.
+ * Tapping a track plays the album from it and opens Now Playing. The track
+ * that is playing is highlighted and centred when the screen opens (step 18).
  */
 @Composable
 fun AlbumDetailScreen(
@@ -46,8 +51,13 @@ fun AlbumDetailScreen(
     val album by viewModel.album.collectAsStateWithLifecycle()
     val listing by viewModel.songs.collectAsStateWithLifecycle()
     val songs = listing.items
+    val currentSongId by viewModel.currentSongId.collectAsStateWithLifecycle()
+    val playingRow = playingRowIndex(songs.map { it.id }, currentSongId)
 
-    LazyColumn(modifier = Modifier.fillMaxWidth()) {
+    val listState = rememberLazyListState()
+    // Item 0 is the header, so the row's list index is one more.
+    ScrollToPlayingRowOnce(listState, if (playingRow < 0) -1 else playingRow + 1)
+    LazyColumn(state = listState, modifier = Modifier.fillMaxWidth()) {
         item {
             Column(
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
@@ -110,6 +120,7 @@ fun AlbumDetailScreen(
                     viewModel.playFrom(index)
                     onPlayed()
                 },
+                modifier = if (song.id == currentSongId) Modifier.background(MaterialTheme.colorScheme.primaryContainer) else Modifier,
             )
         }
     }

@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import net.erezschatz.resonancedrift.ampache.Session
 import net.erezschatz.resonancedrift.data.LibraryRepository
@@ -29,6 +30,11 @@ class AlbumDetailViewModel(
 
     val songs: StateFlow<Listing<SongEntity>> = library.albumSongs(albumId)
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MS), Listing(emptyList(), Refresh.Running))
+
+    /** The song the player is on, so the list can mark it (step 18, D42). */
+    val currentSongId: StateFlow<Long?> = player.current
+        .map { entry -> entry?.mediaId?.toLongOrNull() }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MS), null)
 
     fun login() = session.currentLogin()
 

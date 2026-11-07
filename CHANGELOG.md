@@ -6,6 +6,19 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-07 — Lists mark the playing song · 1.0.3 (21)
+- Step 18: album detail and playlist detail highlight the row of the song
+  the player is on, by song id, and scroll it to the middle of the screen
+  once when the screen opens; afterwards the highlight follows the player
+  and the list stays put (D42: Erez chose this over ReDrift's collapsed
+  view). `ui/components/PlayingSong.kt`; tests in `PlayingSongTest`.
+- W12 and W13 closed (below).
+
+### 2026-11-07 — W12 and W13 closed
+- W12 (one 429 after a doubled Play, 11-02) and W13 (audio-focus bursts in
+  the car, 11-03) closed with the cause unknown and nothing to change;
+  Erez could not recall either. The watch list is W8 alone.
+
 ### 2026-11-07 — Step 15 closed: the W7 test passes (1.0.2); phase 1 complete
 - Paused at 11 s of a song still downloading, app swiped away, launched
   5.5 h later: the handshake for the expired token ran before the restore,
