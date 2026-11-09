@@ -29,6 +29,7 @@ result has been run on the phone (not just compiled).
 | 16 | [Scrobbling: one play per song](tasks/16-scrobble-doubles.md) | done 2026-11-07 (1.0.2 on phone: one album, each song once, the unreached song absent; D41) |
 | 17 | [Now Playing: queue opens at the current song](tasks/17-now-playing-current-song.md) | done 2026-11-07 (1.0.2 on phone: opens at the current song and follows; D40) |
 | 18 | [Lists mark the song that is playing](tasks/18-lists-mark-playing-song.md) | done 2026-11-07 (1.0.3 (21) on the phone: album and playlist highlight and centre the playing song, the list stays put after; D42) |
+| 19 | [Skips: counted by outcome, not by button](tasks/19-skips-by-outcome.md) | todo (2026-11-09, out of the history reset; starts with reading the server's skip rule) |
 
 ## Milestones
 
@@ -42,8 +43,10 @@ result has been run on the phone (not just compiled).
   17 come out of 15's week (D39) and may be built while it runs. **Reached
   2026-11-07.**
 - **After 18:** the one nice-to-have Erez asked for during the week; phase 1
-  stays complete without it. **Reached 2026-11-07.** Nothing is planned
-  after it; new work starts with a new step file and a PLAN row.
+  stays complete without it. **Reached 2026-11-07.**
+- **After 19:** skips in Ampache mean "left before the end", so play and
+  skip counts per track are a usable pruning signal. Post-phase-1 like 18;
+  phase 1 stays complete without it.
 
 ## Not in phase 1
 

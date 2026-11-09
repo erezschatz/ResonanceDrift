@@ -6,6 +6,13 @@ what has not yet been installed on the phone as a numbered version.
 
 ## Unreleased
 
+### 2026-11-09 — Step 19 planned: skips by outcome
+- New step file `docs/tasks/19-skips-by-outcome.md` and PLAN row. After the
+  Ampache history reset (to 2026-11-07, D41's date) the app's 4 `skip` rows
+  match only next-button presses; albums left mid-song for another album
+  leave no skip. The step starts by reading the server's skip rule, then
+  defines a skip by outcome. Docs only, nothing built.
+
 ### 2026-11-07 — Step 18 verified on the phone (1.0.3); nothing left planned
 - Album detail and playlist detail both open with the playing song
   highlighted mid-screen; the list stays put on an auto-advance; an album
